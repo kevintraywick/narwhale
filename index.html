@@ -19,6 +19,7 @@
         }
 
         /* Background image fills viewport, letterboxed if needed */
+        /* TODO: remove filter once kt_index.png is re-exported in sRGB */
         .bg {
             position: absolute;
             inset: 0;
@@ -26,6 +27,7 @@
             height: 100%;
             object-fit: contain;
             object-position: center center;
+            filter: brightness(1.35) saturate(1.1);
         }
 
         /*
