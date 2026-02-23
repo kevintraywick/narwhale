@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kevin Traywick</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            width: 100vw;
+            height: 100vh;
+            overflow: hidden;
+            background-color: #d4cfc4;
+        }
+
+        /* Background image fills viewport, letterboxed if needed */
+        .bg {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            object-position: center center;
+        }
+
+        /*
+         * Hotspot overlay — same aspect ratio as the image (8000 x 4500 = 16:9)
+         * so percentage positions map exactly to image coordinates.
+         */
+        .hotspots {
+            position: absolute;
+            inset: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .hotspot-frame {
+            position: relative;
+            width: 100%;
+            aspect-ratio: 8000 / 4500;
+            max-height: 100vh;
+            max-width: calc(100vh * 8000 / 4500);
+        }
+
+        /*
+         * Each hotspot is an <a> tag positioned by percentages.
+         *
+         * Formula (all values from the SVG's 8000x4500 coordinate space):
+         *   left:   (cx - rx) / 8000 * 100%
+         *   top:    (cy - ry) / 4500 * 100%
+         *   width:  (rx * 2)  / 8000 * 100%
+         *   height: (ry * 2)  / 4500 * 100%
+         *
+         * To add a new hotspot:
+         *   1. Export an ellipse-only SVG from Affinity (hide all other layers)
+         *   2. Note cx, cy, rx, ry — apply any group transforms if present
+         *   3. Scale to 8000x4500 space if viewBox differs
+         *   4. Copy a hotspot block below, plug in the numbers
+         */
+        .hotspot {
+            position: absolute;
+            border-radius: 50%;
+            cursor: pointer;
+            /* Uncomment to debug hotspot positions:
+            background: rgba(255,0,0,0.2);
+            border: 2px solid red; */
+        }
+
+        /* ─── COFFEE SHOP → fast-french ───────────────────────────────
+         * Source: kt_hotspots.svg (8000x4500)
+         * cx=1052.083  cy=3452.083  rx=1152.083  ry=1202.083
+         */
+        .hotspot-coffee {
+            left:   calc((1052.083 - 1152.083) / 8000 * 100%);
+            top:    calc((3452.083 - 1202.083) / 4500 * 100%);
+            width:  calc(1152.083 * 2 / 8000 * 100%);
+            height: calc(1202.083 * 2 / 4500 * 100%);
+        }
+
+        /* ─── TEXT BUBBLE → SMS ────────────────────────────────────────
+         * Source: TextMe_Bubble.svg (1920x1080, scaled 4.1667x to 8000x4500)
+         * Raw ellipse: cx=1481.5 cy=259 rx=126.5 ry=117
+         * After group transform matrix(1.055336,0,0,0.923077,-179.98,11.92):
+         *   cx=1383.1  cy=251.0  rx=133.5  ry=108.0
+         * Scaled to 8000x4500:
+         *   cx=5762.8  cy=1045.9  rx=556.3  ry=450.0
+         */
+        .hotspot-textme {
+            left:   calc((5762.8 - 556.3) / 8000 * 100%);
+            top:    calc((1045.9 - 450.0) / 4500 * 100%);
+            width:  calc(556.3  * 2 / 8000 * 100%);
+            height: calc(450.0  * 2 / 4500 * 100%);
+        }
+
+        /* ─── SMS DIALOG ─────────────────────────────────────────────── */
+
+        .sms-overlay {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: rgba(0,0,0,0.35);
+            z-index: 100;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .sms-overlay.open {
+            display: flex;
+        }
+
+        .sms-dialog {
+            background: #d4edda;
+            border-radius: 18px;
+            padding: 28px 28px 22px;
+            width: 340px;
+            max-width: 90vw;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.18);
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+            position: relative;
+        }
+
+        .sms-dialog h2 {
+            font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", sans-serif;
+            font-size: 15px;
+            font-weight: 500;
+            color: #2d4a35;
+            letter-spacing: 0.3px;
+        }
+
+        .sms-dialog textarea {
+            width: 100%;
+            height: 100px;
+            border: 1.5px solid #a8d5b5;
+            border-radius: 10px;
+            background: #eaf6ee;
+            color: #2d2d2d;
+            font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", sans-serif;
+            font-size: 14px;
+            padding: 10px 12px;
+            resize: none;
+            outline: none;
+            transition: border-color 0.2s;
+        }
+
+        .sms-dialog textarea:focus {
+            border-color: #5a9e6f;
+        }
+
+        .sms-dialog textarea::placeholder {
+            color: #8ab898;
+        }
+
+        .sms-actions {
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .sms-cancel {
+            background: none;
+            border: none;
+            color: #5a7a62;
+            font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", sans-serif;
+            font-size: 13px;
+            cursor: pointer;
+            padding: 4px 8px;
+            border-radius: 6px;
+            transition: background 0.15s;
+        }
+
+        .sms-cancel:hover {
+            background: rgba(0,0,0,0.06);
+        }
+
+        .sms-send {
+            background: #4a9e6a;
+            border: none;
+            border-radius: 50%;
+            width: 38px;
+            height: 38px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background 0.15s, transform 0.1s;
+            flex-shrink: 0;
+        }
+
+        .sms-send:hover {
+            background: #3a8a58;
+            transform: scale(1.07);
+        }
+
+        .sms-send:active {
+            transform: scale(0.96);
+        }
+
+        /* Paper airplane SVG icon */
+        .sms-send svg {
+            width: 18px;
+            height: 18px;
+            fill: white;
+            transform: translateX(1px); /* optical centering */
+        }
+
+    </style>
+</head>
+<body>
+
+    <img class="bg" src="kt_index.png" alt="Kevin Traywick">
+
+    <div class="hotspots">
+        <div class="hotspot-frame">
+
+            <!-- COFFEE SHOP → Fast French -->
+            <a  class="hotspot hotspot-coffee"
+                href="https://www.kevintraywick.com/fast-french"
+                title="Fast French">
+            </a>
+
+            <!-- TEXT BUBBLE → opens SMS dialog -->
+            <a  class="hotspot hotspot-textme"
+                href="#"
+                title="Text Kevin"
+                onclick="openSMS(event)">
+            </a>
+
+        </div>
+    </div>
+
+    <!-- SMS Dialog -->
+    <div class="sms-overlay" id="smsOverlay" onclick="overlayClick(event)">
+        <div class="sms-dialog">
+            <h2>Send Kevin a message</h2>
+            <textarea id="smsText" placeholder="Type your message…" maxlength="300"></textarea>
+            <div class="sms-actions">
+                <button class="sms-cancel" onclick="closeSMS()">Cancel</button>
+                <button class="sms-send" onclick="sendSMS()" title="Send">
+                    <!-- Paper airplane -->
+                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const YOUR_NUMBER = '+1XXXXXXXXXX'; // ← replace with your number
+
+        function openSMS(e) {
+            e.preventDefault();
+            document.getElementById('smsOverlay').classList.add('open');
+            setTimeout(() => document.getElementById('smsText').focus(), 50);
+        }
+
+        function closeSMS() {
+            document.getElementById('smsOverlay').classList.remove('open');
+            document.getElementById('smsText').value = '';
+        }
+
+        function overlayClick(e) {
+            // close if clicking the backdrop, not the dialog
+            if (e.target === document.getElementById('smsOverlay')) closeSMS();
+        }
+
+        function sendSMS() {
+            const msg = document.getElementById('smsText').value.trim();
+            if (!msg) return;
+            window.location.href = `sms:${YOUR_NUMBER}&body=${encodeURIComponent(msg)}`;
+            closeSMS();
+        }
+
+        // Allow Cmd/Ctrl+Enter to send
+        document.getElementById('smsText').addEventListener('keydown', function(e) {
+            if ((e.metaKey || e.ctrlKey) && e.key === 'Enter') sendSMS();
+        });
+    </script>
+
+</body>
+</html>
