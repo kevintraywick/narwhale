@@ -19,7 +19,6 @@
         }
 
         /* Background image fills viewport, letterboxed if needed */
-        /* TODO: remove filter once kt_index.png is re-exported in sRGB */
         .bg {
             position: absolute;
             inset: 0;
@@ -27,7 +26,6 @@
             height: 100%;
             object-fit: contain;
             object-position: center center;
-            filter: brightness(1.35) saturate(1.1);
         }
 
         /*
@@ -218,7 +216,7 @@
 </head>
 <body>
 
-    <img class="bg" src="kt_index.png" alt="Kevin Traywick">
+    <img class="bg" src="kt_index.jpg" alt="Kevin Traywick">
 
     <div class="hotspots">
         <div class="hotspot-frame">
