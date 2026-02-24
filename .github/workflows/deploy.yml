@@ -20,9 +20,10 @@ jobs:
           echo "$SSH_PRIVATE_KEY" > ~/.ssh/deploy_key
           chmod 600 ~/.ssh/deploy_key
           ssh-keyscan iad1-shared-e1-09.dreamhost.com >> ~/.ssh/known_hosts
-          rsync -avz --delete \
+          rsync -avz \
             -e "ssh -i ~/.ssh/deploy_key -o StrictHostKeyChecking=no" \
             --exclude '.git' \
             --exclude '.github' \
             --exclude '.DS_Store' \
+            --exclude 'fast-french' \
             ./ dh_hp35cg@iad1-shared-e1-09.dreamhost.com:~/kevintraywick.com/
