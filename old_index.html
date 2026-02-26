@@ -18,8 +18,7 @@
             background-color: #d4cfc4;
         }
 
-        /* Background fills viewport, letterboxed (contain) so hotspot
-           percentages map 1:1 to the 8000x4500 illustration space */
+        /* Background image fills viewport, letterboxed if needed */
         .bg {
             position: absolute;
             inset: 0;
@@ -29,7 +28,10 @@
             object-position: center center;
         }
 
-        /* Hotspot overlay — same aspect ratio as illustration */
+        /*
+         * Hotspot overlay — same aspect ratio as the image (8000 x 4500 = 16:9)
+         * so percentage positions map exactly to image coordinates.
+         */
         .hotspots {
             position: absolute;
             inset: 0;
@@ -38,7 +40,6 @@
             justify-content: center;
         }
 
-        /* This frame matches the image's rendered size exactly */
         .hotspot-frame {
             position: relative;
             width: 100%;
@@ -48,78 +49,53 @@
         }
 
         /*
-         * Hotspot formula (all coordinates in 8000x4500 space):
+         * Each hotspot is an <a> tag positioned by percentages.
          *
-         * For ELLIPSES:
+         * Formula (all values from the SVG's 8000x4500 coordinate space):
          *   left:   (cx - rx) / 8000 * 100%
          *   top:    (cy - ry) / 4500 * 100%
          *   width:  (rx * 2)  / 8000 * 100%
          *   height: (ry * 2)  / 4500 * 100%
-         *   border-radius: 50%
-         *
-         * For RECTS:
-         *   left:   x / 8000 * 100%
-         *   top:    y / 4500 * 100%
-         *   width:  w / 8000 * 100%
-         *   height: h / 4500 * 100%
          *
          * To add a new hotspot:
-         *   1. Export a shape-only SVG from Affinity (hide all other layers)
-         *   2. Note the shape coords + any group transforms, note the viewBox
-         *   3. Scale coords to 8000x4500 space
-         *   4. Copy a hotspot block below and plug in the numbers
+         *   1. Export an ellipse-only SVG from Affinity (hide all other layers)
+         *   2. Note cx, cy, rx, ry — apply any group transforms if present
+         *   3. Scale to 8000x4500 space if viewBox differs
+         *   4. Copy a hotspot block below, plug in the numbers
          */
         .hotspot {
             position: absolute;
+            border-radius: 50%;
             cursor: pointer;
-            /* Debug: uncomment to visualize hotspot bounds
+            /* Uncomment to debug hotspot positions:
             background: rgba(255,0,0,0.2);
             border: 2px solid red; */
         }
 
-        /* ─── NOTEBOOK → justedit ──────────────────────────────────────
-         * Source: justedit/notebook.svg  viewBox="0 0 1920 1080"
-         * rect x=0 y=0 width=232 height=451  (no transform)
-         * Scale factor: 8000/1920 = 4.1667x, 4500/1080 = 4.1667x
-         * In 8000x4500: x=0 y=0 w=966.7 h=1879.2
-         */
-        .hotspot-notebook {
-            left:   calc(0 / 8000 * 100%);
-            top:    calc(0 / 4500 * 100%);
-            width:  calc(966.7 / 8000 * 100%);
-            height: calc(1879.2 / 4500 * 100%);
-            border-radius: 4px;
-        }
-
         /* ─── COFFEE SHOP → fast-french ───────────────────────────────
-         * Source: kt_hotspots.svg  viewBox="0 0 8000 4500"
-         * ellipse cx=1052.083 cy=3452.083 rx=1152.083 ry=1202.083
+         * Source: kt_hotspots.svg (8000x4500)
+         * cx=1052.083  cy=3452.083  rx=1152.083  ry=1202.083
          */
         .hotspot-coffee {
             left:   calc((1052.083 - 1152.083) / 8000 * 100%);
             top:    calc((3452.083 - 1202.083) / 4500 * 100%);
             width:  calc(1152.083 * 2 / 8000 * 100%);
             height: calc(1202.083 * 2 / 4500 * 100%);
-            border-radius: 50%;
         }
 
-        /* ─── TEXT BUBBLE → SMS dialog ─────────────────────────────────
-         * Source: TextMe_Bubble.svg  viewBox="0 0 1920 1080"
-         * ellipse cx=1481.5 cy=259 rx=126.5 ry=117
-         * group transform: matrix(1.055336,0,0,0.923077,-179.980237,11.923077)
-         *   cx_t = 1481.5*1.055336 + (-179.980237) = 1382.95
-         *   cy_t = 259*0.923077 + 11.923077 = 250.92
-         *   rx_t = 126.5*1.055336 = 133.5
-         *   ry_t = 117*0.923077 = 108.0
-         * Scale to 8000x4500 (factor 4.1667x):
-         *   cx=5762.3  cy=1045.5  rx=556.3  ry=450.0
+        /* ─── TEXT BUBBLE → SMS ────────────────────────────────────────
+         * Source: TextMe_Bubble.svg (1920x1080, scaled 4.1667x to 8000x4500)
+         * Raw ellipse: cx=1481.5 cy=259 rx=126.5 ry=117
+         * After group transform matrix(1.055336,0,0,0.923077,-179.98,11.92):
+         *   cx=1383.1  cy=251.0  rx=133.5  ry=108.0
+         * Scaled to 8000x4500:
+         *   cx=5762.8  cy=1045.9  rx=556.3  ry=450.0
          */
         .hotspot-textme {
-            left:   calc((5762.3 - 556.3) / 8000 * 100%);
-            top:    calc((1045.5 - 450.0) / 4500 * 100%);
+            left:   calc((5762.8 - 556.3) / 8000 * 100%);
+            top:    calc((1045.9 - 450.0) / 4500 * 100%);
             width:  calc(556.3  * 2 / 8000 * 100%);
             height: calc(450.0  * 2 / 4500 * 100%);
-            border-radius: 50%;
         }
 
         /* ─── SMS DIALOG ─────────────────────────────────────────────── */
@@ -228,11 +204,12 @@
             transform: scale(0.96);
         }
 
+        /* Paper airplane SVG icon */
         .sms-send svg {
             width: 18px;
             height: 18px;
             fill: white;
-            transform: translateX(1px);
+            transform: translateX(1px); /* optical centering */
         }
 
     </style>
@@ -244,21 +221,18 @@
     <div class="hotspots">
         <div class="hotspot-frame">
 
-            <!-- NOTEBOOK → Just Edit -->
-            <a class="hotspot hotspot-notebook"
-               href="justedit/justedit.html"
-               title="Open notebook"></a>
-
             <!-- COFFEE SHOP → Fast French -->
-            <a class="hotspot hotspot-coffee"
-               href="https://www.kevintraywick.com/fast-french"
-               title="Fast French"></a>
+            <a  class="hotspot hotspot-coffee"
+                href="https://www.kevintraywick.com/fast-french"
+                title="Fast French">
+            </a>
 
-            <!-- TEXT BUBBLE → SMS dialog -->
-            <a class="hotspot hotspot-textme"
-               href="#"
-               title="Text Kevin"
-               onclick="openSMS(event)"></a>
+            <!-- TEXT BUBBLE → opens SMS dialog -->
+            <a  class="hotspot hotspot-textme"
+                href="#"
+                title="Text Kevin"
+                onclick="openSMS(event)">
+            </a>
 
         </div>
     </div>
@@ -271,6 +245,7 @@
             <div class="sms-actions">
                 <button class="sms-cancel" onclick="closeSMS()">Cancel</button>
                 <button class="sms-send" onclick="sendSMS()" title="Send">
+                    <!-- Paper airplane -->
                     <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                         <path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/>
                     </svg>
@@ -280,7 +255,7 @@
     </div>
 
     <script>
-        const YOUR_NUMBER = '+12068608292';
+        const YOUR_NUMBER = '+12068608292'; // ← replace with your number
 
         function openSMS(e) {
             e.preventDefault();
@@ -294,6 +269,7 @@
         }
 
         function overlayClick(e) {
+            // close if clicking the backdrop, not the dialog
             if (e.target === document.getElementById('smsOverlay')) closeSMS();
         }
 
@@ -304,6 +280,7 @@
             closeSMS();
         }
 
+        // Allow Cmd/Ctrl+Enter to send
         document.getElementById('smsText').addEventListener('keydown', function(e) {
             if ((e.metaKey || e.ctrlKey) && e.key === 'Enter') sendSMS();
         });
