@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pinball</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { background: #fff; width: 100vw; height: 100vh; overflow: hidden; user-select: none; }
+    #hint {
+      position: fixed; bottom: 18px; left: 50%; transform: translateX(-50%);
+      font: 11px/1 -apple-system, sans-serif; color: #bbb; letter-spacing: 0.5px; pointer-events: none;
+    }
+  </style>
+</head>
+<body>
+  <svg id="scene" style="position:absolute;top:0;left:0;width:100%;height:100%;overflow:visible;"></svg>
+  <div id="hint">left click · right click &nbsp;·&nbsp; Z / X</div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/matter-js/0.19.0/matter.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.8.5/d3.min.js"></script>
+  <script>
+  (function () {
+    const { Engine, Runner, Bodies, Body, World, Events } = Matter;
+
+    const W  = window.innerWidth;
+    const H  = window.innerHeight;
+    const R  = 38.5;
+    const CX = W / 2;
+
+    // ── Flipper geometry ──────────────────────────────────────────────
+    const FL   = 220;
+    const FH   = 14;
+    const FHLF = FL / 2;
+    const GAP  = 81;
+
+    const L_REST =  0.38;
+    const L_UP   = -0.54;
+    const R_REST =  Math.PI - 0.38;
+    const R_UP   =  Math.PI + 0.54;
+
+    const GROUND_Y = H - 30;
+    const PIVOT_Y  = GROUND_Y - FHLF * Math.sin(L_REST) - FH / 2;
+
+    const LP = { x: CX - GAP - FL, y: PIVOT_Y };
+    const RP = { x: CX + GAP + FL, y: PIVOT_Y };
+
+    // Tips of flippers at rest — defines gap edges
+    const L_TIP_X = LP.x + FL * Math.cos(L_REST);  // right end of left flipper
+    const R_TIP_X = RP.x - FL * Math.cos(L_REST);  // left end of right flipper (symmetric)
+    const GAP_HALF = (R_TIP_X - L_TIP_X) / 2;      // half-width of the gap
+
+    // ── Pop bumpers ────────────────────────────────────────────────────
+    const BR = 64;
+    const bumpers = [
+      { x: W * 0.20, y: H * 0.32 },
+      { x: W * 0.60, y: H * 0.52 },
+      { x: W * 0.72, y: H * 0.28 },
+    ];
+
+    // ── Physics ────────────────────────────────────────────────────────
+    const engine = Engine.create({ gravity: { y: 1.4 } });
+
+    // Ball spawned over a random flipper pivot
+    function spawnX() {
+      return Math.random() < 0.5
+        ? LP.x + FL * 0.3 + Math.random() * FL * 0.4   // over left flipper
+        : RP.x - FL * 0.3 - Math.random() * FL * 0.4;  // over right flipper
+    }
+
+    const ballBody = Bodies.circle(spawnX(), 60, R, {
+      restitution: 1.1, friction: 0.001, frictionAir: 0.004, label: 'ball'
+    });
+
+    function mkFlipper(angle, pivot) {
+      const c = { x: pivot.x + FHLF * Math.cos(angle), y: pivot.y + FHLF * Math.sin(angle) };
+      return Bodies.rectangle(c.x, c.y, FL, FH, {
+        isStatic: true, label: 'flipper',
+        restitution: 0.45,  // more bounce off flippers
+        friction: 0.01, angle
+      });
+    }
+
+    const lFlip = mkFlipper(L_REST, LP);
+    const rFlip = mkFlipper(R_REST, RP);
+
+    const bumperBodies = bumpers.map((b, i) =>
+      Bodies.circle(b.x, b.y, BR, {
+        isStatic: true, label: `bumper${i}`,
+        restitution: 2.4,  // more kick
+        friction: 0
+      })
+    );
+
+    // Two floor segments flanking the gap
+    const floorThick = 50;
+    const floorY     = GROUND_Y + floorThick / 2;
+    const leftFloor  = Bodies.rectangle(
+      (L_TIP_X - W) / 2,  // center of left segment
+      floorY,
+      L_TIP_X + W,
+      floorThick,
+      { isStatic: true }
+    );
+    const rightFloor = Bodies.rectangle(
+      R_TIP_X + (W - R_TIP_X) / 2,
+      floorY,
+      W - R_TIP_X + W,
+      floorThick,
+      { isStatic: true }
+    );
+
+    const wallL   = Bodies.rectangle(-25,    H / 2, 50, H * 2, { isStatic: true });
+    const wallR   = Bodies.rectangle(W + 25, H / 2, 50, H * 2, { isStatic: true });
+    const ceiling = Bodies.rectangle(CX,    -80,   W * 2, 50,  { isStatic: true });
+
+    World.add(engine.world, [ballBody, lFlip, rFlip, ...bumperBodies, leftFloor, rightFloor, wallL, wallR, ceiling]);
+
+    // ── Respawn when ball falls through gap ───────────────────────────
+    let respawning = false;
+    function respawn() {
+      if (respawning) return;
+      respawning = true;
+      setTimeout(() => {
+        Body.setPosition(ballBody, { x: spawnX(), y: 60 });
+        Body.setVelocity(ballBody, { x: 0, y: 0 });
+        Body.setAngularVelocity(ballBody, 0);
+        respawning = false;
+      }, 600);
+    }
+
+    // ── Flippers ───────────────────────────────────────────────────────
+    let lActive = false, rActive = false;
+    let lAngle = L_REST, rAngle = R_REST;
+
+    Events.on(engine, 'beforeUpdate', () => {
+      lAngle += ((lActive ? L_UP : L_REST) - lAngle) * 0.22;
+      rAngle += ((rActive ? R_UP : R_REST) - rAngle) * 0.22;
+      Body.setPosition(lFlip, { x: LP.x + FHLF * Math.cos(lAngle), y: LP.y + FHLF * Math.sin(lAngle) });
+      Body.setAngle(lFlip, lAngle);
+      Body.setPosition(rFlip, { x: RP.x + FHLF * Math.cos(rAngle), y: RP.y + FHLF * Math.sin(rAngle) });
+      Body.setAngle(rFlip, rAngle);
+
+      // Check if ball has fallen below the gap
+      if (ballBody.position.y > GROUND_Y + R + 20) respawn();
+    });
+
+    // ── Audio ──────────────────────────────────────────────────────────
+    let actx = null;
+    function audio() { if (!actx) actx = new (window.AudioContext || window.webkitAudioContext)(); return actx; }
+    function playBump() {
+      const ctx = audio(), osc = ctx.createOscillator(), gain = ctx.createGain();
+      osc.type = 'sine';
+      osc.connect(gain); gain.connect(ctx.destination);
+      osc.frequency.setValueAtTime(520, ctx.currentTime);
+      osc.frequency.exponentialRampToValueAtTime(160, ctx.currentTime + 0.14);
+      gain.gain.setValueAtTime(0.38, ctx.currentTime);
+      gain.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + 0.20);
+      osc.start(); osc.stop(ctx.currentTime + 0.20);
+    }
+
+    // ── Bumper impulse + sound ─────────────────────────────────────────
+    const bumperFlash = bumpers.map(() => 0);
+
+    Events.on(engine, 'collisionStart', evt => {
+      evt.pairs.forEach(pair => {
+        const la = pair.bodyA.label, lb = pair.bodyB.label;
+        bumpers.forEach((b, i) => {
+          const bl = `bumper${i}`;
+          if ((la === bl && lb === 'ball') || (la === 'ball' && lb === bl)) {
+            const dx = ballBody.position.x - b.x, dy = ballBody.position.y - b.y;
+            const d = Math.sqrt(dx*dx + dy*dy) || 1;
+            Body.applyForce(ballBody, ballBody.position, { x: (dx/d)*0.12, y: (dy/d)*0.12 });
+            playBump();
+            bumperFlash[i] = 12;
+          }
+        });
+      });
+    });
+
+    // ── D3 scene ───────────────────────────────────────────────────────
+    const svg = d3.select('#scene');
+
+    const shadowEl = svg.append('ellipse')
+      .attr('ry', 6).attr('cy', GROUND_Y).attr('fill', 'rgba(0,0,0,0.07)');
+
+    function drawBumper(bx, by, idx) {
+      const g = svg.append('g');
+      g.append('circle').attr('class', 'br')
+        .attr('cx', bx).attr('cy', by).attr('r', BR)
+        .attr('fill', 'none').attr('stroke', '#1a1a1a').attr('stroke-width', 1.3)
+        .attr('stroke-linecap', 'round').attr('pathLength', 100)
+        .attr('stroke-dasharray', '96 4').attr('stroke-dashoffset', 8 + idx * 14);
+      g.append('circle')
+        .attr('cx', bx).attr('cy', by).attr('r', BR * 0.52)
+        .attr('fill', 'none').attr('stroke', '#1a1a1a').attr('stroke-width', 0.65).attr('opacity', 0.38);
+      [[-9,0,9,0],[0,-9,0,9]].forEach(([x1,y1,x2,y2]) =>
+        g.append('line')
+          .attr('x1',bx+x1).attr('y1',by+y1).attr('x2',bx+x2).attr('y2',by+y2)
+          .attr('stroke','#1a1a1a').attr('stroke-width',0.9).attr('opacity',0.45)
+      );
+      return g;
+    }
+    const bumperGs = bumpers.map((b, i) => drawBumper(b.x, b.y, i));
+
+    const fPath  = `M 0,-9 Q ${FL*0.35},-10 ${FL},-4 L ${FL},4 Q ${FL*0.35},10 0,9 Z`;
+    const fCLine = `M 8,0 Q ${FL*0.5},0 ${FL-8},0`;
+
+    function makeFlipperSVG(id) {
+      const g = svg.append('g').attr('id', id);
+      g.append('circle').attr('r', 4).attr('fill','none').attr('stroke','#1a1a1a').attr('stroke-width',1.1);
+      g.append('path').attr('d', fPath).attr('fill','none').attr('stroke','#1a1a1a')
+        .attr('stroke-width',1.3).attr('stroke-linejoin','round').attr('stroke-linecap','round');
+      g.append('path').attr('d', fCLine).attr('fill','none').attr('stroke','#1a1a1a')
+        .attr('stroke-width',0.5).attr('opacity',0.22).attr('stroke-linecap','round');
+      return g;
+    }
+    const lgSVG = makeFlipperSVG('lf');
+    const rgSVG = makeFlipperSVG('rf');
+
+    const ballG = svg.append('g');
+    ballG.append('ellipse').attr('cx',0).attr('cy',0).attr('rx',R-2).attr('ry',R-2)
+      .attr('fill','none').attr('stroke','#1a1a1a').attr('stroke-width',1.4)
+      .attr('stroke-linecap','round').attr('pathLength',100)
+      .attr('stroke-dasharray','97 3').attr('stroke-dashoffset',12);
+    ballG.append('ellipse').attr('cx',0).attr('cy',0).attr('rx',R-0.8).attr('ry',R-1.2)
+      .attr('fill','none').attr('stroke','#1a1a1a').attr('stroke-width',0.65)
+      .attr('opacity',0.3).attr('pathLength',100)
+      .attr('stroke-dasharray','60 40').attr('stroke-dashoffset',55).attr('transform','rotate(22)');
+    ballG.append('ellipse').attr('cx',-14).attr('cy',-18).attr('rx',5).attr('ry',3)
+      .attr('fill','none').attr('stroke','#1a1a1a').attr('stroke-width',0.6).attr('opacity',0.18)
+      .attr('transform','rotate(-30 -14 -18)');
+
+    // ── Input ──────────────────────────────────────────────────────────
+    window.addEventListener('mousedown', e => { audio(); if(e.button===0) lActive=true; if(e.button===2) rActive=true; });
+    window.addEventListener('mouseup',   e => { if(e.button===0) lActive=false; if(e.button===2) rActive=false; });
+    window.addEventListener('contextmenu', e => e.preventDefault());
+    window.addEventListener('keydown', e => {
+      if(e.key==='z'||e.key==='Z'||e.key==='ArrowLeft')  lActive=true;
+      if(e.key==='x'||e.key==='X'||e.key==='ArrowRight') rActive=true;
+    });
+    window.addEventListener('keyup', e => {
+      if(e.key==='z'||e.key==='Z'||e.key==='ArrowLeft')  lActive=false;
+      if(e.key==='x'||e.key==='X'||e.key==='ArrowRight') rActive=false;
+    });
+
+    // ── Render loop ────────────────────────────────────────────────────
+    Runner.run(Runner.create(), engine);
+
+    (function loop() {
+      requestAnimationFrame(loop);
+      const { x, y } = ballBody.position;
+
+      // Hide ball while respawning (off screen)
+      const visible = !respawning || y < H + 100;
+      ballG.attr('opacity', visible ? 1 : 0);
+      ballG.attr('transform', `translate(${x},${y})`);
+
+      const dist = Math.max(GROUND_Y - y - R, 0);
+      const prox = 1 - Math.min(dist / GROUND_Y, 1);
+      shadowEl.attr('cx', x).attr('rx', 14 + prox * 50).attr('opacity', visible ? 0.02 + prox * 0.10 : 0);
+
+      lgSVG.attr('transform', `translate(${LP.x},${LP.y}) rotate(${lAngle * 180 / Math.PI})`);
+      const rSvgDeg = (rAngle - Math.PI) * 180 / Math.PI;
+      rgSVG.attr('transform', `translate(${RP.x},${RP.y}) rotate(${rSvgDeg}) scale(-1,1)`);
+
+      bumpers.forEach((_, i) => {
+        if (bumperFlash[i] > 0) { bumperFlash[i]--; bumperGs[i].select('.br').attr('stroke-width', 3); }
+        else bumperGs[i].select('.br').attr('stroke-width', 1.3);
+      });
+    })();
+  })();
+  </script>
+</body>
+</html>
