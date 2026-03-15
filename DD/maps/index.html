@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maps</title>
+    <style>
+        :root {
+            --bg: #1a1614;
+            --surface: #231f1c;
+            --border: #3d3530;
+            --gold: #c9a84c;
+            --accent: #c0392b;
+            --text: #e8ddd0;
+            --muted: #8a7d6e;
+            --green: #5a8a5a;
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+
+        body {
+            background: var(--bg);
+            font-family: 'Georgia', serif;
+            min-height: 100vh;
+        }
+
+        /* ── Nav ── */
+        .dd-nav {
+            display: flex;
+            gap: 0.75rem;
+            padding: 0.75rem 1.25rem;
+            background: var(--bg);
+            border-bottom: 1px solid var(--border);
+            flex-wrap: wrap;
+        }
+        .dd-nav a {
+            color: var(--muted);
+            text-decoration: none;
+            font-size: 0.85rem;
+            padding: 0.3rem 0.8rem;
+            border: 1px solid var(--border);
+            border-radius: 4px;
+            transition: color 0.15s, border-color 0.15s;
+        }
+        .dd-nav a:hover, .dd-nav a.active { color: var(--gold); border-color: var(--gold); }
+
+        /* ── Session tabs ── */
+        .sess-tabs-wrap {
+            background: var(--surface);
+            border-bottom: 1px solid var(--border);
+            padding: 1rem 1.25rem;
+            overflow-x: auto;
+        }
+        .sess-tabs {
+            display: flex;
+            gap: 0.6rem;
+            min-width: min-content;
+        }
+        .sess-tab {
+            background: transparent;
+            border: 1px solid var(--border);
+            color: var(--muted);
+            font-family: inherit;
+            font-size: 0.85rem;
+            padding: 0.45rem 1rem;
+            border-radius: 4px;
+            cursor: pointer;
+            white-space: nowrap;
+            transition: color 0.15s, border-color 0.15s, background 0.15s;
+            flex-shrink: 0;
+        }
+        .sess-tab:hover { color: var(--gold); border-color: var(--gold); }
+        .sess-tab.active { background: var(--accent); color: #fff; border-color: var(--accent); }
+
+        /* ── Map grid ── */
+        .map-wrap {
+            max-width: 860px;
+            margin: 0 auto;
+            padding: 1.5rem 1rem 4rem;
+        }
+
+        .map-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0;
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            overflow: hidden;
+        }
+
+        .map-box {
+            background: var(--surface);
+            border-right: 1px solid var(--border);
+            border-bottom: 1px solid var(--border);
+            padding: 0.75rem 0.9rem;
+        }
+        .map-box:nth-child(even) { border-right: none; }
+        .map-box:nth-last-child(-n+2) { border-bottom: none; }
+
+        .map-box-title {
+            background: transparent;
+            border: none;
+            border-bottom: 1px solid var(--border);
+            color: var(--gold);
+            font-family: inherit;
+            font-size: 0.9rem;
+            font-weight: bold;
+            outline: none;
+            width: 100%;
+            padding-bottom: 0.3rem;
+            margin-bottom: 0.5rem;
+        }
+        .map-box-title::placeholder { color: var(--border); font-weight: normal; }
+        .map-box-title:focus { border-bottom-color: var(--gold); }
+
+        .map-box-notes {
+            width: 100%;
+            background: transparent;
+            border: none;
+            color: var(--text);
+            font-family: 'Georgia', serif;
+            font-size: 0.88rem;
+            line-height: 1.55;
+            resize: none;
+            outline: none;
+            min-height: 100px;
+        }
+        .map-box-notes::placeholder { color: #4a403a; }
+
+        .empty {
+            text-align: center;
+            padding: 3rem;
+            color: var(--muted);
+            font-style: italic;
+        }
+
+        /* ── Save bar ── */
+        .save-bar {
+            position: fixed;
+            bottom: 1rem;
+            right: 1rem;
+            font-size: 0.78rem;
+            color: var(--muted);
+            background: var(--surface);
+            border: 1px solid var(--border);
+            padding: 0.35rem 0.75rem;
+            border-radius: 4px;
+            opacity: 0;
+            transition: opacity 0.3s;
+            z-index: 100;
+        }
+        .save-bar.visible { opacity: 1; }
+        .save-bar.saved { color: var(--green); }
+    </style>
+</head>
+<body>
+
+<nav class="dd-nav">
+    <a href="/DD/index.html">Sessions</a>
+    <a href="/DD/npcs/">NPCs</a>
+    <a href="/DD/players/players.html">Players</a>
+    <a href="/DD/maps/" class="active">Maps</a>
+</nav>
+
+<div class="sess-tabs-wrap">
+    <div class="sess-tabs" id="sess-tabs"></div>
+</div>
+
+<div class="map-wrap">
+    <div class="map-grid" id="map-grid" style="display:none;"></div>
+    <div class="empty" id="map-empty">No sessions yet.</div>
+</div>
+
+<div class="save-bar" id="save-bar">saved</div>
+
+<script>
+    const SESS_API = '/DD/api.php?key=sessions';
+    const MAPS_API = '/DD/api.php?key=maps';
+
+    let sessions = [];
+    let mapsData = {};
+    let currentId = null;
+    let saveTimer;
+
+    async function loadSessions() {
+        try { const r = await fetch(SESS_API); return r.ok ? r.json() : []; } catch { return []; }
+    }
+    async function loadMaps() {
+        try { const r = await fetch(MAPS_API); return r.ok ? r.json() : {}; } catch { return {}; }
+    }
+    async function saveMaps() {
+        const bar = document.getElementById('save-bar');
+        bar.textContent = 'saving…'; bar.className = 'save-bar visible';
+        clearTimeout(saveTimer);
+        saveTimer = setTimeout(async () => {
+            await fetch(MAPS_API, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(mapsData) });
+            bar.textContent = 'saved'; bar.className = 'save-bar visible saved';
+            setTimeout(() => { bar.className = 'save-bar'; }, 1500);
+        }, 600);
+    }
+
+    function emptyBoxes() {
+        return Array.from({ length: 8 }, (_, i) => ({ id: i, title: '', notes: '' }));
+    }
+
+    function selectSession(id) {
+        currentId = id;
+        document.querySelectorAll('.sess-tab').forEach(t => t.classList.remove('active'));
+        document.querySelector(`.sess-tab[data-id="${id}"]`).classList.add('active');
+        if (!mapsData[id]) mapsData[id] = emptyBoxes();
+        renderGrid(id);
+    }
+
+    function renderGrid(id) {
+        const grid = document.getElementById('map-grid');
+        const empty = document.getElementById('map-empty');
+        const boxes = mapsData[id];
+        grid.innerHTML = '';
+        grid.style.display = 'grid';
+        empty.style.display = 'none';
+        boxes.forEach((box, i) => {
+            const div = document.createElement('div');
+            div.className = 'map-box';
+            div.innerHTML = `
+                <input class="map-box-title" placeholder="Area name…" value="${(box.title || '').replace(/"/g,'&quot;')}">
+                <textarea class="map-box-notes" placeholder="Exits, contents, traps, treasure…">${box.notes || ''}</textarea>
+            `;
+            div.querySelector('.map-box-title').addEventListener('input', e => {
+                mapsData[id][i].title = e.target.value; saveMaps();
+            });
+            div.querySelector('.map-box-notes').addEventListener('input', e => {
+                mapsData[id][i].notes = e.target.value; saveMaps();
+            });
+            grid.appendChild(div);
+        });
+    }
+
+    (async () => {
+        [sessions, mapsData] = await Promise.all([loadSessions(), loadMaps()]);
+        const tabs = document.getElementById('sess-tabs');
+        const empty = document.getElementById('map-empty');
+
+        if (sessions.length === 0) { empty.style.display = 'block'; return; }
+
+        sessions.forEach(s => {
+            const btn = document.createElement('button');
+            btn.className = 'sess-tab';
+            btn.dataset.id = s.id;
+            btn.textContent = s.title || `Session ${s.number}`;
+            btn.onclick = () => selectSession(s.id);
+            tabs.appendChild(btn);
+        });
+
+        selectSession(sessions[0].id);
+    })();
+</script>
+
+</body>
+</html>

@@ -71,21 +71,34 @@
       display: inline-block;
     }
     .btn:hover { opacity: 0.85; }
+    .sess-item { display: flex; align-items: center; gap: 0.3rem; }
     .session-btn {
       background: rgba(192,57,43,0.55);
       color: #fff;
       border: none;
       padding: 0.35rem 0.9rem;
       border-radius: 4px;
-      cursor: pointer;
+      cursor: grab;
       font-family: inherit;
       font-size: 0.8rem;
       text-decoration: none;
       text-align: left;
       display: block;
       white-space: nowrap;
+      flex: 1;
     }
     .session-btn:hover { background: rgba(192,57,43,0.85); }
+    .sess-del {
+      background: none;
+      border: none;
+      color: rgba(255,255,255,0.35);
+      cursor: pointer;
+      font-size: 0.75rem;
+      padding: 0.2rem;
+      line-height: 1;
+      flex-shrink: 0;
+    }
+    .sess-del:hover { color: #fff; }
     .list { display: flex; flex-direction: column; gap: 0.5rem; }
     .card {
       display: flex;
@@ -127,10 +140,12 @@
       <div id="session-list" style="display:flex;flex-direction:column;gap:0.35rem;margin-top:0.25rem;padding-left:20px;"></div>
       <a href="/DD/npcs/" class="btn">NPCs</a>
       <a href="players/players.html" class="btn">Players</a>
+      <a href="maps/" class="btn">Maps</a>
     </nav>
   </header>
 
 
+  <script src="https://cdn.jsdelivr.net/npm/sortablejs@1.15.0/Sortable.min.js"></script>
   <script>
     const API = '/DD/api.php?key=sessions';
 
@@ -148,15 +163,42 @@
     }
 
     async function render() {
-      const sessions = (await load()).sort((a, b) => a.number - b.number);
+      const sessions = await load(); // preserve saved order
       const list = document.getElementById('session-list');
       list.innerHTML = '';
       sessions.forEach(s => {
+        const div = document.createElement('div');
+        div.className = 'sess-item';
+        div.dataset.id = s.id;
         const a = document.createElement('a');
         a.className = 'session-btn';
         a.href = `session.html?id=${s.id}`;
-        a.textContent = `${s.number}. ${s.title || 'Untitled'}`;
-        list.appendChild(a);
+        a.textContent = s.title || 'Untitled';
+        const del = document.createElement('button');
+        del.className = 'sess-del';
+        del.textContent = '×';
+        del.addEventListener('click', async () => {
+          if (confirm(`Delete "${s.title || 'Untitled'}"?`)) {
+            await save((await load()).filter(x => x.id !== s.id));
+            render();
+          }
+        });
+        div.appendChild(a);
+        div.appendChild(del);
+        list.appendChild(div);
+      });
+
+      Sortable.create(list, {
+        animation: 120,
+        delay: 200,
+        delayOnTouchOnly: true,
+        onEnd: async () => {
+          const ids = [...list.querySelectorAll('.sess-item')].map(el => el.dataset.id);
+          const all = await load();
+          const reordered = ids.map(id => all.find(s => s.id === id)).filter(Boolean);
+          all.forEach(s => { if (!reordered.find(r => r.id === s.id)) reordered.push(s); });
+          await save(reordered);
+        }
       });
     }
 
@@ -167,7 +209,7 @@
       sessions.push({
         id, number: max + 1, title: '', date: '',
         goal: '', scenes: '', npcs: '', locations: '',
-        encounters: '', looseEnds: '', notes: '',
+        looseEnds: '', notes: '',
         lastModified: Date.now()
       });
       await save(sessions);
