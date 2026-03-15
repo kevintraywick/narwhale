@@ -1,5 +1,5 @@
 <?php
-$allowed = ['sessions', 'npcs', 'party', 'players'];
+$allowed = ['sessions', 'npcs', 'party', 'players', 'npc_cards'];
 $key = $_GET['key'] ?? '';
 
 if (!in_array($key, $allowed, true)) {
