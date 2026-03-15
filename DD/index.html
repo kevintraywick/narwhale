@@ -138,9 +138,10 @@
       <button class="btn" onclick="newSession()" style="margin-bottom:20px;">+ New Session</button>
       <a href="index.html" class="btn">Sessions</a>
       <div id="session-list" style="display:flex;flex-direction:column;gap:0.35rem;margin-top:0.25rem;padding-left:20px;"></div>
-      <a href="/DD/npcs/" class="btn">NPCs</a>
-      <a href="players/players.html" class="btn">Players</a>
-      <a href="maps/" class="btn">Maps</a>
+      <a href="players/players.html" class="btn" style="margin-top:20px;" onclick="playHowl()">Players</a>
+      <a href="/DD/npcs/" class="btn" style="margin-top:20px;">NPCs</a>
+      <a href="maps/" class="btn" style="margin-top:20px;">Maps</a>
+      <audio id="howl" src="audio/wolf-howl.mp3" preload="auto"></audio>
     </nav>
   </header>
 
@@ -214,6 +215,12 @@
       });
       await save(sessions);
       location.href = `session.html?id=${id}`;
+    }
+
+    function playHowl() {
+      const a = document.getElementById('howl');
+      a.currentTime = 0;
+      a.play();
     }
 
     render();
