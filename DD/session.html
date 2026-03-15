@@ -1,0 +1,248 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Session Prep</title>
+  <style>
+    :root {
+      --bg: #1a1614;
+      --surface: #231f1c;
+      --border: #3d3530;
+      --gold: #c9a84c;
+      --text: #e8ddd0;
+      --muted: #8a7d6e;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Georgia', serif;
+      min-height: 100vh;
+    }
+    .topbar {
+      position: sticky;
+      top: 0;
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
+      padding: 0.7rem 2rem;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      z-index: 10;
+    }
+    .topbar a { color: var(--muted); text-decoration: none; font-size: 0.85rem; }
+    .topbar a:hover { color: var(--gold); }
+    .sep { color: var(--border); }
+    .save-status {
+      margin-left: auto;
+      font-size: 0.78rem;
+      color: var(--muted);
+    }
+    .save-status.saved { color: #5a8a5a; }
+    .content {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 2rem;
+    }
+    .sess-header {
+      margin-bottom: 2rem;
+      padding-bottom: 1.5rem;
+      border-bottom: 1px solid var(--border);
+    }
+    .sess-top {
+      display: flex;
+      align-items: baseline;
+      gap: 0.5rem;
+      margin-bottom: 0.6rem;
+    }
+    .num-prefix { color: var(--gold); font-size: 1.8rem; }
+    input[type="number"] {
+      background: transparent;
+      border: none;
+      color: var(--gold);
+      font-family: inherit;
+      font-size: 1.8rem;
+      width: 3.5rem;
+      outline: none;
+    }
+    input[type="number"]::-webkit-inner-spin-button,
+    input[type="number"]::-webkit-outer-spin-button { display: none; }
+    .title-input {
+      background: transparent;
+      border: none;
+      color: var(--text);
+      font-family: inherit;
+      font-size: 1.8rem;
+      flex: 1;
+      outline: none;
+    }
+    .title-input::placeholder { color: var(--muted); }
+    .date-input {
+      background: transparent;
+      border: none;
+      color: var(--muted);
+      font-family: inherit;
+      font-size: 0.9rem;
+      outline: none;
+      border-bottom: 1px solid transparent;
+    }
+    .date-input:focus { border-bottom-color: var(--border); }
+    .date-input::placeholder { color: var(--border); }
+    .section { margin-bottom: 1.75rem; }
+    .label {
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      color: var(--muted);
+      margin-bottom: 0.45rem;
+    }
+    textarea {
+      width: 100%;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      color: var(--text);
+      font-family: 'Georgia', serif;
+      font-size: 0.95rem;
+      line-height: 1.65;
+      padding: 0.7rem 0.9rem;
+      resize: vertical;
+      outline: none;
+      transition: border-color 0.15s;
+      min-height: 75px;
+    }
+    textarea:focus { border-color: var(--gold); }
+    textarea::placeholder { color: var(--muted); }
+    .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+    @media (max-width: 600px) {
+      .two-col { grid-template-columns: 1fr; }
+      .content { padding: 1rem; }
+      .topbar { padding: 0.7rem 1rem; }
+    }
+  </style>
+</head>
+<body>
+  <div class="topbar">
+    <a href="index.html">← Sessions</a>
+    <span class="sep">|</span>
+    <span id="topbar-label" style="font-size:0.85rem;color:var(--muted)">Session</span>
+    <span class="save-status" id="save-status">saved</span>
+  </div>
+
+  <div class="content" id="content">
+    <div class="sess-header">
+      <div class="sess-top">
+        <span class="num-prefix">#</span>
+        <input type="number" id="f-number" min="1" placeholder="1" />
+        <input type="text" class="title-input" id="f-title" placeholder="Session Title" />
+      </div>
+      <input type="text" class="date-input" id="f-date" placeholder="Date" />
+    </div>
+
+    <div class="section">
+      <div class="label">Goal / Hook</div>
+      <textarea id="f-goal" rows="3" placeholder="What's the session goal? How does it open?"></textarea>
+    </div>
+
+    <div class="section">
+      <div class="label">Scene Outline</div>
+      <textarea id="f-scenes" rows="7" placeholder="Beat-by-beat breakdown of the session..."></textarea>
+    </div>
+
+    <div class="two-col">
+      <div class="section">
+        <div class="label">Key NPCs</div>
+        <textarea id="f-npcs" rows="5" placeholder="Names, roles, motivations..."></textarea>
+      </div>
+      <div class="section">
+        <div class="label">Locations</div>
+        <textarea id="f-locations" rows="5" placeholder="Key locations and descriptions..."></textarea>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="label">Encounters</div>
+      <textarea id="f-encounters" rows="4" placeholder="Combat or social encounters, stat blocks, DCs, rewards..."></textarea>
+    </div>
+
+    <div class="two-col">
+      <div class="section">
+        <div class="label">Loose Ends</div>
+        <textarea id="f-loose-ends" rows="4" placeholder="Unresolved threads from last session..."></textarea>
+      </div>
+      <div class="section">
+        <div class="label">Notes</div>
+        <textarea id="f-notes" rows="4" placeholder="Music, atmosphere, misc reminders..."></textarea>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const KEY = 'dd_sessions';
+    const id = new URLSearchParams(location.search).get('id');
+
+    function load() {
+      try { return JSON.parse(localStorage.getItem(KEY) || '[]'); } catch { return []; }
+    }
+    function store(data) {
+      try { localStorage.setItem(KEY, JSON.stringify(data)); } catch {}
+    }
+
+    const session = load().find(s => s.id === id);
+
+    if (!session) {
+      document.getElementById('content').innerHTML =
+        '<p style="color:var(--muted);padding:2rem">Session not found. <a href="index.html" style="color:var(--gold)">← Back</a></p>';
+    } else {
+      document.title = session.title ? `#${session.number} ${session.title}` : `Session #${session.number}`;
+      document.getElementById('topbar-label').textContent = `Session #${session.number}`;
+
+      const fields = {
+        'f-number':    'number',
+        'f-title':     'title',
+        'f-date':      'date',
+        'f-goal':      'goal',
+        'f-scenes':    'scenes',
+        'f-npcs':      'npcs',
+        'f-locations': 'locations',
+        'f-encounters':'encounters',
+        'f-loose-ends':'looseEnds',
+        'f-notes':     'notes',
+      };
+
+      Object.entries(fields).forEach(([elId, key]) => {
+        document.getElementById(elId).value = session[key] || '';
+      });
+
+      let timer;
+      function autosave() {
+        const status = document.getElementById('save-status');
+        status.textContent = 'saving…';
+        status.className = 'save-status';
+        clearTimeout(timer);
+        timer = setTimeout(() => {
+          const sessions = load();
+          const idx = sessions.findIndex(s => s.id === id);
+          if (idx === -1) return;
+          Object.entries(fields).forEach(([elId, key]) => {
+            const el = document.getElementById(elId);
+            sessions[idx][key] = el.type === 'number'
+              ? (parseInt(el.value) || sessions[idx][key])
+              : el.value;
+          });
+          sessions[idx].lastModified = Date.now();
+          store(sessions);
+          status.textContent = 'saved';
+          status.className = 'save-status saved';
+          setTimeout(() => { status.className = 'save-status'; }, 2000);
+        }, 600);
+      }
+
+      document.querySelectorAll('input, textarea').forEach(el => {
+        el.addEventListener('input', autosave);
+      });
+    }
+  </script>
+</body>
+</html>

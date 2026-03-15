@@ -1,0 +1,308 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>NPCs</title>
+  <style>
+    :root {
+      --bg: #1a1614;
+      --surface: #231f1c;
+      --border: #3d3530;
+      --accent: #c0392b;
+      --gold: #c9a84c;
+      --text: #e8ddd0;
+      --muted: #8a7d6e;
+      --green: #5a8a5a;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Georgia', serif;
+      min-height: 100vh;
+      padding: 2rem;
+      max-width: 860px;
+      margin: 0 auto;
+    }
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      margin-bottom: 2rem;
+      padding-bottom: 1rem;
+      border-bottom: 1px solid var(--border);
+    }
+    h1 { font-size: 2rem; color: var(--gold); letter-spacing: 0.08em; }
+    nav { display: flex; gap: 0.75rem; margin-bottom: 2rem; }
+    nav a {
+      color: var(--muted);
+      text-decoration: none;
+      font-size: 0.85rem;
+      padding: 0.35rem 0.85rem;
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      transition: color 0.15s, border-color 0.15s;
+    }
+    nav a:hover, nav a.active { color: var(--gold); border-color: var(--gold); }
+    .section-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 1rem;
+    }
+    .label { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.15em; color: var(--muted); }
+    .btn {
+      background: var(--accent);
+      color: #fff;
+      border: none;
+      padding: 0.45rem 1.1rem;
+      border-radius: 4px;
+      cursor: pointer;
+      font-family: inherit;
+      font-size: 0.85rem;
+    }
+    .btn:hover { opacity: 0.85; }
+    .npc-list { display: flex; flex-direction: column; gap: 0.75rem; }
+    .npc-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 5px;
+      padding: 1rem 1.1rem;
+      transition: border-color 0.15s;
+    }
+    .npc-card:focus-within { border-color: var(--gold); }
+    .npc-top {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      margin-bottom: 0.6rem;
+    }
+    .npc-name {
+      background: transparent;
+      border: none;
+      color: var(--text);
+      font-family: inherit;
+      font-size: 1.05rem;
+      outline: none;
+      flex: 1;
+    }
+    .npc-name::placeholder { color: var(--muted); }
+    .status-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      border: none;
+      cursor: pointer;
+      flex-shrink: 0;
+    }
+    .status-alive { background: var(--green); }
+    .status-dead { background: var(--accent); }
+    .status-unknown { background: var(--muted); }
+    .npc-role {
+      background: transparent;
+      border: none;
+      border-bottom: 1px solid var(--border);
+      color: var(--muted);
+      font-family: inherit;
+      font-size: 0.85rem;
+      outline: none;
+      width: 100%;
+      padding-bottom: 0.3rem;
+      margin-bottom: 0.6rem;
+    }
+    .npc-role::placeholder { color: var(--border); }
+    .npc-notes {
+      width: 100%;
+      background: transparent;
+      border: none;
+      color: var(--text);
+      font-family: 'Georgia', serif;
+      font-size: 0.9rem;
+      line-height: 1.5;
+      resize: none;
+      outline: none;
+      min-height: 50px;
+    }
+    .npc-notes::placeholder { color: var(--muted); }
+    .npc-footer {
+      display: flex;
+      justify-content: flex-end;
+      margin-top: 0.5rem;
+    }
+    .del-btn {
+      background: none;
+      border: none;
+      color: var(--border);
+      cursor: pointer;
+      font-size: 0.8rem;
+      transition: color 0.15s;
+    }
+    .del-btn:hover { color: var(--accent); }
+    .status-legend {
+      font-size: 0.75rem;
+      color: var(--muted);
+      margin-bottom: 1rem;
+      display: flex;
+      gap: 1rem;
+    }
+    .legend-item { display: flex; align-items: center; gap: 0.4rem; }
+    .dot { width: 8px; height: 8px; border-radius: 50%; display: inline-block; }
+    .empty { text-align: center; padding: 3rem; color: var(--muted); font-style: italic; }
+    .save-bar {
+      position: fixed;
+      bottom: 1rem;
+      right: 1rem;
+      font-size: 0.78rem;
+      color: var(--muted);
+      background: var(--surface);
+      border: 1px solid var(--border);
+      padding: 0.35rem 0.75rem;
+      border-radius: 4px;
+      opacity: 0;
+      transition: opacity 0.3s;
+    }
+    .save-bar.visible { opacity: 1; }
+    .save-bar.saved { color: var(--green); }
+  </style>
+</head>
+<body>
+  <header>
+    <div>
+      <h1>⚔ D&amp;D</h1>
+    </div>
+  </header>
+
+  <nav>
+    <a href="index.html">Sessions</a>
+    <a href="npcs.html" class="active">NPCs</a>
+    <a href="party.html">Party</a>
+  </nav>
+
+  <div class="section-header">
+    <span class="label">NPCs</span>
+    <button class="btn" onclick="addNPC()">+ Add NPC</button>
+  </div>
+
+  <div class="status-legend">
+    <span class="legend-item"><span class="dot" style="background:var(--green)"></span> alive</span>
+    <span class="legend-item"><span class="dot" style="background:var(--accent)"></span> dead</span>
+    <span class="legend-item"><span class="dot" style="background:var(--muted)"></span> unknown</span>
+    <span style="color:var(--border)">· click dot to cycle</span>
+  </div>
+
+  <div class="npc-list" id="npc-list">
+    <div class="empty" id="empty">No NPCs yet.</div>
+  </div>
+
+  <div class="save-bar" id="save-bar">saved</div>
+
+  <script>
+    const KEY = 'dd_npcs';
+    const STATUSES = ['alive', 'unknown', 'dead'];
+
+    function load() {
+      try { return JSON.parse(localStorage.getItem(KEY) || '[]'); } catch { return []; }
+    }
+    function store(data) {
+      try { localStorage.setItem(KEY, JSON.stringify(data)); } catch {}
+    }
+
+    let saveTimer;
+    function markSaving() {
+      const bar = document.getElementById('save-bar');
+      bar.textContent = 'saving…';
+      bar.className = 'save-bar visible';
+      clearTimeout(saveTimer);
+      saveTimer = setTimeout(() => {
+        bar.textContent = 'saved';
+        bar.className = 'save-bar visible saved';
+        setTimeout(() => { bar.className = 'save-bar'; }, 1500);
+      }, 600);
+    }
+
+    function saveAll() {
+      const npcs = [];
+      document.querySelectorAll('.npc-card').forEach(card => {
+        npcs.push({
+          id: card.dataset.id,
+          name: card.querySelector('.npc-name').value,
+          role: card.querySelector('.npc-role').value,
+          notes: card.querySelector('.npc-notes').value,
+          status: card.dataset.status,
+        });
+      });
+      store(npcs);
+      markSaving();
+    }
+
+    function makeCard(npc) {
+      const div = document.createElement('div');
+      div.className = 'npc-card';
+      div.dataset.id = npc.id;
+      div.dataset.status = npc.status || 'alive';
+
+      div.innerHTML = `
+        <div class="npc-top">
+          <button class="status-dot status-${npc.status || 'alive'}" title="Status: ${npc.status || 'alive'}"></button>
+          <input class="npc-name" type="text" value="${esc(npc.name || '')}" placeholder="NPC Name" />
+        </div>
+        <input class="npc-role" type="text" value="${esc(npc.role || '')}" placeholder="Role / affiliation" />
+        <textarea class="npc-notes" placeholder="Motivations, appearance, notes..." rows="2">${esc(npc.notes || '')}</textarea>
+        <div class="npc-footer">
+          <button class="del-btn">delete</button>
+        </div>
+      `;
+
+      const dot = div.querySelector('.status-dot');
+      dot.addEventListener('click', () => {
+        const cur = STATUSES.indexOf(div.dataset.status);
+        const next = STATUSES[(cur + 1) % STATUSES.length];
+        div.dataset.status = next;
+        dot.className = `status-dot status-${next}`;
+        dot.title = `Status: ${next}`;
+        saveAll();
+      });
+
+      div.querySelector('.del-btn').addEventListener('click', () => {
+        if (confirm('Remove this NPC?')) { div.remove(); saveAll(); checkEmpty(); }
+      });
+
+      div.querySelectorAll('input, textarea').forEach(el => {
+        el.addEventListener('input', saveAll);
+      });
+
+      return div;
+    }
+
+    function esc(s) {
+      return s.replace(/&/g,'&amp;').replace(/"/g,'&quot;').replace(/</g,'&lt;');
+    }
+
+    function checkEmpty() {
+      const empty = document.getElementById('empty');
+      const cards = document.querySelectorAll('.npc-card');
+      empty.style.display = cards.length ? 'none' : 'block';
+    }
+
+    function addNPC() {
+      const npc = { id: Date.now().toString(36), name: '', role: '', notes: '', status: 'alive' };
+      const list = document.getElementById('npc-list');
+      const card = makeCard(npc);
+      list.appendChild(card);
+      card.querySelector('.npc-name').focus();
+      checkEmpty();
+      saveAll();
+    }
+
+    function render() {
+      const npcs = load();
+      const list = document.getElementById('npc-list');
+      npcs.forEach(npc => list.appendChild(makeCard(npc)));
+      checkEmpty();
+    }
+
+    render();
+  </script>
+</body>
+</html>

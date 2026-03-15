@@ -1,0 +1,302 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Party</title>
+  <style>
+    :root {
+      --bg: #1a1614;
+      --surface: #231f1c;
+      --border: #3d3530;
+      --accent: #c0392b;
+      --gold: #c9a84c;
+      --text: #e8ddd0;
+      --muted: #8a7d6e;
+      --green: #5a8a5a;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Georgia', serif;
+      min-height: 100vh;
+      padding: 2rem;
+      max-width: 860px;
+      margin: 0 auto;
+    }
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      margin-bottom: 2rem;
+      padding-bottom: 1rem;
+      border-bottom: 1px solid var(--border);
+    }
+    h1 { font-size: 2rem; color: var(--gold); letter-spacing: 0.08em; }
+    nav { display: flex; gap: 0.75rem; margin-bottom: 2rem; }
+    nav a {
+      color: var(--muted);
+      text-decoration: none;
+      font-size: 0.85rem;
+      padding: 0.35rem 0.85rem;
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      transition: color 0.15s, border-color 0.15s;
+    }
+    nav a:hover, nav a.active { color: var(--gold); border-color: var(--gold); }
+    .section-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 1rem;
+    }
+    .label { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.15em; color: var(--muted); }
+    .btn {
+      background: var(--accent);
+      color: #fff;
+      border: none;
+      padding: 0.45rem 1.1rem;
+      border-radius: 4px;
+      cursor: pointer;
+      font-family: inherit;
+      font-size: 0.85rem;
+    }
+    .btn:hover { opacity: 0.85; }
+    .party-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 1rem;
+    }
+    .char-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 5px;
+      padding: 1.1rem;
+      transition: border-color 0.15s;
+    }
+    .char-card:focus-within { border-color: var(--gold); }
+    .char-name {
+      background: transparent;
+      border: none;
+      color: var(--text);
+      font-family: inherit;
+      font-size: 1.15rem;
+      outline: none;
+      width: 100%;
+      margin-bottom: 0.5rem;
+    }
+    .char-name::placeholder { color: var(--muted); }
+    .char-row {
+      display: flex;
+      gap: 0.5rem;
+      margin-bottom: 0.5rem;
+    }
+    .char-field {
+      background: transparent;
+      border: none;
+      border-bottom: 1px solid var(--border);
+      color: var(--muted);
+      font-family: inherit;
+      font-size: 0.85rem;
+      outline: none;
+      padding-bottom: 0.2rem;
+      flex: 1;
+      min-width: 0;
+    }
+    .char-field::placeholder { color: var(--border); }
+    .char-field:focus { border-bottom-color: var(--gold); color: var(--text); }
+    .hp-row {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      margin-bottom: 0.5rem;
+    }
+    .hp-label { font-size: 0.75rem; color: var(--muted); text-transform: uppercase; letter-spacing: 0.1em; }
+    .hp-input {
+      background: transparent;
+      border: none;
+      border-bottom: 1px solid var(--border);
+      color: var(--text);
+      font-family: inherit;
+      font-size: 0.95rem;
+      outline: none;
+      width: 3rem;
+      text-align: center;
+      padding-bottom: 0.2rem;
+    }
+    .hp-sep { color: var(--border); }
+    .char-notes {
+      width: 100%;
+      background: transparent;
+      border: none;
+      color: var(--text);
+      font-family: 'Georgia', serif;
+      font-size: 0.85rem;
+      line-height: 1.5;
+      resize: none;
+      outline: none;
+      min-height: 45px;
+      margin-top: 0.25rem;
+    }
+    .char-notes::placeholder { color: var(--muted); }
+    .char-footer {
+      display: flex;
+      justify-content: flex-end;
+      margin-top: 0.5rem;
+    }
+    .del-btn {
+      background: none;
+      border: none;
+      color: var(--border);
+      cursor: pointer;
+      font-size: 0.8rem;
+      transition: color 0.15s;
+    }
+    .del-btn:hover { color: var(--accent); }
+    .empty { text-align: center; padding: 3rem; color: var(--muted); font-style: italic; }
+    .save-bar {
+      position: fixed;
+      bottom: 1rem;
+      right: 1rem;
+      font-size: 0.78rem;
+      color: var(--muted);
+      background: var(--surface);
+      border: 1px solid var(--border);
+      padding: 0.35rem 0.75rem;
+      border-radius: 4px;
+      opacity: 0;
+      transition: opacity 0.3s;
+    }
+    .save-bar.visible { opacity: 1; }
+    .save-bar.saved { color: var(--green); }
+  </style>
+</head>
+<body>
+  <header>
+    <div>
+      <h1>⚔ D&amp;D</h1>
+    </div>
+  </header>
+
+  <nav>
+    <a href="index.html">Sessions</a>
+    <a href="npcs.html">NPCs</a>
+    <a href="party.html" class="active">Party</a>
+  </nav>
+
+  <div class="section-header">
+    <span class="label">Party</span>
+    <button class="btn" onclick="addChar()">+ Add Character</button>
+  </div>
+
+  <div class="party-grid" id="party-grid">
+    <div class="empty" id="empty">No characters yet.</div>
+  </div>
+
+  <div class="save-bar" id="save-bar">saved</div>
+
+  <script>
+    const KEY = 'dd_party';
+
+    function load() {
+      try { return JSON.parse(localStorage.getItem(KEY) || '[]'); } catch { return []; }
+    }
+    function store(data) {
+      try { localStorage.setItem(KEY, JSON.stringify(data)); } catch {}
+    }
+
+    let saveTimer;
+    function markSaving() {
+      const bar = document.getElementById('save-bar');
+      bar.textContent = 'saving…';
+      bar.className = 'save-bar visible';
+      clearTimeout(saveTimer);
+      saveTimer = setTimeout(() => {
+        bar.textContent = 'saved';
+        bar.className = 'save-bar visible saved';
+        setTimeout(() => { bar.className = 'save-bar'; }, 1500);
+      }, 600);
+    }
+
+    function saveAll() {
+      const chars = [];
+      document.querySelectorAll('.char-card').forEach(card => {
+        chars.push({
+          id: card.dataset.id,
+          name: card.querySelector('.char-name').value,
+          player: card.querySelector('[data-field="player"]').value,
+          class: card.querySelector('[data-field="class"]').value,
+          level: card.querySelector('[data-field="level"]').value,
+          hpCur: card.querySelector('[data-field="hpCur"]').value,
+          hpMax: card.querySelector('[data-field="hpMax"]').value,
+          notes: card.querySelector('.char-notes').value,
+        });
+      });
+      store(chars);
+      markSaving();
+    }
+
+    function esc(s) {
+      return (s || '').replace(/&/g,'&amp;').replace(/"/g,'&quot;').replace(/</g,'&lt;');
+    }
+
+    function makeCard(c) {
+      const div = document.createElement('div');
+      div.className = 'char-card';
+      div.dataset.id = c.id;
+      div.innerHTML = `
+        <input class="char-name" type="text" value="${esc(c.name)}" placeholder="Character Name" />
+        <div class="char-row">
+          <input class="char-field" data-field="player" type="text" value="${esc(c.player)}" placeholder="Player" />
+        </div>
+        <div class="char-row">
+          <input class="char-field" data-field="class" type="text" value="${esc(c.class)}" placeholder="Class" style="flex:2" />
+          <input class="char-field" data-field="level" type="text" value="${esc(c.level)}" placeholder="Lvl" style="flex:0.6;text-align:center" />
+        </div>
+        <div class="hp-row">
+          <span class="hp-label">HP</span>
+          <input class="hp-input" data-field="hpCur" type="text" value="${esc(c.hpCur)}" placeholder="—" title="Current HP" />
+          <span class="hp-sep">/</span>
+          <input class="hp-input" data-field="hpMax" type="text" value="${esc(c.hpMax)}" placeholder="—" title="Max HP" />
+        </div>
+        <textarea class="char-notes" placeholder="Conditions, inventory, notes..." rows="2">${esc(c.notes)}</textarea>
+        <div class="char-footer">
+          <button class="del-btn">remove</button>
+        </div>
+      `;
+      div.querySelector('.del-btn').addEventListener('click', () => {
+        if (confirm('Remove this character?')) { div.remove(); saveAll(); checkEmpty(); }
+      });
+      div.querySelectorAll('input, textarea').forEach(el => {
+        el.addEventListener('input', saveAll);
+      });
+      return div;
+    }
+
+    function checkEmpty() {
+      const cards = document.querySelectorAll('.char-card');
+      document.getElementById('empty').style.display = cards.length ? 'none' : 'block';
+    }
+
+    function addChar() {
+      const c = { id: Date.now().toString(36), name: '', player: '', class: '', level: '', hpCur: '', hpMax: '', notes: '' };
+      const grid = document.getElementById('party-grid');
+      const card = makeCard(c);
+      grid.appendChild(card);
+      card.querySelector('.char-name').focus();
+      checkEmpty();
+      saveAll();
+    }
+
+    function render() {
+      const chars = load();
+      const grid = document.getElementById('party-grid');
+      chars.forEach(c => grid.appendChild(makeCard(c)));
+      checkEmpty();
+    }
+
+    render();
+  </script>
+</body>
+</html>

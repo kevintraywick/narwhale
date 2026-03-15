@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Player Boon Cards</title>
+    <style>
+        @page {
+            size: letter;
+            margin: 0.5in;
+        }
+        
+        body {
+            font-family: 'Garamond', 'Times New Roman', serif;
+            margin: 0;
+            padding: 20px;
+            background: #2c2c2c;
+        }
+        
+        .page {
+            width: 8.5in;
+            margin: 0 auto 20px auto;
+            background: white;
+            padding: 0.5in;
+        }
+        
+        .cards-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0.3in;
+            margin-bottom: 0.3in;
+        }
+        
+        .card {
+            border: 3px solid #8B0000;
+            border-radius: 8px;
+            padding: 16px;
+            background: linear-gradient(135deg, #fffef7 0%, #faf8f0 100%);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+            height: 3.2in;
+            position: relative;
+            page-break-inside: avoid;
+        }
+        
+        .card-header {
+            border-bottom: 2px solid #8B0000;
+            padding-bottom: 8px;
+            margin-bottom: 12px;
+        }
+        
+        .player-name {
+            font-size: 18px;
+            font-weight: bold;
+            color: #8B0000;
+            margin-bottom: 4px;
+        }
+        
+        .character-info {
+            font-size: 11px;
+            color: #666;
+            font-style: italic;
+        }
+        
+        .boon-title {
+            font-size: 15px;
+            font-weight: bold;
+            color: #000080;
+            margin: 12px 0 8px 0;
+            text-align: center;
+            background: rgba(0, 0, 128, 0.1);
+            padding: 6px;
+            border-radius: 4px;
+        }
+        
+        .boon-description {
+            font-size: 12px;
+            line-height: 1.5;
+            margin-bottom: 10px;
+        }
+        
+        .mechanic {
+            background: #fff9e6;
+            border-left: 3px solid #d4af37;
+            padding: 8px;
+            margin: 8px 0;
+            font-size: 11px;
+            border-radius: 3px;
+        }
+        
+        .mechanic-title {
+            font-weight: bold;
+            color: #8B0000;
+            font-size: 11px;
+            margin-bottom: 4px;
+        }
+        
+        .usage {
+            font-style: italic;
+            color: #006400;
+            font-size: 11px;
+        }
+        
+        .flavor-text {
+            font-style: italic;
+            color: #555;
+            font-size: 10px;
+            margin-top: 8px;
+            padding-top: 8px;
+            border-top: 1px dashed #ccc;
+        }
+        
+        .checkboxes {
+            display: flex;
+            gap: 12px;
+            margin-top: 8px;
+        }
+        
+        .checkbox {
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+            font-size: 10px;
+        }
+        
+        .checkbox-box {
+            width: 16px;
+            height: 16px;
+            border: 2px solid #8B0000;
+            border-radius: 3px;
+            display: inline-block;
+        }
+        
+        .print-button {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            padding: 12px 24px;
+            background: #8B0000;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            font-size: 16px;
+            cursor: pointer;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+            z-index: 1000;
+        }
+        
+        .print-button:hover {
+            background: #6d0000;
+        }
+        
+        @media print {
+            body {
+                background: white;
+                padding: 0;
+            }
+            .page {
+                margin: 0;
+                page-break-after: always;
+            }
+            .print-button {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <button class="print-button" onclick="window.print()">🖨️ Print Boon Cards</button>
+
+    <div class="page">
+        <div class="cards-grid">
+            <!-- Levi's Card -->
+            <div class="card">
+                <div class="card-header">
+                    <div class="player-name">LEVI</div>
+                    <div class="character-info">Level 3 Gnome Ranger</div>
+                </div>
+                
+                <div class="boon-title">⭐ Lucky Charm ⭐</div>
+                
+                <div class="boon-description">
+                    The forest spirits have taken notice of your perseverance despite your misfortune. They grant you moments of perfect timing.
+                </div>
+                
+                <div class="mechanic">
+                    <div class="mechanic-title">Effect:</div>
+                    You may reroll any attack roll, ability check, or saving throw. You must use the new roll.
+                    <div class="usage">Uses: 3 total (mark when used)</div>
+                </div>
+                
+                <div class="checkboxes">
+                    <div class="checkbox">
+                        <span class="checkbox-box"></span> Use 1
+                    </div>
+                    <div class="checkbox">
+                        <span class="checkbox-box"></span> Use 2
+                    </div>
+                    <div class="checkbox">
+                        <span class="checkbox-box"></span> Use 3
+                    </div>
+                </div>
+            </div>
+
+            <!-- Jeanette's Card -->
+            <div class="card">
+                <div class="card-header">
+                    <div class="player-name">JEANETTE</div>
+                    <div class="character-info">Elf Druid</div>
+                </div>
+                
+                <div class="boon-title">🌿 Nature's Gift 🌿</div>
+                
+                <div class="boon-description">
+                    Your connection to the natural world deepens. The land rewards your cleverness with ancient knowledge.
+                </div>
+                
+                <div class="mechanic">
+                    <div class="mechanic-title">Effect:</div>
+                    You have discovered a useful druid spell in the wild. Choose one druid spell of 2nd level or lower that you don't know. You may cast it once without using a spell slot.
+                    <div class="usage">Single use - consumed when cast</div>
+                </div>
+                
+                <div class="flavor-text">
+                    "Write your chosen spell here: ___________________"
+                </div>
+            </div>
+
+            <!-- Nicole's Card -->
+            <div class="card">
+                <div class="card-header">
+                    <div class="player-name">NICOLE</div>
+                    <div class="character-info">Goliath Paladin</div>
+                </div>
+                
+                <div class="boon-title">💎 Tactician's Insight 💎</div>
+                
+                <div class="boon-description">
+                    Your wit and strategic mind have caught the attention of the war gods. They sharpen your tactical acumen.
+                </div>
+                
+                <div class="mechanic">
+                    <div class="mechanic-title">Effect:</div>
+                    Once per short or long rest, you may use a bonus action to analyze the battlefield. For the next minute, you can use your Intelligence modifier instead of Strength for attack and damage rolls with melee weapons.
+                    <div class="usage">Recharges on short or long rest</div>
+                </div>
+                
+                <div class="flavor-text">
+                    "Sometimes the mind cuts deeper than any blade."
+                </div>
+            </div>
+
+            <!-- Katie's Card -->
+            <div class="card">
+                <div class="card-header">
+                    <div class="player-name">KATIE</div>
+                    <div class="character-info">Elf Bard</div>
+                </div>
+                
+                <div class="boon-title">🎵 Phoenix's Resilience 🎵</div>
+                
+                <div class="boon-description">
+                    Your brush with death has made you stronger. An inner fire refuses to be extinguished.
+                </div>
+                
+                <div class="mechanic">
+                    <div class="mechanic-title">Effect (Choose One):</div>
+                    <strong>Option A:</strong> Gain advantage on your next death saving throw. When used, this boon is consumed.<br><br>
+                    <strong>Option B:</strong> Gain +5 temporary hit points until your next long rest.<br><br>
+                    <em>If you choose advantage and use it, you lose the +5 temp HP option.</em>
+                    <div class="usage">Single use consumable</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="page">
+        <div class="cards-grid">
+            <!-- Brandon's Card -->
+            <div class="card">
+                <div class="card-header">
+                    <div class="player-name">BRANDON</div>
+                    <div class="character-info">Level 3 Dwarf Fighter</div>
+                </div>
+                
+                <div class="boon-title">⚔️ Warrior's Feast ⚔️</div>
+                
+                <div class="boon-description">
+                    The battle gods honor your bravery. Each meal or drink now fuels your combat prowess.
+                </div>
+                
+                <div class="mechanic">
+                    <div class="mechanic-title">Effect:</div>
+                    Each time you consume food, drink, or a potion during combat (using an action or bonus action), you gain advantage on your next attack roll.
+                    <div class="usage">Uses: 3 total (mark when used)</div>
+                </div>
+                
+                <div class="checkboxes">
+                    <div class="checkbox">
+                        <span class="checkbox-box"></span> Use 1
+                    </div>
+                    <div class="checkbox">
+                        <span class="checkbox-box"></span> Use 2
+                    </div>
+                    <div class="checkbox">
+                        <span class="checkbox-box"></span> Use 3
+                    </div>
+                </div>
+                
+                <div class="flavor-text">
+                    "Nothing tastes sweeter than victory... except maybe this ale before the kill shot."
+                </div>
+            </div>
+
+            <!-- Ashton's Card -->
+            <div class="card">
+                <div class="card-header">
+                    <div class="player-name">ASHTON</div>
+                    <div class="character-info">Human Fighter</div>
+                </div>
+                
+                <div class="boon-title">🛡️ Guardian's Inspiration 🛡️</div>
+                
+                <div class="boon-description">
+                    Your courage shines brightest when protecting others. The bonds of fellowship strengthen your resolve.
+                </div>
+                
+                <div class="mechanic">
+                    <div class="mechanic-title">Effect:</div>
+                    Anytime you use the Help action in combat to aid an ally, OR take the Dodge action while standing within 5 feet of an ally, you gain Inspiration.<br><br>
+                    You can use Inspiration to gain advantage on any attack roll, saving throw, or ability check.<br><br>
+                    <em>You can only have one Inspiration at a time.</em>
+                    <div class="usage">Ongoing effect - no limit on uses</div>
+                </div>
+                
+                <div class="flavor-text">
+                    "True strength is found in standing beside your companions."
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
