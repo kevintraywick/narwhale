@@ -3,540 +3,401 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Player Character Sheets</title>
+    <title>Players</title>
     <style>
-        @page {
-            size: letter;
-            margin: 0.5in;
+        :root {
+            --bg: #1a1614;
+            --surface: #231f1c;
+            --border: #3d3530;
+            --gold: #c9a84c;
+            --red: #8B0000;
+            --blue: #000080;
+            --text: #e8ddd0;
+            --muted: #8a7d6e;
+            --parchment: #faf8f0;
+            --parchment-dark: #f0ebe0;
         }
-        
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+
         body {
-            font-family: 'Garamond', 'Times New Roman', serif;
-            margin: 0;
-            padding: 20px;
-            background: #2c2c2c;
+            background: var(--bg);
+            font-family: 'Georgia', serif;
+            min-height: 100vh;
         }
-        
-        .page {
-            width: 8.5in;
-            height: 11in;
-            margin: 0 auto 20px auto;
-            background: linear-gradient(to bottom, #fffef7 0%, #faf8f0 100%);
-            padding: 0.5in;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-            border: 3px solid #8B4513;
-            page-break-after: always;
+
+        /* ── Nav ── */
+        .dd-nav {
+            display: flex;
+            gap: 0.75rem;
+            padding: 0.75rem 1.25rem;
+            background: var(--bg);
+            border-bottom: 1px solid var(--border);
         }
-        
-        .header {
+        .dd-nav a {
+            color: var(--muted);
+            text-decoration: none;
+            font-size: 0.85rem;
+            padding: 0.3rem 0.8rem;
+            border: 1px solid var(--border);
+            border-radius: 4px;
+            transition: color 0.15s, border-color 0.15s;
+        }
+        .dd-nav a:hover { color: var(--gold); border-color: var(--gold); }
+
+        /* ── Selector bar ── */
+        .selector {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            padding: 1.25rem 1rem;
+            background: var(--surface);
+            border-bottom: 1px solid var(--border);
+            flex-wrap: wrap;
+        }
+
+        .thumb {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.4rem;
+            cursor: pointer;
+        }
+
+        .thumb-img {
+            position: relative;
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 3px solid var(--border);
+            transition: border-color 0.15s, transform 0.15s;
+            background: #2e2825;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .thumb:hover .thumb-img {
+            border-color: var(--muted);
+            transform: scale(1.05);
+        }
+
+        .thumb.active .thumb-img {
+            border-color: var(--gold);
+            box-shadow: 0 0 0 2px var(--gold);
+        }
+
+        .thumb-img img {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .thumb-initials {
+            font-size: 1.6rem;
+            color: var(--muted);
+            font-family: 'Georgia', serif;
+            user-select: none;
+            position: relative;
+            z-index: 0;
+        }
+
+        .thumb-name {
+            font-size: 0.72rem;
+            color: var(--muted);
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            transition: color 0.15s;
+        }
+
+        .thumb.active .thumb-name { color: var(--gold); }
+
+        /* ── Player sheet ── */
+        .sheet-wrap {
+            max-width: 700px;
+            margin: 0 auto;
+            padding: 1.5rem 1rem 3rem;
+        }
+
+        .sheet {
+            display: none;
+            background: var(--parchment);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.4);
+            border: 2px solid #8B4513;
+        }
+
+        .sheet.active { display: block; }
+
+        .sheet-header {
             text-align: center;
-            border-bottom: 3px double #8B0000;
-            padding-bottom: 15px;
-            margin-bottom: 20px;
+            padding: 1.5rem 1.5rem 1.25rem;
+            border-bottom: 3px double var(--red);
+            background: linear-gradient(to bottom, #fffef7, var(--parchment));
         }
-        
+
         .player-name {
-            font-size: 28px;
+            font-size: 1.8rem;
             font-weight: bold;
-            color: #8B0000;
-            margin-bottom: 5px;
-            letter-spacing: 2px;
+            color: var(--red);
+            letter-spacing: 0.12em;
+            margin-bottom: 0.3rem;
         }
-        
-        .character-info {
-            font-size: 18px;
+
+        .char-info {
+            font-size: 1.05rem;
             color: #333;
-            margin-bottom: 8px;
         }
-        
-        .character-name {
-            font-weight: bold;
-            color: #000080;
-        }
-        
-        .discord-section {
-            margin-top: 10px;
-            padding: 8px;
-            background: rgba(255, 255, 255, 0.5);
-            border-radius: 4px;
-        }
-        
-        .discord-label {
-            font-size: 12px;
-            color: #666;
-            display: inline-block;
-            width: 100px;
-        }
-        
-        .discord-line {
-            display: inline-block;
-            border-bottom: 2px solid #8B0000;
-            width: 300px;
-            margin-left: 10px;
-        }
-        
-        .section {
-            margin-bottom: 25px;
-        }
-        
+
+        .char-name { font-weight: bold; color: var(--blue); }
+
+        .sheet-body { padding: 1.25rem 1.5rem; }
+
+        .section { margin-bottom: 1.5rem; }
+
         .section-title {
-            font-size: 18px;
+            font-size: 1rem;
             font-weight: bold;
-            color: #8B0000;
-            border-bottom: 2px solid #8B0000;
-            padding-bottom: 5px;
-            margin-bottom: 12px;
-            letter-spacing: 1px;
+            color: var(--red);
+            border-bottom: 2px solid var(--red);
+            padding-bottom: 0.3rem;
+            margin-bottom: 0.75rem;
+            letter-spacing: 0.05em;
         }
-        
+
         .boons-list {
-            background: rgba(255, 255, 255, 0.6);
+            background: rgba(255,255,255,0.6);
             border-left: 4px solid #d4af37;
-            padding: 12px;
+            padding: 0.75rem 1rem;
             border-radius: 4px;
         }
-        
+
         .boon-item {
-            margin-bottom: 12px;
-            padding-bottom: 12px;
+            padding-bottom: 0.75rem;
+            margin-bottom: 0.75rem;
             border-bottom: 1px dashed #ccc;
         }
-        
-        .boon-item:last-child {
-            border-bottom: none;
-            padding-bottom: 0;
-            margin-bottom: 0;
-        }
-        
+
+        .boon-item:last-child { border-bottom: none; padding-bottom: 0; margin-bottom: 0; }
+
         .boon-name {
             font-weight: bold;
-            color: #000080;
-            font-size: 14px;
-            margin-bottom: 4px;
+            color: var(--blue);
+            font-size: 0.95rem;
+            margin-bottom: 0.25rem;
         }
-        
+
         .boon-effect {
-            font-size: 12px;
-            line-height: 1.5;
+            font-size: 0.88rem;
+            line-height: 1.55;
             color: #333;
         }
-        
+
         .boon-uses {
-            font-size: 11px;
+            font-size: 0.8rem;
             font-style: italic;
             color: #006400;
-            margin-top: 4px;
+            margin-top: 0.3rem;
         }
-        
-        .highlights-section {
-            background: rgba(255, 255, 255, 0.4);
-            padding: 15px;
-            border-radius: 4px;
-            min-height: 300px;
-        }
-        
-        .round-entry {
-            margin-bottom: 15px;
-            padding: 10px;
-            background: white;
-            border-left: 3px solid #8B0000;
-            border-radius: 3px;
-        }
-        
-        .round-label {
-            font-weight: bold;
-            color: #8B0000;
-            font-size: 13px;
-            margin-bottom: 5px;
-        }
-        
-        .round-notes {
-            border-bottom: 1px solid #ddd;
-            min-height: 40px;
-            padding: 5px 0;
-            font-size: 12px;
-        }
-        
-        .print-button {
-            position: fixed;
-            top: 20px;
-            right: 20px;
-            padding: 12px 24px;
-            background: #8B0000;
-            color: white;
-            border: none;
-            border-radius: 4px;
-            font-size: 16px;
-            cursor: pointer;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.3);
-            z-index: 1000;
-        }
-        
-        .print-button:hover {
-            background: #6d0000;
-        }
-        
-        @media print {
-            body {
-                background: white;
-                padding: 0;
-            }
-            .page {
-                box-shadow: none;
-                margin: 0;
-                border: none;
-            }
-            .print-button {
-                display: none;
-            }
-        }
-    .dd-nav {
-        display: flex;
-        gap: 0.75rem;
-        padding: 0.75rem 1.25rem;
-        background: #1a1614;
-        border-bottom: 1px solid #3d3530;
-        margin-bottom: 20px;
-    }
-    .dd-nav a {
-        color: #8a7d6e;
-        text-decoration: none;
-        font-size: 0.85rem;
-        font-family: 'Georgia', serif;
-        padding: 0.3rem 0.8rem;
-        border: 1px solid #3d3530;
-        border-radius: 4px;
-    }
-    .dd-nav a:hover { color: #c9a84c; border-color: #c9a84c; }
-    @media print { .dd-nav { display: none; } }
     </style>
 </head>
 <body>
+
 <nav class="dd-nav">
-  <a href="/DD/index.html">Sessions</a>
-  <a href="/DD/npcs.html">NPCs</a>
-  <a href="/DD/party.html">Party</a>
+    <a href="/DD/index.html">Sessions</a>
+    <a href="/DD/npcs.html">NPCs</a>
+    <a href="/DD/party.html">Party</a>
+    <a href="/DD/boons.html">Boons</a>
+    <a href="/DD/players/players.html">Players</a>
 </nav>
-    <button class="print-button" onclick="window.print()">🖨️ Print All Sheets</button>
 
-    <!-- Levi / Garrick -->
-    <div class="page">
-        <div class="header">
+<!-- ── Selector ── -->
+<div class="selector">
+    <div class="thumb active" data-id="levi" onclick="select('levi')">
+        <div class="thumb-img">
+            <span class="thumb-initials">L</span>
+            <img src="images/levi.jpg" onerror="this.remove()">
+        </div>
+        <div class="thumb-name">Levi</div>
+    </div>
+    <div class="thumb" data-id="jeanette" onclick="select('jeanette')">
+        <div class="thumb-img">
+            <span class="thumb-initials">J</span>
+            <img src="images/jeanette.jpg" onerror="this.remove()">
+        </div>
+        <div class="thumb-name">Jeanette</div>
+    </div>
+    <div class="thumb" data-id="nicole" onclick="select('nicole')">
+        <div class="thumb-img">
+            <span class="thumb-initials">N</span>
+            <img src="images/nicole.jpg" onerror="this.remove()">
+        </div>
+        <div class="thumb-name">Nicole</div>
+    </div>
+    <div class="thumb" data-id="katie" onclick="select('katie')">
+        <div class="thumb-img">
+            <span class="thumb-initials">K</span>
+            <img src="images/katie.jpg" onerror="this.remove()">
+        </div>
+        <div class="thumb-name">Katie</div>
+    </div>
+    <div class="thumb" data-id="brandon" onclick="select('brandon')">
+        <div class="thumb-img">
+            <span class="thumb-initials">B</span>
+            <img src="images/brandon.jpg" onerror="this.remove()">
+        </div>
+        <div class="thumb-name">Brandon</div>
+    </div>
+    <div class="thumb" data-id="ashton" onclick="select('ashton')">
+        <div class="thumb-img">
+            <span class="thumb-initials">A</span>
+            <img src="images/ashton.jpg" onerror="this.remove()">
+        </div>
+        <div class="thumb-name">Ashton</div>
+    </div>
+</div>
+
+<!-- ── Sheets ── -->
+<div class="sheet-wrap">
+
+    <!-- Levi -->
+    <div class="sheet active" id="sheet-levi">
+        <div class="sheet-header">
             <div class="player-name">LEVI</div>
-            <div class="character-info">
-                <span class="character-name">Garrick</span> • Level 3 Gnome Ranger
-            </div>
-            <div class="discord-section">
-                <span class="discord-label">Discord Name:</span>
-                <span class="discord-line"></span>
-            </div>
+            <div class="char-info"><span class="char-name">Garrick</span> &bull; Level 3 Gnome Ranger</div>
         </div>
-        
-        <div class="section">
-            <div class="section-title">⭐ ACTIVE BOONS</div>
-            <div class="boons-list">
-                <div class="boon-item">
-                    <div class="boon-name">Lucky Charm</div>
-                    <div class="boon-effect">
-                        You may reroll any attack roll, ability check, or saving throw. You must use the new roll.
+        <div class="sheet-body">
+            <div class="section">
+                <div class="section-title">⭐ ACTIVE BOONS</div>
+                <div class="boons-list">
+                    <div class="boon-item">
+                        <div class="boon-name">Lucky Charm</div>
+                        <div class="boon-effect">You may reroll any attack roll, ability check, or saving throw. You must use the new roll.</div>
+                        <div class="boon-uses">Uses: 3 total (☐ ☐ ☐)</div>
                     </div>
-                    <div class="boon-uses">Uses: 3 total (☐ ☐ ☐)</div>
-                </div>
-            </div>
-        </div>
-        
-        <div class="section">
-            <div class="section-title">📜 PLAY HIGHLIGHTS</div>
-            <div class="highlights-section">
-                <div class="round-entry">
-                    <div class="round-label">Round 1:</div>
-                    <div class="round-notes"></div>
-                </div>
-                <div class="round-entry">
-                    <div class="round-label">Round 2:</div>
-                    <div class="round-notes"></div>
-                </div>
-                <div class="round-entry">
-                    <div class="round-label">Round 3:</div>
-                    <div class="round-notes"></div>
-                </div>
-                <div class="round-entry">
-                    <div class="round-label">Round 4:</div>
-                    <div class="round-notes"></div>
-                </div>
-                <div class="round-entry">
-                    <div class="round-label">Round 5:</div>
-                    <div class="round-notes"></div>
                 </div>
             </div>
         </div>
     </div>
 
-    <!-- Jeanette / Eleil -->
-    <div class="page">
-        <div class="header">
+    <!-- Jeanette -->
+    <div class="sheet" id="sheet-jeanette">
+        <div class="sheet-header">
             <div class="player-name">JEANETTE</div>
-            <div class="character-info">
-                <span class="character-name">Eleil</span> • Level 1 Elf Druid
-            </div>
-            <div class="discord-section">
-                <span class="discord-label">Discord Name:</span>
-                <span class="discord-line"></span>
-            </div>
+            <div class="char-info"><span class="char-name">Eleil</span> &bull; Level 1 Elf Druid</div>
         </div>
-        
-        <div class="section">
-            <div class="section-title">⭐ ACTIVE BOONS</div>
-            <div class="boons-list">
-                <div class="boon-item">
-                    <div class="boon-name">Nature's Gift</div>
-                    <div class="boon-effect">
-                        You have discovered a useful druid spell. Choose one druid spell of 2nd level or lower that you don't know. You may cast it once without using a spell slot.
+        <div class="sheet-body">
+            <div class="section">
+                <div class="section-title">⭐ ACTIVE BOONS</div>
+                <div class="boons-list">
+                    <div class="boon-item">
+                        <div class="boon-name">Nature's Gift</div>
+                        <div class="boon-effect">You have discovered a useful druid spell. Choose one druid spell of 2nd level or lower that you don't know. You may cast it once without using a spell slot.</div>
+                        <div class="boon-uses">Chosen Spell: ___________________ (Single use)</div>
                     </div>
-                    <div class="boon-uses">Chosen Spell: ___________________ (Single use)</div>
-                </div>
-            </div>
-        </div>
-        
-        <div class="section">
-            <div class="section-title">📜 PLAY HIGHLIGHTS</div>
-            <div class="highlights-section">
-                <div class="round-entry">
-                    <div class="round-label">Round 1:</div>
-                    <div class="round-notes"></div>
-                </div>
-                <div class="round-entry">
-                    <div class="round-label">Round 2:</div>
-                    <div class="round-notes"></div>
-                </div>
-                <div class="round-entry">
-                    <div class="round-label">Round 3:</div>
-                    <div class="round-notes"></div>
-                </div>
-                <div class="round-entry">
-                    <div class="round-label">Round 4:</div>
-                    <div class="round-notes"></div>
-                </div>
-                <div class="round-entry">
-                    <div class="round-label">Round 5:</div>
-                    <div class="round-notes"></div>
                 </div>
             </div>
         </div>
     </div>
 
-    <!-- Nicole / HollyGo -->
-    <div class="page">
-        <div class="header">
+    <!-- Nicole -->
+    <div class="sheet" id="sheet-nicole">
+        <div class="sheet-header">
             <div class="player-name">NICOLE</div>
-            <div class="character-info">
-                <span class="character-name">HollyGo</span> • Level 1 Goliath Paladin
-            </div>
-            <div class="discord-section">
-                <span class="discord-label">Discord Name:</span>
-                <span class="discord-line"></span>
-            </div>
+            <div class="char-info"><span class="char-name">HollyGo</span> &bull; Level 1 Goliath Paladin</div>
         </div>
-        
-        <div class="section">
-            <div class="section-title">⭐ ACTIVE BOONS</div>
-            <div class="boons-list">
-                <div class="boon-item">
-                    <div class="boon-name">Tactician's Insight</div>
-                    <div class="boon-effect">
-                        Once per short or long rest, you may use a bonus action to analyze the battlefield. For the next minute, you can use your Intelligence modifier instead of Strength for attack and damage rolls with melee weapons.
+        <div class="sheet-body">
+            <div class="section">
+                <div class="section-title">⭐ ACTIVE BOONS</div>
+                <div class="boons-list">
+                    <div class="boon-item">
+                        <div class="boon-name">Tactician's Insight</div>
+                        <div class="boon-effect">Once per short or long rest, you may use a bonus action to analyze the battlefield. For the next minute, you can use your Intelligence modifier instead of Strength for attack and damage rolls with melee weapons.</div>
+                        <div class="boon-uses">Recharges on short or long rest</div>
                     </div>
-                    <div class="boon-uses">Recharges on short or long rest</div>
-                </div>
-            </div>
-        </div>
-        
-        <div class="section">
-            <div class="section-title">📜 PLAY HIGHLIGHTS</div>
-            <div class="highlights-section">
-                <div class="round-entry">
-                    <div class="round-label">Round 1:</div>
-                    <div class="round-notes"></div>
-                </div>
-                <div class="round-entry">
-                    <div class="round-label">Round 2:</div>
-                    <div class="round-notes"></div>
-                </div>
-                <div class="round-entry">
-                    <div class="round-label">Round 3:</div>
-                    <div class="round-notes"></div>
-                </div>
-                <div class="round-entry">
-                    <div class="round-label">Round 4:</div>
-                    <div class="round-notes"></div>
-                </div>
-                <div class="round-entry">
-                    <div class="round-label">Round 5:</div>
-                    <div class="round-notes"></div>
                 </div>
             </div>
         </div>
     </div>
 
-    <!-- Katie / Lysnadra -->
-    <div class="page">
-        <div class="header">
+    <!-- Katie -->
+    <div class="sheet" id="sheet-katie">
+        <div class="sheet-header">
             <div class="player-name">KATIE</div>
-            <div class="character-info">
-                <span class="character-name">Lysnadra</span> • Level 1 Elf Bard
-            </div>
-            <div class="discord-section">
-                <span class="discord-label">Discord Name:</span>
-                <span class="discord-line"></span>
-            </div>
+            <div class="char-info"><span class="char-name">Lysnadra</span> &bull; Level 1 Elf Bard</div>
         </div>
-        
-        <div class="section">
-            <div class="section-title">⭐ ACTIVE BOONS</div>
-            <div class="boons-list">
-                <div class="boon-item">
-                    <div class="boon-name">Phoenix's Resilience</div>
-                    <div class="boon-effect">
-                        <strong>Option A:</strong> Gain advantage on your next death saving throw.<br>
-                        <strong>Option B:</strong> Gain +5 temporary hit points until your next long rest.<br>
-                        <em>If you choose advantage and use it, you lose the +5 temp HP option.</em>
+        <div class="sheet-body">
+            <div class="section">
+                <div class="section-title">⭐ ACTIVE BOONS</div>
+                <div class="boons-list">
+                    <div class="boon-item">
+                        <div class="boon-name">Phoenix's Resilience</div>
+                        <div class="boon-effect">
+                            <strong>Option A:</strong> Gain advantage on your next death saving throw.<br>
+                            <strong>Option B:</strong> Gain +5 temporary hit points until your next long rest.<br>
+                            <em>If you choose advantage and use it, you lose the +5 temp HP option.</em>
+                        </div>
+                        <div class="boon-uses">Single use consumable (☐ Used)</div>
                     </div>
-                    <div class="boon-uses">Single use consumable (☐ Used)</div>
-                </div>
-            </div>
-        </div>
-        
-        <div class="section">
-            <div class="section-title">📜 PLAY HIGHLIGHTS</div>
-            <div class="highlights-section">
-                <div class="round-entry">
-                    <div class="round-label">Round 1:</div>
-                    <div class="round-notes"></div>
-                </div>
-                <div class="round-entry">
-                    <div class="round-label">Round 2:</div>
-                    <div class="round-notes"></div>
-                </div>
-                <div class="round-entry">
-                    <div class="round-label">Round 3:</div>
-                    <div class="round-notes"></div>
-                </div>
-                <div class="round-entry">
-                    <div class="round-label">Round 4:</div>
-                    <div class="round-notes"></div>
-                </div>
-                <div class="round-entry">
-                    <div class="round-label">Round 5:</div>
-                    <div class="round-notes"></div>
                 </div>
             </div>
         </div>
     </div>
 
-    <!-- Brandon / Vaoker -->
-    <div class="page">
-        <div class="header">
+    <!-- Brandon -->
+    <div class="sheet" id="sheet-brandon">
+        <div class="sheet-header">
             <div class="player-name">BRANDON</div>
-            <div class="character-info">
-                <span class="character-name">Vaoker</span> • Level 3 Dwarf Fighter
-            </div>
-            <div class="discord-section">
-                <span class="discord-label">Discord Name:</span>
-                <span class="discord-line"></span>
-            </div>
+            <div class="char-info"><span class="char-name">Vaoker</span> &bull; Level 3 Dwarf Fighter</div>
         </div>
-        
-        <div class="section">
-            <div class="section-title">⭐ ACTIVE BOONS</div>
-            <div class="boons-list">
-                <div class="boon-item">
-                    <div class="boon-name">Warrior's Feast</div>
-                    <div class="boon-effect">
-                        Each time you consume food, drink, or a potion during combat (using an action or bonus action), you gain advantage on your next attack roll.
+        <div class="sheet-body">
+            <div class="section">
+                <div class="section-title">⭐ ACTIVE BOONS</div>
+                <div class="boons-list">
+                    <div class="boon-item">
+                        <div class="boon-name">Warrior's Feast</div>
+                        <div class="boon-effect">Each time you consume food, drink, or a potion during combat (using an action or bonus action), you gain advantage on your next attack roll.</div>
+                        <div class="boon-uses">Uses: 3 total (☐ ☐ ☐)</div>
                     </div>
-                    <div class="boon-uses">Uses: 3 total (☐ ☐ ☐)</div>
-                </div>
-            </div>
-        </div>
-        
-        <div class="section">
-            <div class="section-title">📜 PLAY HIGHLIGHTS</div>
-            <div class="highlights-section">
-                <div class="round-entry">
-                    <div class="round-label">Round 1:</div>
-                    <div class="round-notes"></div>
-                </div>
-                <div class="round-entry">
-                    <div class="round-label">Round 2:</div>
-                    <div class="round-notes"></div>
-                </div>
-                <div class="round-entry">
-                    <div class="round-label">Round 3:</div>
-                    <div class="round-notes"></div>
-                </div>
-                <div class="round-entry">
-                    <div class="round-label">Round 4:</div>
-                    <div class="round-notes"></div>
-                </div>
-                <div class="round-entry">
-                    <div class="round-label">Round 5:</div>
-                    <div class="round-notes"></div>
                 </div>
             </div>
         </div>
     </div>
 
-    <!-- Ashton / Ash -->
-    <div class="page">
-        <div class="header">
+    <!-- Ashton -->
+    <div class="sheet" id="sheet-ashton">
+        <div class="sheet-header">
             <div class="player-name">ASHTON</div>
-            <div class="character-info">
-                <span class="character-name">Ash</span> • Level 1 Human Fighter
-            </div>
-            <div class="discord-section">
-                <span class="discord-label">Discord Name:</span>
-                <span class="discord-line"></span>
-            </div>
+            <div class="char-info"><span class="char-name">Ash</span> &bull; Level 1 Human Fighter</div>
         </div>
-        
-        <div class="section">
-            <div class="section-title">⭐ ACTIVE BOONS</div>
-            <div class="boons-list">
-                <div class="boon-item">
-                    <div class="boon-name">Guardian's Inspiration</div>
-                    <div class="boon-effect">
-                        Anytime you use the Help action in combat to aid an ally, OR take the Dodge action while standing within 5 feet of an ally, you gain Inspiration. You can use Inspiration to gain advantage on any attack roll, saving throw, or ability check.
+        <div class="sheet-body">
+            <div class="section">
+                <div class="section-title">⭐ ACTIVE BOONS</div>
+                <div class="boons-list">
+                    <div class="boon-item">
+                        <div class="boon-name">Guardian's Inspiration</div>
+                        <div class="boon-effect">Anytime you use the Help action in combat to aid an ally, OR take the Dodge action while standing within 5 feet of an ally, you gain Inspiration. You can use Inspiration to gain advantage on any attack roll, saving throw, or ability check.</div>
+                        <div class="boon-uses">Ongoing effect — no limit (can only have 1 Inspiration at a time)</div>
                     </div>
-                    <div class="boon-uses">Ongoing effect - no limit (can only have 1 Inspiration at a time)</div>
-                </div>
-            </div>
-        </div>
-        
-        <div class="section">
-            <div class="section-title">📜 PLAY HIGHLIGHTS</div>
-            <div class="highlights-section">
-                <div class="round-entry">
-                    <div class="round-label">Round 1:</div>
-                    <div class="round-notes"></div>
-                </div>
-                <div class="round-entry">
-                    <div class="round-label">Round 2:</div>
-                    <div class="round-notes"></div>
-                </div>
-                <div class="round-entry">
-                    <div class="round-label">Round 3:</div>
-                    <div class="round-notes"></div>
-                </div>
-                <div class="round-entry">
-                    <div class="round-label">Round 4:</div>
-                    <div class="round-notes"></div>
-                </div>
-                <div class="round-entry">
-                    <div class="round-label">Round 5:</div>
-                    <div class="round-notes"></div>
                 </div>
             </div>
         </div>
     </div>
+
+</div>
+
+<script>
+    function select(id) {
+        document.querySelectorAll('.thumb').forEach(t => t.classList.remove('active'));
+        document.querySelectorAll('.sheet').forEach(s => s.classList.remove('active'));
+        document.querySelector(`.thumb[data-id="${id}"]`).classList.add('active');
+        document.getElementById(`sheet-${id}`).classList.add('active');
+    }
+</script>
+
 </body>
 </html>
