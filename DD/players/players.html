@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Player Character Sheets</title>
+    <style>
+        @page {
+            size: letter;
+            margin: 0.5in;
+        }
+        
+        body {
+            font-family: 'Garamond', 'Times New Roman', serif;
+            margin: 0;
+            padding: 20px;
+            background: #2c2c2c;
+        }
+        
+        .page {
+            width: 8.5in;
+            height: 11in;
+            margin: 0 auto 20px auto;
+            background: linear-gradient(to bottom, #fffef7 0%, #faf8f0 100%);
+            padding: 0.5in;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            border: 3px solid #8B4513;
+            page-break-after: always;
+        }
+        
+        .header {
+            text-align: center;
+            border-bottom: 3px double #8B0000;
+            padding-bottom: 15px;
+            margin-bottom: 20px;
+        }
+        
+        .player-name {
+            font-size: 28px;
+            font-weight: bold;
+            color: #8B0000;
+            margin-bottom: 5px;
+            letter-spacing: 2px;
+        }
+        
+        .character-info {
+            font-size: 18px;
+            color: #333;
+            margin-bottom: 8px;
+        }
+        
+        .character-name {
+            font-weight: bold;
+            color: #000080;
+        }
+        
+        .discord-section {
+            margin-top: 10px;
+            padding: 8px;
+            background: rgba(255, 255, 255, 0.5);
+            border-radius: 4px;
+        }
+        
+        .discord-label {
+            font-size: 12px;
+            color: #666;
+            display: inline-block;
+            width: 100px;
+        }
+        
+        .discord-line {
+            display: inline-block;
+            border-bottom: 2px solid #8B0000;
+            width: 300px;
+            margin-left: 10px;
+        }
+        
+        .section {
+            margin-bottom: 25px;
+        }
+        
+        .section-title {
+            font-size: 18px;
+            font-weight: bold;
+            color: #8B0000;
+            border-bottom: 2px solid #8B0000;
+            padding-bottom: 5px;
+            margin-bottom: 12px;
+            letter-spacing: 1px;
+        }
+        
+        .boons-list {
+            background: rgba(255, 255, 255, 0.6);
+            border-left: 4px solid #d4af37;
+            padding: 12px;
+            border-radius: 4px;
+        }
+        
+        .boon-item {
+            margin-bottom: 12px;
+            padding-bottom: 12px;
+            border-bottom: 1px dashed #ccc;
+        }
+        
+        .boon-item:last-child {
+            border-bottom: none;
+            padding-bottom: 0;
+            margin-bottom: 0;
+        }
+        
+        .boon-name {
+            font-weight: bold;
+            color: #000080;
+            font-size: 14px;
+            margin-bottom: 4px;
+        }
+        
+        .boon-effect {
+            font-size: 12px;
+            line-height: 1.5;
+            color: #333;
+        }
+        
+        .boon-uses {
+            font-size: 11px;
+            font-style: italic;
+            color: #006400;
+            margin-top: 4px;
+        }
+        
+        .highlights-section {
+            background: rgba(255, 255, 255, 0.4);
+            padding: 15px;
+            border-radius: 4px;
+            min-height: 300px;
+        }
+        
+        .round-entry {
+            margin-bottom: 15px;
+            padding: 10px;
+            background: white;
+            border-left: 3px solid #8B0000;
+            border-radius: 3px;
+        }
+        
+        .round-label {
+            font-weight: bold;
+            color: #8B0000;
+            font-size: 13px;
+            margin-bottom: 5px;
+        }
+        
+        .round-notes {
+            border-bottom: 1px solid #ddd;
+            min-height: 40px;
+            padding: 5px 0;
+            font-size: 12px;
+        }
+        
+        .print-button {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            padding: 12px 24px;
+            background: #8B0000;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            font-size: 16px;
+            cursor: pointer;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+            z-index: 1000;
+        }
+        
+        .print-button:hover {
+            background: #6d0000;
+        }
+        
+        @media print {
+            body {
+                background: white;
+                padding: 0;
+            }
+            .page {
+                box-shadow: none;
+                margin: 0;
+                border: none;
+            }
+            .print-button {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <button class="print-button" onclick="window.print()">🖨️ Print All Sheets</button>
+
+    <!-- Levi / Garrick -->
+    <div class="page">
+        <div class="header">
+            <div class="player-name">LEVI</div>
+            <div class="character-info">
+                <span class="character-name">Garrick</span> • Level 3 Gnome Ranger
+            </div>
+            <div class="discord-section">
+                <span class="discord-label">Discord Name:</span>
+                <span class="discord-line"></span>
+            </div>
+        </div>
+        
+        <div class="section">
+            <div class="section-title">⭐ ACTIVE BOONS</div>
+            <div class="boons-list">
+                <div class="boon-item">
+                    <div class="boon-name">Lucky Charm</div>
+                    <div class="boon-effect">
+                        You may reroll any attack roll, ability check, or saving throw. You must use the new roll.
+                    </div>
+                    <div class="boon-uses">Uses: 3 total (☐ ☐ ☐)</div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="section">
+            <div class="section-title">📜 PLAY HIGHLIGHTS</div>
+            <div class="highlights-section">
+                <div class="round-entry">
+                    <div class="round-label">Round 1:</div>
+                    <div class="round-notes"></div>
+                </div>
+                <div class="round-entry">
+                    <div class="round-label">Round 2:</div>
+                    <div class="round-notes"></div>
+                </div>
+                <div class="round-entry">
+                    <div class="round-label">Round 3:</div>
+                    <div class="round-notes"></div>
+                </div>
+                <div class="round-entry">
+                    <div class="round-label">Round 4:</div>
+                    <div class="round-notes"></div>
+                </div>
+                <div class="round-entry">
+                    <div class="round-label">Round 5:</div>
+                    <div class="round-notes"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Jeanette / Eleil -->
+    <div class="page">
+        <div class="header">
+            <div class="player-name">JEANETTE</div>
+            <div class="character-info">
+                <span class="character-name">Eleil</span> • Level 1 Elf Druid
+            </div>
+            <div class="discord-section">
+                <span class="discord-label">Discord Name:</span>
+                <span class="discord-line"></span>
+            </div>
+        </div>
+        
+        <div class="section">
+            <div class="section-title">⭐ ACTIVE BOONS</div>
+            <div class="boons-list">
+                <div class="boon-item">
+                    <div class="boon-name">Nature's Gift</div>
+                    <div class="boon-effect">
+                        You have discovered a useful druid spell. Choose one druid spell of 2nd level or lower that you don't know. You may cast it once without using a spell slot.
+                    </div>
+                    <div class="boon-uses">Chosen Spell: ___________________ (Single use)</div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="section">
+            <div class="section-title">📜 PLAY HIGHLIGHTS</div>
+            <div class="highlights-section">
+                <div class="round-entry">
+                    <div class="round-label">Round 1:</div>
+                    <div class="round-notes"></div>
+                </div>
+                <div class="round-entry">
+                    <div class="round-label">Round 2:</div>
+                    <div class="round-notes"></div>
+                </div>
+                <div class="round-entry">
+                    <div class="round-label">Round 3:</div>
+                    <div class="round-notes"></div>
+                </div>
+                <div class="round-entry">
+                    <div class="round-label">Round 4:</div>
+                    <div class="round-notes"></div>
+                </div>
+                <div class="round-entry">
+                    <div class="round-label">Round 5:</div>
+                    <div class="round-notes"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Nicole / HollyGo -->
+    <div class="page">
+        <div class="header">
+            <div class="player-name">NICOLE</div>
+            <div class="character-info">
+                <span class="character-name">HollyGo</span> • Level 1 Goliath Paladin
+            </div>
+            <div class="discord-section">
+                <span class="discord-label">Discord Name:</span>
+                <span class="discord-line"></span>
+            </div>
+        </div>
+        
+        <div class="section">
+            <div class="section-title">⭐ ACTIVE BOONS</div>
+            <div class="boons-list">
+                <div class="boon-item">
+                    <div class="boon-name">Tactician's Insight</div>
+                    <div class="boon-effect">
+                        Once per short or long rest, you may use a bonus action to analyze the battlefield. For the next minute, you can use your Intelligence modifier instead of Strength for attack and damage rolls with melee weapons.
+                    </div>
+                    <div class="boon-uses">Recharges on short or long rest</div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="section">
+            <div class="section-title">📜 PLAY HIGHLIGHTS</div>
+            <div class="highlights-section">
+                <div class="round-entry">
+                    <div class="round-label">Round 1:</div>
+                    <div class="round-notes"></div>
+                </div>
+                <div class="round-entry">
+                    <div class="round-label">Round 2:</div>
+                    <div class="round-notes"></div>
+                </div>
+                <div class="round-entry">
+                    <div class="round-label">Round 3:</div>
+                    <div class="round-notes"></div>
+                </div>
+                <div class="round-entry">
+                    <div class="round-label">Round 4:</div>
+                    <div class="round-notes"></div>
+                </div>
+                <div class="round-entry">
+                    <div class="round-label">Round 5:</div>
+                    <div class="round-notes"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Katie / Lysnadra -->
+    <div class="page">
+        <div class="header">
+            <div class="player-name">KATIE</div>
+            <div class="character-info">
+                <span class="character-name">Lysnadra</span> • Level 1 Elf Bard
+            </div>
+            <div class="discord-section">
+                <span class="discord-label">Discord Name:</span>
+                <span class="discord-line"></span>
+            </div>
+        </div>
+        
+        <div class="section">
+            <div class="section-title">⭐ ACTIVE BOONS</div>
+            <div class="boons-list">
+                <div class="boon-item">
+                    <div class="boon-name">Phoenix's Resilience</div>
+                    <div class="boon-effect">
+                        <strong>Option A:</strong> Gain advantage on your next death saving throw.<br>
+                        <strong>Option B:</strong> Gain +5 temporary hit points until your next long rest.<br>
+                        <em>If you choose advantage and use it, you lose the +5 temp HP option.</em>
+                    </div>
+                    <div class="boon-uses">Single use consumable (☐ Used)</div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="section">
+            <div class="section-title">📜 PLAY HIGHLIGHTS</div>
+            <div class="highlights-section">
+                <div class="round-entry">
+                    <div class="round-label">Round 1:</div>
+                    <div class="round-notes"></div>
+                </div>
+                <div class="round-entry">
+                    <div class="round-label">Round 2:</div>
+                    <div class="round-notes"></div>
+                </div>
+                <div class="round-entry">
+                    <div class="round-label">Round 3:</div>
+                    <div class="round-notes"></div>
+                </div>
+                <div class="round-entry">
+                    <div class="round-label">Round 4:</div>
+                    <div class="round-notes"></div>
+                </div>
+                <div class="round-entry">
+                    <div class="round-label">Round 5:</div>
+                    <div class="round-notes"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Brandon / Vaoker -->
+    <div class="page">
+        <div class="header">
+            <div class="player-name">BRANDON</div>
+            <div class="character-info">
+                <span class="character-name">Vaoker</span> • Level 3 Dwarf Fighter
+            </div>
+            <div class="discord-section">
+                <span class="discord-label">Discord Name:</span>
+                <span class="discord-line"></span>
+            </div>
+        </div>
+        
+        <div class="section">
+            <div class="section-title">⭐ ACTIVE BOONS</div>
+            <div class="boons-list">
+                <div class="boon-item">
+                    <div class="boon-name">Warrior's Feast</div>
+                    <div class="boon-effect">
+                        Each time you consume food, drink, or a potion during combat (using an action or bonus action), you gain advantage on your next attack roll.
+                    </div>
+                    <div class="boon-uses">Uses: 3 total (☐ ☐ ☐)</div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="section">
+            <div class="section-title">📜 PLAY HIGHLIGHTS</div>
+            <div class="highlights-section">
+                <div class="round-entry">
+                    <div class="round-label">Round 1:</div>
+                    <div class="round-notes"></div>
+                </div>
+                <div class="round-entry">
+                    <div class="round-label">Round 2:</div>
+                    <div class="round-notes"></div>
+                </div>
+                <div class="round-entry">
+                    <div class="round-label">Round 3:</div>
+                    <div class="round-notes"></div>
+                </div>
+                <div class="round-entry">
+                    <div class="round-label">Round 4:</div>
+                    <div class="round-notes"></div>
+                </div>
+                <div class="round-entry">
+                    <div class="round-label">Round 5:</div>
+                    <div class="round-notes"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Ashton / Ash -->
+    <div class="page">
+        <div class="header">
+            <div class="player-name">ASHTON</div>
+            <div class="character-info">
+                <span class="character-name">Ash</span> • Level 1 Human Fighter
+            </div>
+            <div class="discord-section">
+                <span class="discord-label">Discord Name:</span>
+                <span class="discord-line"></span>
+            </div>
+        </div>
+        
+        <div class="section">
+            <div class="section-title">⭐ ACTIVE BOONS</div>
+            <div class="boons-list">
+                <div class="boon-item">
+                    <div class="boon-name">Guardian's Inspiration</div>
+                    <div class="boon-effect">
+                        Anytime you use the Help action in combat to aid an ally, OR take the Dodge action while standing within 5 feet of an ally, you gain Inspiration. You can use Inspiration to gain advantage on any attack roll, saving throw, or ability check.
+                    </div>
+                    <div class="boon-uses">Ongoing effect - no limit (can only have 1 Inspiration at a time)</div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="section">
+            <div class="section-title">📜 PLAY HIGHLIGHTS</div>
+            <div class="highlights-section">
+                <div class="round-entry">
+                    <div class="round-label">Round 1:</div>
+                    <div class="round-notes"></div>
+                </div>
+                <div class="round-entry">
+                    <div class="round-label">Round 2:</div>
+                    <div class="round-notes"></div>
+                </div>
+                <div class="round-entry">
+                    <div class="round-label">Round 3:</div>
+                    <div class="round-notes"></div>
+                </div>
+                <div class="round-entry">
+                    <div class="round-label">Round 4:</div>
+                    <div class="round-notes"></div>
+                </div>
+                <div class="round-entry">
+                    <div class="round-label">Round 5:</div>
+                    <div class="round-notes"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
