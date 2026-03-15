@@ -200,42 +200,43 @@
   <div class="save-bar" id="save-bar">saved</div>
 
   <script>
-    const KEY = 'dd_npcs';
+    const API = '/DD/api.php?key=npcs';
     const STATUSES = ['alive', 'unknown', 'dead'];
 
-    function load() {
-      try { return JSON.parse(localStorage.getItem(KEY) || '[]'); } catch { return []; }
+    async function load() {
+      try { const r = await fetch(API); return r.ok ? r.json() : []; }
+      catch { return []; }
     }
-    function store(data) {
-      try { localStorage.setItem(KEY, JSON.stringify(data)); } catch {}
+    async function store(data) {
+      await fetch(API, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(data)
+      });
     }
 
     let saveTimer;
-    function markSaving() {
+    function saveAll() {
       const bar = document.getElementById('save-bar');
       bar.textContent = 'saving…';
       bar.className = 'save-bar visible';
       clearTimeout(saveTimer);
-      saveTimer = setTimeout(() => {
+      saveTimer = setTimeout(async () => {
+        const npcs = [];
+        document.querySelectorAll('.npc-card').forEach(card => {
+          npcs.push({
+            id: card.dataset.id,
+            name: card.querySelector('.npc-name').value,
+            role: card.querySelector('.npc-role').value,
+            notes: card.querySelector('.npc-notes').value,
+            status: card.dataset.status,
+          });
+        });
+        await store(npcs);
         bar.textContent = 'saved';
         bar.className = 'save-bar visible saved';
         setTimeout(() => { bar.className = 'save-bar'; }, 1500);
       }, 600);
-    }
-
-    function saveAll() {
-      const npcs = [];
-      document.querySelectorAll('.npc-card').forEach(card => {
-        npcs.push({
-          id: card.dataset.id,
-          name: card.querySelector('.npc-name').value,
-          role: card.querySelector('.npc-role').value,
-          notes: card.querySelector('.npc-notes').value,
-          status: card.dataset.status,
-        });
-      });
-      store(npcs);
-      markSaving();
     }
 
     function makeCard(npc) {
@@ -297,8 +298,8 @@
       saveAll();
     }
 
-    function render() {
-      const npcs = load();
+    async function render() {
+      const npcs = await load();
       const list = document.getElementById('npc-list');
       npcs.forEach(npc => list.appendChild(makeCard(npc)));
       checkEmpty();

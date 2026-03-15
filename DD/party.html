@@ -199,44 +199,45 @@
   <div class="save-bar" id="save-bar">saved</div>
 
   <script>
-    const KEY = 'dd_party';
+    const API = '/DD/api.php?key=party';
 
-    function load() {
-      try { return JSON.parse(localStorage.getItem(KEY) || '[]'); } catch { return []; }
+    async function load() {
+      try { const r = await fetch(API); return r.ok ? r.json() : []; }
+      catch { return []; }
     }
-    function store(data) {
-      try { localStorage.setItem(KEY, JSON.stringify(data)); } catch {}
+    async function store(data) {
+      await fetch(API, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(data)
+      });
     }
 
     let saveTimer;
-    function markSaving() {
+    function saveAll() {
       const bar = document.getElementById('save-bar');
       bar.textContent = 'saving…';
       bar.className = 'save-bar visible';
       clearTimeout(saveTimer);
-      saveTimer = setTimeout(() => {
+      saveTimer = setTimeout(async () => {
+        const chars = [];
+        document.querySelectorAll('.char-card').forEach(card => {
+          chars.push({
+            id: card.dataset.id,
+            name: card.querySelector('.char-name').value,
+            player: card.querySelector('[data-field="player"]').value,
+            class: card.querySelector('[data-field="class"]').value,
+            level: card.querySelector('[data-field="level"]').value,
+            hpCur: card.querySelector('[data-field="hpCur"]').value,
+            hpMax: card.querySelector('[data-field="hpMax"]').value,
+            notes: card.querySelector('.char-notes').value,
+          });
+        });
+        await store(chars);
         bar.textContent = 'saved';
         bar.className = 'save-bar visible saved';
         setTimeout(() => { bar.className = 'save-bar'; }, 1500);
       }, 600);
-    }
-
-    function saveAll() {
-      const chars = [];
-      document.querySelectorAll('.char-card').forEach(card => {
-        chars.push({
-          id: card.dataset.id,
-          name: card.querySelector('.char-name').value,
-          player: card.querySelector('[data-field="player"]').value,
-          class: card.querySelector('[data-field="class"]').value,
-          level: card.querySelector('[data-field="level"]').value,
-          hpCur: card.querySelector('[data-field="hpCur"]').value,
-          hpMax: card.querySelector('[data-field="hpMax"]').value,
-          notes: card.querySelector('.char-notes').value,
-        });
-      });
-      store(chars);
-      markSaving();
     }
 
     function esc(s) {
@@ -291,8 +292,8 @@
       saveAll();
     }
 
-    function render() {
-      const chars = load();
+    async function render() {
+      const chars = await load();
       const grid = document.getElementById('party-grid');
       chars.forEach(c => grid.appendChild(makeCard(c)));
       checkEmpty();

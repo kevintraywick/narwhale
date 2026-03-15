@@ -126,19 +126,23 @@
   </div>
 
   <script>
-    const KEY = 'dd_sessions';
+    const API = '/DD/api.php?key=sessions';
 
-    function load() {
-      try { return JSON.parse(localStorage.getItem(KEY) || '[]'); }
+    async function load() {
+      try { const r = await fetch(API); return r.ok ? r.json() : []; }
       catch { return []; }
     }
 
-    function save(data) {
-      try { localStorage.setItem(KEY, JSON.stringify(data)); } catch {}
+    async function save(data) {
+      await fetch(API, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(data)
+      });
     }
 
-    function render() {
-      const sessions = load().sort((a, b) => b.number - a.number);
+    async function render() {
+      const sessions = (await load()).sort((a, b) => b.number - a.number);
       const list = document.getElementById('list');
       const empty = document.getElementById('empty');
       list.querySelectorAll('.card').forEach(el => el.remove());
@@ -153,19 +157,20 @@
           <span class="card-meta">${s.date || ''}</span>
           <button class="del-btn" title="Delete" data-id="${s.id}">✕</button>
         `;
-        a.querySelector('.del-btn').addEventListener('click', e => {
+        a.querySelector('.del-btn').addEventListener('click', async e => {
           e.preventDefault();
           if (confirm(`Delete session #${s.number}?`)) {
-            save(load().filter(x => x.id !== s.id));
-            render();
+            const all = await load();
+            await save(all.filter(x => x.id !== s.id));
+            await render();
           }
         });
         list.appendChild(a);
       });
     }
 
-    function newSession() {
-      const sessions = load();
+    async function newSession() {
+      const sessions = await load();
       const max = sessions.reduce((m, s) => Math.max(m, s.number), 0);
       const id = Date.now().toString(36);
       sessions.push({
@@ -174,7 +179,7 @@
         encounters: '', looseEnds: '', notes: '',
         lastModified: Date.now()
       });
-      save(sessions);
+      await save(sessions);
       location.href = `session.html?id=${id}`;
     }
 

@@ -184,37 +184,46 @@
   </div>
 
   <script>
-    const KEY = 'dd_sessions';
+    const API = '/DD/api.php?key=sessions';
     const id = new URLSearchParams(location.search).get('id');
 
-    function load() {
-      try { return JSON.parse(localStorage.getItem(KEY) || '[]'); } catch { return []; }
+    async function load() {
+      try { const r = await fetch(API); return r.ok ? r.json() : []; }
+      catch { return []; }
     }
-    function store(data) {
-      try { localStorage.setItem(KEY, JSON.stringify(data)); } catch {}
+    async function store(data) {
+      await fetch(API, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(data)
+      });
     }
 
-    const session = load().find(s => s.id === id);
+    const fields = {
+      'f-number':    'number',
+      'f-title':     'title',
+      'f-date':      'date',
+      'f-goal':      'goal',
+      'f-scenes':    'scenes',
+      'f-npcs':      'npcs',
+      'f-locations': 'locations',
+      'f-encounters':'encounters',
+      'f-loose-ends':'looseEnds',
+      'f-notes':     'notes',
+    };
 
-    if (!session) {
-      document.getElementById('content').innerHTML =
-        '<p style="color:var(--muted);padding:2rem">Session not found. <a href="index.html" style="color:var(--gold)">← Back</a></p>';
-    } else {
+    (async () => {
+      const sessions = await load();
+      const session = sessions.find(s => s.id === id);
+
+      if (!session) {
+        document.getElementById('content').innerHTML =
+          '<p style="color:var(--muted);padding:2rem">Session not found. <a href="index.html" style="color:var(--gold)">← Back</a></p>';
+        return;
+      }
+
       document.title = session.title ? `#${session.number} ${session.title}` : `Session #${session.number}`;
       document.getElementById('topbar-label').textContent = `Session #${session.number}`;
-
-      const fields = {
-        'f-number':    'number',
-        'f-title':     'title',
-        'f-date':      'date',
-        'f-goal':      'goal',
-        'f-scenes':    'scenes',
-        'f-npcs':      'npcs',
-        'f-locations': 'locations',
-        'f-encounters':'encounters',
-        'f-loose-ends':'looseEnds',
-        'f-notes':     'notes',
-      };
 
       Object.entries(fields).forEach(([elId, key]) => {
         document.getElementById(elId).value = session[key] || '';
@@ -226,18 +235,18 @@
         status.textContent = 'saving…';
         status.className = 'save-status';
         clearTimeout(timer);
-        timer = setTimeout(() => {
-          const sessions = load();
-          const idx = sessions.findIndex(s => s.id === id);
+        timer = setTimeout(async () => {
+          const all = await load();
+          const idx = all.findIndex(s => s.id === id);
           if (idx === -1) return;
           Object.entries(fields).forEach(([elId, key]) => {
             const el = document.getElementById(elId);
-            sessions[idx][key] = el.type === 'number'
-              ? (parseInt(el.value) || sessions[idx][key])
+            all[idx][key] = el.type === 'number'
+              ? (parseInt(el.value) || all[idx][key])
               : el.value;
           });
-          sessions[idx].lastModified = Date.now();
-          store(sessions);
+          all[idx].lastModified = Date.now();
+          await store(all);
           status.textContent = 'saved';
           status.className = 'save-status saved';
           setTimeout(() => { status.className = 'save-status'; }, 2000);
@@ -247,7 +256,7 @@
       document.querySelectorAll('input, textarea').forEach(el => {
         el.addEventListener('input', autosave);
       });
-    }
+    })();
   </script>
 </body>
 </html>
