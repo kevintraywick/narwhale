@@ -10,12 +10,11 @@
             --surface: #231f1c;
             --border: #3d3530;
             --gold: #c9a84c;
-            --red: #8B0000;
-            --blue: #1a1a6e;
             --text: #e8ddd0;
             --muted: #8a7d6e;
-            --parchment: #faf8f0;
             --green: #5a8a5a;
+            --red: #8B0000;
+            --blue: #1a1a6e;
         }
 
         * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -45,7 +44,7 @@
         }
         .dd-nav a:hover { color: var(--gold); border-color: var(--gold); }
 
-        /* ── Selector bar ── */
+        /* ── Selector ── */
         .selector {
             display: flex;
             justify-content: center;
@@ -56,13 +55,7 @@
             flex-wrap: wrap;
         }
 
-        .thumb {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 0.4rem;
-            cursor: pointer;
-        }
+        .thumb { display: flex; flex-direction: column; align-items: center; gap: 0.4rem; cursor: pointer; }
 
         .thumb-img {
             position: relative;
@@ -77,23 +70,11 @@
             align-items: center;
             justify-content: center;
         }
-
         .thumb:hover .thumb-img { border-color: var(--muted); transform: scale(1.05); }
         .thumb.active .thumb-img { border-color: var(--gold); box-shadow: 0 0 0 2px var(--gold); }
 
-        .thumb-img img {
-            position: absolute;
-            inset: 0;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        .thumb-initials {
-            font-size: 1.6rem;
-            color: var(--muted);
-            user-select: none;
-        }
+        .thumb-img img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+        .thumb-initials { font-size: 1.6rem; color: var(--muted); user-select: none; }
 
         .thumb-name {
             font-size: 0.72rem;
@@ -123,12 +104,7 @@
         .save-bar.saved { color: var(--green); }
 
         /* ── Sheet ── */
-        .sheet-wrap {
-            max-width: 780px;
-            margin: 0 auto;
-            padding: 1.5rem 1rem 4rem;
-        }
-
+        .sheet-wrap { max-width: 780px; margin: 0 auto; padding: 1.5rem 1rem 4rem; }
         .sheet { display: none; }
         .sheet.active { display: block; }
 
@@ -146,23 +122,11 @@
             align-items: baseline;
             gap: 0.6rem;
             flex-wrap: wrap;
-            margin-bottom: 0.6rem;
         }
 
-        .player-label {
-            font-size: 1.3rem;
-            font-weight: bold;
-            color: var(--gold);
-            letter-spacing: 0.06em;
-        }
-
+        .player-label { font-size: 1.3rem; font-weight: bold; color: var(--gold); letter-spacing: 0.06em; }
         .header-sep { color: var(--border); font-size: 1.1rem; }
-
-        .char-label {
-            font-size: 1.1rem;
-            font-weight: bold;
-            color: var(--text);
-        }
+        .char-label { font-size: 1.1rem; font-weight: bold; color: var(--text); }
 
         .discord-field {
             background: transparent;
@@ -173,13 +137,13 @@
             font-size: 0.88rem;
             outline: none;
             padding-bottom: 0.1rem;
-            min-width: 180px;
+            min-width: 160px;
             flex: 1;
         }
         .discord-field::placeholder { color: var(--border); }
         .discord-field:focus { border-bottom-color: var(--gold); color: var(--text); }
 
-        /* Stats row */
+        /* Stats */
         .stats-row {
             display: flex;
             gap: 0.5rem;
@@ -200,12 +164,7 @@
             min-width: 60px;
         }
 
-        .stat-label {
-            font-size: 0.6rem;
-            text-transform: uppercase;
-            letter-spacing: 0.12em;
-            color: var(--muted);
-        }
+        .stat-label { font-size: 0.6rem; text-transform: uppercase; letter-spacing: 0.12em; color: var(--muted); }
 
         .stat-input {
             background: transparent;
@@ -221,6 +180,28 @@
         }
         .stat-input::placeholder { color: var(--border); }
         .stat-input:focus { border-bottom-color: var(--gold); }
+
+        .stat-adj {
+            display: flex;
+            gap: 2px;
+            margin-top: 3px;
+        }
+        .stat-adj button {
+            background: #2a2420;
+            border: 1px solid var(--border);
+            color: var(--muted);
+            width: 22px;
+            height: 20px;
+            border-radius: 3px;
+            cursor: pointer;
+            font-size: 0.85rem;
+            line-height: 1;
+            padding: 0;
+            font-family: inherit;
+            transition: border-color 0.1s, color 0.1s;
+        }
+        .stat-adj button:hover { border-color: var(--gold); color: var(--gold); }
+        .stat-adj button:active { background: #3a3020; }
 
         /* Grid */
         .grid {
@@ -242,13 +223,7 @@
         .box:nth-child(even) { border-right: none; }
         .box:nth-last-child(-n+2) { border-bottom: none; }
 
-        .box-label {
-            font-size: 0.65rem;
-            text-transform: uppercase;
-            letter-spacing: 0.13em;
-            color: var(--muted);
-            margin-bottom: 0.4rem;
-        }
+        .box-label { font-size: 0.65rem; text-transform: uppercase; letter-spacing: 0.13em; color: var(--muted); margin-bottom: 0.4rem; }
 
         .box textarea {
             width: 100%;
@@ -270,52 +245,32 @@
 <nav class="dd-nav">
     <a href="/DD/index.html">Sessions</a>
     <a href="/DD/npcs.html">NPCs</a>
-    <a href="/DD/party.html">Party</a>
-    <a href="/DD/boons.html">Boons</a>
     <a href="/DD/players/players.html">Players</a>
 </nav>
 
 <div class="selector">
     <div class="thumb active" data-id="levi" onclick="selectPlayer('levi')">
-        <div class="thumb-img">
-            <span class="thumb-initials">L</span>
-            <img src="images/levi.jpg" onerror="this.remove()">
-        </div>
+        <div class="thumb-img"><span class="thumb-initials">L</span><img src="images/levi.png" onerror="this.remove()"></div>
         <div class="thumb-name">Levi</div>
     </div>
     <div class="thumb" data-id="jeanette" onclick="selectPlayer('jeanette')">
-        <div class="thumb-img">
-            <span class="thumb-initials">J</span>
-            <img src="images/jeanette.jpg" onerror="this.remove()">
-        </div>
+        <div class="thumb-img"><span class="thumb-initials">J</span><img src="images/jeanette.png" onerror="this.remove()"></div>
         <div class="thumb-name">Jeanette</div>
     </div>
     <div class="thumb" data-id="nicole" onclick="selectPlayer('nicole')">
-        <div class="thumb-img">
-            <span class="thumb-initials">N</span>
-            <img src="images/nicole.jpg" onerror="this.remove()">
-        </div>
+        <div class="thumb-img"><span class="thumb-initials">N</span><img src="images/nicole.png" onerror="this.remove()"></div>
         <div class="thumb-name">Nicole</div>
     </div>
     <div class="thumb" data-id="katie" onclick="selectPlayer('katie')">
-        <div class="thumb-img">
-            <span class="thumb-initials">K</span>
-            <img src="images/katie.jpg" onerror="this.remove()">
-        </div>
+        <div class="thumb-img"><span class="thumb-initials">K</span><img src="images/katie.png" onerror="this.remove()"></div>
         <div class="thumb-name">Katie</div>
     </div>
     <div class="thumb" data-id="brandon" onclick="selectPlayer('brandon')">
-        <div class="thumb-img">
-            <span class="thumb-initials">B</span>
-            <img src="images/brandon.jpg" onerror="this.remove()">
-        </div>
+        <div class="thumb-img"><span class="thumb-initials">B</span><img src="images/brandon.png" onerror="this.remove()"></div>
         <div class="thumb-name">Brandon</div>
     </div>
     <div class="thumb" data-id="ashton" onclick="selectPlayer('ashton')">
-        <div class="thumb-img">
-            <span class="thumb-initials">A</span>
-            <img src="images/ashton.jpg" onerror="this.remove()">
-        </div>
+        <div class="thumb-img"><span class="thumb-initials">A</span><img src="images/ashton.png" onerror="this.remove()"></div>
         <div class="thumb-name">Ashton</div>
     </div>
 </div>
@@ -333,15 +288,15 @@
             </div>
         </div>
         <div class="stats-row">
-            <div class="stat"><div class="stat-label">Level</div><input class="stat-input" data-field="level" placeholder="—"></div>
-            <div class="stat"><div class="stat-label">HP</div><input class="stat-input" data-field="hp" placeholder="—"></div>
-            <div class="stat"><div class="stat-label">XP</div><input class="stat-input" data-field="xp" placeholder="—"></div>
-            <div class="stat"><div class="stat-label">Speed</div><input class="stat-input" data-field="speed" placeholder="—"></div>
-            <div class="stat"><div class="stat-label">Size</div><input class="stat-input" data-field="size" placeholder="—"></div>
-            <div class="stat"><div class="stat-label">AC</div><input class="stat-input" data-field="ac" placeholder="—"></div>
+            <div class="stat"><div class="stat-label">Level</div><input class="stat-input" data-field="level" placeholder="—"><div class="stat-adj"><button onclick="adj(this,-1)">−</button><button onclick="adj(this,1)">+</button></div></div>
+            <div class="stat"><div class="stat-label">HP</div><input class="stat-input" data-field="hp" placeholder="—"><div class="stat-adj"><button onclick="adj(this,-1)">−</button><button onclick="adj(this,1)">+</button></div></div>
+            <div class="stat"><div class="stat-label">XP</div><input class="stat-input" data-field="xp" placeholder="—"><div class="stat-adj"><button onclick="adj(this,-1)">−</button><button onclick="adj(this,1)">+</button></div></div>
+            <div class="stat"><div class="stat-label">Speed</div><input class="stat-input" data-field="speed" placeholder="—"><div class="stat-adj"><button onclick="adj(this,-1)">−</button><button onclick="adj(this,1)">+</button></div></div>
+            <div class="stat"><div class="stat-label">Size</div><input class="stat-input" data-field="size" placeholder="—"><div class="stat-adj"><button onclick="adj(this,-1)">−</button><button onclick="adj(this,1)">+</button></div></div>
+            <div class="stat"><div class="stat-label">AC</div><input class="stat-input" data-field="ac" placeholder="—"><div class="stat-adj"><button onclick="adj(this,-1)">−</button><button onclick="adj(this,1)">+</button></div></div>
         </div>
         <div class="grid">
-            <div class="box"><div class="box-label">Boons</div><textarea data-field="boons" placeholder="Active boons…">Lucky Charm — reroll any attack/check/save, must use new roll. Uses: 3 (☐ ☐ ☐)</textarea></div>
+            <div class="box"><div class="box-label">Boons</div><textarea data-field="boons">Lucky Charm — reroll any attack/check/save, must use new roll. Uses: 3 (☐ ☐ ☐)</textarea></div>
             <div class="box"><div class="box-label">Gear &amp; Equipment</div><textarea data-field="gear" placeholder="Items, weapons, armor…"></textarea></div>
             <div class="box"><div class="box-label">Class Features</div><textarea data-field="classFeatures" placeholder="Key class abilities…"></textarea></div>
             <div class="box"><div class="box-label">Species Traits</div><textarea data-field="speciesTraits" placeholder="Racial/species traits…"></textarea></div>
@@ -361,15 +316,15 @@
             </div>
         </div>
         <div class="stats-row">
-            <div class="stat"><div class="stat-label">Level</div><input class="stat-input" data-field="level" placeholder="—"></div>
-            <div class="stat"><div class="stat-label">HP</div><input class="stat-input" data-field="hp" placeholder="—"></div>
-            <div class="stat"><div class="stat-label">XP</div><input class="stat-input" data-field="xp" placeholder="—"></div>
-            <div class="stat"><div class="stat-label">Speed</div><input class="stat-input" data-field="speed" placeholder="—"></div>
-            <div class="stat"><div class="stat-label">Size</div><input class="stat-input" data-field="size" placeholder="—"></div>
-            <div class="stat"><div class="stat-label">AC</div><input class="stat-input" data-field="ac" placeholder="—"></div>
+            <div class="stat"><div class="stat-label">Level</div><input class="stat-input" data-field="level" placeholder="—"><div class="stat-adj"><button onclick="adj(this,-1)">−</button><button onclick="adj(this,1)">+</button></div></div>
+            <div class="stat"><div class="stat-label">HP</div><input class="stat-input" data-field="hp" placeholder="—"><div class="stat-adj"><button onclick="adj(this,-1)">−</button><button onclick="adj(this,1)">+</button></div></div>
+            <div class="stat"><div class="stat-label">XP</div><input class="stat-input" data-field="xp" placeholder="—"><div class="stat-adj"><button onclick="adj(this,-1)">−</button><button onclick="adj(this,1)">+</button></div></div>
+            <div class="stat"><div class="stat-label">Speed</div><input class="stat-input" data-field="speed" placeholder="—"><div class="stat-adj"><button onclick="adj(this,-1)">−</button><button onclick="adj(this,1)">+</button></div></div>
+            <div class="stat"><div class="stat-label">Size</div><input class="stat-input" data-field="size" placeholder="—"><div class="stat-adj"><button onclick="adj(this,-1)">−</button><button onclick="adj(this,1)">+</button></div></div>
+            <div class="stat"><div class="stat-label">AC</div><input class="stat-input" data-field="ac" placeholder="—"><div class="stat-adj"><button onclick="adj(this,-1)">−</button><button onclick="adj(this,1)">+</button></div></div>
         </div>
         <div class="grid">
-            <div class="box"><div class="box-label">Boons</div><textarea data-field="boons" placeholder="Active boons…">Nature's Gift — cast one druid spell 2nd level or lower once without a spell slot. Chosen spell: ___________</textarea></div>
+            <div class="box"><div class="box-label">Boons</div><textarea data-field="boons">Nature's Gift — cast one druid spell 2nd level or lower once without a spell slot. Chosen spell: ___________</textarea></div>
             <div class="box"><div class="box-label">Gear &amp; Equipment</div><textarea data-field="gear" placeholder="Items, weapons, armor…"></textarea></div>
             <div class="box"><div class="box-label">Class Features</div><textarea data-field="classFeatures" placeholder="Key class abilities…"></textarea></div>
             <div class="box"><div class="box-label">Species Traits</div><textarea data-field="speciesTraits" placeholder="Racial/species traits…"></textarea></div>
@@ -389,15 +344,15 @@
             </div>
         </div>
         <div class="stats-row">
-            <div class="stat"><div class="stat-label">Level</div><input class="stat-input" data-field="level" placeholder="—"></div>
-            <div class="stat"><div class="stat-label">HP</div><input class="stat-input" data-field="hp" placeholder="—"></div>
-            <div class="stat"><div class="stat-label">XP</div><input class="stat-input" data-field="xp" placeholder="—"></div>
-            <div class="stat"><div class="stat-label">Speed</div><input class="stat-input" data-field="speed" placeholder="—"></div>
-            <div class="stat"><div class="stat-label">Size</div><input class="stat-input" data-field="size" placeholder="—"></div>
-            <div class="stat"><div class="stat-label">AC</div><input class="stat-input" data-field="ac" placeholder="—"></div>
+            <div class="stat"><div class="stat-label">Level</div><input class="stat-input" data-field="level" placeholder="—"><div class="stat-adj"><button onclick="adj(this,-1)">−</button><button onclick="adj(this,1)">+</button></div></div>
+            <div class="stat"><div class="stat-label">HP</div><input class="stat-input" data-field="hp" placeholder="—"><div class="stat-adj"><button onclick="adj(this,-1)">−</button><button onclick="adj(this,1)">+</button></div></div>
+            <div class="stat"><div class="stat-label">XP</div><input class="stat-input" data-field="xp" placeholder="—"><div class="stat-adj"><button onclick="adj(this,-1)">−</button><button onclick="adj(this,1)">+</button></div></div>
+            <div class="stat"><div class="stat-label">Speed</div><input class="stat-input" data-field="speed" placeholder="—"><div class="stat-adj"><button onclick="adj(this,-1)">−</button><button onclick="adj(this,1)">+</button></div></div>
+            <div class="stat"><div class="stat-label">Size</div><input class="stat-input" data-field="size" placeholder="—"><div class="stat-adj"><button onclick="adj(this,-1)">−</button><button onclick="adj(this,1)">+</button></div></div>
+            <div class="stat"><div class="stat-label">AC</div><input class="stat-input" data-field="ac" placeholder="—"><div class="stat-adj"><button onclick="adj(this,-1)">−</button><button onclick="adj(this,1)">+</button></div></div>
         </div>
         <div class="grid">
-            <div class="box"><div class="box-label">Boons</div><textarea data-field="boons" placeholder="Active boons…">Tactician's Insight — bonus action, use INT instead of STR for melee attacks for 1 min. Recharges on short/long rest.</textarea></div>
+            <div class="box"><div class="box-label">Boons</div><textarea data-field="boons">Tactician's Insight — bonus action, use INT instead of STR for melee attacks for 1 min. Recharges on short/long rest.</textarea></div>
             <div class="box"><div class="box-label">Gear &amp; Equipment</div><textarea data-field="gear" placeholder="Items, weapons, armor…"></textarea></div>
             <div class="box"><div class="box-label">Class Features</div><textarea data-field="classFeatures" placeholder="Key class abilities…"></textarea></div>
             <div class="box"><div class="box-label">Species Traits</div><textarea data-field="speciesTraits" placeholder="Racial/species traits…"></textarea></div>
@@ -417,15 +372,15 @@
             </div>
         </div>
         <div class="stats-row">
-            <div class="stat"><div class="stat-label">Level</div><input class="stat-input" data-field="level" placeholder="—"></div>
-            <div class="stat"><div class="stat-label">HP</div><input class="stat-input" data-field="hp" placeholder="—"></div>
-            <div class="stat"><div class="stat-label">XP</div><input class="stat-input" data-field="xp" placeholder="—"></div>
-            <div class="stat"><div class="stat-label">Speed</div><input class="stat-input" data-field="speed" placeholder="—"></div>
-            <div class="stat"><div class="stat-label">Size</div><input class="stat-input" data-field="size" placeholder="—"></div>
-            <div class="stat"><div class="stat-label">AC</div><input class="stat-input" data-field="ac" placeholder="—"></div>
+            <div class="stat"><div class="stat-label">Level</div><input class="stat-input" data-field="level" placeholder="—"><div class="stat-adj"><button onclick="adj(this,-1)">−</button><button onclick="adj(this,1)">+</button></div></div>
+            <div class="stat"><div class="stat-label">HP</div><input class="stat-input" data-field="hp" placeholder="—"><div class="stat-adj"><button onclick="adj(this,-1)">−</button><button onclick="adj(this,1)">+</button></div></div>
+            <div class="stat"><div class="stat-label">XP</div><input class="stat-input" data-field="xp" placeholder="—"><div class="stat-adj"><button onclick="adj(this,-1)">−</button><button onclick="adj(this,1)">+</button></div></div>
+            <div class="stat"><div class="stat-label">Speed</div><input class="stat-input" data-field="speed" placeholder="—"><div class="stat-adj"><button onclick="adj(this,-1)">−</button><button onclick="adj(this,1)">+</button></div></div>
+            <div class="stat"><div class="stat-label">Size</div><input class="stat-input" data-field="size" placeholder="—"><div class="stat-adj"><button onclick="adj(this,-1)">−</button><button onclick="adj(this,1)">+</button></div></div>
+            <div class="stat"><div class="stat-label">AC</div><input class="stat-input" data-field="ac" placeholder="—"><div class="stat-adj"><button onclick="adj(this,-1)">−</button><button onclick="adj(this,1)">+</button></div></div>
         </div>
         <div class="grid">
-            <div class="box"><div class="box-label">Boons</div><textarea data-field="boons" placeholder="Active boons…">Phoenix's Resilience — Option A: advantage on next death save. Option B: +5 temp HP until long rest. Single use (☐ Used)</textarea></div>
+            <div class="box"><div class="box-label">Boons</div><textarea data-field="boons">Phoenix's Resilience — Option A: advantage on next death save. Option B: +5 temp HP until long rest. Single use (☐ Used)</textarea></div>
             <div class="box"><div class="box-label">Gear &amp; Equipment</div><textarea data-field="gear" placeholder="Items, weapons, armor…"></textarea></div>
             <div class="box"><div class="box-label">Class Features</div><textarea data-field="classFeatures" placeholder="Key class abilities…"></textarea></div>
             <div class="box"><div class="box-label">Species Traits</div><textarea data-field="speciesTraits" placeholder="Racial/species traits…"></textarea></div>
@@ -445,15 +400,15 @@
             </div>
         </div>
         <div class="stats-row">
-            <div class="stat"><div class="stat-label">Level</div><input class="stat-input" data-field="level" placeholder="—"></div>
-            <div class="stat"><div class="stat-label">HP</div><input class="stat-input" data-field="hp" placeholder="—"></div>
-            <div class="stat"><div class="stat-label">XP</div><input class="stat-input" data-field="xp" placeholder="—"></div>
-            <div class="stat"><div class="stat-label">Speed</div><input class="stat-input" data-field="speed" placeholder="—"></div>
-            <div class="stat"><div class="stat-label">Size</div><input class="stat-input" data-field="size" placeholder="—"></div>
-            <div class="stat"><div class="stat-label">AC</div><input class="stat-input" data-field="ac" placeholder="—"></div>
+            <div class="stat"><div class="stat-label">Level</div><input class="stat-input" data-field="level" placeholder="—"><div class="stat-adj"><button onclick="adj(this,-1)">−</button><button onclick="adj(this,1)">+</button></div></div>
+            <div class="stat"><div class="stat-label">HP</div><input class="stat-input" data-field="hp" placeholder="—"><div class="stat-adj"><button onclick="adj(this,-1)">−</button><button onclick="adj(this,1)">+</button></div></div>
+            <div class="stat"><div class="stat-label">XP</div><input class="stat-input" data-field="xp" placeholder="—"><div class="stat-adj"><button onclick="adj(this,-1)">−</button><button onclick="adj(this,1)">+</button></div></div>
+            <div class="stat"><div class="stat-label">Speed</div><input class="stat-input" data-field="speed" placeholder="—"><div class="stat-adj"><button onclick="adj(this,-1)">−</button><button onclick="adj(this,1)">+</button></div></div>
+            <div class="stat"><div class="stat-label">Size</div><input class="stat-input" data-field="size" placeholder="—"><div class="stat-adj"><button onclick="adj(this,-1)">−</button><button onclick="adj(this,1)">+</button></div></div>
+            <div class="stat"><div class="stat-label">AC</div><input class="stat-input" data-field="ac" placeholder="—"><div class="stat-adj"><button onclick="adj(this,-1)">−</button><button onclick="adj(this,1)">+</button></div></div>
         </div>
         <div class="grid">
-            <div class="box"><div class="box-label">Boons</div><textarea data-field="boons" placeholder="Active boons…">Warrior's Feast — consuming food/drink/potion in combat grants advantage on next attack roll. Uses: 3 (☐ ☐ ☐)</textarea></div>
+            <div class="box"><div class="box-label">Boons</div><textarea data-field="boons">Warrior's Feast — consuming food/drink/potion in combat grants advantage on next attack roll. Uses: 3 (☐ ☐ ☐)</textarea></div>
             <div class="box"><div class="box-label">Gear &amp; Equipment</div><textarea data-field="gear" placeholder="Items, weapons, armor…"></textarea></div>
             <div class="box"><div class="box-label">Class Features</div><textarea data-field="classFeatures" placeholder="Key class abilities…"></textarea></div>
             <div class="box"><div class="box-label">Species Traits</div><textarea data-field="speciesTraits" placeholder="Racial/species traits…"></textarea></div>
@@ -473,15 +428,15 @@
             </div>
         </div>
         <div class="stats-row">
-            <div class="stat"><div class="stat-label">Level</div><input class="stat-input" data-field="level" placeholder="—"></div>
-            <div class="stat"><div class="stat-label">HP</div><input class="stat-input" data-field="hp" placeholder="—"></div>
-            <div class="stat"><div class="stat-label">XP</div><input class="stat-input" data-field="xp" placeholder="—"></div>
-            <div class="stat"><div class="stat-label">Speed</div><input class="stat-input" data-field="speed" placeholder="—"></div>
-            <div class="stat"><div class="stat-label">Size</div><input class="stat-input" data-field="size" placeholder="—"></div>
-            <div class="stat"><div class="stat-label">AC</div><input class="stat-input" data-field="ac" placeholder="—"></div>
+            <div class="stat"><div class="stat-label">Level</div><input class="stat-input" data-field="level" placeholder="—"><div class="stat-adj"><button onclick="adj(this,-1)">−</button><button onclick="adj(this,1)">+</button></div></div>
+            <div class="stat"><div class="stat-label">HP</div><input class="stat-input" data-field="hp" placeholder="—"><div class="stat-adj"><button onclick="adj(this,-1)">−</button><button onclick="adj(this,1)">+</button></div></div>
+            <div class="stat"><div class="stat-label">XP</div><input class="stat-input" data-field="xp" placeholder="—"><div class="stat-adj"><button onclick="adj(this,-1)">−</button><button onclick="adj(this,1)">+</button></div></div>
+            <div class="stat"><div class="stat-label">Speed</div><input class="stat-input" data-field="speed" placeholder="—"><div class="stat-adj"><button onclick="adj(this,-1)">−</button><button onclick="adj(this,1)">+</button></div></div>
+            <div class="stat"><div class="stat-label">Size</div><input class="stat-input" data-field="size" placeholder="—"><div class="stat-adj"><button onclick="adj(this,-1)">−</button><button onclick="adj(this,1)">+</button></div></div>
+            <div class="stat"><div class="stat-label">AC</div><input class="stat-input" data-field="ac" placeholder="—"><div class="stat-adj"><button onclick="adj(this,-1)">−</button><button onclick="adj(this,1)">+</button></div></div>
         </div>
         <div class="grid">
-            <div class="box"><div class="box-label">Boons</div><textarea data-field="boons" placeholder="Active boons…">Guardian's Inspiration — Help action or Dodge within 5ft of ally grants Inspiration. Use for advantage on any roll. Ongoing, max 1 at a time.</textarea></div>
+            <div class="box"><div class="box-label">Boons</div><textarea data-field="boons">Guardian's Inspiration — Help action or Dodge within 5ft of ally grants Inspiration. Use for advantage on any roll. Ongoing, max 1 at a time.</textarea></div>
             <div class="box"><div class="box-label">Gear &amp; Equipment</div><textarea data-field="gear" placeholder="Items, weapons, armor…"></textarea></div>
             <div class="box"><div class="box-label">Class Features</div><textarea data-field="classFeatures" placeholder="Key class abilities…"></textarea></div>
             <div class="box"><div class="box-label">Species Traits</div><textarea data-field="speciesTraits" placeholder="Racial/species traits…"></textarea></div>
@@ -497,17 +452,13 @@
 <script>
     const API = '/DD/api.php?key=players';
     const FIELDS = ['discord','level','hp','xp','speed','size','ac','boons','gear','classFeatures','speciesTraits','playerNotes','generalNotes'];
+    const PLAYERS = ['levi','jeanette','nicole','katie','brandon','ashton'];
 
     async function loadData() {
-        try { const r = await fetch(API); return r.ok ? r.json() : {}; }
-        catch { return {}; }
+        try { const r = await fetch(API); return r.ok ? r.json() : {}; } catch { return {}; }
     }
     async function storeData(data) {
-        await fetch(API, {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify(data)
-        });
+        await fetch(API, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(data) });
     }
 
     let allData = {};
@@ -524,6 +475,13 @@
             bar.className = 'save-bar visible saved';
             setTimeout(() => { bar.className = 'save-bar'; }, 1500);
         }, 600);
+    }
+
+    function adj(btn, delta) {
+        const input = btn.closest('.stat').querySelector('.stat-input');
+        const val = parseFloat(input.value) || 0;
+        input.value = val + delta;
+        input.dispatchEvent(new Event('input'));
     }
 
     function collectSheet(id) {
@@ -562,14 +520,9 @@
         document.getElementById(`sheet-${id}`).classList.add('active');
     }
 
-    const PLAYERS = ['levi','jeanette','nicole','katie','brandon','ashton'];
-
     (async () => {
         allData = await loadData();
-        PLAYERS.forEach(id => {
-            populateSheet(id, allData[id]);
-            bindSheet(id);
-        });
+        PLAYERS.forEach(id => { populateSheet(id, allData[id]); bindSheet(id); });
     })();
 </script>
 
