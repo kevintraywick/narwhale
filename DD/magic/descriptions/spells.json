@@ -1,0 +1,210 @@
+{
+  "guidance": {
+    "name": "Guidance",
+    "type": "Cantrip",
+    "classes": ["Druid", "Bard"],
+    "description": "Touch a willing creature to grant divine insight. Before the spell ends, the target can roll a d4 and add it to one ability check of its choice.",
+    "effect": "+1d4 to one ability check",
+    "limitations": "Touch range, concentration, 1 minute duration"
+  },
+  "vicious mockery": {
+    "name": "Vicious Mockery",
+    "type": "Cantrip",
+    "classes": ["Bard"],
+    "description": "Hurl magically-laced insults at a creature. On a failed WIS save, the target takes psychic damage and has disadvantage on its next attack roll.",
+    "effect": "1d4 psychic damage + disadvantage on next attack",
+    "limitations": "WIS save negates, creature must hear you, 60 ft range"
+  },
+  "mending": {
+    "name": "Mending",
+    "type": "Cantrip",
+    "classes": ["Druid", "Bard"],
+    "description": "Repair a single break or tear in an object you touch, such as a broken chain link, a shattered blade, or a torn cloak. The break can be no larger than 1 foot in any dimension.",
+    "effect": "Repairs one break or tear up to 1 ft",
+    "limitations": "Touch range, instantaneous, objects only"
+  },
+  "prestidigitation": {
+    "name": "Prestidigitation",
+    "type": "Cantrip",
+    "classes": ["Bard"],
+    "description": "Minor magical tricks: create sparks, a puff of wind, faint music, or an odd odor. Can chill, warm, or flavor up to 1 cubic foot of nonliving material for 1 hour.",
+    "effect": "Sensory effects, minor temperature/flavor changes",
+    "limitations": "10 ft range, effects are minor and cosmetic"
+  },
+  "druidcraft": {
+    "name": "Druidcraft",
+    "type": "Cantrip",
+    "classes": ["Druid"],
+    "description": "Create minor nature-themed effects: predict weather for 24 hours, make a flower bloom, create a tiny sensory effect like falling leaves or a puff of wind.",
+    "effect": "Weather prediction, plant growth, minor sensory effects",
+    "limitations": "30 ft range, effects are cosmetic, no damage"
+  },
+  "produce flame": {
+    "name": "Produce Flame",
+    "type": "Cantrip",
+    "classes": ["Druid"],
+    "description": "A flickering flame appears in your hand, shedding bright light in 10 ft and dim light for 10 more. You can hurl it as a ranged spell attack for fire damage.",
+    "effect": "1d8 fire damage (ranged attack) or light source",
+    "limitations": "30 ft range when thrown, spell ends when hurled"
+  },
+  "shillelagh": {
+    "name": "Shillelagh",
+    "type": "Cantrip",
+    "classes": ["Druid"],
+    "description": "Enchant a wooden club or quarterstaff. For 1 minute it becomes magical, deals 1d8 damage, and you use your Wisdom modifier for attack and damage rolls instead of Strength.",
+    "effect": "1d8 magical bludgeoning, use WIS for attacks",
+    "limitations": "1 minute duration, wooden weapon only, bonus action to cast"
+  },
+  "hunter's mark": {
+    "name": "Hunter's Mark",
+    "type": "1st Level",
+    "classes": ["Ranger"],
+    "description": "Mark a creature you can see. Each time you hit the marked target with a weapon attack, you deal extra damage. If the target drops to 0 HP, you can move the mark to a new creature as a bonus action.",
+    "effect": "+1d6 damage per weapon hit on marked target",
+    "limitations": "Concentration, 1 hour, 90 ft range, bonus action to cast/move"
+  },
+  "entangle": {
+    "name": "Entangle",
+    "type": "1st Level",
+    "classes": ["Druid", "Ranger"],
+    "description": "Grasping weeds and vines erupt in a 20-foot square. Creatures in the area must make a STR save or be restrained. The area becomes difficult terrain for the duration.",
+    "effect": "Restrain creatures in 20 ft square (STR save)",
+    "limitations": "Concentration, 1 minute, 90 ft range, affects allies too"
+  },
+  "goodberry": {
+    "name": "Goodberry",
+    "type": "1st Level",
+    "classes": ["Druid", "Ranger"],
+    "description": "Create up to 10 magical berries. Eating one berry restores 1 HP and provides enough nourishment to sustain a creature for one day. Berries lose potency after 24 hours.",
+    "effect": "10 berries, each heals 1 HP + full day nourishment",
+    "limitations": "Berries expire in 24 hours, action to eat one"
+  },
+  "animal friendship": {
+    "name": "Animal Friendship",
+    "type": "1st Level",
+    "classes": ["Bard", "Druid", "Ranger"],
+    "description": "Convince a beast you mean no harm. The beast must make a WIS save or be charmed by you for 24 hours. The spell ends early if you or your companions harm it.",
+    "effect": "Charm a beast for 24 hours",
+    "limitations": "WIS save, beasts only (INT 4+), broken by harm, 30 ft range"
+  },
+  "charm person": {
+    "name": "Charm Person",
+    "type": "1st Level",
+    "classes": ["Bard", "Druid"],
+    "description": "A humanoid must make a WIS save or be charmed by you for 1 hour. It regards you as a friendly acquaintance. It has advantage on the save if you're fighting it.",
+    "effect": "Charm humanoid for 1 hour",
+    "limitations": "WIS save (advantage if hostile), humanoids only, broken by harm"
+  },
+  "cure wounds": {
+    "name": "Cure Wounds",
+    "type": "1st Level",
+    "classes": ["Bard", "Druid", "Paladin"],
+    "description": "Touch a creature to restore hit points. The amount equals 1d8 plus your spellcasting ability modifier. Heals an additional 1d8 per spell slot level above 1st.",
+    "effect": "Heal 1d8 + spellcasting mod HP",
+    "limitations": "Touch range, no effect on undead or constructs"
+  },
+  "healing word": {
+    "name": "Healing Word",
+    "type": "1st Level",
+    "classes": ["Bard", "Druid"],
+    "description": "Speak a word of healing to a creature you can see within range. It regains hit points equal to 1d4 plus your spellcasting modifier. Cast as a bonus action.",
+    "effect": "Heal 1d4 + spellcasting mod HP (bonus action, ranged)",
+    "limitations": "60 ft range, no undead/constructs, bonus action"
+  },
+  "detect magic": {
+    "name": "Detect Magic",
+    "type": "1st Level",
+    "classes": ["Bard", "Druid", "Paladin", "Ranger"],
+    "description": "Sense the presence of magic within 30 feet. You can use your action to see a faint aura around any visible creature or object bearing magic, and learn its school of magic.",
+    "effect": "Detect magic within 30 ft, identify school",
+    "limitations": "Concentration, 10 minutes, blocked by 1ft stone/metal/lead"
+  },
+  "command": {
+    "name": "Command",
+    "type": "1st Level",
+    "classes": ["Paladin"],
+    "description": "Speak a one-word command to a creature. On a failed WIS save, it must follow the command on its next turn. Common commands: Approach, Drop, Flee, Grovel, Halt.",
+    "effect": "Force creature to obey one-word command",
+    "limitations": "WIS save, 60 ft range, undead immune, must understand language"
+  },
+  "bless": {
+    "name": "Bless",
+    "type": "1st Level",
+    "classes": ["Paladin"],
+    "description": "Bless up to three creatures within range. For the duration, whenever a target makes an attack roll or saving throw, it can roll a d4 and add the result.",
+    "effect": "+1d4 to attack rolls and saves for 3 targets",
+    "limitations": "Concentration, 1 minute, 30 ft range"
+  },
+  "divine favor": {
+    "name": "Divine Favor",
+    "type": "1st Level",
+    "classes": ["Paladin"],
+    "description": "Your weapon radiates divine energy. For the duration, your weapon attacks deal extra radiant damage on each hit.",
+    "effect": "+1d4 radiant damage per weapon hit",
+    "limitations": "Concentration, 1 minute, bonus action to cast"
+  },
+  "thunderwave": {
+    "name": "Thunderwave",
+    "type": "1st Level",
+    "classes": ["Bard", "Druid"],
+    "description": "A wave of thunderous force sweeps out from you. Each creature in a 15-foot cube must make a CON save or take thunder damage and be pushed 10 feet away from you.",
+    "effect": "2d8 thunder damage + push 10 ft",
+    "limitations": "CON save for half/no push, self-origin, audible 300 ft away"
+  },
+  "faerie fire": {
+    "name": "Faerie Fire",
+    "type": "1st Level",
+    "classes": ["Bard", "Druid"],
+    "description": "Objects and creatures in a 20-foot cube are outlined in blue, green, or violet light. Affected creatures can't benefit from being invisible, and attack rolls against them have advantage.",
+    "effect": "Outline creatures in light, grant advantage on attacks against them",
+    "limitations": "Concentration, 1 minute, DEX save negates, 60 ft range"
+  },
+  "speak with animals": {
+    "name": "Speak with Animals",
+    "type": "1st Level",
+    "classes": ["Bard", "Druid", "Ranger"],
+    "description": "You gain the ability to comprehend and verbally communicate with beasts for the duration. Their intelligence limits the information they can share.",
+    "effect": "Communicate with beasts for 10 minutes",
+    "limitations": "Beasts only, limited by animal intelligence, ritual"
+  },
+  "fog cloud": {
+    "name": "Fog Cloud",
+    "type": "1st Level",
+    "classes": ["Druid", "Ranger"],
+    "description": "Create a 20-foot-radius sphere of fog centered on a point within range. The area is heavily obscured. Wind of 10+ mph disperses it.",
+    "effect": "20 ft radius heavily obscured area",
+    "limitations": "Concentration, 1 hour, 120 ft range, wind disperses"
+  },
+  "sleep": {
+    "name": "Sleep",
+    "type": "1st Level",
+    "classes": ["Bard"],
+    "description": "Roll 5d8; the total is the HP of creatures this spell can affect. Starting with the lowest-HP creature in range, each falls unconscious until the spell ends or they take damage.",
+    "effect": "Put creatures to sleep (5d8 HP worth)",
+    "limitations": "90 ft range, undead/elves immune, lowest HP affected first"
+  },
+  "heroism": {
+    "name": "Heroism",
+    "type": "1st Level",
+    "classes": ["Bard", "Paladin"],
+    "description": "Touch a willing creature and imbue it with bravery. For the duration, the creature is immune to being frightened and gains temporary HP equal to your spellcasting modifier at the start of each of its turns.",
+    "effect": "Immune to frightened + temp HP each turn",
+    "limitations": "Concentration, 1 minute, touch range"
+  },
+  "dissonant whispers": {
+    "name": "Dissonant Whispers",
+    "type": "1st Level",
+    "classes": ["Bard"],
+    "description": "Whisper a discordant melody only the target can hear. On a failed WIS save, the target takes psychic damage and must use its reaction to move away from you.",
+    "effect": "3d6 psychic damage + forced movement away",
+    "limitations": "WIS save for half/no movement, 60 ft, must hear you"
+  },
+  "shield of faith": {
+    "name": "Shield of Faith",
+    "type": "1st Level",
+    "classes": ["Paladin"],
+    "description": "A shimmering field appears around a creature of your choice within range, granting it a +2 bonus to AC for the duration.",
+    "effect": "+2 AC for one creature",
+    "limitations": "Concentration, 10 minutes, 60 ft range, bonus action"
+  }
+}

@@ -4,6 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>D&amp;D</title>
+  <link rel="stylesheet" href="/DD/strip.css" />
   <style>
     :root {
       --bg: #2a3140;
@@ -45,29 +46,6 @@
       transition: color 0.15s, border-color 0.15s;
     }
     nav a:hover, nav a.active { color: var(--gold); border-color: var(--gold); }
-    .sess-strip {
-      display: flex;
-      gap: 0.4rem;
-      padding: 0.35rem 1.25rem;
-      background: var(--bg);
-      border-bottom: 1px solid var(--border);
-      overflow-x: auto;
-      flex-wrap: nowrap;
-      scrollbar-width: none;
-    }
-    .sess-strip::-webkit-scrollbar { display: none; }
-    .sess-strip a {
-      color: var(--muted);
-      text-decoration: none;
-      font-size: 0.75rem;
-      padding: 0.2rem 0.55rem;
-      border: 1px solid transparent;
-      border-radius: 3px;
-      white-space: nowrap;
-      flex-shrink: 0;
-      transition: color 0.15s, border-color 0.15s;
-    }
-    .sess-strip a:hover { color: var(--gold); border-color: var(--border); }
     .section-header {
       display: flex;
       justify-content: space-between;
@@ -96,7 +74,7 @@
     .btn:hover { opacity: 0.85; }
     .sess-item { display: flex; align-items: center; gap: 0.3rem; }
     .session-btn {
-      background: rgba(192,57,43,0.55);
+      background: rgba(139,26,26,0.55);
       color: #fff;
       border: none;
       padding: 0.35rem 0.9rem;
@@ -110,7 +88,7 @@
       white-space: nowrap;
       flex: 1;
     }
-    .session-btn:hover { background: rgba(192,57,43,0.85); }
+    .session-btn:hover { background: rgba(139,26,26,0.85); }
     .sess-del {
       background: none;
       border: none;
@@ -156,14 +134,15 @@
 </head>
 <body>
   <header style="width:100vw;height:138vh;position:relative;left:50%;right:50%;margin-left:-50vw;margin-right:-50vw;background:#2a3140;overflow:hidden;margin-bottom:2rem;">
-    <img src="SOTW_splash.png" alt="Secrets of the Wilds" style="width:100%;height:100%;object-fit:contain;object-position:center top;display:block;transform:translateY(-50px);">
+    <img src="SOTW_splash.png" alt="Shadow of the Wolf campaign splash art" style="width:100%;height:100%;object-fit:contain;object-position:center top;display:block;transform:translateY(-50px);">
     <nav style="position:absolute;top:1rem;left:1rem;display:flex;flex-direction:column;gap:0.5rem;max-height:calc(100% - 2rem);overflow-y:auto;">
-      <button class="btn" onclick="newSession()" style="margin-bottom:20px;">+ New Session</button>
+      <button class="btn" onclick="newSession()" style="margin-bottom:20px;background:#6b7d8e;">+ New Session</button>
       <a href="index.html" class="btn">Sessions</a>
       <div id="session-list" style="display:flex;flex-direction:column;gap:0.35rem;margin-top:0.25rem;padding-left:20px;"></div>
       <a href="players/players.html" class="btn" style="margin-top:20px;" onclick="playHowl()">Players</a>
       <a href="/DD/npcs/" class="btn" style="margin-top:20px;">NPCs</a>
       <a href="maps/" class="btn" style="margin-top:20px;">Maps</a>
+      <a href="magic/" class="btn" style="margin-top:20px;">Magic</a>
       <audio id="howl" src="audio/wolf-howl.mp3" preload="auto"></audio>
     </nav>
   </header>
@@ -171,6 +150,7 @@
   <div class="sess-strip" id="sess-strip"></div>
 
   <script src="https://cdn.jsdelivr.net/npm/sortablejs@1.15.0/Sortable.min.js"></script>
+  <script src="/DD/strip.js"></script>
   <script>
     const API = '/DD/api.php?key=sessions';
 
@@ -249,19 +229,6 @@
 
     render();
 
-    // Session strip
-    (async () => {
-      try {
-        const sessions = await load();
-        const strip = document.getElementById('sess-strip');
-        sessions.forEach(s => {
-          const a = document.createElement('a');
-          a.href = `session.html?id=${s.id}`;
-          a.textContent = s.title || `Session ${s.number}`;
-          strip.appendChild(a);
-        });
-      } catch {}
-    })();
   </script>
 </body>
 </html>

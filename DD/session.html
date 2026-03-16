@@ -4,6 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Session Prep</title>
+  <link rel="stylesheet" href="/DD/strip.css" />
   <style>
     :root {
       --bg: #1a1614;
@@ -40,30 +41,6 @@
       color: var(--muted);
     }
     .save-status.saved { color: #5a8a5a; }
-    .sess-strip {
-      display: flex;
-      gap: 0.4rem;
-      padding: 0.35rem 1.25rem;
-      background: var(--bg);
-      border-bottom: 1px solid var(--border);
-      overflow-x: auto;
-      flex-wrap: nowrap;
-      scrollbar-width: none;
-    }
-    .sess-strip::-webkit-scrollbar { display: none; }
-    .sess-strip a {
-      color: var(--muted);
-      text-decoration: none;
-      font-size: 0.75rem;
-      padding: 0.2rem 0.55rem;
-      border: 1px solid transparent;
-      border-radius: 3px;
-      white-space: nowrap;
-      flex-shrink: 0;
-      transition: color 0.15s, border-color 0.15s;
-    }
-    .sess-strip a:hover { color: var(--gold); border-color: var(--border); }
-    .sess-strip a.active { color: var(--gold); border-color: var(--gold); }
     .content {
       max-width: 860px;
       margin: 0 auto;
@@ -155,6 +132,7 @@
     <a href="/DD/npcs/">NPCs</a>
     <a href="players/players.html">Players</a>
     <a href="maps/">Maps</a>
+    <a href="magic/">Magic</a>
     <span class="save-status" id="save-status">saved</span>
   </div>
 
@@ -203,24 +181,11 @@
     </div>
   </div>
 
+  <script src="/DD/strip.js"></script>
   <script>
     const API = '/DD/api.php?key=sessions';
     const id = new URLSearchParams(location.search).get('id');
 
-    (async () => {
-      try {
-        const r = await fetch(API);
-        const sessions = r.ok ? await r.json() : [];
-        const strip = document.getElementById('sess-strip');
-        sessions.forEach(s => {
-          const a = document.createElement('a');
-          a.href = `session.html?id=${s.id}`;
-          a.textContent = s.title || `Session ${s.number}`;
-          if (s.id === id) a.classList.add('active');
-          strip.appendChild(a);
-        });
-      } catch {}
-    })();
 
     async function load() {
       try { const r = await fetch(API); return r.ok ? r.json() : []; }
@@ -263,6 +228,11 @@
         document.getElementById(elId).value = session[key] || '';
       });
 
+      // NOTE: Autosave uses a read-modify-write pattern — it fetches all sessions,
+      // updates this session in the array, then saves the whole array back.
+      // This assumes a single writer at a time. If the same session is open in
+      // two tabs simultaneously, the last save wins and the other tab's changes
+      // will be silently overwritten.
       let timer;
       function autosave() {
         const status = document.getElementById('save-status');

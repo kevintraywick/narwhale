@@ -1,0 +1,130 @@
+{
+  "lay on hands": {
+    "name": "Lay on Hands",
+    "type": "Paladin Feature",
+    "class": "Paladin",
+    "description": "You have a pool of healing power that replenishes on a long rest. As an action, touch a creature and draw from the pool to restore HP. Spend 5 points from the pool to cure one disease or neutralize one poison.",
+    "effect": "Heal from pool of 5 × paladin level HP; cure disease/poison for 5 HP",
+    "limitations": "Touch range, pool depletes, long rest to refill"
+  },
+  "divine sense": {
+    "name": "Divine Sense",
+    "type": "Paladin Feature",
+    "class": "Paladin",
+    "description": "As an action, you can detect celestials, fiends, and undead within 60 feet that aren't behind total cover. You know the type but not identity. Also detects consecrated or desecrated ground.",
+    "effect": "Detect celestials, fiends, undead within 60 ft",
+    "limitations": "1 + CHA mod uses per long rest, action to use, 60 ft range"
+  },
+  "divine smite": {
+    "name": "Divine Smite",
+    "type": "Paladin Feature",
+    "class": "Paladin",
+    "description": "When you hit a creature with a melee weapon attack, you can expend a spell slot to deal extra radiant damage. The damage increases by 1d8 per slot level, plus 1d8 extra against undead/fiends.",
+    "effect": "2d8 radiant damage (1st slot) + 1d8 per higher slot level",
+    "limitations": "Melee only, costs spell slot, max 5d8 extra damage"
+  },
+  "second wind": {
+    "name": "Second Wind",
+    "type": "Fighter Feature",
+    "class": "Fighter",
+    "description": "You have a limited well of stamina you can draw on to protect yourself. As a bonus action, regain hit points equal to 1d10 plus your fighter level.",
+    "effect": "Heal 1d10 + fighter level HP as bonus action",
+    "limitations": "Once per short or long rest"
+  },
+  "action surge": {
+    "name": "Action Surge",
+    "type": "Fighter Feature",
+    "class": "Fighter",
+    "description": "You can push yourself beyond your normal limits for a moment. Take one additional action on top of your regular action and any bonus action.",
+    "effect": "One additional action this turn",
+    "limitations": "Once per short or long rest, no extra bonus action"
+  },
+  "fighting style": {
+    "name": "Fighting Style",
+    "type": "Class Feature",
+    "class": "Fighter, Ranger, Paladin",
+    "description": "A specialized combat technique. Archery: +2 ranged attacks. Defense: +1 AC. Dueling: +2 damage one-handed. Great Weapon: reroll 1s/2s on damage. Two-Weapon: add mod to off-hand.",
+    "effect": "Permanent combat bonus (varies by style chosen)",
+    "limitations": "Choose one style, cannot take the same style twice"
+  },
+  "wild shape": {
+    "name": "Wild Shape",
+    "type": "Druid Feature",
+    "class": "Druid",
+    "description": "As an action, magically assume the shape of a beast you have seen before. You gain the beast's HP, physical stats, and natural abilities. You can't cast spells while transformed.",
+    "effect": "Transform into beast (CR 1/4 at level 2, CR 1/2 at level 4)",
+    "limitations": "2 uses per short rest, 1 hour duration, no spellcasting, no flying/swimming at low levels"
+  },
+  "bardic inspiration": {
+    "name": "Bardic Inspiration",
+    "type": "Bard Feature",
+    "class": "Bard",
+    "description": "As a bonus action, choose a creature within 60 ft that can hear you. It gains a Bardic Inspiration die (d6). Within 10 minutes, it can add the die to one ability check, attack roll, or saving throw.",
+    "effect": "Grant d6 to add to one check, attack, or save",
+    "limitations": "CHA mod uses per long rest, 60 ft range, 10 min duration"
+  },
+  "jack of all trades": {
+    "name": "Jack of All Trades",
+    "type": "Bard Feature",
+    "class": "Bard",
+    "description": "Add half your proficiency bonus (rounded down) to any ability check you make that doesn't already include your proficiency bonus. Applies to initiative rolls too.",
+    "effect": "+1 to all non-proficient ability checks (at level 2-4)",
+    "limitations": "Passive, doesn't stack with proficiency"
+  },
+  "song of rest": {
+    "name": "Song of Rest",
+    "type": "Bard Feature",
+    "class": "Bard",
+    "description": "During a short rest, if you or any friendly creature who can hear your performance regains HP by spending Hit Dice, each gains an extra 1d6 HP.",
+    "effect": "+1d6 HP when spending Hit Dice during short rest",
+    "limitations": "Short rest only, creatures must hear you"
+  },
+  "expertise": {
+    "name": "Expertise",
+    "type": "Bard Feature",
+    "class": "Bard",
+    "description": "Choose two skills you're proficient in. Your proficiency bonus is doubled for any ability check using those skills. Effectively makes you exceptional at your best skills.",
+    "effect": "Double proficiency bonus on 2 chosen skills",
+    "limitations": "Must already be proficient, choose at levels 1 and 10"
+  },
+  "favored enemy": {
+    "name": "Favored Enemy",
+    "type": "Ranger Feature",
+    "class": "Ranger",
+    "description": "Choose a type of favored enemy: beasts, fey, humanoids, undead, etc. You have advantage on Survival checks to track them and Intelligence checks to recall info about them.",
+    "effect": "Advantage on tracking and knowledge checks vs. chosen enemy type",
+    "limitations": "Choose one type (two humanoid races), learn one of their languages"
+  },
+  "natural explorer": {
+    "name": "Natural Explorer",
+    "type": "Ranger Feature",
+    "class": "Ranger",
+    "description": "Choose a favored terrain: forest, mountain, swamp, etc. When traveling in that terrain, you gain benefits: difficult terrain doesn't slow your group, you can't become lost, you remain alert to danger even while foraging.",
+    "effect": "Travel and survival bonuses in chosen terrain",
+    "limitations": "Choose one terrain type, benefits only apply there"
+  },
+  "primeval awareness": {
+    "name": "Primeval Awareness",
+    "type": "Ranger Feature",
+    "class": "Ranger",
+    "description": "Expend a spell slot to sense whether aberrations, celestials, dragons, elementals, fey, fiends, or undead are present within 1 mile (6 miles in favored terrain).",
+    "effect": "Detect creature types within 1-6 miles",
+    "limitations": "Costs a spell slot, 1 action per minute of concentration, no pinpoint location"
+  },
+  "rage": {
+    "name": "Rage",
+    "type": "Barbarian Feature",
+    "class": "Barbarian",
+    "description": "Enter a battle fury as a bonus action. While raging, you gain bonus damage on STR-based melee attacks, advantage on STR checks and saves, and resistance to bludgeoning, piercing, and slashing damage.",
+    "effect": "+2 melee damage, advantage on STR, resistance to physical damage",
+    "limitations": "1 minute, can't cast spells, ends if you don't attack or take damage, limited uses per long rest"
+  },
+  "sneak attack": {
+    "name": "Sneak Attack",
+    "type": "Rogue Feature",
+    "class": "Rogue",
+    "description": "Once per turn, deal extra damage when you hit with a finesse or ranged weapon and have advantage on the attack roll, or when an ally is within 5 ft of the target.",
+    "effect": "+1d6 damage at level 1 (increases by 1d6 every 2 levels)",
+    "limitations": "Once per turn, need advantage or adjacent ally, finesse/ranged weapon only"
+  }
+}

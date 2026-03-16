@@ -1,0 +1,666 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Magic</title>
+    <link rel="stylesheet" href="/DD/strip.css" />
+    <style>
+        :root {
+            --bg: #1a1614;
+            --surface: #231f1c;
+            --border: #3d3530;
+            --gold: #c9a84c;
+            --accent: #8b1a1a;
+            --text: #e8ddd0;
+            --muted: #8a7d6e;
+            --green: #5a8a5a;
+            /* Category colors — each box gets a subtle tint so the DM
+               can quickly distinguish spell vs curse vs item vs power */
+            --spell-color: #4a7a9a;
+            --curse-color: #8a3a5a;
+            --item-color: #6a8a4a;
+            --power-color: #9a7a3a;
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+
+        body {
+            background: var(--bg);
+            font-family: 'Georgia', serif;
+            min-height: 100vh;
+            color: var(--text);
+        }
+
+        /* ── Nav ── */
+        .dd-nav {
+            display: flex;
+            gap: 0.75rem;
+            padding: 0.75rem 1.25rem;
+            background: var(--bg);
+            border-bottom: 1px solid var(--border);
+        }
+        .dd-nav a {
+            color: var(--muted);
+            text-decoration: none;
+            font-size: 0.85rem;
+            padding: 0.3rem 0.8rem;
+            border: 1px solid var(--border);
+            border-radius: 4px;
+            transition: color 0.15s, border-color 0.15s;
+        }
+        .dd-nav a:hover { color: var(--gold); border-color: var(--gold); }
+
+
+        /* ── Circle gallery (recently looked-up magic) ── */
+        .gallery-wrap {
+            background: var(--surface);
+            border-bottom: 1px solid var(--border);
+            padding: 1rem 1.25rem;
+            min-height: 90px;
+        }
+        .gallery-label {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            font-size: 0.65rem;
+            text-transform: uppercase;
+            letter-spacing: 0.13em;
+            color: var(--muted);
+            margin-bottom: 0.6rem;
+        }
+        .gallery-clear-btn {
+            background: none;
+            border: none;
+            color: var(--border);
+            font-family: inherit;
+            font-size: 0.65rem;
+            text-transform: uppercase;
+            letter-spacing: 0.13em;
+            cursor: pointer;
+            transition: color 0.15s;
+            padding: 0;
+        }
+        .gallery-clear-btn:hover { color: var(--muted); }
+        .gallery {
+            display: flex;
+            gap: 0.8rem;
+            flex-wrap: wrap;
+            align-items: flex-start;
+        }
+        .gallery-empty {
+            color: var(--muted);
+            font-style: italic;
+            font-size: 0.85rem;
+            padding: 0.5rem 0;
+        }
+
+        /* Each circle in the gallery */
+        .magic-circle {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.3rem;
+            cursor: pointer;
+            position: relative;
+        }
+        .magic-circle-del {
+            position: absolute;
+            top: -4px;
+            right: -4px;
+            background: var(--border);
+            border: none;
+            color: var(--muted);
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            font-size: 0.6rem;
+            cursor: pointer;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            line-height: 1;
+            transition: background 0.15s, color 0.15s;
+        }
+        .magic-circle:hover .magic-circle-del { display: flex; }
+        .magic-circle-del:hover { background: var(--accent); color: #fff; }
+        .magic-circle-ring {
+            width: 56px;
+            height: 56px;
+            border-radius: 50%;
+            border: 3px solid var(--border);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            color: var(--muted);
+            transition: border-color 0.15s, transform 0.15s;
+            background: #2e2825;
+        }
+        .magic-circle:hover .magic-circle-ring {
+            transform: scale(1.08);
+        }
+        .magic-circle.active .magic-circle-ring {
+            box-shadow: 0 0 0 2px var(--gold);
+        }
+        /* Category-specific border colors */
+        .magic-circle[data-cat="spells"] .magic-circle-ring { border-color: var(--spell-color); }
+        .magic-circle[data-cat="curses"] .magic-circle-ring { border-color: var(--curse-color); }
+        .magic-circle[data-cat="items"] .magic-circle-ring  { border-color: var(--item-color); }
+        .magic-circle[data-cat="powers"] .magic-circle-ring { border-color: var(--power-color); }
+
+        .magic-circle-name {
+            font-size: 0.6rem;
+            color: var(--muted);
+            text-align: center;
+            max-width: 64px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+        .magic-circle.active .magic-circle-name { color: var(--gold); }
+
+        /* ── Main layout: inputs left, description right ── */
+        .main-wrap {
+            max-width: 960px;
+            margin: 0 auto;
+            padding: 1.25rem 1rem 4rem;
+            display: flex;
+            gap: 1rem;
+            align-items: flex-start;
+        }
+
+        /* Left column: 4 stacked input boxes */
+        .input-col {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+            width: 280px;
+            flex-shrink: 0;
+        }
+
+        .input-box {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            padding: 0.65rem 0.85rem;
+            transition: border-color 0.15s;
+        }
+        .input-box:focus-within { border-color: var(--gold); }
+
+        .input-box-label {
+            font-size: 0.6rem;
+            text-transform: uppercase;
+            letter-spacing: 0.13em;
+            margin-bottom: 0.35rem;
+        }
+        /* Color-code each label to match its category */
+        .input-box[data-cat="spells"] .input-box-label  { color: var(--spell-color); }
+        .input-box[data-cat="curses"] .input-box-label  { color: var(--curse-color); }
+        .input-box[data-cat="items"] .input-box-label   { color: var(--item-color); }
+        .input-box[data-cat="powers"] .input-box-label  { color: var(--power-color); }
+
+        .input-box input {
+            width: 100%;
+            background: transparent;
+            border: none;
+            border-bottom: 1px solid var(--border);
+            color: var(--text);
+            font-family: inherit;
+            font-size: 0.9rem;
+            padding-bottom: 0.2rem;
+            outline: none;
+        }
+        .input-box input::placeholder { color: #4a403a; }
+        .input-box input:focus { border-bottom-color: var(--gold); }
+        .input-box .hint {
+            font-size: 0.65rem;
+            color: var(--muted);
+            margin-top: 0.3rem;
+            font-style: italic;
+        }
+
+        /* Right column: description panel */
+        .desc-col {
+            flex: 1;
+            min-width: 0;
+        }
+
+        .desc-panel {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            padding: 1.1rem 1.25rem;
+            min-height: 320px;
+        }
+
+        .desc-empty {
+            color: var(--muted);
+            font-style: italic;
+            padding: 2rem 0;
+            text-align: center;
+        }
+
+        .desc-header {
+            display: flex;
+            align-items: baseline;
+            gap: 0.75rem;
+            margin-bottom: 0.75rem;
+            flex-wrap: wrap;
+        }
+        .desc-name {
+            font-size: 1.3rem;
+            font-weight: bold;
+            color: var(--gold);
+            letter-spacing: 0.04em;
+        }
+        .desc-type {
+            font-size: 0.78rem;
+            color: var(--muted);
+            border: 1px solid var(--border);
+            padding: 0.15rem 0.5rem;
+            border-radius: 3px;
+        }
+        .desc-classes {
+            font-size: 0.75rem;
+            color: var(--muted);
+        }
+
+        .desc-body {
+            font-size: 0.92rem;
+            line-height: 1.65;
+            color: var(--text);
+            margin-bottom: 1rem;
+        }
+
+        .desc-row {
+            display: flex;
+            gap: 0.5rem;
+            margin-bottom: 0.5rem;
+        }
+        .desc-row-label {
+            font-size: 0.65rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--muted);
+            min-width: 80px;
+            padding-top: 0.15rem;
+        }
+        .desc-row-value {
+            font-size: 0.88rem;
+            color: var(--text);
+            line-height: 1.5;
+        }
+
+        /* ── Save bar ── */
+        .save-bar {
+            position: fixed;
+            bottom: 1rem;
+            right: 1rem;
+            font-size: 0.78rem;
+            color: var(--muted);
+            background: var(--surface);
+            border: 1px solid var(--border);
+            padding: 0.35rem 0.75rem;
+            border-radius: 4px;
+            opacity: 0;
+            transition: opacity 0.3s;
+            z-index: 100;
+        }
+        .save-bar.visible { opacity: 1; }
+        .save-bar.saved { color: var(--green); }
+
+        /* ── Responsive: stack on narrow screens ── */
+        @media (max-width: 640px) {
+            .main-wrap { flex-direction: column; }
+            .input-col { width: 100%; }
+        }
+    </style>
+</head>
+<body>
+
+<nav class="dd-nav">
+    <a href="/DD/index.html">Sessions</a>
+    <a href="/DD/npcs/">NPCs</a>
+    <a href="/DD/players/players.html">Players</a>
+    <a href="/DD/maps/">Maps</a>
+    <a href="/DD/magic/">Magic</a>
+</nav>
+
+<div class="sess-strip" id="sess-strip"></div>
+
+<!-- Circle gallery: recent lookups appear here -->
+<div class="gallery-wrap">
+    <div class="gallery-label">
+        Quick Reference
+        <button class="gallery-clear-btn" id="gallery-clear-btn" onclick="clearHistory()" style="display:none">Clear all</button>
+    </div>
+    <div class="gallery" id="gallery">
+        <div class="gallery-empty" id="gallery-empty">
+            Type a spell, curse, item, or power name below and press Enter…
+        </div>
+    </div>
+</div>
+
+<div class="main-wrap">
+
+    <!-- Left: 4 stacked input boxes -->
+    <div class="input-col">
+        <div class="input-box" data-cat="spells">
+            <div class="input-box-label">Spells</div>
+            <input type="text" id="input-spells" placeholder="Enter spell name…"
+                   data-cat="spells" autocomplete="off">
+            <div class="hint">Press Enter to look up</div>
+        </div>
+        <div class="input-box" data-cat="curses">
+            <div class="input-box-label">Curses</div>
+            <input type="text" id="input-curses" placeholder="Enter curse name…"
+                   data-cat="curses" autocomplete="off">
+            <div class="hint">Press Enter to look up</div>
+        </div>
+        <div class="input-box" data-cat="items">
+            <div class="input-box-label">Items</div>
+            <input type="text" id="input-items" placeholder="Enter item name…"
+                   data-cat="items" autocomplete="off">
+            <div class="hint">Press Enter to look up</div>
+        </div>
+        <div class="input-box" data-cat="powers">
+            <div class="input-box-label">Powers</div>
+            <input type="text" id="input-powers" placeholder="Enter power name…"
+                   data-cat="powers" autocomplete="off">
+            <div class="hint">Press Enter to look up</div>
+        </div>
+    </div>
+
+    <!-- Right: description display -->
+    <div class="desc-col">
+        <div class="desc-panel" id="desc-panel">
+            <div class="desc-empty" id="desc-empty">
+                Select a circle above or enter a name to see its description here.
+            </div>
+            <div id="desc-content" style="display:none;"></div>
+        </div>
+    </div>
+
+</div>
+
+<div class="save-bar" id="save-bar">saved</div>
+
+<script>
+    /* ================================================================
+       MAGIC PAGE — Quick Reference for DMs
+
+       How it works:
+       1. Preloaded descriptions live in magic/descriptions/*.json
+          (one file per category: spells, curses, items, powers)
+       2. When the DM types a name and presses Enter, we look it up
+          in the preloaded data first (instant)
+       3. If not found, we show "not found" with a note that the DM
+          can add it manually later
+       4. Each lookup adds a circle to the gallery at the top
+       5. Clicking a circle re-displays that description
+       6. The input clears after lookup so the next one can be entered
+
+       Data is saved to the API so circles persist across page loads.
+       ================================================================ */
+
+    const API = '/DD/api.php?key=magic';
+    const CATEGORIES = ['spells', 'curses', 'items', 'powers'];
+
+    // Icon characters for each category (shown inside circles)
+    const ICONS = {
+        spells: '✦',
+        curses: '☠',
+        items:  '◆',
+        powers: '⚡'
+    };
+
+    // Preloaded description data — loaded once on page init
+    let descData = { spells: {}, curses: {}, items: {}, powers: {} };
+
+    // History of looked-up magic (persisted via API)
+    let history = [];
+    let saveTimer;
+
+    // ── Load preloaded descriptions from JSON files ──
+    async function loadDescriptions() {
+        /* Fetch all four description files in parallel.
+           If any file is missing, we just get an empty object
+           for that category — the page still works. */
+        const results = await Promise.all(
+            CATEGORIES.map(cat =>
+                fetch(`descriptions/${cat}.json`)
+                    .then(r => r.ok ? r.json() : {})
+                    .catch(() => ({}))
+            )
+        );
+        CATEGORIES.forEach((cat, i) => { descData[cat] = results[i]; });
+    }
+
+    // ── Load saved history from API ──
+    async function loadHistory() {
+        try {
+            const r = await fetch(API);
+            const data = r.ok ? await r.json() : [];
+            /* The API returns [] for empty data. History is an array
+               of objects: { id, name, cat, desc } */
+            history = Array.isArray(data) ? data : [];
+        } catch { history = []; }
+    }
+
+    // ── Save history to API (debounced) ──
+    function saveHistory() {
+        const bar = document.getElementById('save-bar');
+        bar.textContent = 'saving…';
+        bar.className = 'save-bar visible';
+        clearTimeout(saveTimer);
+        saveTimer = setTimeout(async () => {
+            await fetch(API, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(history)
+            });
+            bar.textContent = 'saved';
+            bar.className = 'save-bar visible saved';
+            setTimeout(() => { bar.className = 'save-bar'; }, 1500);
+        }, 600);
+    }
+
+    // ── Look up a name in preloaded descriptions ──
+    function findDescription(name, category) {
+        /* Try exact match first (case-insensitive), then try
+           partial matching for convenience. This lets the DM
+           type "cure" and still find "Cure Wounds". */
+        const lowerName = name.toLowerCase().trim();
+        const data = descData[category];
+
+        // Exact match by key
+        if (data[lowerName]) return data[lowerName];
+
+        // Search all keys for a match
+        for (const key of Object.keys(data)) {
+            if (key.toLowerCase() === lowerName) return data[key];
+            if (data[key].name && data[key].name.toLowerCase() === lowerName) return data[key];
+        }
+
+        // Partial match — find entries that start with the input
+        for (const key of Object.keys(data)) {
+            if (key.toLowerCase().startsWith(lowerName)) return data[key];
+            if (data[key].name && data[key].name.toLowerCase().startsWith(lowerName)) return data[key];
+        }
+
+        // Try searching ALL categories as a fallback
+        for (const cat of CATEGORIES) {
+            if (cat === category) continue;
+            for (const key of Object.keys(descData[cat])) {
+                if (key.toLowerCase() === lowerName) return descData[cat][key];
+                if (descData[cat][key].name && descData[cat][key].name.toLowerCase() === lowerName) return descData[cat][key];
+            }
+        }
+
+        return null;
+    }
+
+    // ── Render the description panel ──
+    function showDescription(entry) {
+        const empty = document.getElementById('desc-empty');
+        const content = document.getElementById('desc-content');
+
+        if (!entry || !entry.desc) {
+            empty.style.display = '';
+            content.style.display = 'none';
+            return;
+        }
+
+        const d = entry.desc;
+        empty.style.display = 'none';
+        content.style.display = '';
+
+        const classLine = d.classes
+            ? `<div class="desc-classes">${Array.isArray(d.classes) ? d.classes.join(', ') : (d.class || '')}</div>`
+            : (d.class ? `<div class="desc-classes">${d.class}</div>` : '');
+
+        content.innerHTML = `
+            <div class="desc-header">
+                <span class="desc-name">${d.name || entry.name}</span>
+                <span class="desc-type">${d.type || entry.cat}</span>
+                ${classLine}
+            </div>
+            <div class="desc-body">${d.description || 'No description available.'}</div>
+            ${d.effect ? `
+            <div class="desc-row">
+                <div class="desc-row-label">Effect</div>
+                <div class="desc-row-value">${d.effect}</div>
+            </div>` : ''}
+            ${d.limitations ? `
+            <div class="desc-row">
+                <div class="desc-row-label">Limits</div>
+                <div class="desc-row-value">${d.limitations}</div>
+            </div>` : ''}
+            ${d.rarity ? `
+            <div class="desc-row">
+                <div class="desc-row-label">Rarity</div>
+                <div class="desc-row-value">${d.rarity}</div>
+            </div>` : ''}
+        `;
+    }
+
+    // ── Render the gallery circles ──
+    function renderGallery(activeId) {
+        const gallery = document.getElementById('gallery');
+        const emptyMsg = document.getElementById('gallery-empty');
+        const clearBtn = document.getElementById('gallery-clear-btn');
+
+        // Remove existing circles (keep the empty message)
+        gallery.querySelectorAll('.magic-circle').forEach(el => el.remove());
+
+        if (history.length === 0) {
+            emptyMsg.style.display = '';
+            clearBtn.style.display = 'none';
+            return;
+        }
+
+        emptyMsg.style.display = 'none';
+        clearBtn.style.display = '';
+
+        history.forEach(entry => {
+            const div = document.createElement('div');
+            div.className = 'magic-circle' + (entry.id === activeId ? ' active' : '');
+            div.dataset.cat = entry.cat;
+            div.dataset.id = entry.id;
+            div.innerHTML = `
+                <div class="magic-circle-ring">${ICONS[entry.cat] || '?'}</div>
+                <div class="magic-circle-name">${entry.name}</div>
+                <button class="magic-circle-del" title="Remove">✕</button>
+            `;
+            div.querySelector('.magic-circle-del').addEventListener('click', e => {
+                e.stopPropagation(); // don't also trigger the circle click
+                history = history.filter(h => h.id !== entry.id);
+                saveHistory();
+                renderGallery();
+                // If we removed the active entry, clear the description panel
+                if (entry.id === activeId) showDescription(null);
+            });
+            div.addEventListener('click', () => {
+                // Deactivate all, activate this one, show its description
+                gallery.querySelectorAll('.magic-circle').forEach(c => c.classList.remove('active'));
+                div.classList.add('active');
+                showDescription(entry);
+            });
+            gallery.appendChild(div);
+        });
+    }
+
+    // ── Clear entire gallery history ──
+    function clearHistory() {
+        if (history.length === 0) return;
+        history = [];
+        saveHistory();
+        renderGallery();
+        showDescription(null);
+    }
+
+    // ── Handle Enter key on an input ──
+    function handleLookup(category, inputEl) {
+        const name = inputEl.value.trim();
+        if (!name) return;
+
+        // Look up in preloaded data
+        const desc = findDescription(name, category);
+
+        // Create a history entry
+        const entry = {
+            id: Date.now().toString(36),
+            name: desc ? desc.name : name,
+            cat: category,
+            desc: desc || {
+                name: name,
+                type: category.slice(0, -1),  // "spells" → "spell"
+                description: `"${name}" was not found in the preloaded descriptions. You can add it to magic/descriptions/${category}.json for instant lookup next time.`,
+                effect: null,
+                limitations: null
+            }
+        };
+
+        // Add to history and save
+        history.push(entry);
+        saveHistory();
+
+        // Clear the input for the next entry
+        inputEl.value = '';
+
+        // Render gallery with the new circle active
+        renderGallery(entry.id);
+
+        // Show the description
+        showDescription(entry);
+    }
+
+    // ── Bind Enter key to all four inputs ──
+    CATEGORIES.forEach(cat => {
+        const input = document.getElementById(`input-${cat}`);
+        input.addEventListener('keydown', e => {
+            if (e.key === 'Enter') {
+                e.preventDefault();
+                handleLookup(cat, input);
+            }
+        });
+    });
+
+    // ── Init: load descriptions and history, then render ──
+    (async () => {
+        await loadDescriptions();
+        await loadHistory();
+        renderGallery();
+        // If there's history, show the most recent entry
+        if (history.length > 0) {
+            const last = history[history.length - 1];
+            renderGallery(last.id);
+            showDescription(last);
+        }
+    })();
+</script>
+<script src="/DD/strip.js"></script>
+
+</body>
+</html>

@@ -10,7 +10,7 @@
             --surface: #231f1c;
             --border: #3d3530;
             --gold: #c9a84c;
-            --accent: #c0392b;
+            --accent: #8b1a1a;
             --text: #e8ddd0;
             --muted: #8a7d6e;
             --green: #5a8a5a;
@@ -171,6 +171,7 @@
     <a href="/DD/npcs/">NPCs</a>
     <a href="/DD/players/players.html">Players</a>
     <a href="/DD/maps/" class="active">Maps</a>
+    <a href="/DD/magic/">Magic</a>
 </nav>
 
 <div class="sess-tabs-wrap">
@@ -243,7 +244,7 @@
             const div = document.createElement('div');
             div.className = 'map-box';
             const imgTag = (folder && imgFile)
-                ? `<img class="map-box-img" src="/DD/maps/${folder}/${imgFile}" alt="Map ${boxNum}">`
+                ? `<img class="map-box-img" src="/DD/maps/${folder}/${imgFile}" alt="Map ${boxNum}" loading="lazy">`
                 : '';
             div.innerHTML = `
                 ${imgTag}

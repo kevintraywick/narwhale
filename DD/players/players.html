@@ -262,31 +262,32 @@
     <a href="/DD/npcs/">NPCs</a>
     <a href="/DD/players/players.html">Players</a>
     <a href="/DD/maps/">Maps</a>
+    <a href="/DD/magic/">Magic</a>
 </nav>
 
 <div class="selector">
     <div class="thumb active" data-id="levi" onclick="selectPlayer('levi')">
-        <div class="thumb-img"><span class="thumb-initials">L</span><img src="images/levi.png" onerror="this.remove()"></div>
+        <div class="thumb-img"><span class="thumb-initials">L</span><img src="images/levi.png" loading="lazy" loading="lazy" onerror="this.remove()"></div>
         <div class="thumb-name">Levi</div>
     </div>
     <div class="thumb" data-id="jeanette" onclick="selectPlayer('jeanette')">
-        <div class="thumb-img"><span class="thumb-initials">J</span><img src="images/jeanette.png" onerror="this.remove()"></div>
+        <div class="thumb-img"><span class="thumb-initials">J</span><img src="images/jeanette.png" loading="lazy" onerror="this.remove()"></div>
         <div class="thumb-name">Jeanette</div>
     </div>
     <div class="thumb" data-id="nicole" onclick="selectPlayer('nicole')">
-        <div class="thumb-img"><span class="thumb-initials">N</span><img src="images/nicole.png" onerror="this.remove()"></div>
+        <div class="thumb-img"><span class="thumb-initials">N</span><img src="images/nicole.png" loading="lazy" onerror="this.remove()"></div>
         <div class="thumb-name">Nicole</div>
     </div>
     <div class="thumb" data-id="katie" onclick="selectPlayer('katie')">
-        <div class="thumb-img"><span class="thumb-initials">K</span><img src="images/katie.png" onerror="this.remove()"></div>
+        <div class="thumb-img"><span class="thumb-initials">K</span><img src="images/katie.png" loading="lazy" onerror="this.remove()"></div>
         <div class="thumb-name">Katie</div>
     </div>
     <div class="thumb" data-id="brandon" onclick="selectPlayer('brandon')">
-        <div class="thumb-img"><span class="thumb-initials">B</span><img src="images/brandon.png" onerror="this.remove()"></div>
+        <div class="thumb-img"><span class="thumb-initials">B</span><img src="images/brandon.png" loading="lazy" onerror="this.remove()"></div>
         <div class="thumb-name">Brandon</div>
     </div>
     <div class="thumb" data-id="ashton" onclick="selectPlayer('ashton')">
-        <div class="thumb-img"><span class="thumb-initials">A</span><img src="images/ashton.png" onerror="this.remove()"></div>
+        <div class="thumb-img"><span class="thumb-initials">A</span><img src="images/ashton.png" loading="lazy" onerror="this.remove()"></div>
         <div class="thumb-name">Ashton</div>
     </div>
 </div>
@@ -394,7 +395,7 @@
             <div class="header-top">
                 <span class="player-label">KATIE</span>
                 <span class="header-sep">/</span>
-                <span class="char-label">Lysnadra</span>
+                <span class="char-label">Lysandra</span>
                 <span class="header-sep">/</span>
                 <input class="identity-field" data-field="species" placeholder="Species…" value="Elf">
                 <span class="header-sep">·</span>
@@ -559,6 +560,61 @@
         document.querySelector(`.thumb[data-id="${id}"]`).classList.add('active');
         document.getElementById(`sheet-${id}`).classList.add('active');
     }
+
+    /* ── Interactive boon checkboxes ──
+       Boon text uses Unicode checkbox characters: ☐ (unchecked) and
+       ☑ (checked). When you click inside a boons textarea, this
+       handler finds the nearest checkbox character to the cursor
+       and toggles it. The change flows through the normal autosave
+       path since we fire an 'input' event afterward.
+
+       How it works:
+       1. Listen for clicks on any textarea with data-field="boons"
+       2. Get the cursor position (selectionStart) from the click
+       3. Search a small window around that position for ☐ or ☑
+       4. Swap the character and update the textarea value
+       5. Fire an 'input' event so autosave picks up the change
+    */
+    document.addEventListener('click', function(e) {
+        const ta = e.target;
+        // Only act on boons textareas
+        if (ta.tagName !== 'TEXTAREA' || ta.dataset.field !== 'boons') return;
+
+        const pos = ta.selectionStart;
+        const text = ta.value;
+
+        // Search within 2 characters of where the user clicked,
+        // since click position isn't always pixel-perfect
+        const searchStart = Math.max(0, pos - 2);
+        const searchEnd = Math.min(text.length, pos + 3);
+        const window = text.substring(searchStart, searchEnd);
+
+        // Find the first checkbox character in the search window
+        const uncheckedIdx = window.indexOf('☐');
+        const checkedIdx = window.indexOf('☑');
+
+        let targetIdx = -1;
+        let replacement = '';
+
+        if (uncheckedIdx !== -1 && (checkedIdx === -1 || uncheckedIdx <= checkedIdx)) {
+            targetIdx = searchStart + uncheckedIdx;
+            replacement = '☑';
+        } else if (checkedIdx !== -1) {
+            targetIdx = searchStart + checkedIdx;
+            replacement = '☐';
+        }
+
+        if (targetIdx === -1) return; // No checkbox near the click
+
+        // Swap the character
+        ta.value = text.substring(0, targetIdx) + replacement + text.substring(targetIdx + 1);
+
+        // Put the cursor right after the toggled checkbox
+        ta.selectionStart = ta.selectionEnd = targetIdx + 1;
+
+        // Trigger autosave through the normal input event path
+        ta.dispatchEvent(new Event('input'));
+    });
 
     (async () => {
         allData = await loadData();

@@ -1,0 +1,98 @@
+{
+  "potion of healing": {
+    "name": "Potion of Healing",
+    "type": "Consumable",
+    "rarity": "Common",
+    "description": "A ruby-red potion that restores health when consumed. Found throughout the world and essential for any adventurer. Drink as an action to regain hit points.",
+    "effect": "Restore 2d4 + 2 hit points",
+    "limitations": "Single use, action to drink, no effect on undead"
+  },
+  "potion of greater healing": {
+    "name": "Potion of Greater Healing",
+    "type": "Consumable",
+    "rarity": "Uncommon",
+    "description": "A more potent version of the standard healing potion, with a deeper red color and slight glow. Heals significantly more than a basic potion.",
+    "effect": "Restore 4d4 + 4 hit points",
+    "limitations": "Single use, action to drink, no effect on undead"
+  },
+  "+1 weapon": {
+    "name": "+1 Weapon",
+    "type": "Magic Weapon",
+    "rarity": "Uncommon",
+    "description": "A weapon with a faint magical enchantment. It grants a bonus to attack and damage rolls and counts as magical for overcoming resistances.",
+    "effect": "+1 to attack rolls and damage rolls, magical damage",
+    "limitations": "No attunement required"
+  },
+  "goggles of night": {
+    "name": "Goggles of Night",
+    "type": "Wondrous Item",
+    "rarity": "Uncommon",
+    "description": "Dark-lensed goggles that grant the wearer the ability to see in darkness. Useful for races without natural darkvision or in extremely dark environments.",
+    "effect": "Darkvision out to 60 feet",
+    "limitations": "No effect in magical darkness"
+  },
+  "bag of holding": {
+    "name": "Bag of Holding",
+    "type": "Wondrous Item",
+    "rarity": "Uncommon",
+    "description": "A leather bag that opens into an extradimensional space larger than its outside dimensions. Weighs 15 lb regardless of contents.",
+    "effect": "Hold up to 500 lb / 64 cubic ft, always weighs 15 lb",
+    "limitations": "Overloading or piercing ruptures it; placing inside another extradimensional space destroys both"
+  },
+  "cloak of protection": {
+    "name": "Cloak of Protection",
+    "type": "Wondrous Item",
+    "rarity": "Uncommon",
+    "description": "A shimmering cloak that subtly deflects attacks and bolsters the wearer's resistance to harmful effects.",
+    "effect": "+1 to AC and all saving throws",
+    "limitations": "Requires attunement"
+  },
+  "ring of protection": {
+    "name": "Ring of Protection",
+    "type": "Wondrous Item",
+    "rarity": "Rare",
+    "description": "A simple band that shimmers with protective magic. Grants defensive bonuses while worn.",
+    "effect": "+1 to AC and all saving throws",
+    "limitations": "Requires attunement"
+  },
+  "wand of magic missiles": {
+    "name": "Wand of Magic Missiles",
+    "type": "Wondrous Item",
+    "rarity": "Uncommon",
+    "description": "A slender crystal-tipped wand with 7 charges. Expend charges to cast Magic Missile: 1 charge per missile (up to 3). Regains 1d6+1 charges at dawn.",
+    "effect": "Cast Magic Missile (1d4+1 force per dart, auto-hit)",
+    "limitations": "7 charges, regains 1d6+1 at dawn, breaks on 0 if you roll a 1"
+  },
+  "rope of entanglement": {
+    "name": "Rope of Entanglement",
+    "type": "Wondrous Item",
+    "rarity": "Uncommon",
+    "description": "A 50-foot coil of magical rope that animates on command. Throw it at a creature to restrain it. The target can escape with a DC 15 STR or DEX check.",
+    "effect": "Restrain a creature within 20 ft",
+    "limitations": "DC 15 to escape, action to command, 20 ft range"
+  },
+  "shield +1": {
+    "name": "Shield +1",
+    "type": "Magic Armor",
+    "rarity": "Uncommon",
+    "description": "A shield with a faint magical enchantment that provides additional protection beyond a normal shield.",
+    "effect": "+3 to AC total (base +2 plus +1 magical)",
+    "limitations": "Requires shield proficiency, occupies one hand"
+  },
+  "spell scroll": {
+    "name": "Spell Scroll",
+    "type": "Consumable",
+    "rarity": "Varies",
+    "description": "A parchment inscribed with a spell. If the spell is on your class's spell list, you can read it to cast the spell without components. The scroll crumbles after use.",
+    "effect": "Cast one spell without using a spell slot",
+    "limitations": "Single use, must be on your class list, DC check if higher level than you can cast"
+  },
+  "amulet of proof against detection": {
+    "name": "Amulet of Proof Against Detection",
+    "type": "Wondrous Item",
+    "rarity": "Uncommon",
+    "description": "While wearing this amulet, you are hidden from divination magic. You can't be targeted by such magic or perceived through magical scrying sensors.",
+    "effect": "Immune to divination magic and scrying",
+    "limitations": "Requires attunement"
+  }
+}
