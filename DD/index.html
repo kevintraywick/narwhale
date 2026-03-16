@@ -9,7 +9,7 @@
       --bg: #2a3140;
       --surface: #231f1c;
       --border: #3d3530;
-      --accent: #c0392b;
+      --accent: #8b1a1a;
       --gold: #c9a84c;
       --text: #e8ddd0;
       --muted: #8a7d6e;
@@ -45,6 +45,29 @@
       transition: color 0.15s, border-color 0.15s;
     }
     nav a:hover, nav a.active { color: var(--gold); border-color: var(--gold); }
+    .sess-strip {
+      display: flex;
+      gap: 0.4rem;
+      padding: 0.35rem 1.25rem;
+      background: var(--bg);
+      border-bottom: 1px solid var(--border);
+      overflow-x: auto;
+      flex-wrap: nowrap;
+      scrollbar-width: none;
+    }
+    .sess-strip::-webkit-scrollbar { display: none; }
+    .sess-strip a {
+      color: var(--muted);
+      text-decoration: none;
+      font-size: 0.75rem;
+      padding: 0.2rem 0.55rem;
+      border: 1px solid transparent;
+      border-radius: 3px;
+      white-space: nowrap;
+      flex-shrink: 0;
+      transition: color 0.15s, border-color 0.15s;
+    }
+    .sess-strip a:hover { color: var(--gold); border-color: var(--border); }
     .section-header {
       display: flex;
       justify-content: space-between;
@@ -145,6 +168,7 @@
     </nav>
   </header>
 
+  <div class="sess-strip" id="sess-strip"></div>
 
   <script src="https://cdn.jsdelivr.net/npm/sortablejs@1.15.0/Sortable.min.js"></script>
   <script>
@@ -224,6 +248,20 @@
     }
 
     render();
+
+    // Session strip
+    (async () => {
+      try {
+        const sessions = await load();
+        const strip = document.getElementById('sess-strip');
+        sessions.forEach(s => {
+          const a = document.createElement('a');
+          a.href = `session.html?id=${s.id}`;
+          a.textContent = s.title || `Session ${s.number}`;
+          strip.appendChild(a);
+        });
+      } catch {}
+    })();
   </script>
 </body>
 </html>

@@ -43,6 +43,31 @@
         }
         .dd-nav a:hover { color: var(--gold); border-color: var(--gold); }
 
+        /* ── Session strip ── */
+        .sess-strip {
+            display: flex;
+            gap: 0.4rem;
+            padding: 0.35rem 1.25rem;
+            background: var(--bg);
+            border-bottom: 1px solid var(--border);
+            overflow-x: auto;
+            flex-wrap: nowrap;
+            scrollbar-width: none;
+        }
+        .sess-strip::-webkit-scrollbar { display: none; }
+        .sess-strip a {
+            color: var(--muted);
+            text-decoration: none;
+            font-size: 0.75rem;
+            padding: 0.2rem 0.55rem;
+            border: 1px solid transparent;
+            border-radius: 3px;
+            white-space: nowrap;
+            flex-shrink: 0;
+            transition: color 0.15s, border-color 0.15s;
+        }
+        .sess-strip a:hover { color: var(--gold); border-color: var(--border); }
+
         /* ── Selector row ── */
         .selector-wrap {
             background: var(--surface);
@@ -294,6 +319,8 @@
     <a href="/DD/maps/">Maps</a>
 </nav>
 
+<div class="sess-strip" id="sess-strip"></div>
+
 <div class="selector-wrap">
     <div class="selector" id="selector">
         <div class="add-thumb" onclick="openModal()">
@@ -478,6 +505,21 @@
         if (e.key === 'Enter') createNPC();
         if (e.key === 'Escape') closeModal();
     });
+
+    // Session strip
+    (async () => {
+        try {
+            const r = await fetch('/DD/api.php?key=sessions');
+            const sessions = r.ok ? await r.json() : [];
+            const strip = document.getElementById('sess-strip');
+            sessions.forEach(s => {
+                const a = document.createElement('a');
+                a.href = `/DD/session.html?id=${s.id}`;
+                a.textContent = s.title || `Session ${s.number}`;
+                strip.appendChild(a);
+            });
+        } catch {}
+    })();
 
     // Init
     (async () => {
