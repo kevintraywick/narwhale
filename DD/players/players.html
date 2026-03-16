@@ -128,6 +128,21 @@
         .header-sep { color: var(--border); font-size: 1.1rem; }
         .char-label { font-size: 1.1rem; font-weight: bold; color: var(--text); }
 
+        .identity-field {
+            background: transparent;
+            border: none;
+            border-bottom: 1px solid var(--border);
+            color: var(--text);
+            font-family: inherit;
+            font-size: 0.88rem;
+            outline: none;
+            padding-bottom: 0.1rem;
+            min-width: 70px;
+            width: auto;
+        }
+        .identity-field::placeholder { color: var(--border); }
+        .identity-field:focus { border-bottom-color: var(--gold); }
+
         .discord-field {
             background: transparent;
             border: none;
@@ -285,6 +300,10 @@
                 <span class="header-sep">/</span>
                 <span class="char-label">Garrick</span>
                 <span class="header-sep">/</span>
+                <input class="identity-field" data-field="species" placeholder="Species…" value="Gnome">
+                <span class="header-sep">·</span>
+                <input class="identity-field" data-field="class" placeholder="Class…" value="Ranger">
+                <span class="header-sep">/</span>
                 <input class="discord-field" data-field="discord" placeholder="Discord name…">
             </div>
         </div>
@@ -312,6 +331,10 @@
                 <span class="player-label">JEANETTE</span>
                 <span class="header-sep">/</span>
                 <span class="char-label">Eleil</span>
+                <span class="header-sep">/</span>
+                <input class="identity-field" data-field="species" placeholder="Species…" value="Elf">
+                <span class="header-sep">·</span>
+                <input class="identity-field" data-field="class" placeholder="Class…" value="Druid">
                 <span class="header-sep">/</span>
                 <input class="discord-field" data-field="discord" placeholder="Discord name…">
             </div>
@@ -341,6 +364,10 @@
                 <span class="header-sep">/</span>
                 <span class="char-label">HollyGo</span>
                 <span class="header-sep">/</span>
+                <input class="identity-field" data-field="species" placeholder="Species…" value="Goliath">
+                <span class="header-sep">·</span>
+                <input class="identity-field" data-field="class" placeholder="Class…" value="Paladin">
+                <span class="header-sep">/</span>
                 <input class="discord-field" data-field="discord" placeholder="Discord name…">
             </div>
         </div>
@@ -368,6 +395,10 @@
                 <span class="player-label">KATIE</span>
                 <span class="header-sep">/</span>
                 <span class="char-label">Lysnadra</span>
+                <span class="header-sep">/</span>
+                <input class="identity-field" data-field="species" placeholder="Species…" value="Elf">
+                <span class="header-sep">·</span>
+                <input class="identity-field" data-field="class" placeholder="Class…" value="Bard">
                 <span class="header-sep">/</span>
                 <input class="discord-field" data-field="discord" placeholder="Discord name…">
             </div>
@@ -397,6 +428,10 @@
                 <span class="header-sep">/</span>
                 <span class="char-label">Vaoker</span>
                 <span class="header-sep">/</span>
+                <input class="identity-field" data-field="species" placeholder="Species…" value="Dwarf">
+                <span class="header-sep">·</span>
+                <input class="identity-field" data-field="class" placeholder="Class…" value="Fighter">
+                <span class="header-sep">/</span>
                 <input class="discord-field" data-field="discord" placeholder="Discord name…">
             </div>
         </div>
@@ -425,6 +460,10 @@
                 <span class="header-sep">/</span>
                 <span class="char-label">Ash</span>
                 <span class="header-sep">/</span>
+                <input class="identity-field" data-field="species" placeholder="Species…" value="Human">
+                <span class="header-sep">·</span>
+                <input class="identity-field" data-field="class" placeholder="Class…" value="Fighter">
+                <span class="header-sep">/</span>
                 <input class="discord-field" data-field="discord" placeholder="Discord name…">
             </div>
         </div>
@@ -452,7 +491,7 @@
 
 <script>
     const API = '/DD/api.php?key=players';
-    const FIELDS = ['discord','level','hp','xp','speed','size','ac','boons','gear','classFeatures','speciesTraits','playerNotes','generalNotes'];
+    const FIELDS = ['discord','species','class','level','hp','xp','speed','size','ac','boons','gear','classFeatures','speciesTraits','playerNotes','generalNotes'];
     const PLAYERS = ['levi','jeanette','nicole','katie','brandon','ashton'];
 
     async function loadData() {
