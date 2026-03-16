@@ -188,6 +188,7 @@
 
     let sessions = [];
     let mapsData = {};
+    let sessNumbers = {}; // id → number
     let currentId = null;
     let saveTimer;
 
@@ -220,11 +221,12 @@
         document.querySelectorAll('.sess-tab').forEach(t => t.classList.remove('active'));
         document.querySelector(`.sess-tab[data-id="${id}"]`).classList.add('active');
         if (!mapsData[id]) mapsData[id] = emptyBoxes();
-        const imgFiles = await loadMapFiles(id);
-        renderGrid(id, imgFiles);
+        const num = sessNumbers[id];
+        const imgFiles = await loadMapFiles(num);
+        renderGrid(id, num, imgFiles);
     }
 
-    function renderGrid(id, imgFiles) {
+    function renderGrid(id, num, imgFiles) {
         imgFiles = imgFiles || {};
         const grid = document.getElementById('map-grid');
         const empty = document.getElementById('map-empty');
@@ -238,7 +240,7 @@
             const div = document.createElement('div');
             div.className = 'map-box';
             const imgTag = imgFile
-                ? `<img class="map-box-img" src="/DD/maps/images/${id}/${imgFile}" alt="Map ${boxNum}">`
+                ? `<img class="map-box-img" src="/DD/maps/images/${num}/${imgFile}" alt="Map ${boxNum}">`
                 : '';
             div.innerHTML = `
                 ${imgTag}
@@ -263,6 +265,7 @@
         if (sessions.length === 0) { empty.style.display = 'block'; return; }
 
         sessions.forEach(s => {
+            sessNumbers[s.id] = s.number;
             const btn = document.createElement('button');
             btn.className = 'sess-tab';
             btn.dataset.id = s.id;
