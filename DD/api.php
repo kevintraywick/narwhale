@@ -28,7 +28,7 @@ if ($action === 'mapfiles') {
     exit;
 }
 
-$allowed = ['sessions', 'npcs', 'party', 'players', 'npc_cards', 'maps', 'magic'];
+$allowed = ['sessions', 'npcs', 'party', 'players', 'npc_cards', 'maps', 'magic', 'marketplace'];
 $key = $_GET['key'] ?? '';
 
 if (!in_array($key, $allowed, true)) {

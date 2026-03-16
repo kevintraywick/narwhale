@@ -253,6 +253,143 @@
             min-height: 90px;
         }
         .box textarea::placeholder { color: #4a403a; }
+
+        /* ── Gear circles ── */
+        .gear-grid {
+            display: flex;
+            gap: 0.7rem;
+            flex-wrap: wrap;
+            align-items: flex-start;
+            min-height: 60px;
+        }
+        .gear-circle {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.2rem;
+            position: relative;
+            max-width: 64px;
+        }
+        .gear-ring {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            border: 2px solid var(--border);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.58rem;
+            color: var(--text);
+            text-align: center;
+            line-height: 1.1;
+            padding: 3px;
+            background: #2e2825;
+            word-break: break-word;
+            overflow: hidden;
+        }
+        .gear-circle[data-type="potion"] .gear-ring { border-color: #6a8a4a; }
+        .gear-circle[data-type="scroll"] .gear-ring { border-color: #4a7a9a; }
+        .gear-circle[data-type="gear"] .gear-ring   { border-color: #9a7a3a; }
+        .gear-circle[data-type="weapon"] .gear-ring  { border-color: #8a3a3a; }
+        .gear-name {
+            font-size: 0.52rem;
+            color: var(--muted);
+            text-align: center;
+            max-width: 60px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+        .gear-qty {
+            position: absolute;
+            top: -3px;
+            right: 0;
+            background: var(--surface);
+            border: 1px solid var(--border);
+            color: var(--muted);
+            font-size: 0.5rem;
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .gear-del {
+            position: absolute;
+            top: -4px;
+            left: 0;
+            background: var(--border);
+            border: none;
+            color: var(--muted);
+            width: 14px;
+            height: 14px;
+            border-radius: 50%;
+            font-size: 0.5rem;
+            cursor: pointer;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            line-height: 1;
+        }
+        .gear-circle:hover .gear-del { display: flex; }
+        .gear-del:hover { background: var(--red); color: #fff; }
+        .gear-add-btn {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            border: 2px dashed var(--border);
+            background: transparent;
+            color: var(--muted);
+            font-size: 1.2rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: border-color 0.15s, color 0.15s;
+        }
+        .gear-add-btn:hover { border-color: var(--gold); color: var(--gold); }
+        .gear-add-form {
+            display: none;
+            padding: 0.5rem;
+            margin-top: 0.4rem;
+            background: #1e1b18;
+            border-radius: 4px;
+        }
+        .gear-add-form.visible { display: block; }
+        .gear-add-form input, .gear-add-form select {
+            background: transparent;
+            border: 1px solid var(--border);
+            color: var(--text);
+            font-family: inherit;
+            font-size: 0.78rem;
+            padding: 0.2rem 0.4rem;
+            border-radius: 3px;
+            outline: none;
+            margin: 0.15rem;
+        }
+        .gear-add-form input:focus, .gear-add-form select:focus { border-color: var(--gold); }
+        .gear-add-form select option { background: var(--surface); }
+        .gear-form-btns {
+            display: flex;
+            gap: 0.3rem;
+            margin-top: 0.3rem;
+        }
+        .gear-form-btns button {
+            background: var(--red);
+            color: #fff;
+            border: none;
+            padding: 0.2rem 0.6rem;
+            border-radius: 3px;
+            cursor: pointer;
+            font-family: inherit;
+            font-size: 0.72rem;
+        }
+        .gear-form-btns button.cancel-gear {
+            background: transparent;
+            border: 1px solid var(--border);
+            color: var(--muted);
+        }
     </style>
 </head>
 <body>
@@ -263,6 +400,7 @@
     <a href="/DD/players/players.html">Players</a>
     <a href="/DD/maps/">Maps</a>
     <a href="/DD/magic/">Magic</a>
+    <a href="/DD/marketplace.html">Marketplace</a>
 </nav>
 
 <div class="selector">
@@ -318,7 +456,7 @@
         </div>
         <div class="grid">
             <div class="box"><div class="box-label">Boons</div><textarea data-field="boons">Lucky Charm — reroll any attack/check/save, must use new roll. Uses: 3 (☐ ☐ ☐)</textarea></div>
-            <div class="box"><div class="box-label">Gear &amp; Equipment</div><textarea data-field="gear" placeholder="Items, weapons, armor…"></textarea></div>
+            <div class="box gear-box"><div class="box-label">Gear &amp; Equipment</div><div class="gear-grid" data-field="gear"></div></div>
             <div class="box"><div class="box-label">Class Features</div><textarea data-field="classFeatures" placeholder="Key class abilities…"></textarea></div>
             <div class="box"><div class="box-label">Species Traits</div><textarea data-field="speciesTraits" placeholder="Racial/species traits…"></textarea></div>
             <div class="box"><div class="box-label">Player Notes</div><textarea data-field="playerNotes" placeholder="Notes about the player…"></textarea></div>
@@ -350,7 +488,7 @@
         </div>
         <div class="grid">
             <div class="box"><div class="box-label">Boons</div><textarea data-field="boons">Nature's Gift — cast one druid spell 2nd level or lower once without a spell slot. Chosen spell: ___________</textarea></div>
-            <div class="box"><div class="box-label">Gear &amp; Equipment</div><textarea data-field="gear" placeholder="Items, weapons, armor…"></textarea></div>
+            <div class="box gear-box"><div class="box-label">Gear &amp; Equipment</div><div class="gear-grid" data-field="gear"></div></div>
             <div class="box"><div class="box-label">Class Features</div><textarea data-field="classFeatures" placeholder="Key class abilities…"></textarea></div>
             <div class="box"><div class="box-label">Species Traits</div><textarea data-field="speciesTraits" placeholder="Racial/species traits…"></textarea></div>
             <div class="box"><div class="box-label">Player Notes</div><textarea data-field="playerNotes" placeholder="Notes about the player…"></textarea></div>
@@ -382,7 +520,7 @@
         </div>
         <div class="grid">
             <div class="box"><div class="box-label">Boons</div><textarea data-field="boons">Tactician's Insight — bonus action, use INT instead of STR for melee attacks for 1 min. Recharges on short/long rest.</textarea></div>
-            <div class="box"><div class="box-label">Gear &amp; Equipment</div><textarea data-field="gear" placeholder="Items, weapons, armor…"></textarea></div>
+            <div class="box gear-box"><div class="box-label">Gear &amp; Equipment</div><div class="gear-grid" data-field="gear"></div></div>
             <div class="box"><div class="box-label">Class Features</div><textarea data-field="classFeatures" placeholder="Key class abilities…"></textarea></div>
             <div class="box"><div class="box-label">Species Traits</div><textarea data-field="speciesTraits" placeholder="Racial/species traits…"></textarea></div>
             <div class="box"><div class="box-label">Player Notes</div><textarea data-field="playerNotes" placeholder="Notes about the player…"></textarea></div>
@@ -414,7 +552,7 @@
         </div>
         <div class="grid">
             <div class="box"><div class="box-label">Boons</div><textarea data-field="boons">Phoenix's Resilience — Option A: advantage on next death save. Option B: +5 temp HP until long rest. Single use (☐ Used)</textarea></div>
-            <div class="box"><div class="box-label">Gear &amp; Equipment</div><textarea data-field="gear" placeholder="Items, weapons, armor…"></textarea></div>
+            <div class="box gear-box"><div class="box-label">Gear &amp; Equipment</div><div class="gear-grid" data-field="gear"></div></div>
             <div class="box"><div class="box-label">Class Features</div><textarea data-field="classFeatures" placeholder="Key class abilities…"></textarea></div>
             <div class="box"><div class="box-label">Species Traits</div><textarea data-field="speciesTraits" placeholder="Racial/species traits…"></textarea></div>
             <div class="box"><div class="box-label">Player Notes</div><textarea data-field="playerNotes" placeholder="Notes about the player…"></textarea></div>
@@ -446,7 +584,7 @@
         </div>
         <div class="grid">
             <div class="box"><div class="box-label">Boons</div><textarea data-field="boons">Warrior's Feast — consuming food/drink/potion in combat grants advantage on next attack roll. Uses: 3 (☐ ☐ ☐)</textarea></div>
-            <div class="box"><div class="box-label">Gear &amp; Equipment</div><textarea data-field="gear" placeholder="Items, weapons, armor…"></textarea></div>
+            <div class="box gear-box"><div class="box-label">Gear &amp; Equipment</div><div class="gear-grid" data-field="gear"></div></div>
             <div class="box"><div class="box-label">Class Features</div><textarea data-field="classFeatures" placeholder="Key class abilities…"></textarea></div>
             <div class="box"><div class="box-label">Species Traits</div><textarea data-field="speciesTraits" placeholder="Racial/species traits…"></textarea></div>
             <div class="box"><div class="box-label">Player Notes</div><textarea data-field="playerNotes" placeholder="Notes about the player…"></textarea></div>
@@ -478,7 +616,7 @@
         </div>
         <div class="grid">
             <div class="box"><div class="box-label">Boons</div><textarea data-field="boons">Guardian's Inspiration — Help action or Dodge within 5ft of ally grants Inspiration. Use for advantage on any roll. Ongoing, max 1 at a time.</textarea></div>
-            <div class="box"><div class="box-label">Gear &amp; Equipment</div><textarea data-field="gear" placeholder="Items, weapons, armor…"></textarea></div>
+            <div class="box gear-box"><div class="box-label">Gear &amp; Equipment</div><div class="gear-grid" data-field="gear"></div></div>
             <div class="box"><div class="box-label">Class Features</div><textarea data-field="classFeatures" placeholder="Key class abilities…"></textarea></div>
             <div class="box"><div class="box-label">Species Traits</div><textarea data-field="speciesTraits" placeholder="Racial/species traits…"></textarea></div>
             <div class="box"><div class="box-label">Player Notes</div><textarea data-field="playerNotes" placeholder="Notes about the player…"></textarea></div>
@@ -492,7 +630,9 @@
 
 <script>
     const API = '/DD/api.php?key=players';
-    const FIELDS = ['discord','species','class','level','hp','xp','speed','size','ac','boons','gear','classFeatures','speciesTraits','playerNotes','generalNotes'];
+    /* Gear is now stored as a structured array, so we handle it
+       separately from the text-based fields */
+    const TEXT_FIELDS = ['discord','species','class','level','hp','xp','speed','size','ac','boons','classFeatures','speciesTraits','playerNotes','generalNotes'];
     const PLAYERS = ['levi','jeanette','nicole','katie','brandon','ashton'];
 
     async function loadData() {
@@ -528,20 +668,24 @@
     function collectSheet(id) {
         const sheet = document.getElementById(`sheet-${id}`);
         const data = {};
-        FIELDS.forEach(f => {
+        TEXT_FIELDS.forEach(f => {
             const el = sheet.querySelector(`[data-field="${f}"]`);
             if (el) data[f] = el.value;
         });
+        // Gear is stored structurally — preserve it from allData
+        data.gear = (allData[id] && allData[id].gear) || [];
         return data;
     }
 
     function populateSheet(id, data) {
         if (!data) return;
         const sheet = document.getElementById(`sheet-${id}`);
-        FIELDS.forEach(f => {
+        TEXT_FIELDS.forEach(f => {
             const el = sheet.querySelector(`[data-field="${f}"]`);
             if (el && data[f] !== undefined) el.value = data[f];
         });
+        // Render gear circles
+        renderGearCircles(id, data.gear);
     }
 
     function bindSheet(id) {
@@ -552,6 +696,115 @@
                 markSaving();
             });
         });
+    }
+
+    /* ── Gear circle rendering ──
+       Each player's gear is an array of item objects:
+       [ { id, name, type, value, qty, spellLevel } ]
+       If the old data was a string (from the textarea era),
+       we migrate it to a single "misc" item. */
+    function normalizeGear(gear) {
+        if (!gear) return [];
+        if (Array.isArray(gear)) return gear;
+        // Migrate legacy string gear data
+        const text = String(gear).trim();
+        if (!text) return [];
+        return [{ id: Date.now().toString(36), name: text.slice(0, 40), type: 'gear', value: 0, qty: 1, spellLevel: null }];
+    }
+
+    function renderGearCircles(playerId, gear) {
+        const sheet = document.getElementById(`sheet-${playerId}`);
+        const grid = sheet.querySelector('.gear-grid[data-field="gear"]');
+        if (!grid) return;
+        gear = normalizeGear(gear);
+        // Store normalized version back
+        if (allData[playerId]) allData[playerId].gear = gear;
+
+        grid.innerHTML = '';
+        gear.forEach((item, idx) => {
+            const div = document.createElement('div');
+            div.className = 'gear-circle';
+            div.dataset.type = item.type || 'gear';
+
+            const shortName = item.name.length > 8
+                ? item.name.split(' ').map(w => w[0]).join('').toUpperCase()
+                : item.name;
+
+            let qtyBadge = item.qty > 1 ? `<span class="gear-qty">×${item.qty}</span>` : '';
+            let delBtn = `<button class="gear-del" title="Remove">✕</button>`;
+
+            div.innerHTML = `
+                <div class="gear-ring">${shortName}</div>
+                <div class="gear-name" title="${item.name}">${item.name}</div>
+                ${qtyBadge}
+                ${delBtn}
+            `;
+
+            div.querySelector('.gear-del').addEventListener('click', () => {
+                gear.splice(idx, 1);
+                allData[playerId].gear = gear;
+                markSaving();
+                renderGearCircles(playerId, gear);
+            });
+
+            grid.appendChild(div);
+        });
+
+        // Add button
+        const addBtn = document.createElement('button');
+        addBtn.className = 'gear-add-btn';
+        addBtn.textContent = '+';
+        addBtn.title = 'Add item';
+        addBtn.addEventListener('click', () => showGearForm(playerId, grid));
+        grid.appendChild(addBtn);
+    }
+
+    function showGearForm(playerId, grid) {
+        // Remove any existing form
+        const existing = grid.parentElement.querySelector('.gear-add-form');
+        if (existing) { existing.remove(); return; }
+
+        const form = document.createElement('div');
+        form.className = 'gear-add-form visible';
+        form.innerHTML = `
+            <input type="text" class="gf-name" placeholder="Item name…" style="width:100%">
+            <div style="display:flex;gap:0.2rem;flex-wrap:wrap;">
+                <select class="gf-type" style="flex:1">
+                    <option value="potion">Potion</option>
+                    <option value="scroll">Scroll</option>
+                    <option value="gear" selected>Gear</option>
+                    <option value="weapon">Weapon</option>
+                </select>
+                <input type="number" class="gf-qty" placeholder="Qty" min="1" value="1" style="width:50px">
+            </div>
+            <div class="gear-form-btns">
+                <button class="cancel-gear">Cancel</button>
+                <button class="confirm-gear">Add</button>
+            </div>
+        `;
+
+        form.querySelector('.cancel-gear').addEventListener('click', () => form.remove());
+        form.querySelector('.confirm-gear').addEventListener('click', () => {
+            const name = form.querySelector('.gf-name').value.trim();
+            if (!name) return;
+            const type = form.querySelector('.gf-type').value;
+            const qty = parseInt(form.querySelector('.gf-qty').value) || 1;
+
+            const gear = allData[playerId]?.gear || [];
+            gear.push({ id: Date.now().toString(36), name, type, value: 0, qty, spellLevel: null });
+            allData[playerId].gear = gear;
+            markSaving();
+            form.remove();
+            renderGearCircles(playerId, gear);
+        });
+
+        // Press Enter to add
+        form.querySelector('.gf-name').addEventListener('keydown', e => {
+            if (e.key === 'Enter') { e.preventDefault(); form.querySelector('.confirm-gear').click(); }
+        });
+
+        grid.parentElement.appendChild(form);
+        form.querySelector('.gf-name').focus();
     }
 
     function selectPlayer(id) {
@@ -567,29 +820,18 @@
        handler finds the nearest checkbox character to the cursor
        and toggles it. The change flows through the normal autosave
        path since we fire an 'input' event afterward.
-
-       How it works:
-       1. Listen for clicks on any textarea with data-field="boons"
-       2. Get the cursor position (selectionStart) from the click
-       3. Search a small window around that position for ☐ or ☑
-       4. Swap the character and update the textarea value
-       5. Fire an 'input' event so autosave picks up the change
     */
     document.addEventListener('click', function(e) {
         const ta = e.target;
-        // Only act on boons textareas
         if (ta.tagName !== 'TEXTAREA' || ta.dataset.field !== 'boons') return;
 
         const pos = ta.selectionStart;
         const text = ta.value;
 
-        // Search within 2 characters of where the user clicked,
-        // since click position isn't always pixel-perfect
         const searchStart = Math.max(0, pos - 2);
         const searchEnd = Math.min(text.length, pos + 3);
         const window = text.substring(searchStart, searchEnd);
 
-        // Find the first checkbox character in the search window
         const uncheckedIdx = window.indexOf('☐');
         const checkedIdx = window.indexOf('☑');
 
@@ -604,21 +846,23 @@
             replacement = '☐';
         }
 
-        if (targetIdx === -1) return; // No checkbox near the click
+        if (targetIdx === -1) return;
 
-        // Swap the character
         ta.value = text.substring(0, targetIdx) + replacement + text.substring(targetIdx + 1);
-
-        // Put the cursor right after the toggled checkbox
         ta.selectionStart = ta.selectionEnd = targetIdx + 1;
-
-        // Trigger autosave through the normal input event path
         ta.dispatchEvent(new Event('input'));
     });
 
     (async () => {
         allData = await loadData();
-        PLAYERS.forEach(id => { populateSheet(id, allData[id]); bindSheet(id); });
+        PLAYERS.forEach(id => {
+            // Normalize gear data on load
+            if (allData[id]) {
+                allData[id].gear = normalizeGear(allData[id]?.gear);
+            }
+            populateSheet(id, allData[id]);
+            bindSheet(id);
+        });
     })();
 </script>
 

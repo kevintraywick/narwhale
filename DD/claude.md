@@ -96,6 +96,8 @@ DD/
 │   └── images/             # Shared map images (dungeon_entrance.jpeg, etc.)
 │   └── <session-slug>/     # Auto-created folders for per-session map images
 │
+├── marketplace.html        # Player marketplace — buy/sell/trade items between players
+│
 ├── magic/
 │   ├── index.html          # Magic quick reference — spells, curses, items, powers
 │   └── descriptions/       # Preloaded JSON descriptions for instant lookup
@@ -155,6 +157,7 @@ is valid JSON.
 | `maps`      | maps/index.html    | Object (keyed by session ID) | Map grid data per session |
 | `npcs`      | npcs.html          | Array       | (Legacy) NPC data                  |
 | `magic`     | magic/index.html   | Array of objects | Magic lookup history (circles)  |
+| `marketplace` | marketplace.html | Object { market, players } | Market inventory + player gold/items |
 
 ### Special API Actions
 
@@ -198,7 +201,7 @@ GET /DD/api.php?action=mapfiles&folder=<slug>       → lists numbered images in
 
 - **Typography:** Georgia, serif throughout
 - **Layout:** Max-width 860px, centered
-- **Navigation:** Consistent nav bar linking Sessions, NPCs, Players, Maps, Magic
+- **Navigation:** Consistent nav bar linking Sessions, NPCs, Players, Maps, Magic, Marketplace
 - **Autosave:** All pages debounce saves at 600ms after input, with
   a small "saving…" / "saved" indicator (usually fixed bottom-right)
 - **IDs:** Generated with `Date.now().toString(36)` for uniqueness
@@ -237,11 +240,13 @@ GET /DD/api.php?action=mapfiles&folder=<slug>       → lists numbered images in
 - [x] Autosave on all editable pages
 - [x] Audio effect on nav (wolf howl)
 - [x] Magic quick reference (spells, curses, items, powers with preloaded descriptions)
+- [x] Player marketplace with buy/sell/trade, item circles, character selection
+- [x] Structured gear on player sheets (item circles replacing free-text)
 - [ ] Session recap (AI-generated from filmed miniatures)
 - [ ] Episodic replay viewer
 - [ ] Quest/thread tracker
 - [ ] Encounter builder
-- [ ] Loot/inventory manager
+- [x] Loot/inventory manager (via Marketplace)
 - [ ] Player-uploaded portrait images
 
 
