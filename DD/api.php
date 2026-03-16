@@ -1,12 +1,22 @@
 <?php
 header('Content-Type: application/json');
 
-// Handle map image listing
+// Handle map folder creation and image listing
 $action = $_GET['action'] ?? '';
+if ($action === 'mkSessionDir') {
+    $title = trim($_GET['title'] ?? '');
+    $slug = preg_replace('/[^a-zA-Z0-9]+/', '-', $title);
+    $slug = trim($slug, '-');
+    if (!$slug) { echo '{"folder":""}'; exit; }
+    $dir = __DIR__ . '/maps/' . $slug;
+    if (!is_dir($dir)) mkdir($dir, 0755, true);
+    echo json_encode(['folder' => $slug]);
+    exit;
+}
 if ($action === 'mapfiles') {
-    $sessId = preg_replace('/[^a-z0-9]/i', '', $_GET['session'] ?? '');
-    if (!$sessId) { http_response_code(400); echo '{"error":"invalid session"}'; exit; }
-    $imgDir = __DIR__ . '/maps/images/' . $sessId;
+    $folder = basename($_GET['folder'] ?? '');
+    if (!$folder) { http_response_code(400); echo '{"error":"invalid folder"}'; exit; }
+    $imgDir = __DIR__ . '/maps/' . $folder;
     if (!is_dir($imgDir)) mkdir($imgDir, 0755, true);
     $files = [];
     foreach (scandir($imgDir) as $f) {

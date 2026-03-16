@@ -239,6 +239,11 @@
               : el.value;
           });
           all[idx].lastModified = Date.now();
+          if (!all[idx].mapFolder && all[idx].title) {
+            const r = await fetch(`/DD/api.php?action=mkSessionDir&title=${encodeURIComponent(all[idx].title)}`);
+            const d = await r.json();
+            if (d.folder) all[idx].mapFolder = d.folder;
+          }
           await store(all);
           status.textContent = 'saved';
           status.className = 'save-status saved';
