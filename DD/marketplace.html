@@ -52,184 +52,58 @@
         /* ── Welcome banner ── */
         .welcome {
             text-align: center;
-            padding: 2.5rem 1rem 1.5rem;
+            padding: 1.5rem 1rem 0.5rem;
         }
         .welcome h1 {
-            font-size: 1.6rem;
+            font-size: 1.4rem;
             color: var(--gold);
             letter-spacing: 0.06em;
-            margin-bottom: 0.6rem;
+            margin-bottom: 0.4rem;
         }
         .welcome p {
             color: var(--muted);
-            font-size: 0.95rem;
+            font-size: 0.88rem;
         }
 
-        /* ── Player selection circles ── */
-        .player-select {
+        /* ── Market shelf (top area, replaces old player circles) ── */
+        .market-shelf {
             display: flex;
             justify-content: center;
             gap: 1.25rem;
-            padding: 1rem 1rem 2rem;
+            padding: 1.25rem 1rem 1.5rem;
             flex-wrap: wrap;
-        }
-
-        .p-circle {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 0.4rem;
-            cursor: pointer;
-            transition: transform 0.15s;
-        }
-        .p-circle:hover { transform: scale(1.08); }
-
-        .p-circle-img {
-            width: 72px;
-            height: 72px;
-            border-radius: 50%;
-            overflow: hidden;
-            border: 3px solid var(--border);
-            background: #2e2825;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            position: relative;
-            transition: border-color 0.3s, box-shadow 0.3s;
-        }
-        .p-circle-img img {
-            position: absolute;
-            inset: 0;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-        .p-circle-initials {
-            font-size: 1.4rem;
-            color: var(--muted);
-            user-select: none;
-        }
-        .p-circle-name {
-            font-size: 0.7rem;
-            color: var(--muted);
-            text-transform: uppercase;
-            letter-spacing: 0.1em;
-            transition: color 0.2s;
-        }
-
-        /* Pulsing glow animation for unselected state */
-        .awaiting .p-circle-img {
-            animation: pulse-glow 2s ease-in-out infinite;
-        }
-        .awaiting .p-circle:nth-child(2) .p-circle-img { animation-delay: 0.33s; }
-        .awaiting .p-circle:nth-child(3) .p-circle-img { animation-delay: 0.66s; }
-        .awaiting .p-circle:nth-child(4) .p-circle-img { animation-delay: 1s; }
-        .awaiting .p-circle:nth-child(5) .p-circle-img { animation-delay: 1.33s; }
-        .awaiting .p-circle:nth-child(6) .p-circle-img { animation-delay: 1.66s; }
-
-        @keyframes pulse-glow {
-            0%, 100% { box-shadow: 0 0 6px rgba(201,168,76,0.2); border-color: var(--border); }
-            50% { box-shadow: 0 0 18px rgba(201,168,76,0.55); border-color: var(--gold); }
-        }
-
-        /* Selected player highlight */
-        .p-circle.active .p-circle-img {
-            border-color: var(--gold);
-            box-shadow: 0 0 0 2px var(--gold);
-            animation: none;
-        }
-        .p-circle.active .p-circle-name { color: var(--gold); }
-
-        /* ── Main marketplace (hidden until player selected) ── */
-        .market-main {
-            display: none;
-            max-width: 900px;
-            margin: 0 auto;
-            padding: 0 1rem 4rem;
-        }
-        .market-main.visible { display: block; }
-
-        /* Active player bar */
-        .active-bar {
-            display: flex;
-            align-items: center;
-            gap: 0.75rem;
             background: var(--surface);
-            border: 1px solid var(--border);
-            border-radius: 6px;
-            padding: 0.65rem 1rem;
-            margin-bottom: 1.25rem;
+            border-bottom: 1px solid var(--border);
         }
-        .active-bar-img {
-            width: 36px;
-            height: 36px;
-            border-radius: 50%;
-            overflow: hidden;
-            border: 2px solid var(--gold);
-            background: #2e2825;
+        .shelf-label {
+            width: 100%;
+            text-align: center;
+            font-size: 0.6rem;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            color: var(--muted);
+            margin-bottom: 0.3rem;
             display: flex;
             align-items: center;
             justify-content: center;
-            flex-shrink: 0;
-            position: relative;
+            gap: 0.75rem;
         }
-        .active-bar-img img {
-            position: absolute;
-            inset: 0;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-        .active-bar-name {
-            font-size: 1rem;
-            color: var(--gold);
-            font-weight: bold;
-        }
-        .active-bar-gold {
-            margin-left: auto;
-            font-size: 0.9rem;
-            color: var(--gold);
-            display: flex;
-            align-items: center;
-            gap: 0.3rem;
-        }
-        .gold-icon { font-size: 1rem; }
-        .change-btn {
+        .shelf-label button {
             background: none;
-            border: 1px solid var(--border);
+            border: 1px dashed var(--border);
             color: var(--muted);
             font-family: inherit;
-            font-size: 0.75rem;
-            padding: 0.25rem 0.6rem;
+            font-size: 0.6rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            padding: 0.2rem 0.5rem;
             border-radius: 3px;
             cursor: pointer;
-            margin-left: 0.75rem;
             transition: color 0.15s, border-color 0.15s;
         }
-        .change-btn:hover { color: var(--gold); border-color: var(--gold); }
+        .shelf-label button:hover { color: var(--gold); border-color: var(--gold); }
 
-        /* ── Section headings ── */
-        .section-label {
-            font-size: 0.65rem;
-            text-transform: uppercase;
-            letter-spacing: 0.13em;
-            color: var(--muted);
-            margin-bottom: 0.6rem;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-        }
-
-        /* ── Item circles (shared style for market + player inventories) ── */
-        .item-grid {
-            display: flex;
-            gap: 0.85rem;
-            flex-wrap: wrap;
-            align-items: flex-start;
-            min-height: 80px;
-            padding: 0.75rem 0;
-        }
-
+        /* ── Item circles (shared for market + player inventories) ── */
         .item-circle {
             display: flex;
             flex-direction: column;
@@ -260,9 +134,7 @@
             word-break: break-word;
             overflow: hidden;
         }
-        .item-circle:hover .item-ring {
-            border-color: var(--gold);
-        }
+        .item-circle:hover .item-ring { border-color: var(--gold); }
 
         /* Category-colored borders */
         .item-circle[data-type="potion"] .item-ring { border-color: var(--potion-color); }
@@ -300,7 +172,7 @@
             line-height: 1;
         }
 
-        /* Spell level badge (bottom-right of circle) */
+        /* Spell level badge */
         .spell-badge {
             position: absolute;
             bottom: 14px;
@@ -321,73 +193,164 @@
         .item-empty {
             color: var(--muted);
             font-style: italic;
-            font-size: 0.85rem;
-            padding: 0.5rem 0;
+            font-size: 0.78rem;
+            padding: 0.3rem 0;
         }
 
-        /* ── Market shelf section ── */
-        .market-shelf {
-            background: var(--surface);
-            border: 1px solid var(--border);
-            border-radius: 6px;
-            padding: 0.85rem 1rem;
-            margin-bottom: 1.25rem;
+        /* ── Player table (3-column layout) ── */
+        .player-table {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 0.5rem 4rem;
         }
 
-        /* ── Player row (other players for trading) ── */
         .player-row {
-            background: var(--surface);
-            border: 1px solid var(--border);
-            border-radius: 6px;
-            padding: 0.85rem 1rem;
-            margin-bottom: 0.75rem;
-            display: flex;
-            gap: 0.85rem;
-            align-items: flex-start;
+            display: grid;
+            grid-template-columns: 90px 1fr 80px;
+            min-height: 90px;
+            border-bottom: 1px solid var(--border);
         }
-        .player-row-portrait {
-            width: 44px;
-            height: 44px;
+        .player-row:last-child { border-bottom: none; }
+
+        /* Column dividers via border-right */
+        .pr-portrait {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 0.3rem;
+            padding: 0.75rem 0.4rem;
+            border-right: 1px solid var(--border);
+            cursor: pointer;
+            transition: background 0.15s;
+        }
+        .pr-portrait:hover { background: rgba(201,168,76,0.06); }
+
+        .pr-portrait-img {
+            width: 48px;
+            height: 48px;
             border-radius: 50%;
             overflow: hidden;
-            border: 2px solid var(--border);
+            border: 3px solid var(--border);
             background: #2e2825;
             display: flex;
             align-items: center;
             justify-content: center;
-            flex-shrink: 0;
             position: relative;
+            transition: border-color 0.3s, box-shadow 0.3s;
         }
-        .player-row-portrait img {
+        .pr-portrait-img img {
             position: absolute;
             inset: 0;
             width: 100%;
             height: 100%;
             object-fit: cover;
         }
-        .player-row-portrait .initials {
-            font-size: 1rem;
+        .pr-portrait-initials {
+            font-size: 1.1rem;
             color: var(--muted);
             user-select: none;
         }
-        .player-row-info { flex: 1; min-width: 0; }
-        .player-row-header {
-            display: flex;
-            align-items: baseline;
-            gap: 0.5rem;
-            margin-bottom: 0.4rem;
-        }
-        .player-row-name {
-            font-size: 0.85rem;
-            color: var(--text);
-            font-weight: bold;
-        }
-        .player-row-gold {
-            font-size: 0.75rem;
-            color: var(--gold);
+        .pr-portrait-name {
+            font-size: 0.6rem;
+            color: var(--muted);
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            transition: color 0.2s;
         }
 
-        /* ── Action tooltip/popup ── */
+        /* Pulsing glow on portraits before anyone is selected */
+        .awaiting .pr-portrait-img {
+            animation: pulse-glow 2s ease-in-out infinite;
+        }
+        .player-row:nth-child(2) .pr-portrait-img { animation-delay: 0.33s; }
+        .player-row:nth-child(3) .pr-portrait-img { animation-delay: 0.66s; }
+        .player-row:nth-child(4) .pr-portrait-img { animation-delay: 1s; }
+        .player-row:nth-child(5) .pr-portrait-img { animation-delay: 1.33s; }
+        .player-row:nth-child(6) .pr-portrait-img { animation-delay: 1.66s; }
+
+        @keyframes pulse-glow {
+            0%, 100% { box-shadow: 0 0 6px rgba(201,168,76,0.15); border-color: var(--border); }
+            50% { box-shadow: 0 0 16px rgba(201,168,76,0.5); border-color: var(--gold); }
+        }
+
+        /* Active player highlight */
+        .player-row.active .pr-portrait-img {
+            border-color: var(--gold);
+            box-shadow: 0 0 0 2px var(--gold);
+            animation: none;
+        }
+        .player-row.active .pr-portrait-name { color: var(--gold); }
+        .player-row.active { background: rgba(201,168,76,0.04); }
+
+        /* Inventory column */
+        .pr-items {
+            display: flex;
+            gap: 0.65rem;
+            flex-wrap: wrap;
+            align-items: center;
+            padding: 0.65rem 0.85rem;
+            border-right: 1px solid var(--border);
+            min-height: 80px;
+        }
+
+        /* Smaller circles inside player rows */
+        .pr-items .item-circle { max-width: 64px; }
+        .pr-items .item-ring {
+            width: 46px;
+            height: 46px;
+            font-size: 0.58rem;
+        }
+        .pr-items .item-name { font-size: 0.52rem; max-width: 60px; }
+        .pr-items .item-price { font-size: 0.48rem; }
+        .pr-items .item-qty { width: 16px; height: 16px; font-size: 0.5rem; top: -3px; right: 0; }
+        .pr-items .spell-badge { width: 14px; height: 14px; font-size: 0.45rem; bottom: 11px; }
+
+        /* Gold column */
+        .pr-gold {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 0.5rem;
+            gap: 0.2rem;
+        }
+        .pr-gold-icon {
+            font-size: 1.3rem;
+            color: var(--gold);
+        }
+        .pr-gold-amount {
+            font-size: 0.95rem;
+            color: var(--gold);
+            font-weight: bold;
+        }
+        .pr-gold-label {
+            font-size: 0.5rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--muted);
+        }
+
+        /* Column headers */
+        .col-headers {
+            display: grid;
+            grid-template-columns: 90px 1fr 80px;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0.5rem 0.5rem 0;
+        }
+        .col-header {
+            font-size: 0.55rem;
+            text-transform: uppercase;
+            letter-spacing: 0.13em;
+            color: var(--muted);
+            padding: 0.3rem 0.5rem;
+            border-bottom: 1px solid var(--border);
+        }
+        .col-header:nth-child(2) { padding-left: 0.85rem; }
+        .col-header:last-child { text-align: center; }
+
+        /* ── Action popup ── */
         .action-popup {
             display: none;
             position: fixed;
@@ -448,32 +411,14 @@
         }
         .overlay.visible { display: block; }
 
-        /* ── DM controls (add item to market) ── */
-        .dm-controls {
-            margin-top: 0.5rem;
-            padding-top: 0.5rem;
-            border-top: 1px solid var(--border);
-        }
-        .add-item-btn {
-            background: none;
-            border: 1px dashed var(--border);
-            color: var(--muted);
-            font-family: inherit;
-            font-size: 0.78rem;
-            padding: 0.35rem 0.8rem;
-            border-radius: 4px;
-            cursor: pointer;
-            transition: color 0.15s, border-color 0.15s;
-        }
-        .add-item-btn:hover { color: var(--gold); border-color: var(--gold); }
-
-        /* Add-item form */
+        /* ── Add-item form (inside market shelf) ── */
         .add-form {
             display: none;
-            margin-top: 0.5rem;
+            width: 100%;
             padding: 0.75rem;
             background: #1e1b18;
             border-radius: 4px;
+            margin-top: 0.25rem;
         }
         .add-form.visible { display: block; }
         .add-form-row {
@@ -521,7 +466,7 @@
         .save-bar.visible { opacity: 1; }
         .save-bar.saved { color: var(--green); }
 
-        /* ── Toast notification ── */
+        /* ── Toast ── */
         .toast {
             position: fixed;
             bottom: 3rem;
@@ -539,6 +484,14 @@
             pointer-events: none;
         }
         .toast.visible { opacity: 1; }
+
+        /* ── Responsive ── */
+        @media (max-width: 600px) {
+            .player-row { grid-template-columns: 70px 1fr 60px; }
+            .col-headers { grid-template-columns: 70px 1fr 60px; }
+            .pr-portrait-img { width: 40px; height: 40px; }
+            .pr-items .item-ring { width: 38px; height: 38px; font-size: 0.5rem; }
+        }
     </style>
 </head>
 <body>
@@ -560,99 +513,79 @@
     <p>Pick your character below to start</p>
 </div>
 
-<!-- Player selection circles -->
-<div class="player-select awaiting" id="player-select"></div>
-
-<!-- Main marketplace area (revealed after player selection) -->
-<div class="market-main" id="market-main">
-
-    <!-- Active player bar -->
-    <div class="active-bar" id="active-bar"></div>
-
-    <!-- Market shelf: items for sale -->
-    <div class="market-shelf">
-        <div class="section-label">
-            Market Shelf
-            <button class="add-item-btn" id="add-market-btn" onclick="toggleAddForm()">+ Add Item</button>
+<!-- Market shelf at top (same position/size as old player circles) -->
+<div class="market-shelf" id="market-shelf">
+    <div class="shelf-label">
+        Market Shelf
+        <button id="add-market-btn" onclick="toggleAddForm()">+ Add Item</button>
+    </div>
+    <div id="market-grid" style="display:contents;"></div>
+    <div class="add-form" id="add-form">
+        <div class="add-form-row">
+            <label>Name</label>
+            <input type="text" id="af-name" placeholder="Item name…">
         </div>
-        <div class="item-grid" id="market-grid"></div>
-        <!-- DM: add new items to market -->
-        <div class="add-form" id="add-form">
-            <div class="add-form-row">
-                <label>Name</label>
-                <input type="text" id="af-name" placeholder="Item name…">
-            </div>
-            <div class="add-form-row">
-                <label>Type</label>
-                <select id="af-type">
-                    <option value="potion">Potion</option>
-                    <option value="scroll">Scroll</option>
-                    <option value="gear">Gear</option>
-                    <option value="weapon">Weapon</option>
-                </select>
-            </div>
-            <div class="add-form-row">
-                <label>Price</label>
-                <input type="number" id="af-price" placeholder="gp" min="0">
-            </div>
-            <div class="add-form-row">
-                <label>Qty</label>
-                <input type="number" id="af-qty" placeholder="1" min="1" value="1">
-            </div>
-            <div class="add-form-row">
-                <label>Spell Lv</label>
-                <input type="number" id="af-spell" placeholder="—" min="0" max="9">
-            </div>
-            <div class="add-form-row" style="justify-content:flex-end;margin-top:0.3rem;">
-                <button class="popup-btn cancel" onclick="toggleAddForm()">Cancel</button>
-                <button class="popup-btn" onclick="addMarketItem()">Add to Market</button>
-            </div>
+        <div class="add-form-row">
+            <label>Type</label>
+            <select id="af-type">
+                <option value="potion">Potion</option>
+                <option value="scroll">Scroll</option>
+                <option value="gear">Gear</option>
+                <option value="weapon">Weapon</option>
+            </select>
+        </div>
+        <div class="add-form-row">
+            <label>Price</label>
+            <input type="number" id="af-price" placeholder="gp" min="0">
+        </div>
+        <div class="add-form-row">
+            <label>Qty</label>
+            <input type="number" id="af-qty" placeholder="1" min="1" value="1">
+        </div>
+        <div class="add-form-row">
+            <label>Spell Lv</label>
+            <input type="number" id="af-spell" placeholder="—" min="0" max="9">
+        </div>
+        <div class="add-form-row" style="justify-content:flex-end;margin-top:0.3rem;">
+            <button class="popup-btn cancel" onclick="toggleAddForm()">Cancel</button>
+            <button class="popup-btn" onclick="addMarketItem()">Add to Market</button>
         </div>
     </div>
-
-    <!-- Your inventory section -->
-    <div class="market-shelf" id="my-inventory-section">
-        <div class="section-label">Your Inventory</div>
-        <div class="item-grid" id="my-inventory"></div>
-    </div>
-
-    <!-- Other players section (for trading) -->
-    <div id="other-players"></div>
-
 </div>
 
-<!-- Action popup (buy/sell/trade confirmation) -->
+<!-- Column headers -->
+<div class="col-headers">
+    <div class="col-header">Character</div>
+    <div class="col-header">Inventory</div>
+    <div class="col-header">Gold</div>
+</div>
+
+<!-- Player rows (3-column table) -->
+<div class="player-table awaiting" id="player-table"></div>
+
+<!-- Popups -->
 <div class="overlay" id="overlay" onclick="closePopup()"></div>
 <div class="action-popup" id="action-popup"></div>
 
-<!-- Toast -->
 <div class="toast" id="toast"></div>
-
 <div class="save-bar" id="save-bar">saved</div>
 
 <script>
     /* ================================================================
-       MARKETPLACE — Player-facing trading hub
+       MARKETPLACE — Redesigned layout
 
-       Two data sources:
-       - /DD/api.php?key=marketplace → market inventory + player gold/items
-       - /DD/api.php?key=players    → read-only, for player names/images/levels
-
-       Marketplace data structure:
-       {
-         market: [ { id, name, type, value, qty, spellLevel } ],
-         players: {
-           levi:     { gold: 50, items: [ { id, name, type, value, qty, spellLevel } ] },
-           jeanette: { gold: 50, items: [] },
-           ...
-         }
-       }
+       Top:    Market shelf with buyable item circles
+       Below:  Player rows in a 3-column grid:
+               [Portrait] | [Inventory items] | [Gold]
+       Selection: click a portrait in column 1 to become active player.
+       Buy:    click a market item → popup → deduct gold, add to inventory
+       Sell:   click your own item → popup → gain gold, return to market
+       Trade:  click another player's item → popup → transfer gold + item
        ================================================================ */
 
     const MARKET_API = '/DD/api.php?key=marketplace';
     const PLAYERS_API = '/DD/api.php?key=players';
 
-    // Player display info — matches the players page
     const PLAYER_INFO = {
         levi:     { label: 'Levi',     char: 'Garrick',  initials: 'L' },
         jeanette: { label: 'Jeanette', char: 'Eleil',    initials: 'J' },
@@ -663,17 +596,28 @@
     };
     const PLAYER_IDS = Object.keys(PLAYER_INFO);
 
-    // Default starting market inventory
+    // Default market inventory
     const DEFAULT_MARKET = [
-        { id: 'm1', name: 'Healing Potion',          type: 'potion', value: 50,  qty: 3, spellLevel: null },
-        { id: 'm2', name: 'Arrow Brace',             type: 'gear',   value: 1,   qty: 2, spellLevel: null },
-        { id: 'm3', name: 'Faerie Fire Scroll',      type: 'scroll', value: 25,  qty: 1, spellLevel: 1 },
+        { id: 'm1', name: 'Healing Potion',            type: 'potion', value: 50,  qty: 3, spellLevel: null },
+        { id: 'm2', name: 'Arrow Brace',               type: 'gear',   value: 1,   qty: 2, spellLevel: null },
+        { id: 'm3', name: 'Faerie Fire Scroll',        type: 'scroll', value: 25,  qty: 1, spellLevel: 1 },
         { id: 'm4', name: 'Potion of Water Breathing', type: 'potion', value: 100, qty: 1, spellLevel: null },
-        { id: 'm5', name: 'Magic Missile Scroll',    type: 'scroll', value: 25,  qty: 1, spellLevel: 1 }
+        { id: 'm5', name: 'Magic Missile Scroll',      type: 'scroll', value: 25,  qty: 1, spellLevel: 1 }
     ];
 
+    /* Starting scroll for each player — one random-ish spell scroll
+       per character, thematically matched to their class */
+    const STARTING_SCROLLS = {
+        levi:     { name: 'Cure Wounds Scroll',     spellLevel: 1 },
+        jeanette: { name: 'Entangle Scroll',        spellLevel: 1 },
+        nicole:   { name: 'Shield of Faith Scroll', spellLevel: 1 },
+        katie:    { name: 'Charm Person Scroll',    spellLevel: 1 },
+        brandon:  { name: 'Heroism Scroll',         spellLevel: 1 },
+        ashton:   { name: 'Protection from Evil Scroll', spellLevel: 1 }
+    };
+
     let marketData = { market: [], players: {} };
-    let playerSheets = {};  // from players API (read-only, for level info)
+    let playerSheets = {};
     let activePlayer = null;
     let saveTimer;
 
@@ -682,7 +626,6 @@
         try {
             const r = await fetch(MARKET_API);
             const d = r.ok ? await r.json() : {};
-            // If empty or array (API returns [] for new keys), initialize
             if (!d || Array.isArray(d) || !d.market) {
                 return initializeMarketData();
             }
@@ -702,12 +645,15 @@
             market: JSON.parse(JSON.stringify(DEFAULT_MARKET)),
             players: {}
         };
-        // Initialize each player with starting gold based on level
         PLAYER_IDS.forEach(id => {
             const level = parseInt(playerSheets[id]?.level) || 1;
+            const scroll = STARTING_SCROLLS[id];
             data.players[id] = {
                 gold: 50 + 25 * (level - 1),
-                items: []
+                items: [
+                    { id: Date.now().toString(36) + id + 'hp', name: 'Healing Potion', type: 'potion', value: 50, qty: 2, spellLevel: null },
+                    { id: Date.now().toString(36) + id + 'sc', name: scroll.name, type: 'scroll', value: 25, qty: 1, spellLevel: scroll.spellLevel }
+                ]
             };
         });
         return data;
@@ -730,7 +676,7 @@
         }, 600);
     }
 
-    // ── Toast notifications ──
+    // ── Toast ──
     let toastTimer;
     function showToast(msg) {
         const t = document.getElementById('toast');
@@ -740,166 +686,121 @@
         toastTimer = setTimeout(() => { t.className = 'toast'; }, 2000);
     }
 
-    // ── Render player selection circles ──
-    function renderPlayerSelect() {
-        const wrap = document.getElementById('player-select');
-        wrap.innerHTML = '';
-        PLAYER_IDS.forEach(id => {
-            const info = PLAYER_INFO[id];
-            const div = document.createElement('div');
-            div.className = 'p-circle' + (activePlayer === id ? ' active' : '');
-            div.innerHTML = `
-                <div class="p-circle-img">
-                    <span class="p-circle-initials">${info.initials}</span>
-                    <img src="/DD/players/images/${id}.png" loading="lazy" onerror="this.remove()">
-                </div>
-                <div class="p-circle-name">${info.char}</div>
-            `;
-            div.addEventListener('click', () => selectPlayer(id));
-            wrap.appendChild(div);
-        });
-    }
-
-    // ── Select a player ──
+    // ── Select a player by clicking their portrait ──
     function selectPlayer(id) {
         activePlayer = id;
-
-        // Ensure this player has data
         if (!marketData.players[id]) {
             const level = parseInt(playerSheets[id]?.level) || 1;
-            marketData.players[id] = { gold: 50 + 25 * (level - 1), items: [] };
+            const scroll = STARTING_SCROLLS[id];
+            marketData.players[id] = {
+                gold: 50 + 25 * (level - 1),
+                items: [
+                    { id: Date.now().toString(36) + id + 'hp', name: 'Healing Potion', type: 'potion', value: 50, qty: 2, spellLevel: null },
+                    { id: Date.now().toString(36) + id + 'sc', name: scroll.name, type: 'scroll', value: 25, qty: 1, spellLevel: scroll.spellLevel }
+                ]
+            };
         }
-
-        // Stop glow animation, mark active
-        const wrap = document.getElementById('player-select');
-        wrap.classList.remove('awaiting');
-        renderPlayerSelect();
-
-        // Shrink the welcome
-        const welcome = document.getElementById('welcome');
-        welcome.querySelector('p').textContent = 'Tap another character to switch';
-
-        // Show the marketplace
-        document.getElementById('market-main').classList.add('visible');
+        // Stop pulse animation
+        document.getElementById('player-table').classList.remove('awaiting');
+        document.getElementById('welcome').querySelector('p').textContent =
+            PLAYER_INFO[id].char + ' is shopping. Tap another portrait to switch.';
         renderAll();
     }
 
     // ── Render everything ──
     function renderAll() {
-        if (!activePlayer) return;
-        renderActiveBar();
-        renderMarketGrid();
-        renderMyInventory();
-        renderOtherPlayers();
+        renderMarketShelf();
+        renderPlayerTable();
     }
 
-    // ── Active player bar ──
-    function renderActiveBar() {
-        const info = PLAYER_INFO[activePlayer];
-        const pd = marketData.players[activePlayer];
-        const bar = document.getElementById('active-bar');
-        bar.innerHTML = `
-            <div class="active-bar-img">
-                <span style="font-size:0.9rem;color:var(--muted)">${info.initials}</span>
-                <img src="/DD/players/images/${activePlayer}.png" loading="lazy" onerror="this.remove()">
-            </div>
-            <span class="active-bar-name">${info.char}</span>
-            <span class="active-bar-gold"><span class="gold-icon">⬡</span> ${pd.gold} gp</span>
-            <button class="change-btn" onclick="resetSelection()">Change</button>
-        `;
-    }
-
-    // ── Render market grid ──
-    function renderMarketGrid() {
+    // ── Render market shelf circles ──
+    function renderMarketShelf() {
         const grid = document.getElementById('market-grid');
+        // Remove old circles (keep add-form and shelf-label)
         grid.innerHTML = '';
-        if (marketData.market.length === 0) {
-            grid.innerHTML = '<div class="item-empty">The market is empty.</div>';
-            return;
+        const visibleItems = marketData.market.filter(m => m.qty > 0);
+        if (visibleItems.length === 0) {
+            const empty = document.createElement('div');
+            empty.className = 'item-empty';
+            empty.textContent = 'The market is empty.';
+            grid.appendChild(empty);
+        } else {
+            visibleItems.forEach(item => {
+                grid.appendChild(createItemCircle(item, 'buy'));
+            });
         }
-        marketData.market.forEach(item => {
-            if (item.qty <= 0) return;
-            grid.appendChild(createItemCircle(item, 'buy'));
-        });
     }
 
-    // ── Render active player's inventory ──
-    function renderMyInventory() {
-        const grid = document.getElementById('my-inventory');
-        const pd = marketData.players[activePlayer];
-        grid.innerHTML = '';
-        if (!pd.items || pd.items.length === 0) {
-            grid.innerHTML = '<div class="item-empty">No items yet. Buy something from the market!</div>';
-            return;
-        }
-        pd.items.forEach(item => {
-            grid.appendChild(createItemCircle(item, 'sell'));
-        });
-    }
-
-    // ── Render other players (for trading) ──
-    function renderOtherPlayers() {
-        const wrap = document.getElementById('other-players');
-        wrap.innerHTML = '';
-        const label = document.createElement('div');
-        label.className = 'section-label';
-        label.style.marginBottom = '0.6rem';
-        label.textContent = 'Other Adventurers';
-        wrap.appendChild(label);
+    // ── Render the player table rows ──
+    function renderPlayerTable() {
+        const table = document.getElementById('player-table');
+        table.innerHTML = '';
 
         PLAYER_IDS.forEach(id => {
-            if (id === activePlayer) return;
             const info = PLAYER_INFO[id];
             const pd = marketData.players[id] || { gold: 0, items: [] };
+            const isActive = activePlayer === id;
 
             const row = document.createElement('div');
-            row.className = 'player-row';
-            row.innerHTML = `
-                <div class="player-row-portrait">
-                    <span class="initials">${info.initials}</span>
+            row.className = 'player-row' + (isActive ? ' active' : '');
+
+            // Column 1: Portrait (clickable to select)
+            const portrait = document.createElement('div');
+            portrait.className = 'pr-portrait';
+            portrait.innerHTML = `
+                <div class="pr-portrait-img">
+                    <span class="pr-portrait-initials">${info.initials}</span>
                     <img src="/DD/players/images/${id}.png" loading="lazy" onerror="this.remove()">
                 </div>
-                <div class="player-row-info">
-                    <div class="player-row-header">
-                        <span class="player-row-name">${info.char}</span>
-                        <span class="player-row-gold">⬡ ${pd.gold} gp</span>
-                    </div>
-                    <div class="item-grid" style="min-height:50px;padding:0.4rem 0;"></div>
-                </div>
+                <div class="pr-portrait-name">${info.char}</div>
             `;
+            portrait.addEventListener('click', () => selectPlayer(id));
 
-            const itemGrid = row.querySelector('.item-grid');
+            // Column 2: Inventory items
+            const items = document.createElement('div');
+            items.className = 'pr-items';
             if (!pd.items || pd.items.length === 0) {
-                itemGrid.innerHTML = '<div class="item-empty" style="font-size:0.75rem">No items</div>';
+                items.innerHTML = '<div class="item-empty">No items</div>';
             } else {
                 pd.items.forEach(item => {
-                    itemGrid.appendChild(createItemCircle(item, 'trade', id));
+                    // Determine action: sell if active player's row, trade if another player's row
+                    const action = isActive ? 'sell' : (activePlayer ? 'trade' : null);
+                    const circle = createItemCircle(item, action, id);
+                    if (!activePlayer) circle.style.cursor = 'default';
+                    items.appendChild(circle);
                 });
             }
-            wrap.appendChild(row);
+
+            // Column 3: Gold
+            const gold = document.createElement('div');
+            gold.className = 'pr-gold';
+            gold.innerHTML = `
+                <span class="pr-gold-icon">⬡</span>
+                <span class="pr-gold-amount">${pd.gold}</span>
+                <span class="pr-gold-label">gp</span>
+            `;
+
+            row.appendChild(portrait);
+            row.appendChild(items);
+            row.appendChild(gold);
+            table.appendChild(row);
         });
     }
 
-    // ── Create a single item circle element ──
+    // ── Create a single item circle ──
     function createItemCircle(item, action, ownerId) {
         const div = document.createElement('div');
         div.className = 'item-circle';
         div.dataset.type = item.type || 'gear';
 
-        // Short display name for inside the circle
         const shortName = item.name.length > 10
             ? item.name.split(' ').map(w => w[0]).join('').toUpperCase()
             : item.name;
 
-        let qtyBadge = '';
-        if (item.qty > 1) {
-            qtyBadge = `<span class="item-qty">×${item.qty}</span>`;
-        }
-
-        let spellBadge = '';
-        if (item.spellLevel) {
-            spellBadge = `<span class="spell-badge">${item.spellLevel}</span>`;
-        }
+        let qtyBadge = item.qty > 1
+            ? `<span class="item-qty">×${item.qty}</span>` : '';
+        let spellBadge = item.spellLevel
+            ? `<span class="spell-badge">${item.spellLevel}</span>` : '';
 
         div.innerHTML = `
             <div class="item-ring">${shortName}</div>
@@ -909,22 +810,22 @@
             ${spellBadge}
         `;
 
-        // Click handler based on action type
-        div.addEventListener('click', () => {
-            if (action === 'buy') showBuyPopup(item);
-            else if (action === 'sell') showSellPopup(item);
-            else if (action === 'trade') showTradePopup(item, ownerId);
-        });
+        if (action && activePlayer) {
+            div.addEventListener('click', () => {
+                if (action === 'buy') showBuyPopup(item);
+                else if (action === 'sell') showSellPopup(item);
+                else if (action === 'trade') showTradePopup(item, ownerId);
+            });
+        }
 
         return div;
     }
 
     // ── Buy popup ──
     function showBuyPopup(item) {
+        if (!activePlayer) return;
         const pd = marketData.players[activePlayer];
-        const info = PLAYER_INFO[activePlayer];
         const canAfford = pd.gold >= item.value;
-
         const popup = document.getElementById('action-popup');
         popup.innerHTML = `
             <h3>Buy ${item.name}?</h3>
@@ -939,35 +840,25 @@
     }
 
     function doBuy(itemId) {
-        const market = marketData.market;
-        const mi = market.find(m => m.id === itemId);
+        const mi = marketData.market.find(m => m.id === itemId);
         if (!mi || mi.qty <= 0) return closePopup();
-
         const pd = marketData.players[activePlayer];
         if (pd.gold < mi.value) return closePopup();
 
-        // Deduct gold
         pd.gold -= mi.value;
-        // Decrease market qty
         mi.qty -= 1;
 
-        // Add to player inventory (stack if same name+type)
         const existing = pd.items.find(i => i.name === mi.name && i.type === mi.type);
         if (existing) {
             existing.qty = (existing.qty || 1) + 1;
         } else {
             pd.items.push({
                 id: Date.now().toString(36),
-                name: mi.name,
-                type: mi.type,
-                value: mi.value,
-                qty: 1,
-                spellLevel: mi.spellLevel
+                name: mi.name, type: mi.type, value: mi.value,
+                qty: 1, spellLevel: mi.spellLevel
             });
         }
-
-        // Remove zero-qty market items
-        marketData.market = market.filter(m => m.qty > 0);
+        marketData.market = marketData.market.filter(m => m.qty > 0);
 
         saveMarketData();
         closePopup();
@@ -977,6 +868,7 @@
 
     // ── Sell popup ──
     function showSellPopup(item) {
+        if (!activePlayer) return;
         const sellPrice = Math.floor(item.value / 2);
         const popup = document.getElementById('action-popup');
         popup.innerHTML = `
@@ -998,25 +890,16 @@
 
         const sellPrice = Math.floor(item.value / 2);
         pd.gold += sellPrice;
-
-        // Decrease qty or remove
         item.qty = (item.qty || 1) - 1;
-        if (item.qty <= 0) {
-            pd.items = pd.items.filter(i => i.id !== itemId);
-        }
+        if (item.qty <= 0) pd.items = pd.items.filter(i => i.id !== itemId);
 
-        // Add back to market (stack if same name exists)
         const marketItem = marketData.market.find(m => m.name === item.name && m.type === item.type);
-        if (marketItem) {
-            marketItem.qty += 1;
-        } else {
+        if (marketItem) { marketItem.qty += 1; }
+        else {
             marketData.market.push({
                 id: Date.now().toString(36),
-                name: item.name,
-                type: item.type,
-                value: item.value,
-                qty: 1,
-                spellLevel: item.spellLevel
+                name: item.name, type: item.type, value: item.value,
+                qty: 1, spellLevel: item.spellLevel
             });
         }
 
@@ -1026,12 +909,12 @@
         showToast(`Sold ${item.name} for ${sellPrice} gp`);
     }
 
-    // ── Trade popup (buy from another player) ──
+    // ── Trade popup ──
     function showTradePopup(item, ownerId) {
+        if (!activePlayer) return;
         const ownerInfo = PLAYER_INFO[ownerId];
         const pd = marketData.players[activePlayer];
         const canAfford = pd.gold >= item.value;
-
         const popup = document.getElementById('action-popup');
         popup.innerHTML = `
             <h3>Buy from ${ownerInfo.char}?</h3>
@@ -1052,29 +935,19 @@
         const item = seller.items.find(i => i.id === itemId);
         if (!item || buyer.gold < item.value) return closePopup();
 
-        // Transfer gold
         buyer.gold -= item.value;
         seller.gold += item.value;
 
-        // Transfer item
-        const qtyToMove = 1;
         item.qty = (item.qty || 1) - 1;
-        if (item.qty <= 0) {
-            seller.items = seller.items.filter(i => i.id !== itemId);
-        }
+        if (item.qty <= 0) seller.items = seller.items.filter(i => i.id !== itemId);
 
-        // Add to buyer
         const existing = buyer.items.find(i => i.name === item.name && i.type === item.type);
-        if (existing) {
-            existing.qty = (existing.qty || 1) + 1;
-        } else {
+        if (existing) { existing.qty = (existing.qty || 1) + 1; }
+        else {
             buyer.items.push({
                 id: Date.now().toString(36),
-                name: item.name,
-                type: item.type,
-                value: item.value,
-                qty: 1,
-                spellLevel: item.spellLevel
+                name: item.name, type: item.type, value: item.value,
+                qty: 1, spellLevel: item.spellLevel
             });
         }
 
@@ -1094,16 +967,6 @@
         document.getElementById('action-popup').classList.remove('visible');
     }
 
-    // ── Reset to player selection ──
-    function resetSelection() {
-        activePlayer = null;
-        document.getElementById('market-main').classList.remove('visible');
-        document.getElementById('welcome').querySelector('p').textContent = 'Pick your character below to start';
-        const wrap = document.getElementById('player-select');
-        wrap.classList.add('awaiting');
-        renderPlayerSelect();
-    }
-
     // ── DM: Add item to market ──
     function toggleAddForm() {
         document.getElementById('add-form').classList.toggle('visible');
@@ -1115,7 +978,6 @@
         const price = parseInt(document.getElementById('af-price').value) || 0;
         const qty = parseInt(document.getElementById('af-qty').value) || 1;
         const spellLv = parseInt(document.getElementById('af-spell').value) || null;
-
         if (!name) return;
 
         marketData.market.push({
@@ -1123,7 +985,6 @@
             name, type, value: price, qty, spellLevel: spellLv
         });
 
-        // Clear form
         document.getElementById('af-name').value = '';
         document.getElementById('af-price').value = '';
         document.getElementById('af-qty').value = '1';
@@ -1137,19 +998,25 @@
 
     // ── Init ──
     (async () => {
-        // Load player sheet data first (for levels → starting gold)
         playerSheets = await loadPlayerSheets();
         marketData = await loadMarketData();
 
-        // Ensure all players exist in marketplace data
+        // Ensure all players have marketplace data
         PLAYER_IDS.forEach(id => {
             if (!marketData.players[id]) {
                 const level = parseInt(playerSheets[id]?.level) || 1;
-                marketData.players[id] = { gold: 50 + 25 * (level - 1), items: [] };
+                const scroll = STARTING_SCROLLS[id];
+                marketData.players[id] = {
+                    gold: 50 + 25 * (level - 1),
+                    items: [
+                        { id: Date.now().toString(36) + id + 'hp', name: 'Healing Potion', type: 'potion', value: 50, qty: 2, spellLevel: null },
+                        { id: Date.now().toString(36) + id + 'sc', name: scroll.name, type: 'scroll', value: 25, qty: 1, spellLevel: scroll.spellLevel }
+                    ]
+                };
             }
         });
 
-        renderPlayerSelect();
+        renderAll();
     })();
 </script>
 <script src="/DD/strip.js"></script>
