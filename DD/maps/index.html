@@ -22,6 +22,7 @@
             background: var(--bg);
             font-family: 'Georgia', serif;
             min-height: 100vh;
+            color: var(--text);
         }
 
         /* ── Nav ── */
@@ -44,21 +45,19 @@
         }
         .dd-nav a:hover, .dd-nav a.active { color: var(--gold); border-color: var(--gold); }
 
-        /* ── Session tabs ── */
-        .sess-tabs-wrap {
+        /* ── Tab rows (shared style for both session + image tabs) ── */
+        .tab-row {
             background: var(--bg);
             border-bottom: 1px solid var(--border);
             padding: 0.35rem 1.25rem;
             overflow-x: auto;
             scrollbar-width: none;
         }
-        .sess-tabs-wrap::-webkit-scrollbar { display: none; }
-        .sess-tabs {
-            display: flex;
-            gap: 0.4rem;
-            flex-wrap: nowrap;
-        }
-        .sess-tab {
+        .tab-row::-webkit-scrollbar { display: none; }
+        .tab-row.surface { background: var(--surface); }
+        .tab-row.hidden { display: none; }
+        .tab-list { display: flex; gap: 0.4rem; flex-wrap: nowrap; }
+        .tab-btn {
             background: transparent;
             border: 1px solid transparent;
             color: var(--muted);
@@ -71,51 +70,60 @@
             transition: color 0.15s, border-color 0.15s;
             flex-shrink: 0;
         }
-        .sess-tab:hover { color: var(--gold); border-color: var(--border); }
-        .sess-tab.active { color: var(--gold); border-color: var(--gold); }
+        .tab-btn:hover { color: var(--gold); border-color: var(--border); }
+        .tab-btn.active { color: var(--gold); border-color: var(--gold); }
 
-        /* ── Map grid ── */
-        .map-wrap {
-            max-width: 860px;
-            margin: 0 auto;
-            padding: 1.5rem 1rem 4rem;
+        /* ── Map image panel (top third) ── */
+        .map-img-panel {
+            height: 33vh;
+            background: #0d0b09;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-bottom: 1px solid var(--border);
+            overflow: hidden;
+        }
+        .map-img-panel img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            display: block;
+        }
+        .map-img-empty {
+            color: var(--muted);
+            font-size: 0.85rem;
+            font-style: italic;
         }
 
-        .map-grid {
+        /* ── 4 notes boxes ── */
+        .boxes-wrap {
+            max-width: 860px;
+            margin: 1.5rem auto;
+            padding: 0 1rem 4rem;
+        }
+        .boxes-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 0;
             border: 1px solid var(--border);
             border-radius: 6px;
             overflow: hidden;
         }
-
         .map-box {
             background: var(--surface);
+            padding: 0.75rem 0.9rem;
             border-right: 1px solid var(--border);
             border-bottom: 1px solid var(--border);
-            padding: 0.75rem 0.9rem;
         }
         .map-box:nth-child(even) { border-right: none; }
         .map-box:nth-last-child(-n+2) { border-bottom: none; }
-
-        .map-box-title {
-            background: transparent;
-            border: none;
-            border-bottom: 1px solid var(--border);
-            color: var(--gold);
-            font-family: inherit;
-            font-size: 0.9rem;
-            font-weight: bold;
-            outline: none;
-            width: 100%;
-            padding-bottom: 0.3rem;
-            margin-bottom: 0.5rem;
+        .box-label {
+            font-size: 0.65rem;
+            text-transform: uppercase;
+            letter-spacing: 0.13em;
+            color: var(--muted);
+            margin-bottom: 0.4rem;
         }
-        .map-box-title::placeholder { color: var(--border); font-weight: normal; }
-        .map-box-title:focus { border-bottom-color: var(--gold); }
-
-        .map-box-notes {
+        .map-box textarea {
             width: 100%;
             background: transparent;
             border: none;
@@ -125,25 +133,11 @@
             line-height: 1.55;
             resize: none;
             outline: none;
-            min-height: 100px;
+            min-height: 150px;
         }
-        .map-box-notes::placeholder { color: #4a403a; }
+        .map-box textarea::placeholder { color: #4a403a; }
 
-        .map-box-img {
-            width: 100%;
-            max-height: 180px;
-            object-fit: contain;
-            border-radius: 4px;
-            margin-bottom: 0.5rem;
-            display: block;
-        }
-
-        .empty {
-            text-align: center;
-            padding: 3rem;
-            color: var(--muted);
-            font-style: italic;
-        }
+        .empty { text-align: center; padding: 3rem; color: var(--muted); font-style: italic; }
 
         /* ── Save bar ── */
         .save-bar {
@@ -174,14 +168,45 @@
     <a href="/DD/magic/">Magic</a>
 </nav>
 
-<div class="sess-tabs-wrap">
-    <div class="sess-tabs" id="sess-tabs"></div>
+<!-- Row 2: Session tabs -->
+<div class="tab-row" id="sess-tabs-wrap">
+    <div class="tab-list" id="sess-tabs"></div>
 </div>
 
-<div class="map-wrap">
-    <div class="map-grid" id="map-grid" style="display:none;"></div>
-    <div class="empty" id="map-empty">No sessions yet.</div>
+<!-- Row 3: Image tabs — only shown when 2+ images exist for the session -->
+<div class="tab-row surface hidden" id="img-tabs-wrap">
+    <div class="tab-list" id="img-tabs"></div>
 </div>
+
+<!-- Full-width map image -->
+<div class="map-img-panel" id="map-img-panel">
+    <span class="map-img-empty" id="map-img-empty">No map image</span>
+    <img id="map-img" src="" alt="Map" style="display:none;" loading="lazy">
+</div>
+
+<!-- 4 notes boxes -->
+<div class="boxes-wrap" id="boxes-wrap" style="display:none;">
+    <div class="boxes-grid">
+        <div class="map-box">
+            <div class="box-label">NPCs</div>
+            <textarea id="f-npcs" placeholder="NPCs in this area…"></textarea>
+        </div>
+        <div class="map-box">
+            <div class="box-label">Traps</div>
+            <textarea id="f-traps" placeholder="Traps, hazards, alarms…"></textarea>
+        </div>
+        <div class="map-box">
+            <div class="box-label">Treasures</div>
+            <textarea id="f-treasures" placeholder="Loot, hidden items, rewards…"></textarea>
+        </div>
+        <div class="map-box">
+            <div class="box-label">Notes</div>
+            <textarea id="f-notes" placeholder="Atmosphere, tactics, misc…"></textarea>
+        </div>
+    </div>
+</div>
+
+<div class="empty" id="map-empty" style="display:none;">No sessions yet.</div>
 
 <div class="save-bar" id="save-bar">saved</div>
 
@@ -191,21 +216,36 @@
 
     let sessions = [];
     let mapsData = {};
-    let sessFolders = {}; // id → mapFolder
+    let sessFolders = {};
     let currentId = null;
+    let currentImages = [];
     let saveTimer;
 
     async function loadSessions() {
         try { const r = await fetch(SESS_API); return r.ok ? r.json() : []; } catch { return []; }
     }
     async function loadMaps() {
-        try { const r = await fetch(MAPS_API); return r.ok ? r.json() : {}; } catch { return {}; }
+        try {
+            const r = await fetch(MAPS_API);
+            if (!r.ok) return {};
+            const d = await r.json();
+            // Guard against old array format or missing file (api returns [] by default)
+            return (d && typeof d === 'object' && !Array.isArray(d)) ? d : {};
+        } catch { return {}; }
     }
     async function loadMapFiles(folder) {
-        if (!folder) return {};
-        try { const r = await fetch(`/DD/api.php?action=mapfiles&folder=${encodeURIComponent(folder)}`); return r.ok ? r.json() : {}; } catch { return {}; }
+        if (!folder) return [];
+        try {
+            const r = await fetch(`/DD/api.php?action=mapfiles&folder=${encodeURIComponent(folder)}`);
+            if (!r.ok) return [];
+            const obj = await r.json(); // e.g. {1: "1.jpg", 2: "2.jpeg"}
+            return Object.entries(obj)
+                .sort((a, b) => parseInt(a[0]) - parseInt(b[0]))
+                .map(([, filename]) => filename);
+        } catch { return []; }
     }
-    async function saveMaps() {
+
+    function saveMaps() {
         const bar = document.getElementById('save-bar');
         bar.textContent = 'saving…'; bar.className = 'save-bar visible';
         clearTimeout(saveTimer);
@@ -216,62 +256,92 @@
         }, 600);
     }
 
-    function emptyBoxes() {
-        return Array.from({ length: 8 }, (_, i) => ({ id: i, title: '', notes: '' }));
+    function getOrInit(id) {
+        // Initialise (or reset from old array format) to new flat object shape
+        if (!mapsData[id] || Array.isArray(mapsData[id])) {
+            mapsData[id] = { npcs: '', traps: '', treasures: '', notes: '' };
+        }
+        return mapsData[id];
+    }
+
+    function showImage(folder, images, idx) {
+        const img = document.getElementById('map-img');
+        const empty = document.getElementById('map-img-empty');
+        if (!folder || images.length === 0) {
+            img.style.display = 'none';
+            empty.style.display = '';
+        } else {
+            const filename = images[idx] || images[0];
+            img.src = `/DD/maps/${folder}/${filename}`;
+            img.alt = filename;
+            img.style.display = 'block';
+            empty.style.display = 'none';
+        }
+    }
+
+    function renderImgTabs(folder, images) {
+        const wrap = document.getElementById('img-tabs-wrap');
+        const tabs = document.getElementById('img-tabs');
+        tabs.innerHTML = '';
+        if (images.length < 2) { wrap.classList.add('hidden'); return; }
+        wrap.classList.remove('hidden');
+        images.forEach((filename, idx) => {
+            const btn = document.createElement('button');
+            btn.className = 'tab-btn' + (idx === 0 ? ' active' : '');
+            btn.textContent = filename;
+            btn.onclick = () => {
+                tabs.querySelectorAll('.tab-btn').forEach((b, i) => b.classList.toggle('active', i === idx));
+                showImage(folder, images, idx);
+            };
+            tabs.appendChild(btn);
+        });
     }
 
     async function selectSession(id) {
         currentId = id;
-        document.querySelectorAll('.sess-tab').forEach(t => t.classList.remove('active'));
-        document.querySelector(`.sess-tab[data-id="${id}"]`).classList.add('active');
-        if (!mapsData[id]) mapsData[id] = emptyBoxes();
+        document.querySelectorAll('#sess-tabs .tab-btn').forEach(t => t.classList.remove('active'));
+        document.querySelector(`#sess-tabs .tab-btn[data-id="${id}"]`).classList.add('active');
+
+        const data = getOrInit(id);
         const folder = sessFolders[id];
-        const imgFiles = await loadMapFiles(folder);
-        renderGrid(id, folder, imgFiles);
+        const images = await loadMapFiles(folder);
+        currentImages = images;
+
+        // Populate boxes
+        document.getElementById('f-npcs').value = data.npcs || '';
+        document.getElementById('f-traps').value = data.traps || '';
+        document.getElementById('f-treasures').value = data.treasures || '';
+        document.getElementById('f-notes').value = data.notes || '';
+        document.getElementById('boxes-wrap').style.display = '';
+
+        showImage(folder, images, 0);
+        renderImgTabs(folder, images);
     }
 
-    function renderGrid(id, folder, imgFiles) {
-        imgFiles = imgFiles || {};
-        const grid = document.getElementById('map-grid');
-        const empty = document.getElementById('map-empty');
-        const boxes = mapsData[id];
-        grid.innerHTML = '';
-        grid.style.display = 'grid';
-        empty.style.display = 'none';
-        boxes.forEach((box, i) => {
-            const boxNum = i + 1;
-            const imgFile = imgFiles[boxNum];
-            const div = document.createElement('div');
-            div.className = 'map-box';
-            const imgTag = (folder && imgFile)
-                ? `<img class="map-box-img" src="/DD/maps/${folder}/${imgFile}" alt="Map ${boxNum}" loading="lazy">`
-                : '';
-            div.innerHTML = `
-                ${imgTag}
-                <input class="map-box-title" placeholder="Area name…" value="${(box.title || '').replace(/"/g,'&quot;')}">
-                <textarea class="map-box-notes" placeholder="Exits, contents, traps, treasure…">${box.notes || ''}</textarea>
-            `;
-            div.querySelector('.map-box-title').addEventListener('input', e => {
-                mapsData[id][i].title = e.target.value; saveMaps();
-            });
-            div.querySelector('.map-box-notes').addEventListener('input', e => {
-                mapsData[id][i].notes = e.target.value; saveMaps();
-            });
-            grid.appendChild(div);
+    // Wire up autosave for the 4 textareas
+    ['npcs', 'traps', 'treasures', 'notes'].forEach(field => {
+        document.getElementById(`f-${field}`).addEventListener('input', e => {
+            if (!currentId) return;
+            getOrInit(currentId)[field] = e.target.value;
+            saveMaps();
         });
-    }
+    });
 
     (async () => {
         [sessions, mapsData] = await Promise.all([loadSessions(), loadMaps()]);
         const tabs = document.getElementById('sess-tabs');
         const empty = document.getElementById('map-empty');
 
-        if (sessions.length === 0) { empty.style.display = 'block'; return; }
+        if (sessions.length === 0) {
+            document.getElementById('map-img-panel').style.display = 'none';
+            empty.style.display = 'block';
+            return;
+        }
 
         sessions.forEach(s => {
             sessFolders[s.id] = s.mapFolder || '';
             const btn = document.createElement('button');
-            btn.className = 'sess-tab';
+            btn.className = 'tab-btn';
             btn.dataset.id = s.id;
             btn.textContent = s.title || `Session ${s.number}`;
             btn.onclick = () => selectSession(s.id);
