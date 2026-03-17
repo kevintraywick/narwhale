@@ -61,7 +61,9 @@ The project has three goals:
 
 - **Frontend:** Vanilla HTML, CSS, and JavaScript (no framework)
 - **Backend:** Single PHP file (`api.php`) serving JSON read/write
-- **Data storage:** Flat JSON files in `data/` (one per data type)
+- **Card Database:** PostgreSQL (`dd_cards` database) for spell/item/weapon/potion data
+- **Card API:** `cards-api.php` — separate PHP endpoint querying PostgreSQL
+- **Data storage:** Flat JSON files in `data/` (one per data type) for session/player/NPC data
 - **External JS:** SortableJS (CDN) for drag-and-drop reordering
 - **Hosting:** Served from `/DD/` path on a local or shared server
 - **Plugins:** `anthropics/claude-code`, `frontend-design@claude-code-plugins`, `pbakaus/impeccable`
@@ -97,6 +99,15 @@ DD/
 │   └── <session-slug>/     # Auto-created folders for per-session map images
 │
 ├── marketplace.html        # Player marketplace — buy/sell/trade items between players
+│
+├── cards/
+│   ├── index.html          # Spell card browser — filterable grid of SRD spell cards
+│   ├── schema.sql          # PostgreSQL schema (spells, items, potions, weapons, players tables)
+│   ├── seed_spells.sql     # 166 SRD spells (levels 1–4) as INSERT statements
+│   ├── db-config.php       # PostgreSQL connection settings (host, port, db, user, pass)
+│   └── setup.sh            # One-command database setup script
+│
+├── cards-api.php           # REST API for card queries — reads from PostgreSQL
 │
 ├── magic/
 │   ├── index.html          # Magic quick reference — spells, curses, items, powers
@@ -166,6 +177,33 @@ GET /DD/api.php?action=mkSessionDir&title=<title>  → creates maps/<slug>/ fold
 GET /DD/api.php?action=mapfiles&folder=<slug>       → lists numbered images in folder
 ```
 
+### Cards API (PostgreSQL)
+
+A separate endpoint for card data that reads from PostgreSQL:
+
+```
+GET /DD/cards-api.php?type=spells                    → all spells
+GET /DD/cards-api.php?type=spells&level=1            → by level (1–4)
+GET /DD/cards-api.php?type=spells&school=Evocation   → by school
+GET /DD/cards-api.php?type=spells&class=Wizard       → by class
+GET /DD/cards-api.php?type=spells&search=fire        → name search
+GET /DD/cards-api.php?type=spells&id=42              → single spell by ID
+GET /DD/cards-api.php?type=items                     → all magic items
+GET /DD/cards-api.php?type=potions                   → all potions
+GET /DD/cards-api.php?type=weapons                   → all weapons
+GET /DD/cards-api.php?type=players                   → all players
+```
+
+Filters can be combined: `?type=spells&level=2&school=Evocation&class=Wizard`
+
+Pagination: `&limit=50&offset=0` (default limit 200, max 500)
+
+**Database:** `dd_cards` on PostgreSQL, connection configured in `cards/db-config.php`
+
+**Setup:** Run `cards/setup.sh` to install PostgreSQL, create the database, and seed all spell data.
+
+**PostgreSQL tables:** `spells` (166 rows, levels 1–4), `items`, `potions`, `weapons`, `players` (schema ready, items/potions/weapons/players pending seed data)
+
 ### How to Add a New Data Type
 
 1. Pick a key name (e.g., `quests`)
@@ -201,7 +239,7 @@ GET /DD/api.php?action=mapfiles&folder=<slug>       → lists numbered images in
 
 - **Typography:** Georgia, serif throughout
 - **Layout:** Max-width 860px, centered
-- **Navigation:** Consistent nav bar linking Sessions, NPCs, Players, Maps, Magic, Marketplace
+- **Navigation:** Consistent nav bar linking Sessions, NPCs, Players, Maps, Magic, Marketplace, Cards
 - **Autosave:** All pages debounce saves at 600ms after input, with
   a small "saving…" / "saved" indicator (usually fixed bottom-right)
 - **IDs:** Generated with `Date.now().toString(36)` for uniqueness
@@ -242,6 +280,10 @@ GET /DD/api.php?action=mapfiles&folder=<slug>       → lists numbered images in
 - [x] Magic quick reference (spells, curses, items, powers with preloaded descriptions)
 - [x] Player marketplace with buy/sell/trade, item circles, character selection
 - [x] Structured gear on player sheets (item circles replacing free-text)
+- [x] Spell card browser with PostgreSQL backend (166 SRD spells, levels 1–4)
+- [x] Cards API with filtering by level, school, class, and name search
+- [ ] Item/potion/weapon card seed data (schema ready, data pending)
+- [ ] Player card integration (sync player JSON data into PostgreSQL)
 - [ ] Session recap (AI-generated from filmed miniatures)
 - [ ] Episodic replay viewer
 - [ ] Quest/thread tracker
@@ -272,7 +314,14 @@ over time. Priority features:
 - Each episode links to the session, maps, and NPCs involved
 - Could include AI-generated illustrations or scene descriptions
 
-### 3. Future AI Ideas (Brainstorm)
+### 3. Card System Expansion
+- Seed data for items, potions, and weapons tables (schema is ready)
+- Sync player JSON data into the PostgreSQL `players` table
+- Add tab navigation to cards page (Spells / Items / Potions / Weapons / Players)
+- Print-friendly spell card layout for physical reference at the table
+- Card detail pages with full descriptions and artwork slots
+
+### 4. Future AI Ideas (Brainstorm)
 - NPC dialogue generator (voice/personality based on NPC notes)
 - Encounter balancing suggestions based on party composition
 - Auto-populate session prep from loose ends of previous sessions
@@ -317,8 +366,9 @@ without updating the palette section above. Stick to Georgia serif.
 - **Preserve the aesthetic.** This is a dark-themed, fantasy-styled
   DM tool. Keep the mood consistent — parchment tones, gold accents,
   serif fonts.
-- **Data is flat JSON.** Don't suggest databases unless the project
-  genuinely outgrows flat files. We're not there yet.
+- **Two data layers.** Session/player/NPC/marketplace data uses flat
+  JSON via `api.php`. Card reference data (spells, items, weapons,
+  potions) uses PostgreSQL via `cards-api.php`. Keep them separate.
 - **Comments welcome.** I'm learning as we build. Add helpful
   comments in code when doing anything non-obvious.
 - **AI features are the north star.** When in doubt about what to

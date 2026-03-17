@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spell Cards</title>
+    <link rel="stylesheet" href="/DD/strip.css" />
+    <style>
+        :root {
+            --bg: #1a1614;
+            --surface: #231f1c;
+            --border: #3d3530;
+            --gold: #c9a84c;
+            --accent: #8b1a1a;
+            --text: #e8ddd0;
+            --muted: #8a7d6e;
+            --green: #5a8a5a;
+            /* School colors */
+            --abjuration:    #4a90d9;
+            --conjuration:   #d4a017;
+            --divination:    #9b59b6;
+            --enchantment:   #e74c8b;
+            --evocation:     #e74c3c;
+            --illusion:      #1abc9c;
+            --necromancy:    #6c7a3a;
+            --transmutation: #e67e22;
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+
+        body {
+            background: var(--bg);
+            font-family: 'Georgia', serif;
+            min-height: 100vh;
+            color: var(--text);
+        }
+
+        /* ── Nav ── */
+        .dd-nav {
+            display: flex;
+            gap: 0.75rem;
+            padding: 0.75rem 1.25rem;
+            background: var(--bg);
+            border-bottom: 1px solid var(--border);
+        }
+        .dd-nav a {
+            color: var(--muted);
+            text-decoration: none;
+            font-size: 0.85rem;
+            padding: 0.3rem 0.8rem;
+            border: 1px solid var(--border);
+            border-radius: 4px;
+            transition: color 0.15s, border-color 0.15s;
+        }
+        .dd-nav a:hover { color: var(--gold); border-color: var(--gold); }
+
+        /* ── Page header ── */
+        .page-header {
+            text-align: center;
+            padding: 1.25rem 1rem 0.75rem;
+        }
+        .page-header h1 {
+            font-size: 1.5rem;
+            color: var(--gold);
+            letter-spacing: 0.06em;
+            margin-bottom: 0.3rem;
+        }
+        .page-header p {
+            color: var(--muted);
+            font-size: 0.85rem;
+        }
+
+        /* ── Filters ── */
+        .filters {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            justify-content: center;
+            padding: 0.75rem 1rem 1rem;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        .filter-group {
+            display: flex;
+            align-items: center;
+            gap: 0.3rem;
+        }
+        .filter-group label {
+            font-size: 0.6rem;
+            text-transform: uppercase;
+            letter-spacing: 0.12em;
+            color: var(--muted);
+        }
+        .filter-group select, .filter-group input[type="text"] {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            color: var(--text);
+            font-family: inherit;
+            font-size: 0.82rem;
+            padding: 0.3rem 0.5rem;
+            border-radius: 4px;
+            outline: none;
+        }
+        .filter-group select:focus, .filter-group input:focus {
+            border-color: var(--gold);
+        }
+        .filter-group select option { background: var(--surface); }
+
+        .spell-count {
+            width: 100%;
+            text-align: center;
+            font-size: 0.7rem;
+            color: var(--muted);
+            margin-top: 0.25rem;
+        }
+
+        /* ── Card grid ── */
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 1rem;
+            padding: 0.5rem 1.25rem 4rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* ── Spell card ── */
+        .spell-card {
+            background: var(--surface);
+            border: 2px solid var(--border);
+            border-radius: 8px;
+            overflow: hidden;
+            transition: border-color 0.2s, transform 0.15s;
+            cursor: pointer;
+        }
+        .spell-card:hover {
+            transform: translateY(-2px);
+            border-color: var(--gold);
+        }
+
+        .card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            padding: 0.7rem 0.85rem 0.5rem;
+            border-bottom: 1px solid var(--border);
+            gap: 0.5rem;
+        }
+        .card-name {
+            font-size: 1rem;
+            color: var(--gold);
+            line-height: 1.25;
+            flex: 1;
+        }
+        .card-level {
+            font-size: 0.65rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            padding: 0.2rem 0.5rem;
+            border-radius: 3px;
+            background: rgba(201,168,76,0.15);
+            color: var(--gold);
+            white-space: nowrap;
+            flex-shrink: 0;
+        }
+
+        .card-school {
+            display: inline-block;
+            font-size: 0.6rem;
+            text-transform: uppercase;
+            letter-spacing: 0.12em;
+            padding: 0.15rem 0.85rem;
+            color: #fff;
+            font-weight: bold;
+        }
+        /* School color bars */
+        .school-abjuration    .card-school { background: var(--abjuration); }
+        .school-conjuration   .card-school { background: var(--conjuration); }
+        .school-divination    .card-school { background: var(--divination); }
+        .school-enchantment   .card-school { background: var(--enchantment); }
+        .school-evocation     .card-school { background: var(--evocation); }
+        .school-illusion      .card-school { background: var(--illusion); }
+        .school-necromancy    .card-school { background: var(--necromancy); }
+        .school-transmutation .card-school { background: var(--transmutation); }
+
+        /* School-colored left border */
+        .school-abjuration    { border-left: 4px solid var(--abjuration); }
+        .school-conjuration   { border-left: 4px solid var(--conjuration); }
+        .school-divination    { border-left: 4px solid var(--divination); }
+        .school-enchantment   { border-left: 4px solid var(--enchantment); }
+        .school-evocation     { border-left: 4px solid var(--evocation); }
+        .school-illusion      { border-left: 4px solid var(--illusion); }
+        .school-necromancy    { border-left: 4px solid var(--necromancy); }
+        .school-transmutation { border-left: 4px solid var(--transmutation); }
+
+        .card-meta {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0.15rem 0.75rem;
+            padding: 0.5rem 0.85rem;
+            font-size: 0.72rem;
+        }
+        .card-meta dt {
+            color: var(--muted);
+            text-transform: uppercase;
+            font-size: 0.55rem;
+            letter-spacing: 0.1em;
+        }
+        .card-meta dd {
+            color: var(--text);
+            margin-bottom: 0.3rem;
+        }
+
+        .card-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.25rem;
+            padding: 0 0.85rem 0.5rem;
+        }
+        .card-tag {
+            font-size: 0.55rem;
+            padding: 0.1rem 0.4rem;
+            border: 1px solid var(--border);
+            border-radius: 3px;
+            color: var(--muted);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+        .card-tag.conc { border-color: var(--accent); color: var(--accent); }
+        .card-tag.ritual { border-color: var(--divination); color: var(--divination); }
+
+        .card-desc {
+            display: none;
+            padding: 0.65rem 0.85rem;
+            font-size: 0.78rem;
+            line-height: 1.6;
+            color: var(--text);
+            border-top: 1px solid var(--border);
+            max-height: 300px;
+            overflow-y: auto;
+        }
+        .card-desc.visible { display: block; }
+
+        .card-desc .higher-levels {
+            margin-top: 0.5rem;
+            padding-top: 0.4rem;
+            border-top: 1px dashed var(--border);
+            color: var(--muted);
+            font-style: italic;
+            font-size: 0.73rem;
+        }
+
+        .card-classes {
+            padding: 0 0.85rem 0.65rem;
+            font-size: 0.6rem;
+            color: var(--muted);
+        }
+
+        /* ── Loading / empty state ── */
+        .loading, .empty-state {
+            text-align: center;
+            padding: 3rem 1rem;
+            color: var(--muted);
+            font-size: 0.95rem;
+            font-style: italic;
+        }
+
+        /* ── Responsive ── */
+        @media (max-width: 600px) {
+            .card-grid {
+                grid-template-columns: 1fr;
+                padding: 0.5rem 0.75rem 4rem;
+            }
+            .filters { padding: 0.5rem 0.75rem; }
+        }
+    </style>
+</head>
+<body>
+
+<nav class="dd-nav">
+    <a href="/DD/index.html">Sessions</a>
+    <a href="/DD/npcs/">NPCs</a>
+    <a href="/DD/players/players.html">Players</a>
+    <a href="/DD/maps/">Maps</a>
+    <a href="/DD/magic/">Magic</a>
+    <a href="/DD/marketplace.html">Marketplace</a>
+    <a href="/DD/cards/">Cards</a>
+</nav>
+
+<div class="sess-strip" id="sess-strip"></div>
+
+<div class="page-header">
+    <h1>Spell Cards</h1>
+    <p>Browse and filter SRD spells — click a card to expand</p>
+</div>
+
+<div class="filters">
+    <div class="filter-group">
+        <label>Level</label>
+        <select id="f-level">
+            <option value="">All</option>
+            <option value="1">1st</option>
+            <option value="2">2nd</option>
+            <option value="3">3rd</option>
+            <option value="4">4th</option>
+        </select>
+    </div>
+
+    <div class="filter-group">
+        <label>School</label>
+        <select id="f-school">
+            <option value="">All</option>
+            <option value="Abjuration">Abjuration</option>
+            <option value="Conjuration">Conjuration</option>
+            <option value="Divination">Divination</option>
+            <option value="Enchantment">Enchantment</option>
+            <option value="Evocation">Evocation</option>
+            <option value="Illusion">Illusion</option>
+            <option value="Necromancy">Necromancy</option>
+            <option value="Transmutation">Transmutation</option>
+        </select>
+    </div>
+
+    <div class="filter-group">
+        <label>Class</label>
+        <select id="f-class">
+            <option value="">All</option>
+            <option value="Bard">Bard</option>
+            <option value="Cleric">Cleric</option>
+            <option value="Druid">Druid</option>
+            <option value="Paladin">Paladin</option>
+            <option value="Ranger">Ranger</option>
+            <option value="Sorcerer">Sorcerer</option>
+            <option value="Warlock">Warlock</option>
+            <option value="Wizard">Wizard</option>
+        </select>
+    </div>
+
+    <div class="filter-group">
+        <label>Search</label>
+        <input type="text" id="f-search" placeholder="Spell name…" style="width:130px;">
+    </div>
+
+    <div class="spell-count" id="spell-count"></div>
+</div>
+
+<div class="card-grid" id="card-grid">
+    <div class="loading">Loading spells…</div>
+</div>
+
+<script>
+    /* ================================================================
+       SPELL CARDS — Fetches from cards-api.php and renders cards
+       ================================================================ */
+
+    const API = '/DD/cards-api.php';
+    let allSpells = [];
+    let debounceTimer;
+
+    // ── Fetch spells from API ──
+    async function fetchSpells(filters = {}) {
+        const params = new URLSearchParams({ type: 'spells' });
+        if (filters.level)  params.set('level', filters.level);
+        if (filters.school) params.set('school', filters.school);
+        if (filters.class)  params.set('class', filters.class);
+        if (filters.search) params.set('search', filters.search);
+        params.set('limit', '500');
+
+        try {
+            const r = await fetch(`${API}?${params}`);
+            if (!r.ok) throw new Error('API error');
+            return await r.json();
+        } catch (e) {
+            console.error('Fetch failed:', e);
+            return [];
+        }
+    }
+
+    // ── Render a single card ──
+    function renderCard(spell) {
+        const schoolClass = 'school-' + (spell.school || '').toLowerCase();
+        const levelLabel = spell.level === 0 ? 'Cantrip' : ordinal(spell.level) + ' Level';
+        const classes = Array.isArray(spell.classes) ? spell.classes : [];
+
+        const tags = [];
+        if (spell.concentration) tags.push('<span class="card-tag conc">Concentration</span>');
+        if (spell.ritual) tags.push('<span class="card-tag ritual">Ritual</span>');
+
+        const higherLevels = spell.higher_levels
+            ? `<div class="higher-levels"><strong>At Higher Levels:</strong> ${esc(spell.higher_levels)}</div>`
+            : '';
+
+        return `
+            <div class="spell-card ${schoolClass}" onclick="toggleDesc(this)">
+                <div class="card-header">
+                    <div class="card-name">${esc(spell.name)}</div>
+                    <div class="card-level">${levelLabel}</div>
+                </div>
+                <span class="card-school">${esc(spell.school)}</span>
+                <dl class="card-meta">
+                    <dt>Casting Time</dt><dd>${esc(spell.casting_time)}</dd>
+                    <dt>Range</dt><dd>${esc(spell.range)}</dd>
+                    <dt>Components</dt><dd>${esc(spell.components)}</dd>
+                    <dt>Duration</dt><dd>${esc(spell.duration)}</dd>
+                </dl>
+                ${tags.length ? '<div class="card-tags">' + tags.join('') + '</div>' : ''}
+                <div class="card-classes">${classes.join(' · ')}</div>
+                <div class="card-desc">
+                    ${esc(spell.description)}
+                    ${higherLevels}
+                </div>
+            </div>
+        `;
+    }
+
+    // ── Render all cards ──
+    function renderAll(spells) {
+        const grid = document.getElementById('card-grid');
+        const count = document.getElementById('spell-count');
+
+        if (!spells.length) {
+            grid.innerHTML = '<div class="empty-state">No spells match your filters.</div>';
+            count.textContent = '0 spells';
+            return;
+        }
+
+        grid.innerHTML = spells.map(renderCard).join('');
+        count.textContent = spells.length + ' spell' + (spells.length !== 1 ? 's' : '');
+    }
+
+    // ── Toggle description ──
+    function toggleDesc(cardEl) {
+        const desc = cardEl.querySelector('.card-desc');
+        desc.classList.toggle('visible');
+    }
+
+    // ── Helpers ──
+    function ordinal(n) {
+        const s = ['th','st','nd','rd'];
+        const v = n % 100;
+        return n + (s[(v - 20) % 10] || s[v] || s[0]);
+    }
+    function esc(str) {
+        if (!str) return '';
+        const d = document.createElement('div');
+        d.textContent = str;
+        return d.innerHTML;
+    }
+
+    // ── Filter change handler ──
+    async function applyFilters() {
+        const filters = {
+            level:  document.getElementById('f-level').value,
+            school: document.getElementById('f-school').value,
+            class:  document.getElementById('f-class').value,
+            search: document.getElementById('f-search').value.trim()
+        };
+
+        document.getElementById('card-grid').innerHTML = '<div class="loading">Loading…</div>';
+        const spells = await fetchSpells(filters);
+        renderAll(spells);
+    }
+
+    // ── Wire up filters ──
+    ['f-level', 'f-school', 'f-class'].forEach(id => {
+        document.getElementById(id).addEventListener('change', applyFilters);
+    });
+    document.getElementById('f-search').addEventListener('input', () => {
+        clearTimeout(debounceTimer);
+        debounceTimer = setTimeout(applyFilters, 400);
+    });
+
+    // ── Init ──
+    applyFilters();
+</script>
+<script src="/DD/strip.js"></script>
+
+</body>
+</html>

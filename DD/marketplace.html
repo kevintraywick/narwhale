@@ -689,6 +689,8 @@
     // ── Select a player by clicking their portrait ──
     function selectPlayer(id) {
         activePlayer = id;
+        // Persist selection so it carries across page visits
+        try { sessionStorage.setItem('dd-active-player', id); } catch {}
         if (!marketData.players[id]) {
             const level = parseInt(playerSheets[id]?.level) || 1;
             const scroll = STARTING_SCROLLS[id];
@@ -1015,6 +1017,21 @@
                 };
             }
         });
+
+        // Auto-select player if one was picked from the splash page
+        let hasPlayer = false;
+        try {
+            const saved = sessionStorage.getItem('dd-active-player');
+            if (saved && PLAYER_IDS.includes(saved)) {
+                selectPlayer(saved);
+                hasPlayer = true;
+            }
+        } catch {}
+
+        // Hide the welcome banner if a player is already known
+        if (hasPlayer) {
+            document.getElementById('welcome').style.display = 'none';
+        }
 
         renderAll();
     })();
