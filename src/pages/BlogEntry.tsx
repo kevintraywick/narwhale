@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 import { useParams, Link } from 'react-router-dom'
-import { fetchEntry, EntryDetail, Comment } from '../hooks/useFeed'
+import { fetchEntry } from '../hooks/useFeed'
+import type { EntryDetail, Comment } from '../hooks/useFeed'
 
 function formatDate(iso: string) {
   return new Date(iso).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })

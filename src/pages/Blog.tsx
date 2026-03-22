@@ -1,5 +1,6 @@
 import { useState } from 'react'
-import { useFeed, Entry, Comment } from '../hooks/useFeed'
+import { useFeed } from '../hooks/useFeed'
+import type { Entry, Comment } from '../hooks/useFeed'
 
 const API_URL = import.meta.env.VITE_API_URL as string
 
