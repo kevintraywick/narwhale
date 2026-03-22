@@ -12,7 +12,7 @@ function App() {
         <img src={typeImg} alt="" className="w-full h-full object-cover" style={{ objectPosition: 'center 45%' }} />
       </div>
       <div className="flex items-center justify-center" style={{ fontFamily: '-apple-system, "SF Pro Display", BlinkMacSystemFont, sans-serif', fontSize: 'clamp(80px, 12vw, 180px)' }}>
-        k
+        K
       </div>
       <div className="overflow-hidden">
         <img src={andImg} alt="" className="w-full h-full object-cover" />
