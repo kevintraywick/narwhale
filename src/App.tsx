@@ -9,7 +9,7 @@ function App() {
     <div className="grid h-screen w-screen bg-white" style={{ gridTemplateColumns: '1fr 1fr 1fr', gridTemplateRows: '1fr 1fr' }}>
       {/* Row 1 */}
       <div className="overflow-hidden">
-        <img src={typeImg} alt="" className="w-full h-full object-cover opacity-25" style={{ objectPosition: 'center 45%' }} />
+        <img src={typeImg} alt="" className="w-full h-full object-cover" style={{ objectPosition: 'center 45%' }} />
       </div>
       <div className="flex items-center justify-center" style={{ fontFamily: '-apple-system, "SF Pro Display", BlinkMacSystemFont, sans-serif', fontSize: 'clamp(80px, 12vw, 180px)' }}>
         k
