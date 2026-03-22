@@ -6,7 +6,7 @@ import andImg from './assets/and.png'
 function App() {
   return (
     <div className="min-h-screen bg-white flex flex-col justify-end">
-      <div className="flex justify-center">
+      <div className="flex justify-center items-end">
         <a href="/fast-french/" target="_blank" rel="noopener noreferrer">
           <img src={pastryImg} alt="Fast French" className="w-[500px] h-[500px] object-cover" />
         </a>
