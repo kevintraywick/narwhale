@@ -1,16 +1,10 @@
 import pastryImg from './assets/pastry.png'
 import bubbleImg from './assets/bubble.png'
 import penImg from './assets/pen.png'
-import nameImg from './assets/name.png'
 
 function App() {
   return (
     <div className="min-h-screen bg-white flex flex-col justify-end">
-      <div className="flex justify-center">
-        <div className="w-[500px] h-[500px] flex items-center justify-center">
-          <img src={nameImg} alt="" className="w-full h-full object-contain" />
-        </div>
-      </div>
       <div className="flex justify-center">
         <a href="https://kevintraywick.com/fast-french" target="_blank" rel="noopener noreferrer">
           <img src={pastryImg} alt="Fast French" className="w-[500px] h-[500px] object-cover" />
