@@ -105,7 +105,7 @@ Renders inside the type box grid cell, absolutely positioned over the `type.png`
   - Kevin's note: first 3 lines, truncated (`line-clamp-3`)
   - Visitor comment input: `placeholder="Add a comment…"`
   - Clicking the title navigates to `/blog/:id`
-- **Post form** (bottom, always visible): three plain inputs — Title, Link, Comment — no labels, no button visible. When `[[` is detected in the title field, a Post button appears and the auth header is prepared.
+- **Post form** (bottom, always visible): three plain inputs — Title, Link, Comment — no labels, no button visible. When `[[` is detected at the start of the title field, the auth header is prepared. Submission is triggered by pressing Enter in the title or note field — no visible Post button.
 
 ### Blog.tsx
 
