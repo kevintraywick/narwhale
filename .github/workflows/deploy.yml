@@ -29,6 +29,9 @@ jobs:
 
       - run: npm ci
       - run: npm run build
+        env:
+          VITE_API_URL: ${{ secrets.VITE_API_URL }}
+          VITE_POST_SECRET: ${{ secrets.VITE_POST_SECRET }}
 
       - uses: actions/upload-pages-artifact@v3
         with:
