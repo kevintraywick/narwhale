@@ -9,8 +9,8 @@ function App() {
     <div className="min-h-screen bg-white flex flex-col justify-end">
       <div className="flex justify-center items-end">
         <div className="flex flex-col">
-          <div className="relative w-[500px] h-[500px] overflow-hidden">
-            <img src={typeImg} alt="" className="absolute w-full opacity-25" style={{ height: '143%', top: '-14.3%' }} />
+          <div className="w-[500px] h-[500px] overflow-hidden">
+            <img src={typeImg} alt="" className="w-full h-full object-cover opacity-25" style={{ objectPosition: 'center 45%' }} />
           </div>
           <a href="/fast-french/" target="_blank" rel="noopener noreferrer">
             <img src={pastryImg} alt="Fast French" className="w-[500px] h-[500px] object-cover" />
