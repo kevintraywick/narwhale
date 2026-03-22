@@ -45,7 +45,7 @@ export function FeedOverlay() {
   }
 
   return (
-    <div className="absolute inset-0 flex flex-col font-sans text-xs overflow-hidden bg-white/60 backdrop-blur-sm">
+    <div className="absolute inset-0 flex flex-col font-sans text-xs overflow-hidden">
       {/* Feed */}
       <div className="flex-1 overflow-y-auto p-2.5 space-y-2">
         {recent.map(entry => (
