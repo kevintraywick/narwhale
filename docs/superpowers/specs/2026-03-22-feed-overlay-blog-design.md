@@ -114,8 +114,8 @@ Full listing at `/blog`:
 - Header: `Kevin Traywick · thoughts & links`
 - Entries listed newest first
 - Collapsed: title line + note preview (full text, no clamp) + comment count
-- Clicking a title expands inline to show full note + comment thread + comment input
-- Or navigates to `/blog/:id` for permalink
+- Clicking a title expands inline to show full note + comment thread + comment input (no navigation)
+- `/blog/:id` is a direct permalink URL — accessible by sharing the URL, not by clicking a title on the listing page
 
 ### BlogEntry.tsx
 
