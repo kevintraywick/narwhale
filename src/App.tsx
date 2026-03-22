@@ -6,7 +6,7 @@ function App() {
   return (
     <div className="min-h-screen bg-white flex flex-col justify-end">
       <div className="flex justify-center">
-        <a href="https://github.com/kevintraywick/french-fast" target="_blank" rel="noopener noreferrer">
+        <a href="/fast-french/" target="_blank" rel="noopener noreferrer">
           <img src={pastryImg} alt="Fast French" className="w-[500px] h-[500px] object-cover" />
         </a>
         <a href="sms:+12068608292">
