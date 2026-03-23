@@ -19,9 +19,9 @@ function Homepage() {
       <div className="flex items-center justify-center" style={{ fontFamily: '-apple-system, "SF Pro Display", BlinkMacSystemFont, sans-serif', fontSize: 'clamp(80px, 12vw, 180px)' }}>
         K
       </div>
-      <div className="overflow-hidden">
-        <img src={andImg} alt="" className="w-full h-full object-cover" />
-      </div>
+      <a href="https://blackmoor-production.up.railway.app" target="_blank" rel="noopener noreferrer" className="overflow-hidden">
+        <img src={andImg} alt="Blackmoor" className="w-full h-full object-cover" />
+      </a>
 
       {/* Row 2 */}
       <a href="/fast-french/" target="_blank" rel="noopener noreferrer" className="overflow-hidden">
