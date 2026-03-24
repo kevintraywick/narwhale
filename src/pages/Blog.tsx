@@ -1,8 +1,7 @@
-import { useState, useRef, useEffect } from 'react'
+import { useRef } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import { useFeed } from '../hooks/useFeed'
 import type { Entry, Comment } from '../hooks/useFeed'
-import { getPending, clearPending } from '../pendingDrop'
 
 const API_URL = import.meta.env.VITE_API_URL as string
 
@@ -103,48 +102,8 @@ export default function Blog() {
   const navigate = useNavigate()
 
   const titleRef = useRef<HTMLInputElement>(null)
-  const fileInputRef = useRef<HTMLInputElement>(null)
   const linkRef = useRef<HTMLInputElement>(null)
   const noteRef = useRef<HTMLInputElement>(null)
-  const [previewUrl, setPreviewUrl] = useState<string | undefined>()
-  const [isDragOver, setIsDragOver] = useState(false)
-  const initialized = useRef(false)
-
-  // Pre-fill from homepage drop (best-effort — works for in-app navigation)
-  useEffect(() => {
-    if (initialized.current) return
-    initialized.current = true
-    const pending = getPending()
-    if (!pending) return
-    clearPending()
-    if (pending.title && titleRef.current) titleRef.current.value = pending.title
-    if (pending.link && linkRef.current) linkRef.current.value = pending.link
-    if (pending.file) setPreviewUrl(URL.createObjectURL(pending.file))
-  }, [])
-
-  // Drop directly onto the form — reliable fallback for images
-  function handleFormDragOver(e: React.DragEvent) {
-    e.preventDefault()
-    setIsDragOver(true)
-  }
-  function handleFormDragLeave(e: React.DragEvent) {
-    if (!e.currentTarget.contains(e.relatedTarget as Node)) setIsDragOver(false)
-  }
-  function handleFormDrop(e: React.DragEvent) {
-    e.preventDefault()
-    setIsDragOver(false)
-    const file = e.dataTransfer.files[0]
-    if (file) {
-      setPreviewUrl(URL.createObjectURL(file))
-      if (titleRef.current && !titleRef.current.value) titleRef.current.value = file.name
-      return
-    }
-    const url = e.dataTransfer.getData('text/uri-list') || e.dataTransfer.getData('text/plain')
-    if (url?.startsWith('http')) {
-      if (linkRef.current) linkRef.current.value = url
-      if (titleRef.current && !titleRef.current.value) titleRef.current.value = hostname(url)
-    }
-  }
 
   async function handlePost() {
     const title = titleRef.current!.value.trim()
@@ -154,8 +113,6 @@ export default function Blog() {
       titleRef.current!.value = ''
       linkRef.current!.value = ''
       noteRef.current!.value = ''
-      if (previewUrl) URL.revokeObjectURL(previewUrl)
-      setPreviewUrl(undefined)
       navigate('/blog')
     } catch {}
   }
@@ -170,44 +127,8 @@ export default function Blog() {
           <Link to="/" className="text-xs text-gray-400 hover:text-gray-600">← home</Link>
         </div>
 
-        {/* Post form — also a drop zone */}
-        <div
-          className="mb-10 pb-8 border-b border-gray-100 rounded transition-colors"
-          style={{ background: isDragOver ? '#f9fafb' : 'transparent', outline: isDragOver ? '2px dashed #d1d5db' : 'none' }}
-          onDragOver={handleFormDragOver}
-          onDragLeave={handleFormDragLeave}
-          onDrop={handleFormDrop}
-        >
-          <input
-            ref={fileInputRef}
-            type="file"
-            accept="image/*"
-            className="hidden"
-            onChange={e => {
-              const file = e.target.files?.[0]
-              if (!file) return
-              setPreviewUrl(URL.createObjectURL(file))
-              if (titleRef.current && !titleRef.current.value) titleRef.current.value = file.name
-              e.target.value = ''
-            }}
-          />
-          {previewUrl ? (
-            <div className="relative mb-3">
-              <img src={previewUrl} alt="" className="w-full max-h-48 rounded object-contain bg-gray-50" />
-              <button
-                onClick={() => { URL.revokeObjectURL(previewUrl); setPreviewUrl(undefined) }}
-                className="absolute top-1 right-1 text-xs bg-black/40 text-white rounded px-1.5 py-0.5 hover:bg-black/60"
-              >✕</button>
-            </div>
-          ) : (
-            <button
-              type="button"
-              onClick={() => fileInputRef.current?.click()}
-              className="text-xs text-gray-400 hover:text-gray-600 mb-3 text-left"
-            >
-              + add image
-            </button>
-          )}
+        {/* Post form */}
+        <div className="mb-10 pb-8 border-b border-gray-100">
           <div className="flex flex-col gap-2">
             <input
               ref={titleRef}
