@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { useFeed } from '../hooks/useFeed'
+import { setPending } from '../pendingDrop'
 
 function formatDate(iso: string) {
   return new Date(iso).toLocaleDateString('en-US', { month: 'short', day: 'numeric' })
@@ -34,13 +35,14 @@ export function FeedOverlay() {
     setIsDragOver(false)
     const file = e.dataTransfer.files[0]
     if (file) {
-      const previewUrl = URL.createObjectURL(file)
-      navigate('/blog', { state: { draft: { title: file.name, previewUrl } } })
+      setPending({ title: file.name, file })
+      navigate('/blog')
       return
     }
     const url = e.dataTransfer.getData('text/uri-list') || e.dataTransfer.getData('text/plain')
     if (url?.startsWith('http')) {
-      navigate('/blog', { state: { draft: { title: hostname(url), link: url } } })
+      setPending({ title: hostname(url), link: url })
+      navigate('/blog')
       return
     }
     navigate('/blog')

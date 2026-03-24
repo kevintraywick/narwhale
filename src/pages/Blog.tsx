@@ -1,13 +1,8 @@
 import { useState, useRef, useEffect } from 'react'
-import { useLocation, Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import { useFeed } from '../hooks/useFeed'
 import type { Entry, Comment } from '../hooks/useFeed'
-
-interface Draft {
-  title?: string
-  link?: string
-  previewUrl?: string
-}
+import { getPending, clearPending } from '../pendingDrop'
 
 const API_URL = import.meta.env.VITE_API_URL as string
 
@@ -105,17 +100,30 @@ function EntryRow({ entry, postComment }: { entry: Entry, postComment: (id: numb
 
 export default function Blog() {
   const { entries, loading, postEntry, postComment } = useFeed()
-  const location = useLocation()
-  const draft = (location.state as { draft?: Draft } | null)?.draft
+  const navigate = useNavigate()
 
   const titleRef = useRef<HTMLInputElement>(null)
   const linkRef = useRef<HTMLInputElement>(null)
   const noteRef = useRef<HTMLInputElement>(null)
-  const [previewUrl, setPreviewUrl] = useState<string | undefined>(draft?.previewUrl)
+  const [previewUrl, setPreviewUrl] = useState<string | undefined>()
+  const initialized = useRef(false)
 
   useEffect(() => {
-    if (draft?.title && titleRef.current) titleRef.current.value = draft.title
-    if (draft?.link && linkRef.current) linkRef.current.value = draft.link
+    // Guard prevents double-initialization in React Strict Mode
+    if (initialized.current) return
+    initialized.current = true
+
+    const pending = getPending()
+    if (!pending) return
+    clearPending()
+
+    if (pending.title && titleRef.current) titleRef.current.value = pending.title
+    if (pending.link && linkRef.current) linkRef.current.value = pending.link
+    if (pending.file) {
+      const reader = new FileReader()
+      reader.onload = () => setPreviewUrl(reader.result as string)
+      reader.readAsDataURL(pending.file)
+    }
   }, [])
 
   async function handlePost() {
@@ -126,10 +134,8 @@ export default function Blog() {
       titleRef.current!.value = ''
       linkRef.current!.value = ''
       noteRef.current!.value = ''
-      if (previewUrl) {
-        URL.revokeObjectURL(previewUrl)
-        setPreviewUrl(undefined)
-      }
+      setPreviewUrl(undefined)
+      navigate('/blog')
     } catch {}
   }
 
