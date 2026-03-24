@@ -103,6 +103,7 @@ export default function Blog() {
   const navigate = useNavigate()
 
   const titleRef = useRef<HTMLInputElement>(null)
+  const fileInputRef = useRef<HTMLInputElement>(null)
   const linkRef = useRef<HTMLInputElement>(null)
   const noteRef = useRef<HTMLInputElement>(null)
   const [previewUrl, setPreviewUrl] = useState<string | undefined>()
@@ -177,10 +178,36 @@ export default function Blog() {
           onDragLeave={handleFormDragLeave}
           onDrop={handleFormDrop}
         >
-          {previewUrl
-            ? <img src={previewUrl} alt="" className="mb-3 w-full max-h-48 rounded object-contain bg-gray-50" />
-            : <p className="text-xs text-gray-300 mb-3">drop an image or link here</p>
-          }
+          <input
+            ref={fileInputRef}
+            type="file"
+            accept="image/*"
+            className="hidden"
+            onChange={e => {
+              const file = e.target.files?.[0]
+              if (!file) return
+              setPreviewUrl(URL.createObjectURL(file))
+              if (titleRef.current && !titleRef.current.value) titleRef.current.value = file.name
+              e.target.value = ''
+            }}
+          />
+          {previewUrl ? (
+            <div className="relative mb-3">
+              <img src={previewUrl} alt="" className="w-full max-h-48 rounded object-contain bg-gray-50" />
+              <button
+                onClick={() => { URL.revokeObjectURL(previewUrl); setPreviewUrl(undefined) }}
+                className="absolute top-1 right-1 text-xs bg-black/40 text-white rounded px-1.5 py-0.5 hover:bg-black/60"
+              >✕</button>
+            </div>
+          ) : (
+            <button
+              type="button"
+              onClick={() => fileInputRef.current?.click()}
+              className="text-xs text-gray-400 hover:text-gray-600 mb-3 text-left"
+            >
+              + add image
+            </button>
+          )}
           <div className="flex flex-col gap-2">
             <input
               ref={titleRef}
