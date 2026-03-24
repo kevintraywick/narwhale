@@ -69,7 +69,7 @@ export function FeedOverlay() {
               <span className="text-gray-500 text-[12px] mr-1.5">{formatDate(entry.created_at)}</span>
               <button
                 className="font-semibold text-black hover:underline text-left text-[13px]"
-                onClick={() => navigate(`/blog/${entry.id}`)}
+                onClick={() => navigate('/blog')}
               >
                 {entry.title}
               </button>
