@@ -1,5 +1,5 @@
 import { useState, useRef, useEffect } from 'react'
-import { useLocation } from 'react-router-dom'
+import { useLocation, Link } from 'react-router-dom'
 import { useFeed } from '../hooks/useFeed'
 import type { Entry, Comment } from '../hooks/useFeed'
 
@@ -126,19 +126,19 @@ export default function Blog() {
       titleRef.current!.value = ''
       linkRef.current!.value = ''
       noteRef.current!.value = ''
-      if (previewUrl) {
-        URL.revokeObjectURL(previewUrl)
-        setPreviewUrl(undefined)
-      }
+      if (previewUrl) setPreviewUrl(undefined)
     } catch {}
   }
 
   return (
     <div className="min-h-screen bg-white font-sans">
       <div className="max-w-2xl mx-auto px-6 py-12">
-        <h1 className="text-sm font-semibold text-gray-400 uppercase tracking-widest mb-8">
-          Kevin Traywick · thoughts &amp; links
-        </h1>
+        <div className="flex items-baseline justify-between mb-8">
+          <h1 className="text-sm font-semibold text-gray-400 uppercase tracking-widest">
+            Kevin Traywick · thoughts &amp; links
+          </h1>
+          <Link to="/" className="text-xs text-gray-400 hover:text-gray-600">← home</Link>
+        </div>
 
         {/* Post form */}
         <div className="mb-10 pb-8 border-b border-gray-100">

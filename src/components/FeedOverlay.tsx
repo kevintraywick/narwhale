@@ -26,12 +26,16 @@ export function FeedOverlay() {
     setIsDragOver(false)
   }
 
-  function handleDrop(e: React.DragEvent) {
+  async function handleDrop(e: React.DragEvent) {
     e.preventDefault()
     setIsDragOver(false)
     const file = e.dataTransfer.files[0]
     if (file) {
-      const previewUrl = URL.createObjectURL(file)
+      const previewUrl = await new Promise<string>(resolve => {
+        const reader = new FileReader()
+        reader.onload = () => resolve(reader.result as string)
+        reader.readAsDataURL(file)
+      })
       navigate('/blog', { state: { draft: { title: file.name, previewUrl } } })
       return
     }
@@ -97,18 +101,21 @@ export function FeedOverlay() {
         ))}
       </div>
 
-      {/* + button */}
-      <div className="border-t border-black/10 flex items-center justify-center py-1.5 bg-white/60">
-        <button
-          className="w-5 h-5 rounded-full flex items-center justify-center text-white leading-none transition-opacity"
-          style={{ background: isDragOver ? '#666' : '#999', fontSize: '16px', opacity: isDragOver ? 0.8 : 0.4 }}
-          onClick={() => navigate('/blog')}
-          onDragOver={handleDragOver}
-          onDragLeave={handleDragLeave}
-          onDrop={handleDrop}
+      {/* + button — full bar is the drop zone */}
+      <div
+        className="border-t border-black/10 flex items-center justify-center py-1.5 cursor-pointer transition-colors"
+        style={{ background: isDragOver ? 'rgba(0,0,0,0.06)' : 'rgba(255,255,255,0.6)' }}
+        onClick={() => navigate('/blog')}
+        onDragOver={handleDragOver}
+        onDragLeave={handleDragLeave}
+        onDrop={handleDrop}
+      >
+        <div
+          className="w-5 h-5 rounded-full flex items-center justify-center text-white leading-none pointer-events-none"
+          style={{ background: '#999', fontSize: '16px', opacity: isDragOver ? 0.7 : 0.4 }}
         >
           +
-        </button>
+        </div>
       </div>
     </div>
   )
