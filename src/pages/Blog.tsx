@@ -126,7 +126,10 @@ export default function Blog() {
       titleRef.current!.value = ''
       linkRef.current!.value = ''
       noteRef.current!.value = ''
-      if (previewUrl) setPreviewUrl(undefined)
+      if (previewUrl) {
+        URL.revokeObjectURL(previewUrl)
+        setPreviewUrl(undefined)
+      }
     } catch {}
   }
 

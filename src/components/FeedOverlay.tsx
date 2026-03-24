@@ -22,20 +22,19 @@ export function FeedOverlay() {
     setIsDragOver(true)
   }
 
-  function handleDragLeave() {
-    setIsDragOver(false)
+  function handleDragLeave(e: React.DragEvent) {
+    // only clear if leaving the overlay entirely (not moving to a child)
+    if (!e.currentTarget.contains(e.relatedTarget as Node)) {
+      setIsDragOver(false)
+    }
   }
 
-  async function handleDrop(e: React.DragEvent) {
+  function handleDrop(e: React.DragEvent) {
     e.preventDefault()
     setIsDragOver(false)
     const file = e.dataTransfer.files[0]
     if (file) {
-      const previewUrl = await new Promise<string>(resolve => {
-        const reader = new FileReader()
-        reader.onload = () => resolve(reader.result as string)
-        reader.readAsDataURL(file)
-      })
+      const previewUrl = URL.createObjectURL(file)
       navigate('/blog', { state: { draft: { title: file.name, previewUrl } } })
       return
     }
@@ -60,9 +59,18 @@ export function FeedOverlay() {
   }
 
   return (
-    <div className="absolute inset-0 flex flex-col font-sans text-xs overflow-hidden">
+    <div
+      className="absolute inset-0 flex flex-col font-sans text-xs overflow-hidden transition-colors"
+      style={{ background: isDragOver ? 'rgba(255,255,255,0.08)' : 'transparent' }}
+      onDragOver={handleDragOver}
+      onDragLeave={handleDragLeave}
+      onDrop={handleDrop}
+    >
       {/* Feed */}
-      <div className="flex-1 overflow-y-auto p-2.5 space-y-2">
+      <div
+        className="flex-1 overflow-y-auto p-2.5 space-y-2"
+        style={{ scrollbarWidth: 'none' }}
+      >
         {recent.map(entry => (
           <div key={entry.id} className="bg-white/90 rounded p-2">
             <div className="leading-snug">
@@ -101,18 +109,14 @@ export function FeedOverlay() {
         ))}
       </div>
 
-      {/* + button — full bar is the drop zone */}
+      {/* + button */}
       <div
-        className="border-t border-black/10 flex items-center justify-center py-1.5 cursor-pointer transition-colors"
-        style={{ background: isDragOver ? 'rgba(0,0,0,0.06)' : 'rgba(255,255,255,0.6)' }}
+        className="border-t border-white/10 flex items-center justify-center py-1.5 cursor-pointer"
         onClick={() => navigate('/blog')}
-        onDragOver={handleDragOver}
-        onDragLeave={handleDragLeave}
-        onDrop={handleDrop}
       >
         <div
           className="w-5 h-5 rounded-full flex items-center justify-center text-white leading-none pointer-events-none"
-          style={{ background: '#999', fontSize: '16px', opacity: isDragOver ? 0.7 : 0.4 }}
+          style={{ background: '#999', fontSize: '16px', opacity: isDragOver ? 0.8 : 0.4 }}
         >
           +
         </div>
