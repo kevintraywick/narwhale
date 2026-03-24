@@ -1,4 +1,4 @@
-import { useRef } from 'react'
+import { useState, useRef } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import { useFeed } from '../hooks/useFeed'
 import type { Entry, Comment } from '../hooks/useFeed'
