@@ -143,7 +143,7 @@ export default function Blog() {
         {/* Post form */}
         <div className="mb-10 pb-8 border-b border-gray-100">
           {previewUrl && (
-            <img src={previewUrl} alt="" className="mb-3 max-h-40 rounded object-contain" />
+            <img src={previewUrl} alt="" className="mb-3 w-full max-h-48 rounded object-contain bg-gray-50" />
           )}
           <div className="flex flex-col gap-2">
             <input
