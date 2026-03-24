@@ -1,6 +1,13 @@
-import { useState } from 'react'
+import { useState, useRef, useEffect } from 'react'
+import { useLocation } from 'react-router-dom'
 import { useFeed } from '../hooks/useFeed'
 import type { Entry, Comment } from '../hooks/useFeed'
+
+interface Draft {
+  title?: string
+  link?: string
+  previewUrl?: string
+}
 
 const API_URL = import.meta.env.VITE_API_URL as string
 
@@ -97,7 +104,34 @@ function EntryRow({ entry, postComment }: { entry: Entry, postComment: (id: numb
 }
 
 export default function Blog() {
-  const { entries, loading, postComment } = useFeed()
+  const { entries, loading, postEntry, postComment } = useFeed()
+  const location = useLocation()
+  const draft = (location.state as { draft?: Draft } | null)?.draft
+
+  const titleRef = useRef<HTMLInputElement>(null)
+  const linkRef = useRef<HTMLInputElement>(null)
+  const noteRef = useRef<HTMLInputElement>(null)
+  const [previewUrl, setPreviewUrl] = useState<string | undefined>(draft?.previewUrl)
+
+  useEffect(() => {
+    if (draft?.title && titleRef.current) titleRef.current.value = draft.title
+    if (draft?.link && linkRef.current) linkRef.current.value = draft.link
+  }, [])
+
+  async function handlePost() {
+    const title = titleRef.current!.value.trim()
+    if (!title) return
+    try {
+      await postEntry(title, linkRef.current!.value.trim(), noteRef.current!.value.trim())
+      titleRef.current!.value = ''
+      linkRef.current!.value = ''
+      noteRef.current!.value = ''
+      if (previewUrl) {
+        URL.revokeObjectURL(previewUrl)
+        setPreviewUrl(undefined)
+      }
+    } catch {}
+  }
 
   return (
     <div className="min-h-screen bg-white font-sans">
@@ -105,6 +139,41 @@ export default function Blog() {
         <h1 className="text-sm font-semibold text-gray-400 uppercase tracking-widest mb-8">
           Kevin Traywick · thoughts &amp; links
         </h1>
+
+        {/* Post form */}
+        <div className="mb-10 pb-8 border-b border-gray-100">
+          {previewUrl && (
+            <img src={previewUrl} alt="" className="mb-3 max-h-40 rounded object-contain" />
+          )}
+          <div className="flex flex-col gap-2">
+            <input
+              ref={titleRef}
+              className="w-full text-sm border border-gray-200 rounded px-2.5 py-1.5 focus:outline-none"
+              placeholder="Title…"
+              onKeyDown={e => { if (e.key === 'Enter') handlePost() }}
+            />
+            <input
+              ref={linkRef}
+              className="w-full text-sm border border-gray-200 rounded px-2.5 py-1.5 focus:outline-none"
+              placeholder="Link (optional)…"
+            />
+            <input
+              ref={noteRef}
+              className="w-full text-sm border border-gray-200 rounded px-2.5 py-1.5 focus:outline-none"
+              placeholder="Note…"
+              onKeyDown={e => { if (e.key === 'Enter') handlePost() }}
+            />
+            <div>
+              <button
+                onClick={handlePost}
+                className="text-xs bg-gray-900 text-white rounded px-3 py-1.5 hover:bg-gray-700"
+              >
+                Post
+              </button>
+            </div>
+          </div>
+        </div>
+
         {loading && <p className="text-gray-300 text-sm">Loading…</p>}
         {entries.map(entry => (
           <EntryRow key={entry.id} entry={entry} postComment={postComment} />

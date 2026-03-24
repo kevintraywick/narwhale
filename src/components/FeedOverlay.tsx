@@ -1,4 +1,4 @@
-import { useRef } from 'react'
+import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { useFeed } from '../hooks/useFeed'
 
@@ -11,25 +11,36 @@ function hostname(url: string) {
 }
 
 export function FeedOverlay() {
-  const { entries, postEntry, postComment } = useFeed()
+  const { entries, postComment } = useFeed()
   const navigate = useNavigate()
-  const titleRef = useRef<HTMLInputElement>(null)
-  const linkRef = useRef<HTMLInputElement>(null)
-  const noteRef = useRef<HTMLInputElement>(null)
+  const [isDragOver, setIsDragOver] = useState(false)
 
   const recent = entries.slice(0, 8)
 
-  async function handlePost() {
-    const raw = titleRef.current!.value.trim()
-    const isKevin = raw.startsWith('[[')
-    const title = isKevin ? raw.slice(2).trim() : raw
-    if (!title || !isKevin) return
-    try {
-      await postEntry(title, linkRef.current!.value.trim(), noteRef.current!.value.trim())
-      titleRef.current!.value = ''
-      linkRef.current!.value = ''
-      noteRef.current!.value = ''
-    } catch {}
+  function handleDragOver(e: React.DragEvent) {
+    e.preventDefault()
+    setIsDragOver(true)
+  }
+
+  function handleDragLeave() {
+    setIsDragOver(false)
+  }
+
+  function handleDrop(e: React.DragEvent) {
+    e.preventDefault()
+    setIsDragOver(false)
+    const file = e.dataTransfer.files[0]
+    if (file) {
+      const previewUrl = URL.createObjectURL(file)
+      navigate('/blog', { state: { draft: { title: file.name, previewUrl } } })
+      return
+    }
+    const url = e.dataTransfer.getData('text/uri-list') || e.dataTransfer.getData('text/plain')
+    if (url?.startsWith('http')) {
+      navigate('/blog', { state: { draft: { title: hostname(url), link: url } } })
+      return
+    }
+    navigate('/blog')
   }
 
   async function handleComment(entryId: number, input: HTMLInputElement) {
@@ -86,25 +97,18 @@ export function FeedOverlay() {
         ))}
       </div>
 
-      {/* Post form — always visible, no labels */}
-      <div className="border-t border-black/10 p-2 bg-white/80 flex flex-col gap-1">
-        <input
-          ref={titleRef}
-          className="w-full text-[13px] border border-gray-200 rounded px-1.5 py-1 bg-white focus:outline-none"
-          placeholder="Title…"
-          onKeyDown={e => { if (e.key === 'Enter') handlePost() }}
-        />
-        <input
-          ref={linkRef}
-          className="w-full text-[13px] border border-gray-200 rounded px-1.5 py-1 bg-white focus:outline-none"
-          placeholder="Link…"
-        />
-        <input
-          ref={noteRef}
-          className="w-full text-[13px] border border-gray-200 rounded px-1.5 py-1 bg-white focus:outline-none"
-          placeholder="Comment…"
-          onKeyDown={e => { if (e.key === 'Enter') handlePost() }}
-        />
+      {/* + button */}
+      <div className="border-t border-black/10 flex items-center justify-center py-1.5 bg-white/60">
+        <button
+          className="w-5 h-5 rounded-full flex items-center justify-center text-white leading-none transition-opacity"
+          style={{ background: isDragOver ? '#666' : '#999', fontSize: '16px', opacity: isDragOver ? 0.8 : 0.4 }}
+          onClick={() => navigate('/blog')}
+          onDragOver={handleDragOver}
+          onDragLeave={handleDragLeave}
+          onDrop={handleDrop}
+        >
+          +
+        </button>
       </div>
     </div>
   )
