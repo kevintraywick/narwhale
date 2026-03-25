@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 
-export const API_URL = import.meta.env.VITE_API_URL as string
+export const API_URL: string = import.meta.env.VITE_API_URL || ''
 
 export interface Entry {
   id: number
@@ -25,17 +25,18 @@ export interface EntryDetail extends Omit<Entry, 'comment_count'> {
 export function useFeed() {
   const [entries, setEntries] = useState<Entry[]>([])
   const [loading, setLoading] = useState(true)
+  const [error, setError] = useState(false)
 
   useEffect(() => {
     fetch(`${API_URL}/entries`)
       .then(r => r.json())
       .then(setEntries)
-      .catch(() => {})
+      .catch(() => setError(true))
       .finally(() => setLoading(false))
   }, [])
 
-  async function postEntry(title: string, link: string, note: string) {
-    const secret = import.meta.env.VITE_POST_SECRET as string
+  async function postEntry(title: string, link?: string, note?: string): Promise<Entry> {
+    const secret = import.meta.env.VITE_POST_SECRET
     const res = await fetch(`${API_URL}/entries`, {
       method: 'POST',
       headers: {
@@ -49,22 +50,26 @@ export function useFeed() {
       }),
     })
     if (!res.ok) throw new Error('Post failed')
-    const entry = await res.json()
+    const entry: Entry = await res.json()
     setEntries(prev => [{ ...entry, comment_count: 0 }, ...prev])
     return entry
   }
 
-  async function postComment(entryId: number, body: string) {
+  async function postComment(entryId: number, body: string): Promise<Comment> {
     const res = await fetch(`${API_URL}/entries/${entryId}/comments`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ body }),
     })
     if (!res.ok) throw new Error('Comment failed')
-    return res.json()
+    const comment: Comment = await res.json()
+    setEntries(prev => prev.map(e =>
+      e.id === entryId ? { ...e, comment_count: e.comment_count + 1 } : e
+    ))
+    return comment
   }
 
-  return { entries, loading, postEntry, postComment }
+  return { entries, loading, error, postEntry, postComment }
 }
 
 export async function fetchEntry(id: string): Promise<EntryDetail> {

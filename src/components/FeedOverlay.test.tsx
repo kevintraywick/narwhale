@@ -28,9 +28,3 @@ test('renders comment input for each entry', () => {
   expect(screen.getByPlaceholderText('Add a comment…')).toBeInTheDocument()
 })
 
-test('renders post form inputs', () => {
-  render(<MemoryRouter><FeedOverlay /></MemoryRouter>)
-  expect(screen.getByPlaceholderText('Title…')).toBeInTheDocument()
-  expect(screen.getByPlaceholderText('Link…')).toBeInTheDocument()
-  expect(screen.getByPlaceholderText('Comment…')).toBeInTheDocument()
-})

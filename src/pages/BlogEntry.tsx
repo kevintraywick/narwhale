@@ -1,16 +1,15 @@
 import { useState, useEffect } from 'react'
 import { useParams, Link } from 'react-router-dom'
-import { fetchEntry } from '../hooks/useFeed'
+import { fetchEntry, API_URL } from '../hooks/useFeed'
+import { formatDate } from '../utils/format'
 import type { EntryDetail, Comment } from '../hooks/useFeed'
-
-function formatDate(iso: string) {
-  return new Date(iso).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })
-}
 
 export default function BlogEntry() {
   const { id } = useParams<{ id: string }>()
   const [entry, setEntry] = useState<EntryDetail | null>(null)
   const [comments, setComments] = useState<Comment[]>([])
+  const [commentValue, setCommentValue] = useState('')
+  const [commentError, setCommentError] = useState(false)
 
   useEffect(() => {
     if (!id) return
@@ -20,11 +19,11 @@ export default function BlogEntry() {
     }).catch(() => {})
   }, [id])
 
-  async function handleComment(input: HTMLInputElement) {
-    const body = input.value.trim()
+  async function handleComment() {
+    const body = commentValue.trim()
     if (!body || !id) return
     try {
-      const res = await fetch(`${import.meta.env.VITE_API_URL}/entries/${id}/comments`, {
+      const res = await fetch(`${API_URL}/entries/${id}/comments`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ body }),
@@ -32,10 +31,11 @@ export default function BlogEntry() {
       if (!res.ok) throw new Error()
       const comment = await res.json() as Comment
       setComments(prev => [...prev, comment])
-      input.value = ''
+      setCommentValue('')
+      setCommentError(false)
     } catch {
-      input.style.borderColor = '#f87171'
-      setTimeout(() => { input.style.borderColor = '' }, 600)
+      setCommentError(true)
+      setTimeout(() => setCommentError(false), 600)
     }
   }
 
@@ -49,7 +49,7 @@ export default function BlogEntry() {
     <div className="min-h-screen bg-white font-sans">
       <div className="max-w-2xl mx-auto px-6 py-12">
         <Link to="/blog" className="text-xs text-gray-400 hover:text-gray-600 mb-8 block">← all posts</Link>
-        <p className="text-gray-400 text-xs mb-1">{formatDate(entry.created_at)}</p>
+        <p className="text-gray-400 text-xs mb-1">{formatDate(entry.created_at, true)}</p>
         <h1 className="text-xl font-bold text-gray-900 mb-1">{entry.title}</h1>
         {entry.link && (
           <a href={entry.link} target="_blank" rel="noopener noreferrer"
@@ -67,9 +67,11 @@ export default function BlogEntry() {
           ))}
           {comments.length === 0 && <p className="text-gray-300 text-xs italic mb-4">no comments yet</p>}
           <input
-            className="w-full max-w-sm text-xs border border-gray-200 rounded px-2 py-1.5 mt-2 focus:outline-none"
+            className={`w-full max-w-sm text-xs border rounded px-2 py-1.5 mt-2 focus:outline-none ${commentError ? 'border-red-400' : 'border-gray-200'}`}
             placeholder="Add a comment…"
-            onKeyDown={e => { if (e.key === 'Enter') handleComment(e.currentTarget) }}
+            value={commentValue}
+            onChange={e => setCommentValue(e.target.value)}
+            onKeyDown={e => { if (e.key === 'Enter') handleComment() }}
           />
         </div>
       </div>

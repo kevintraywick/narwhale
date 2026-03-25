@@ -1,50 +1,49 @@
-import { useState, useRef } from 'react'
-import { Link, useNavigate } from 'react-router-dom'
-import { useFeed } from '../hooks/useFeed'
+import { useState, useRef, useEffect } from 'react'
+import { Link, useNavigate, useLocation } from 'react-router-dom'
+import { useFeed, API_URL } from '../hooks/useFeed'
+import { formatDate, hostname } from '../utils/format'
 import type { Entry, Comment } from '../hooks/useFeed'
 
-const API_URL = import.meta.env.VITE_API_URL as string
-
-function formatDate(iso: string) {
-  return new Date(iso).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })
-}
-
-function hostname(url: string) {
-  try { return new URL(url).hostname } catch { return url }
-}
-
-function EntryRow({ entry, postComment }: { entry: Entry, postComment: (id: number, body: string) => Promise<unknown> }) {
+function EntryRow({ entry, postComment }: { entry: Entry, postComment: (id: number, body: string) => Promise<Comment> }) {
   const [expanded, setExpanded] = useState(false)
   const [comments, setComments] = useState<Comment[]>([])
   const [loadedComments, setLoadedComments] = useState(false)
+  const [commentValue, setCommentValue] = useState('')
+  const [commentError, setCommentError] = useState(false)
 
   async function expand() {
     if (!expanded && !loadedComments) {
-      const res = await fetch(`${API_URL}/entries/${entry.id}`)
-      const data = await res.json()
-      setComments(data.comments || [])
-      setLoadedComments(true)
+      try {
+        const res = await fetch(`${API_URL}/entries/${entry.id}`)
+        if (!res.ok) throw new Error()
+        const data = await res.json()
+        setComments(data.comments || [])
+        setLoadedComments(true)
+      } catch {
+        return
+      }
     }
     setExpanded(e => !e)
   }
 
-  async function handleComment(input: HTMLInputElement) {
-    const body = input.value.trim()
+  async function handleComment() {
+    const body = commentValue.trim()
     if (!body) return
     try {
-      const comment = await postComment(entry.id, body) as Comment
+      const comment = await postComment(entry.id, body)
       setComments(prev => [...prev, comment])
-      input.value = ''
+      setCommentValue('')
+      setCommentError(false)
     } catch {
-      input.style.borderColor = '#f87171'
-      setTimeout(() => { input.style.borderColor = '' }, 600)
+      setCommentError(true)
+      setTimeout(() => setCommentError(false), 600)
     }
   }
 
   return (
     <div className="border-b border-gray-100 py-4">
       <div>
-        <span className="text-gray-400 text-xs mr-2">{formatDate(entry.created_at)}</span>
+        <span className="text-gray-400 text-xs mr-2">{formatDate(entry.created_at, true)}</span>
         <button
           className="font-semibold text-gray-900 hover:underline text-sm text-left"
           onClick={expand}
@@ -86,9 +85,11 @@ function EntryRow({ entry, postComment }: { entry: Entry, postComment: (id: numb
               <p className="text-gray-300 text-xs italic mb-2">no comments yet</p>
             )}
             <input
-              className="w-full max-w-sm text-xs border border-gray-200 rounded px-2 py-1 mt-1 focus:outline-none"
+              className={`w-full max-w-sm text-xs border rounded px-2 py-1 mt-1 focus:outline-none ${commentError ? 'border-red-400' : 'border-gray-200'}`}
               placeholder="Add a comment…"
-              onKeyDown={e => { if (e.key === 'Enter') handleComment(e.currentTarget) }}
+              value={commentValue}
+              onChange={e => setCommentValue(e.target.value)}
+              onKeyDown={e => { if (e.key === 'Enter') handleComment() }}
             />
           </div>
         </div>
@@ -100,10 +101,17 @@ function EntryRow({ entry, postComment }: { entry: Entry, postComment: (id: numb
 export default function Blog() {
   const { entries, loading, postEntry, postComment } = useFeed()
   const navigate = useNavigate()
+  const location = useLocation()
+  const pending = location.state as { title?: string; link?: string } | null
 
   const titleRef = useRef<HTMLInputElement>(null)
   const linkRef = useRef<HTMLInputElement>(null)
   const noteRef = useRef<HTMLInputElement>(null)
+
+  useEffect(() => {
+    if (pending?.title && titleRef.current) titleRef.current.value = pending.title
+    if (pending?.link && linkRef.current) linkRef.current.value = pending.link
+  }, []) // eslint-disable-line react-hooks/exhaustive-deps
 
   async function handlePost() {
     const title = titleRef.current!.value.trim()

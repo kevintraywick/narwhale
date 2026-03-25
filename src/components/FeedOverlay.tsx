@@ -1,30 +1,25 @@
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { useFeed } from '../hooks/useFeed'
-import { setPending } from '../pendingDrop'
+import { formatDate, hostname } from '../utils/format'
 
-function formatDate(iso: string) {
-  return new Date(iso).toLocaleDateString('en-US', { month: 'short', day: 'numeric' })
-}
-
-function hostname(url: string) {
-  try { return new URL(url).hostname } catch { return url }
-}
+const FEED_PREVIEW_LIMIT = 8
 
 export function FeedOverlay() {
   const { entries, postComment } = useFeed()
   const navigate = useNavigate()
   const [isDragOver, setIsDragOver] = useState(false)
+  const [commentValues, setCommentValues] = useState<Record<number, string>>({})
+  const [commentErrors, setCommentErrors] = useState<Record<number, boolean>>({})
 
-  const recent = entries.slice(0, 8)
+  const recent = entries.slice(0, FEED_PREVIEW_LIMIT)
 
   function handleDragOver(e: React.DragEvent) {
     e.preventDefault()
-    setIsDragOver(true)
+    if (!isDragOver) setIsDragOver(true)
   }
 
   function handleDragLeave(e: React.DragEvent) {
-    // only clear if leaving the overlay entirely (not moving to a child)
     if (!e.currentTarget.contains(e.relatedTarget as Node)) {
       setIsDragOver(false)
     }
@@ -33,30 +28,23 @@ export function FeedOverlay() {
   function handleDrop(e: React.DragEvent) {
     e.preventDefault()
     setIsDragOver(false)
-    const file = e.dataTransfer.files[0]
-    if (file) {
-      setPending({ title: file.name, file })
-      navigate('/blog')
-      return
-    }
     const url = e.dataTransfer.getData('text/uri-list') || e.dataTransfer.getData('text/plain')
     if (url?.startsWith('http')) {
-      setPending({ title: hostname(url), link: url })
-      navigate('/blog')
-      return
+      navigate('/blog', { state: { title: hostname(url), link: url } })
     }
-    navigate('/blog')
+    // file drops and unrecognized content: do nothing
   }
 
-  async function handleComment(entryId: number, input: HTMLInputElement) {
-    const body = input.value.trim()
+  async function handleComment(entryId: number) {
+    const body = (commentValues[entryId] || '').trim()
     if (!body) return
     try {
       await postComment(entryId, body)
-      input.value = ''
+      setCommentValues(prev => ({ ...prev, [entryId]: '' }))
+      setCommentErrors(prev => ({ ...prev, [entryId]: false }))
     } catch {
-      input.style.borderColor = '#f87171'
-      setTimeout(() => { input.style.borderColor = '' }, 600)
+      setCommentErrors(prev => ({ ...prev, [entryId]: true }))
+      setTimeout(() => setCommentErrors(prev => ({ ...prev, [entryId]: false })), 600)
     }
   }
 
@@ -79,7 +67,7 @@ export function FeedOverlay() {
               <span className="text-gray-500 text-[12px] mr-1.5">{formatDate(entry.created_at)}</span>
               <button
                 className="font-semibold text-black hover:underline text-left text-[13px]"
-                onClick={() => navigate('/blog')}
+                onClick={() => navigate('/blog/' + entry.id)}
               >
                 {entry.title}
               </button>
@@ -98,31 +86,33 @@ export function FeedOverlay() {
                 </>
               )}
             </div>
-            {entry.note
-              ? <p className="text-black text-[12px] leading-snug mt-0.5 line-clamp-3">{entry.note}</p>
-              : null
-            }
+            {entry.note && (
+              <p className="text-black text-[12px] leading-snug mt-0.5 line-clamp-3">{entry.note}</p>
+            )}
             <input
-              className="mt-1 w-full text-[12px] border border-gray-200 rounded px-1.5 py-0.5 bg-white placeholder-gray-400 focus:outline-none"
+              className={`mt-1 w-full text-[12px] border rounded px-1.5 py-0.5 bg-white placeholder-gray-400 focus:outline-none ${commentErrors[entry.id] ? 'border-red-400' : 'border-gray-200'}`}
               placeholder="Add a comment…"
-              onKeyDown={e => { if (e.key === 'Enter') handleComment(entry.id, e.currentTarget) }}
+              value={commentValues[entry.id] || ''}
+              onChange={e => setCommentValues(prev => ({ ...prev, [entry.id]: e.target.value }))}
+              onKeyDown={e => { if (e.key === 'Enter') handleComment(entry.id) }}
             />
           </div>
         ))}
       </div>
 
       {/* + button */}
-      <div
-        className="border-t border-white/10 flex items-center justify-center py-1.5 cursor-pointer"
+      <button
+        className="border-t border-white/10 flex items-center justify-center py-1.5 w-full cursor-pointer"
         onClick={() => navigate('/blog')}
+        aria-label="Go to blog"
       >
-        <div
-          className="w-5 h-5 rounded-full flex items-center justify-center text-white leading-none pointer-events-none"
+        <span
+          className="w-5 h-5 rounded-full flex items-center justify-center text-white leading-none"
           style={{ background: '#999', fontSize: '16px', opacity: isDragOver ? 0.8 : 0.4 }}
         >
           +
-        </div>
-      </div>
+        </span>
+      </button>
     </div>
   )
 }
