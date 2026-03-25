@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Impeccable — 20 Commands</title>
+  <style>
+    :root {
+      --bg: #0a0a0f;
+      --surface: #111118;
+      --surface-2: #18181f;
+      --surface-3: #202028;
+      --border: #2a2a38;
+      --border-hover: #3f3f55;
+      --text: #eaeaf2;
+      --text-muted: #8888aa;
+      --text-dim: #50505f;
+      --accent: #b8a0f8;
+      --accent-dim: rgba(184, 160, 248, 0.10);
+      --accent-border: rgba(184, 160, 248, 0.22);
+      --accent-hover: #cbb8ff;
+      --beta-bg: rgba(255, 160, 80, 0.10);
+      --beta-border: rgba(255, 160, 80, 0.25);
+      --beta-color: #ffb06a;
+      --font-sans: -apple-system, BlinkMacSystemFont, "Inter", "Segoe UI", sans-serif;
+      --font-mono: "SF Mono", "Fira Code", "Cascadia Code", monospace;
+      --radius: 12px;
+      --radius-sm: 6px;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: var(--font-sans);
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+    a { color: inherit; text-decoration: none; }
+
+    /* ── NAV ── */
+    nav {
+      position: sticky; top: 0; z-index: 100;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0 36px; height: 56px;
+      background: rgba(10, 10, 15, 0.88);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--border);
+    }
+    .nav-logo {
+      display: flex; align-items: center; gap: 10px;
+      font-size: 14px; font-weight: 600; letter-spacing: -0.01em;
+    }
+    .logo-mark {
+      width: 26px; height: 26px; background: var(--accent);
+      border-radius: 6px; display: flex; align-items: center; justify-content: center;
+      font-size: 13px; font-weight: 800; color: #0a0a0f;
+      font-family: var(--font-mono);
+    }
+    .nav-right { display: flex; align-items: center; gap: 8px; }
+    .btn {
+      display: inline-flex; align-items: center; gap: 6px;
+      padding: 6px 14px; border-radius: var(--radius-sm);
+      font-size: 13px; font-weight: 500; cursor: pointer; border: none;
+      transition: all 0.15s;
+    }
+    .btn-ghost {
+      background: transparent; color: var(--text-muted);
+      border: 1px solid var(--border);
+    }
+    .btn-ghost:hover { border-color: var(--border-hover); color: var(--text); }
+    .btn-primary { background: var(--accent); color: #0a0a0f; font-weight: 600; }
+    .btn-primary:hover { background: var(--accent-hover); }
+
+    /* ── MAIN ── */
+    main {
+      flex: 1;
+      max-width: 1080px;
+      margin: 0 auto;
+      padding: 88px 36px 100px;
+      width: 100%;
+    }
+
+    .eyebrow {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--text-dim);
+      margin-bottom: 16px;
+    }
+    .eyebrow span { color: var(--accent); margin-right: 8px; }
+
+    h1 {
+      font-size: clamp(32px, 5vw, 52px);
+      font-weight: 700;
+      letter-spacing: -0.03em;
+      line-height: 1.1;
+      margin-bottom: 14px;
+    }
+    h1 em { color: var(--accent); font-style: normal; }
+
+    .subtitle {
+      font-size: 16px;
+      color: var(--text-muted);
+      max-width: 540px;
+      margin-bottom: 64px;
+      line-height: 1.65;
+    }
+    .subtitle code {
+      font-family: var(--font-mono);
+      font-size: 13px;
+      color: var(--accent);
+      background: var(--accent-dim);
+      border: 1px solid var(--accent-border);
+      padding: 1px 6px;
+      border-radius: 4px;
+    }
+
+    /* ── CATEGORY BLOCK ── */
+    .category-block { margin-bottom: 48px; }
+
+    .category-header {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 2px;
+      padding: 14px 20px;
+      background: var(--surface-3);
+      border-radius: var(--radius) var(--radius) 0 0;
+      border: 1px solid var(--border);
+      border-bottom: none;
+    }
+
+    .category-pill {
+      font-family: var(--font-mono);
+      font-size: 10px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--accent);
+      background: var(--accent-dim);
+      border: 1px solid var(--accent-border);
+      border-radius: 100px;
+      padding: 2px 9px;
+    }
+
+    .category-name {
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--text-muted);
+      letter-spacing: -0.01em;
+    }
+
+    .category-count {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      color: var(--text-dim);
+      margin-left: auto;
+    }
+
+    /* ── CARD GRID ── */
+    .cmd-grid {
+      display: grid;
+      gap: 2px;
+      background: var(--border);
+      border-radius: 0 0 var(--radius) var(--radius);
+      overflow: hidden;
+    }
+    .cmd-grid-2 { grid-template-columns: repeat(2, 1fr); }
+    .cmd-grid-3 { grid-template-columns: repeat(3, 1fr); }
+    .cmd-grid-4 { grid-template-columns: repeat(4, 1fr); }
+
+    .cmd-card {
+      background: var(--surface);
+      padding: 26px 24px;
+      transition: background 0.2s;
+      display: flex;
+      flex-direction: column;
+    }
+    .cmd-card:hover { background: var(--surface-2); }
+
+    /* overdrive special treatment */
+    .cmd-card.beta {
+      background: var(--beta-bg);
+    }
+    .cmd-card.beta:hover {
+      background: rgba(255, 160, 80, 0.15);
+    }
+
+    .cmd-num {
+      font-family: var(--font-mono);
+      font-size: 10px;
+      color: var(--text-dim);
+      letter-spacing: 0.06em;
+      margin-bottom: 14px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .beta-tag {
+      font-family: var(--font-mono);
+      font-size: 9px;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--beta-color);
+      background: var(--beta-bg);
+      border: 1px solid var(--beta-border);
+      border-radius: 4px;
+      padding: 1px 5px;
+    }
+
+    .cmd-icon {
+      font-size: 22px;
+      margin-bottom: 14px;
+      display: block;
+      line-height: 1;
+    }
+
+    .cmd-name {
+      font-family: var(--font-mono);
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--accent);
+      margin-bottom: 6px;
+      letter-spacing: -0.01em;
+    }
+    .cmd-card.beta .cmd-name { color: var(--beta-color); }
+
+    .cmd-title {
+      font-size: 14px;
+      font-weight: 600;
+      letter-spacing: -0.01em;
+      margin-bottom: 8px;
+    }
+
+    .cmd-desc {
+      font-size: 13px;
+      color: var(--text-muted);
+      line-height: 1.65;
+      flex: 1;
+    }
+
+    .cmd-pair {
+      margin-top: 12px;
+      font-family: var(--font-mono);
+      font-size: 10px;
+      color: var(--text-dim);
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+    .cmd-pair span {
+      color: var(--accent);
+      opacity: 0.6;
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 24px 36px;
+      display: flex; align-items: center; justify-content: space-between;
+      flex-wrap: wrap; gap: 12px;
+    }
+    .footer-left { display: flex; align-items: center; gap: 10px; }
+    .footer-links { display: flex; align-items: center; gap: 20px; }
+    .footer-links a { font-size: 12px; color: var(--text-dim); transition: color 0.15s; }
+    .footer-links a:hover { color: var(--text-muted); }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 860px) {
+      .cmd-grid-4 { grid-template-columns: repeat(2, 1fr); }
+      .cmd-grid-3 { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 540px) {
+      nav { padding: 0 16px; }
+      main { padding: 60px 16px 80px; }
+      footer { padding: 20px 16px; }
+      .cmd-grid-4,
+      .cmd-grid-3,
+      .cmd-grid-2 { grid-template-columns: 1fr; }
+      .category-header { border-radius: var(--radius) var(--radius) 0 0; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <div class="nav-logo">
+      <div class="logo-mark">✦</div>
+      Impeccable
+    </div>
+    <div class="nav-right">
+      <a href="https://github.com/pbakaus/impeccable" class="btn btn-ghost" target="_blank">GitHub ★ 13.3k</a>
+      <a href="https://impeccable.style" class="btn btn-primary" target="_blank">impeccable.style</a>
+    </div>
+  </nav>
+
+  <main>
+    <div class="eyebrow"><span>//</span> Design Skills</div>
+    <h1>20 commands.<br/><em>Design fluency for AI.</em></h1>
+    <p class="subtitle">
+      Drop <code>/polish</code>, <code>/audit</code>, or any of the 20 skills directly into Cursor, Claude Code, Gemini CLI, Codex, Copilot, or Kiro. Each command encodes deep design expertise your AI would otherwise lack.
+    </p>
+
+    <!-- ── DIAGNOSTIC ── -->
+    <div class="category-block">
+      <div class="category-header">
+        <div class="category-pill">Diagnostic</div>
+        <div class="category-name">Understand what's wrong before changing anything</div>
+        <div class="category-count">2 commands</div>
+      </div>
+      <div class="cmd-grid cmd-grid-2">
+
+        <div class="cmd-card">
+          <div class="cmd-num">01 / AUDIT</div>
+          <span class="cmd-icon">🔬</span>
+          <div class="cmd-name">/audit</div>
+          <div class="cmd-title">Technical Quality Audit</div>
+          <div class="cmd-desc">Scores 5 dimensions with P0–P3 severity ratings and structured action plans. Catches accessibility failures, performance regressions, and responsive breakdowns before they ship.</div>
+        </div>
+
+        <div class="cmd-card">
+          <div class="cmd-num">02 / CRITIQUE</div>
+          <span class="cmd-icon">🎯</span>
+          <div class="cmd-name">/critique</div>
+          <div class="cmd-title">UX & Design Review</div>
+          <div class="cmd-desc">Scores against Nielsen's 10 heuristics, tests with persona archetypes, and assesses cognitive load. Surfaces hierarchy, clarity, and emotional resonance issues — not just visual ones.</div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- ── QUALITY ── -->
+    <div class="category-block">
+      <div class="category-header">
+        <div class="category-pill">Quality</div>
+        <div class="category-name">Raise the baseline across every dimension</div>
+        <div class="category-count">4 commands</div>
+      </div>
+      <div class="cmd-grid cmd-grid-4">
+
+        <div class="cmd-card">
+          <div class="cmd-num">03 / NORMALIZE</div>
+          <span class="cmd-icon">📐</span>
+          <div class="cmd-name">/normalize</div>
+          <div class="cmd-title">Align with Design System</div>
+          <div class="cmd-desc">Pulls rogue styles back into your design system's token and component vocabulary. Eliminates magic numbers, one-off colors, and inconsistent spacing.</div>
+        </div>
+
+        <div class="cmd-card">
+          <div class="cmd-num">04 / POLISH</div>
+          <span class="cmd-icon">✨</span>
+          <div class="cmd-name">/polish</div>
+          <div class="cmd-title">Final Pass Before Shipping</div>
+          <div class="cmd-desc">The last check — tightening spacing, sharpening type, smoothing transitions, and verifying visual rhythm. Run it last, right before you ship.</div>
+        </div>
+
+        <div class="cmd-card">
+          <div class="cmd-num">05 / OPTIMIZE</div>
+          <span class="cmd-icon">⚡</span>
+          <div class="cmd-name">/optimize</div>
+          <div class="cmd-title">Performance Improvements</div>
+          <div class="cmd-desc">Audits render cost, eliminates layout thrash, replaces heavy assets, and defers what doesn't need to block. Fast design is good design.</div>
+        </div>
+
+        <div class="cmd-card">
+          <div class="cmd-num">06 / HARDEN</div>
+          <span class="cmd-icon">🛡</span>
+          <div class="cmd-name">/harden</div>
+          <div class="cmd-title">Error Handling & Edge Cases</div>
+          <div class="cmd-desc">Handles empty states, loading states, long content, i18n text expansion, and error conditions. Makes your UI production-ready, not just demo-ready.</div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- ── INTENSITY ── -->
+    <div class="category-block">
+      <div class="category-header">
+        <div class="category-pill">Intensity</div>
+        <div class="category-name">Dial the boldness up or down</div>
+        <div class="category-count">2 commands</div>
+      </div>
+      <div class="cmd-grid cmd-grid-2">
+
+        <div class="cmd-card">
+          <div class="cmd-num">07 / BOLDER</div>
+          <span class="cmd-icon">🔊</span>
+          <div class="cmd-name">/bolder</div>
+          <div class="cmd-title">Amplify Timid Designs</div>
+          <div class="cmd-desc">When a design is too safe, too gray, too hesitant — this makes it commit. Stronger hierarchy, more confident type, deliberate contrast. Pairs with <code style="font-family: var(--font-mono); font-size: 11px; color: var(--accent);">/quieter</code>.</div>
+          <div class="cmd-pair">pairs with <span>/quieter</span></div>
+        </div>
+
+        <div class="cmd-card">
+          <div class="cmd-num">08 / QUIETER</div>
+          <span class="cmd-icon">🔇</span>
+          <div class="cmd-name">/quieter</div>
+          <div class="cmd-title">Tone Down Bold Designs</div>
+          <div class="cmd-desc">When a design is shouting, this teaches it to whisper. Reduces visual noise, softens contrast, and creates breathing room for the content to speak.</div>
+          <div class="cmd-pair">pairs with <span>/bolder</span></div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- ── ADAPTATION ── -->
+    <div class="category-block">
+      <div class="category-header">
+        <div class="category-pill">Adaptation</div>
+        <div class="category-name">Reshape content and context</div>
+        <div class="category-count">3 commands</div>
+      </div>
+      <div class="cmd-grid cmd-grid-3">
+
+        <div class="cmd-card">
+          <div class="cmd-num">09 / CLARIFY</div>
+          <span class="cmd-icon">💬</span>
+          <div class="cmd-name">/clarify</div>
+          <div class="cmd-title">Improve UX Copy</div>
+          <div class="cmd-desc">Rewrites labels, CTAs, error messages, and microcopy to be clearer, more actionable, and appropriately toned. Good copy is a design decision.</div>
+        </div>
+
+        <div class="cmd-card">
+          <div class="cmd-num">10 / DISTILL</div>
+          <span class="cmd-icon">💧</span>
+          <div class="cmd-name">/distill</div>
+          <div class="cmd-title">Strip to Essence</div>
+          <div class="cmd-desc">Removes everything that isn't essential. Formerly <code style="font-family: var(--font-mono); font-size: 11px; color: var(--accent);">/simplify</code>. If a UI feels cluttered, this finds the signal buried inside the noise.</div>
+        </div>
+
+        <div class="cmd-card">
+          <div class="cmd-num">11 / ADAPT</div>
+          <span class="cmd-icon">📱</span>
+          <div class="cmd-name">/adapt</div>
+          <div class="cmd-title">Different Devices & Contexts</div>
+          <div class="cmd-desc">Rethinks layouts and interactions for different viewport sizes, input modes, or usage contexts — not just scaling down, but genuinely reconsidering each breakpoint.</div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- ── ENHANCEMENT ── -->
+    <div class="category-block">
+      <div class="category-header">
+        <div class="category-pill">Enhancement</div>
+        <div class="category-name">Add dimension, delight, and craft</div>
+        <div class="category-count">7 commands</div>
+      </div>
+      <div class="cmd-grid cmd-grid-4">
+
+        <div class="cmd-card">
+          <div class="cmd-num">12 / TYPESET</div>
+          <span class="cmd-icon" style="font-family: serif; font-size: 20px; font-weight: 700;">Aa</span>
+          <div class="cmd-name">/typeset</div>
+          <div class="cmd-title">Fix Typography</div>
+          <div class="cmd-desc">Corrects font choices, size ramps, line-height, letter-spacing, and typographic hierarchy. Fixes the things that make text feel "off" without knowing exactly why.</div>
+        </div>
+
+        <div class="cmd-card">
+          <div class="cmd-num">13 / ARRANGE</div>
+          <span class="cmd-icon">⊞</span>
+          <div class="cmd-name">/arrange</div>
+          <div class="cmd-title">Fix Layout & Spacing</div>
+          <div class="cmd-desc">Adjusts grid, spacing rhythm, alignment, and visual grouping. When things feel slightly wrong but nothing specific stands out — this usually fixes it.</div>
+        </div>
+
+        <div class="cmd-card">
+          <div class="cmd-num">14 / ANIMATE</div>
+          <span class="cmd-icon">🎬</span>
+          <div class="cmd-name">/animate</div>
+          <div class="cmd-title">Add Purposeful Motion</div>
+          <div class="cmd-desc">Introduces transitions, micro-animations, and state changes that reinforce hierarchy and make interactions feel responsive — not decorative, purposeful.</div>
+        </div>
+
+        <div class="cmd-card">
+          <div class="cmd-num">15 / COLORIZE</div>
+          <span class="cmd-icon">🎨</span>
+          <div class="cmd-name">/colorize</div>
+          <div class="cmd-title">Introduce Strategic Color</div>
+          <div class="cmd-desc">Adds color with intention — semantic meaning, emotional tone, and brand alignment. Turns monochrome UIs into systems that communicate through hue.</div>
+        </div>
+
+        <div class="cmd-card">
+          <div class="cmd-num">16 / DELIGHT</div>
+          <span class="cmd-icon">🎉</span>
+          <div class="cmd-name">/delight</div>
+          <div class="cmd-title">Add Moments of Joy</div>
+          <div class="cmd-desc">Sprinkles personality — hover states, empty state illustrations, success animations, easter eggs. The things that make users smile and remember the product.</div>
+        </div>
+
+        <div class="cmd-card">
+          <div class="cmd-num">17 / ONBOARD</div>
+          <span class="cmd-icon">🚀</span>
+          <div class="cmd-name">/onboard</div>
+          <div class="cmd-title">Onboarding & Empty States</div>
+          <div class="cmd-desc">Designs first-run experiences and empty states that guide rather than confuse. Turns the blank-canvas problem into the product's first impression.</div>
+        </div>
+
+        <div class="cmd-card beta">
+          <div class="cmd-num">18 / OVERDRIVE <span class="beta-tag">beta</span></div>
+          <span class="cmd-icon">⚡</span>
+          <div class="cmd-name">/overdrive</div>
+          <div class="cmd-title">Technically Extraordinary Effects</div>
+          <div class="cmd-desc">Pushes the browser to its limits — WebGL, shader effects, procedural animation, physics-based motion. For when "impressive" is the actual requirement. Handle with care.</div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- ── SYSTEM ── -->
+    <div class="category-block">
+      <div class="category-header">
+        <div class="category-pill">System</div>
+        <div class="category-name">Set up and extract from your design system</div>
+        <div class="category-count">2 commands</div>
+      </div>
+      <div class="cmd-grid cmd-grid-2">
+
+        <div class="cmd-card">
+          <div class="cmd-num">19 / TEACH</div>
+          <span class="cmd-icon">📚</span>
+          <div class="cmd-name">/teach-impeccable</div>
+          <div class="cmd-title">One-Time Project Setup</div>
+          <div class="cmd-desc">Gathers your project's design context — tokens, conventions, tone — and saves it to <code style="font-family: var(--font-mono); font-size: 11px; color: var(--accent);">.impeccable.md</code>. Run once; every subsequent command uses it to stay on-brand.</div>
+        </div>
+
+        <div class="cmd-card">
+          <div class="cmd-num">20 / EXTRACT</div>
+          <span class="cmd-icon">🧩</span>
+          <div class="cmd-name">/extract</div>
+          <div class="cmd-title">Create Design System Elements</div>
+          <div class="cmd-desc">Pulls repeated patterns out of one-off implementations and turns them into reusable components, tokens, or utilities. Turns good designs into scalable systems.</div>
+        </div>
+
+      </div>
+    </div>
+
+  </main>
+
+  <footer>
+    <div class="footer-left">
+      <div class="logo-mark">✦</div>
+      <span style="font-size: 13px; color: var(--text-muted);">Impeccable by Paul Bakaus</span>
+    </div>
+    <div class="footer-links">
+      <a href="https://impeccable.style/cheatsheet" target="_blank">Cheatsheet</a>
+      <a href="https://github.com/pbakaus/impeccable" target="_blank">GitHub</a>
+      <a href="https://impeccable.style" target="_blank">impeccable.style</a>
+    </div>
+  </footer>
+
+</body>
+</html>
