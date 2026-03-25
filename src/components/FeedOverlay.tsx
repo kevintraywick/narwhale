@@ -91,12 +91,14 @@ export function FeedOverlay() {
         {recent.map(entry => (
           <div key={entry.id} className="bg-white/90 rounded p-2">
             {entry.image_url && (
-              <img
-                src={entry.image_url}
-                alt=""
-                loading="lazy"
-                className="w-full max-h-16 object-cover rounded mb-1"
-              />
+              <div className="w-full h-16 overflow-hidden rounded mb-1">
+                <img
+                  src={entry.image_url}
+                  alt=""
+                  loading="lazy"
+                  className="w-full h-full object-cover"
+                />
+              </div>
             )}
             <div className="leading-snug">
               <span className="text-gray-500 text-[12px] mr-1.5">{formatDate(entry.created_at)}</span>
