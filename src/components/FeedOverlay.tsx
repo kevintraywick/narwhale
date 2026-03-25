@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
-import { useFeed } from '../hooks/useFeed'
+import { useFeed, uploadImage } from '../hooks/useFeed'
 import { formatDate, hostname } from '../utils/format'
 
 const FEED_PREVIEW_LIMIT = 8
@@ -9,6 +9,8 @@ export function FeedOverlay() {
   const { entries, postComment } = useFeed()
   const navigate = useNavigate()
   const [isDragOver, setIsDragOver] = useState(false)
+  const [isFileDragOver, setIsFileDragOver] = useState(false)
+  const [uploadState, setUploadState] = useState<'idle' | 'loading' | 'error'>('idle')
   const [commentValues, setCommentValues] = useState<Record<number, string>>({})
   const [commentErrors, setCommentErrors] = useState<Record<number, boolean>>({})
 
@@ -16,23 +18,46 @@ export function FeedOverlay() {
 
   function handleDragOver(e: React.DragEvent) {
     e.preventDefault()
-    if (!isDragOver) setIsDragOver(true)
+    const isFile = e.dataTransfer.types.includes('Files')
+    if (isFile) {
+      if (!isFileDragOver) setIsFileDragOver(true)
+      if (isDragOver) setIsDragOver(false)
+    } else {
+      if (!isDragOver) setIsDragOver(true)
+      if (isFileDragOver) setIsFileDragOver(false)
+    }
   }
 
   function handleDragLeave(e: React.DragEvent) {
     if (!e.currentTarget.contains(e.relatedTarget as Node)) {
       setIsDragOver(false)
+      setIsFileDragOver(false)
     }
   }
 
-  function handleDrop(e: React.DragEvent) {
+  async function handleDrop(e: React.DragEvent) {
     e.preventDefault()
     setIsDragOver(false)
+    setIsFileDragOver(false)
+
+    const file = e.dataTransfer.files[0]
+    if (file?.type.startsWith('image/')) {
+      setUploadState('loading')
+      try {
+        const imageUrl = await uploadImage(file)
+        navigate('/blog', { state: { imageUrl, title: file.name } })
+      } catch {
+        setUploadState('error')
+        setTimeout(() => setUploadState('idle'), 1500)
+      }
+      return
+    }
+
+    // URL drops (existing behavior)
     const url = e.dataTransfer.getData('text/uri-list') || e.dataTransfer.getData('text/plain')
     if (url?.startsWith('http')) {
       navigate('/blog', { state: { title: hostname(url), link: url } })
     }
-    // file drops and unrecognized content: do nothing
   }
 
   async function handleComment(entryId: number) {
@@ -48,10 +73,12 @@ export function FeedOverlay() {
     }
   }
 
+  const anyDragOver = isDragOver || isFileDragOver
+
   return (
     <div
       className="absolute inset-0 flex flex-col font-sans text-xs overflow-hidden transition-colors"
-      style={{ background: isDragOver ? 'rgba(255,255,255,0.08)' : 'transparent' }}
+      style={{ background: anyDragOver ? 'rgba(255,255,255,0.08)' : 'transparent' }}
       onDragOver={handleDragOver}
       onDragLeave={handleDragLeave}
       onDrop={handleDrop}
@@ -63,6 +90,14 @@ export function FeedOverlay() {
       >
         {recent.map(entry => (
           <div key={entry.id} className="bg-white/90 rounded p-2">
+            {entry.image_url && (
+              <img
+                src={entry.image_url}
+                alt=""
+                loading="lazy"
+                className="w-full max-h-16 object-cover rounded mb-1"
+              />
+            )}
             <div className="leading-snug">
               <span className="text-gray-500 text-[12px] mr-1.5">{formatDate(entry.created_at)}</span>
               <button
@@ -105,12 +140,17 @@ export function FeedOverlay() {
         className="border-t border-white/10 flex items-center justify-center py-1.5 w-full cursor-pointer"
         onClick={() => navigate('/blog')}
         aria-label="Go to blog"
+        disabled={uploadState === 'loading'}
       >
         <span
           className="w-5 h-5 rounded-full flex items-center justify-center text-white leading-none"
-          style={{ background: '#999', fontSize: '16px', opacity: isDragOver ? 0.8 : 0.4 }}
+          style={{
+            background: uploadState === 'error' ? '#f87171' : '#999',
+            fontSize: uploadState === 'loading' ? '10px' : '16px',
+            opacity: uploadState !== 'idle' ? 0.8 : anyDragOver ? 0.8 : 0.4,
+          }}
         >
-          +
+          {uploadState === 'loading' ? '…' : uploadState === 'error' ? '✕' : '+'}
         </span>
       </button>
     </div>
