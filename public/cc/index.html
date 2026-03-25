@@ -71,20 +71,11 @@
   <div id="viewer"></div>
 
   <script>
-    const files = [
-      { name: 'Claude Code Cheat Sheet.pdf', type: 'pdf' },
-      { name: 'Claude Conversation Commands.png', type: 'image' },
-      { name: 'Claude Tools.png', type: 'image' },
-      { name: 'compound-engineering skills.png', type: 'image' },
-      { name: 'compound-engineering-commands.html', type: 'html' },
-      { name: 'context_prompts.webp', type: 'image' },
-      { name: 'Screenshot 2026-03-24 at 8.30.07 AM.png', type: 'image' },
-      { name: 'Useful Claude Code Cheatsheet SaasDevelopers.pdf', type: 'pdf' },
-    ]
-
+    let files = []
     let index = 0
 
     function render() {
+      if (!files.length) return
       const f = files[index]
       const src = encodeURIComponent(f.name)
       const viewer = document.getElementById('viewer')
@@ -113,7 +104,9 @@
       if (e.key === 'ArrowRight') go(1)
     })
 
-    render()
+    fetch('files.json')
+      .then(r => r.json())
+      .then(data => { files = data; render() })
   </script>
 </body>
 </html>
