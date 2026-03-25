@@ -15,8 +15,11 @@ function Homepage() {
       <div className="relative overflow-hidden bg-black">
         <FeedOverlay />
       </div>
-      <div className="flex items-center justify-center" style={{ fontFamily: '"Bodoni Moda", serif', fontSize: 'clamp(120px, 18vw, 280px)', fontWeight: 700, letterSpacing: '-0.03em', lineHeight: 1 }}>
-        K
+      <div className="flex flex-col items-center justify-center gap-1">
+        <div style={{ fontFamily: '"Barlow Condensed", sans-serif', fontWeight: 900, fontSize: 'clamp(60px, 9vw, 140px)', lineHeight: 1 }}>K</div>
+        <div style={{ fontFamily: '"DM Serif Display", serif', fontSize: 'clamp(50px, 7vw, 110px)', lineHeight: 1 }}>K</div>
+        <div style={{ fontFamily: '"Syne", sans-serif', fontWeight: 800, fontSize: 'clamp(50px, 7vw, 110px)', lineHeight: 1 }}>K</div>
+        <div className="text-gray-300 text-xs mt-1" style={{ fontFamily: 'monospace' }}>barlow · dm serif · syne</div>
       </div>
       <a href="https://blackmoor-production.up.railway.app" target="_blank" rel="noopener noreferrer" className="overflow-hidden">
         <img src={andImg} alt="Blackmoor" className="w-full h-full object-cover" />
