@@ -10,7 +10,8 @@
     "preview": "vite preview",
     "test": "vitest run",
     "test:watch": "vitest",
-    "update-cc": "node scripts/update-cc.js"
+    "update-cc": "node scripts/update-cc.js",
+    "update-houdini": "node scripts/update-houdini.js"
   },
   "dependencies": {
     "@react-three/drei": "^10.7.7",
