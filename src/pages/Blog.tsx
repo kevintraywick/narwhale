@@ -126,7 +126,7 @@ export default function Blog() {
       noteRef.current!.value = ''
       setPreviewUrl(undefined)
       navigate('/')
-    } catch {}
+    } catch (err) { console.error('Post failed:', err) }
   }
 
   return (
