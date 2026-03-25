@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Compound Engineering — 7 Commands, 1 Complete Loop</title>
+  <style>
+    :root {
+      --bg: #0a0a0a;
+      --surface: #111111;
+      --surface-2: #1a1a1a;
+      --surface-3: #222222;
+      --border: #2a2a2a;
+      --border-hover: #404040;
+      --text: #e8e8e8;
+      --text-muted: #888;
+      --text-dim: #555;
+      --accent: #c8f078;
+      --accent-dim: rgba(200, 240, 120, 0.10);
+      --accent-border: rgba(200, 240, 120, 0.22);
+      --font-sans: -apple-system, BlinkMacSystemFont, "Inter", "Segoe UI", sans-serif;
+      --font-mono: "SF Mono", "Fira Code", "Cascadia Code", monospace;
+      --radius: 12px;
+      --radius-sm: 6px;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: var(--font-sans);
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+    a { color: inherit; text-decoration: none; }
+
+    /* ── NAV ── */
+    nav {
+      position: sticky; top: 0; z-index: 100;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0 36px; height: 56px;
+      background: rgba(10,10,10,0.88);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--border);
+    }
+    .nav-logo {
+      display: flex; align-items: center; gap: 10px;
+      font-size: 14px; font-weight: 600; letter-spacing: -0.01em;
+    }
+    .logo-mark {
+      width: 26px; height: 26px; background: var(--accent);
+      border-radius: 6px; display: flex; align-items: center; justify-content: center;
+      font-size: 12px; font-weight: 800; color: #000;
+      font-family: var(--font-mono);
+    }
+    .nav-right { display: flex; align-items: center; gap: 8px; }
+    .btn {
+      display: inline-flex; align-items: center; gap: 6px;
+      padding: 6px 14px; border-radius: var(--radius-sm);
+      font-size: 13px; font-weight: 500; cursor: pointer; border: none;
+      transition: all 0.15s;
+    }
+    .btn-ghost {
+      background: transparent; color: var(--text-muted);
+      border: 1px solid var(--border);
+    }
+    .btn-ghost:hover { border-color: var(--border-hover); color: var(--text); }
+    .btn-primary { background: var(--accent); color: #000; font-weight: 600; }
+    .btn-primary:hover { background: #d4f585; }
+
+    /* ── MAIN ── */
+    main {
+      flex: 1;
+      max-width: 1080px;
+      margin: 0 auto;
+      padding: 88px 36px 100px;
+      width: 100%;
+    }
+
+    .eyebrow {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--text-dim);
+      margin-bottom: 16px;
+    }
+    .eyebrow span { color: var(--accent); margin-right: 8px; }
+
+    h1 {
+      font-size: clamp(32px, 5vw, 52px);
+      font-weight: 700;
+      letter-spacing: -0.03em;
+      line-height: 1.1;
+      margin-bottom: 14px;
+    }
+    h1 em { color: var(--accent); font-style: normal; }
+
+    .subtitle {
+      font-size: 16px;
+      color: var(--text-muted);
+      max-width: 520px;
+      margin-bottom: 56px;
+      line-height: 1.65;
+    }
+    .subtitle code {
+      font-family: var(--font-mono);
+      font-size: 13px;
+      color: var(--accent);
+      background: var(--accent-dim);
+      border: 1px solid var(--accent-border);
+      padding: 1px 6px;
+      border-radius: 4px;
+    }
+
+    /* ── CARD GRID ── */
+    .cmd-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      grid-template-rows: auto auto;
+      gap: 2px;
+      background: var(--border);
+      border-radius: var(--radius);
+      overflow: hidden;
+    }
+
+    /* /lfg spans the last 2 columns in row 2 */
+    .cmd-card:nth-child(7) {
+      grid-column: span 2;
+    }
+
+    .cmd-card {
+      background: var(--surface);
+      padding: 28px 24px;
+      transition: background 0.2s;
+      display: flex;
+      flex-direction: column;
+    }
+    .cmd-card:hover { background: var(--surface-2); }
+
+    /* /lfg accent treatment */
+    .cmd-card.lfg {
+      background: var(--accent-dim);
+    }
+    .cmd-card.lfg:hover {
+      background: rgba(200, 240, 120, 0.16);
+    }
+
+    .cmd-num {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      color: var(--text-dim);
+      letter-spacing: 0.06em;
+      margin-bottom: 14px;
+    }
+
+    .cmd-icon {
+      font-size: 24px;
+      margin-bottom: 14px;
+      display: block;
+      line-height: 1;
+    }
+
+    .cmd-name {
+      font-family: var(--font-mono);
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--accent);
+      margin-bottom: 6px;
+      letter-spacing: -0.01em;
+    }
+    .cmd-card.lfg .cmd-name { font-size: 18px; }
+
+    .cmd-title {
+      font-size: 15px;
+      font-weight: 600;
+      letter-spacing: -0.01em;
+      margin-bottom: 8px;
+    }
+
+    .cmd-desc {
+      font-size: 13px;
+      color: var(--text-muted);
+      line-height: 1.65;
+      flex: 1;
+    }
+
+    .cmd-meta {
+      margin-top: 16px;
+      font-family: var(--font-mono);
+      font-size: 10px;
+      color: var(--text-dim);
+      letter-spacing: 0.04em;
+      line-height: 1.8;
+      border-top: 1px solid var(--border);
+      padding-top: 12px;
+    }
+    .cmd-card.lfg .cmd-meta {
+      border-top-color: var(--accent-border);
+    }
+    .cmd-meta .hi { color: var(--accent); opacity: 0.7; }
+
+    /* ── FOOTER ── */
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 24px 36px;
+      display: flex; align-items: center; justify-content: space-between;
+      flex-wrap: wrap; gap: 12px;
+    }
+    .footer-left { display: flex; align-items: center; gap: 10px; }
+    .footer-links { display: flex; align-items: center; gap: 20px; }
+    .footer-links a { font-size: 12px; color: var(--text-dim); transition: color 0.15s; }
+    .footer-links a:hover { color: var(--text-muted); }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 860px) {
+      .cmd-grid { grid-template-columns: repeat(2, 1fr); }
+      .cmd-card:nth-child(7) { grid-column: span 2; }
+    }
+    @media (max-width: 540px) {
+      nav { padding: 0 16px; }
+      main { padding: 60px 16px 80px; }
+      footer { padding: 20px 16px; }
+      .cmd-grid { grid-template-columns: 1fr; }
+      .cmd-card:nth-child(7) { grid-column: span 1; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <div class="nav-logo">
+      <div class="logo-mark">⌘</div>
+      Compound Engineering
+    </div>
+    <div class="nav-right">
+      <a href="https://github.com/EveryInc/every-marketplace" class="btn btn-ghost" target="_blank">GitHub</a>
+      <a href="https://every.to/guides/compound-engineering" class="btn btn-primary" target="_blank">Read the Guide</a>
+    </div>
+  </nav>
+
+  <main>
+    <div class="eyebrow"><span>//</span> Workflow Commands</div>
+    <h1>7 commands.<br/><em>1 complete loop.</em></h1>
+    <p class="subtitle">
+      All commands use the <code>/ce:</code> prefix. Type them directly in your AI coding tool — or chain the whole pipeline automatically with <code>/lfg</code>.
+    </p>
+
+    <div class="cmd-grid">
+
+      <div class="cmd-card">
+        <div class="cmd-num">01 / EXPLORE</div>
+        <span class="cmd-icon">🔭</span>
+        <div class="cmd-name">/ce:ideate</div>
+        <div class="cmd-title">Open-Ended Exploration</div>
+        <div class="cmd-desc">Generate options and angles before committing to a direction. For when you have a problem but no clear solution yet.</div>
+        <div class="cmd-meta">
+          <div>output → <span class="hi">docs/brainstorms/</span></div>
+        </div>
+      </div>
+
+      <div class="cmd-card">
+        <div class="cmd-num">02 / CLARIFY</div>
+        <span class="cmd-icon">💬</span>
+        <div class="cmd-name">/ce:brainstorm</div>
+        <div class="cmd-title">Clarify Fuzzy Requirements</div>
+        <div class="cmd-desc">Turns vague feature ideas into scoped, unambiguous briefs through guided questioning. Nothing enters planning without a clear brief.</div>
+        <div class="cmd-meta">
+          <div>output → <span class="hi">docs/brainstorms/</span></div>
+        </div>
+      </div>
+
+      <div class="cmd-card">
+        <div class="cmd-num">03 / PLAN</div>
+        <span class="cmd-icon">📐</span>
+        <div class="cmd-name">/ce:plan</div>
+        <div class="cmd-title">Structured Implementation Plan</div>
+        <div class="cmd-desc">Spawns three parallel research agents — codebase patterns, framework docs, industry standards — then synthesizes findings into a structured plan.</div>
+        <div class="cmd-meta">
+          <div>output → <span class="hi">docs/plans/</span></div>
+          <div>agents → <span class="hi">3 parallel</span></div>
+        </div>
+      </div>
+
+      <div class="cmd-card">
+        <div class="cmd-num">04 / EXECUTE</div>
+        <span class="cmd-icon">⚡</span>
+        <div class="cmd-name">/ce:work</div>
+        <div class="cmd-title">Isolated Execution → PR</div>
+        <div class="cmd-desc">Sets up a git worktree, executes the plan step-by-step, runs tests and linting, then opens a pull request automatically. Step away while it works.</div>
+        <div class="cmd-meta">
+          <div>output → <span class="hi">pull request</span></div>
+          <div>phases → <span class="hi">isolation · exec · QA · PR</span></div>
+        </div>
+      </div>
+
+      <div class="cmd-card">
+        <div class="cmd-num">05 / REVIEW</div>
+        <span class="cmd-icon">🔍</span>
+        <div class="cmd-name">/ce:review</div>
+        <div class="cmd-title">14+ Specialized Review Agents</div>
+        <div class="cmd-desc">Deploys a fleet of reviewers simultaneously — security, performance, architecture, correctness, data integrity. Findings triaged as P1, P2, or P3.</div>
+        <div class="cmd-meta">
+          <div>agents → <span class="hi">14+ parallel</span></div>
+          <div>severity → <span class="hi">P1 · P2 · P3</span></div>
+        </div>
+      </div>
+
+      <div class="cmd-card">
+        <div class="cmd-num">06 / COMPOUND</div>
+        <span class="cmd-icon">📈</span>
+        <div class="cmd-name">/ce:compound</div>
+        <div class="cmd-title">Teach the System What Worked</div>
+        <div class="cmd-desc">Six agents extract patterns from what just succeeded and update CLAUDE.md automatically — so every future task benefits from this one.</div>
+        <div class="cmd-meta">
+          <div>output → <span class="hi">docs/solutions/ · CLAUDE.md</span></div>
+          <div>agents → <span class="hi">6 parallel</span></div>
+        </div>
+      </div>
+
+      <div class="cmd-card lfg">
+        <div class="cmd-num">00 / FULL PIPELINE</div>
+        <span class="cmd-icon">🚀</span>
+        <div class="cmd-name">/lfg</div>
+        <div class="cmd-title">The Complete Loop, One Command</div>
+        <div class="cmd-desc">Describe an idea. Get a pull request. Chains all six stages automatically — ideate → brainstorm → plan → work → review → compound — spawning 50+ agents across every phase. You approve the plan, then step away.</div>
+        <div class="cmd-meta">
+          <div>chains → <span class="hi">all 6 stages</span></div>
+          <div>agents → <span class="hi">50+ total</span></div>
+          <div>input → <span class="hi">description only</span></div>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <footer>
+    <div class="footer-left">
+      <div class="logo-mark">⌘</div>
+      <span style="font-size: 13px; color: var(--text-muted);">Compound Engineering by Every</span>
+    </div>
+    <div class="footer-links">
+      <a href="https://every.to/guides/compound-engineering" target="_blank">Guide</a>
+      <a href="https://github.com/EveryInc/every-marketplace" target="_blank">GitHub</a>
+      <a href="https://every.to" target="_blank">every.to</a>
+    </div>
+  </footer>
+
+</body>
+</html>
