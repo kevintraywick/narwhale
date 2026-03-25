@@ -113,6 +113,7 @@ export default function Blog() {
     if (pending?.title && titleRef.current) titleRef.current.value = pending.title
     if (pending?.link && linkRef.current) linkRef.current.value = pending.link
     if (pending?.imageUrl) setPreviewUrl(pending.imageUrl)
+    titleRef.current?.focus()
   }, []) // eslint-disable-line react-hooks/exhaustive-deps
 
   async function handlePost() {
@@ -124,7 +125,7 @@ export default function Blog() {
       linkRef.current!.value = ''
       noteRef.current!.value = ''
       setPreviewUrl(undefined)
-      navigate('/blog')
+      navigate('/')
     } catch {}
   }
 
