@@ -1,0 +1,1202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Claude Code Cheat Sheets</title>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Newsreader:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
+<style>
+  /* ========== DESIGN TOKENS ========== */
+  :root {
+    --bg: #ffffff;
+    --card: #f4f5f7;
+    --border: #d8dce3;
+    --text: #1a1e2c;
+    --dim: #5c6478;
+    --code: #2b3040;
+    --green: #1a7f37;
+    --green-bg: rgba(26,127,55,0.08);
+    --blue: #0969da;
+    --blue-bg: rgba(9,105,218,0.07);
+    --orange: #9a6700;
+    --orange-bg: rgba(154,103,0,0.08);
+    --red: #cf222e;
+    --red-bg: rgba(207,34,46,0.07);
+    --purple: #8250df;
+    --purple-bg: rgba(130,80,223,0.07);
+    --cyan: #0e8a7a;
+    --cyan-bg: rgba(14,138,122,0.07);
+    --claude-orange: #da7756;
+    --claude-orange-bg: rgba(218,119,86,0.08);
+    --mono: 'JetBrains Mono', monospace;
+    --sans: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    --serif: 'Newsreader', Georgia, serif;
+    --body-bg: #eef0f4;
+    --card-shadow: 0 1px 8px rgba(0,0,0,0.08);
+
+    /* Fluid type scale — scales with viewport */
+    --fs-xs:   clamp(0.65rem,  0.55rem + 0.5vw,  0.78rem);
+    --fs-sm:   clamp(0.72rem,  0.6rem  + 0.55vw, 0.88rem);
+    --fs-base: clamp(0.82rem,  0.68rem + 0.6vw,  1rem);
+    --fs-md:   clamp(0.92rem,  0.76rem + 0.7vw,  1.15rem);
+    --fs-lg:   clamp(1.1rem,   0.9rem  + 0.85vw, 1.45rem);
+    --fs-xl:   clamp(1.3rem,   1rem    + 1.2vw,  1.85rem);
+    --fs-code: clamp(0.7rem,   0.58rem + 0.55vw, 0.88rem);
+    --fs-code-lg: clamp(0.78rem, 0.64rem + 0.6vw, 0.95rem);
+  }
+
+  [data-theme="dark"] {
+    --bg: #1c1c1e;
+    --card: #2c2c2e;
+    --border: #3a3a3c;
+    --text: #e5e5e7;
+    --dim: #98989d;
+    --code: #e5e5e7;
+    --green: #5ec26a;
+    --green-bg: rgba(94,194,106,0.12);
+    --blue: #5aadff;
+    --blue-bg: rgba(90,173,255,0.1);
+    --orange: #e0a530;
+    --orange-bg: rgba(224,165,48,0.1);
+    --red: #ff6369;
+    --red-bg: rgba(255,99,105,0.1);
+    --purple: #b89aff;
+    --purple-bg: rgba(184,154,255,0.1);
+    --cyan: #5ac8b8;
+    --cyan-bg: rgba(90,200,184,0.1);
+    --claude-orange: #e8845e;
+    --claude-orange-bg: rgba(232,132,94,0.12);
+    --body-bg: #111113;
+    --card-shadow: 0 1px 8px rgba(0,0,0,0.3);
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--body-bg);
+    font-family: var(--sans);
+    color: var(--text);
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* ========== MOBILE SHELL: swipe pagination ========== */
+  .cards-viewport {
+    width: 100%;
+    height: 100dvh;
+    overflow-x: auto;
+    overflow-y: hidden;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    position: relative;
+    scrollbar-width: none;
+  }
+  .cards-viewport::-webkit-scrollbar { display: none; }
+
+  .cards-track {
+    display: flex;
+    height: 100%;
+  }
+
+  .card {
+    flex: 0 0 100%;
+    height: 100dvh;
+    background: var(--bg);
+    display: flex;
+    flex-direction: column;
+    padding: 1rem 1.15rem 5.5rem;
+    position: relative;
+    overflow-y: auto;
+    scroll-snap-align: start;
+  }
+
+  /* ---- HEADER ---- */
+  .header {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+    padding-bottom: 0.6rem;
+    border-bottom: 1.5px solid var(--border);
+    flex-wrap: wrap;
+    position: sticky;
+    top: 0;
+    background: var(--bg);
+    z-index: 5;
+    padding-top: 0.6rem;
+  }
+
+  .header h1 {
+    font-size: var(--fs-lg);
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    line-height: 1.2;
+  }
+
+  .header h1 span { color: var(--claude-orange); }
+
+  .header .page-num {
+    font-family: var(--mono);
+    font-size: var(--fs-xs);
+    font-weight: 500;
+    color: var(--dim);
+    letter-spacing: 0.05em;
+    margin-left: auto;
+  }
+
+  .theme-toggle + .page-num { margin-left: 0; }
+
+  /* ---- COLUMNS (mobile: single col) ---- */
+  .columns {
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+    flex: 1;
+  }
+
+  /* ---- SECTIONS ---- */
+  .section { margin-bottom: 0.8rem; }
+
+  .section-title {
+    font-family: var(--mono);
+    font-size: var(--fs-xs);
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 0.2rem 0.5rem;
+    border-radius: 4px;
+    display: inline-block;
+    margin-bottom: 0.35rem;
+  }
+
+  .section-title.green  { color: var(--green);  background: var(--green-bg); }
+  .section-title.blue   { color: var(--blue);   background: var(--blue-bg); }
+  .section-title.orange { color: var(--orange); background: var(--orange-bg); }
+  .section-title.red    { color: var(--red);    background: var(--red-bg); }
+  .section-title.purple { color: var(--purple); background: var(--purple-bg); }
+  .section-title.cyan   { color: var(--cyan);   background: var(--cyan-bg); }
+  .section-title.cc     { color: var(--claude-orange); background: var(--claude-orange-bg); }
+
+  .section-note {
+    font-size: var(--fs-sm);
+    color: var(--dim);
+    line-height: 1.5;
+    margin-bottom: 0.3rem;
+  }
+
+  .section-note code {
+    font-family: var(--mono);
+    font-size: var(--fs-xs);
+    color: var(--code);
+  }
+
+  /* ---- COMMAND ROWS ---- */
+  .cmd {
+    display: flex;
+    align-items: baseline;
+    gap: 0.5rem;
+    padding: 0.25rem 0;
+    line-height: 1.4;
+  }
+
+  .cmd code {
+    font-family: var(--mono);
+    font-size: var(--fs-code-lg);
+    font-weight: 600;
+    color: var(--code);
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+
+  .cmd .d {
+    font-size: var(--fs-sm);
+    color: var(--dim);
+  }
+
+  .cmd.danger code { color: var(--red); }
+
+  .kbd {
+    display: inline-block;
+    font-family: var(--mono);
+    font-size: var(--fs-code);
+    font-weight: 600;
+    color: var(--text);
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    padding: 0.1rem 0.35rem;
+    text-align: left;
+  }
+
+  /* ---- TIP BAR (card 1) ---- */
+  .tip-bar {
+    margin-top: 1rem;
+    padding-top: 0.6rem;
+    border-top: 1px solid var(--border);
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+  }
+
+  .tip-bar .tip-label {
+    font-family: var(--mono);
+    font-size: var(--fs-xs);
+    font-weight: 600;
+    color: var(--blue);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+  }
+
+  .tip-bar p {
+    font-size: var(--fs-sm);
+    color: var(--dim);
+    line-height: 1.5;
+  }
+
+  .tip-bar code {
+    font-family: var(--mono);
+    font-size: var(--fs-code);
+    color: var(--blue);
+  }
+
+  /* ---- TIPS FOOTER (card 2) ---- */
+  .tips-footer {
+    margin-top: 1rem;
+    padding-top: 0.6rem;
+    border-top: 1px solid var(--border);
+  }
+
+  .tips-footer-label {
+    font-family: var(--mono);
+    font-size: var(--fs-xs);
+    font-weight: 600;
+    color: var(--claude-orange);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-bottom: 0.5rem;
+  }
+
+  .tips-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .tip-item {
+    font-size: var(--fs-sm);
+    color: var(--dim);
+    line-height: 1.5;
+  }
+
+  .tip-item strong {
+    color: var(--text);
+    font-weight: 600;
+  }
+
+  .tip-item code {
+    font-family: var(--mono);
+    font-size: var(--fs-code);
+    color: var(--code);
+  }
+
+  /* ---- PRIMER (card 0) ---- */
+  .primer-layout {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    flex: 1;
+  }
+
+  .primer-section { margin-bottom: 0.6rem; }
+
+  .primer-section-title {
+    font-family: var(--serif);
+    font-size: var(--fs-md);
+    font-weight: 600;
+    font-style: italic;
+    color: var(--text);
+    margin-bottom: 0.25rem;
+  }
+
+  .primer-section p {
+    font-size: var(--fs-sm);
+    color: var(--dim);
+    line-height: 1.6;
+  }
+
+  .primer-section code {
+    font-family: var(--mono);
+    font-size: var(--fs-code);
+    font-weight: 600;
+    color: var(--code);
+    background: var(--card);
+    padding: 0.08em 0.3em;
+    border-radius: 3px;
+  }
+
+  .terminal-mock {
+    background: #1e1e2e;
+    border-radius: 8px;
+    padding: 0.8rem 1rem;
+    font-family: var(--mono);
+    font-size: var(--fs-code);
+    line-height: 1.8;
+    color: #cdd6f4;
+    margin-bottom: 0.8rem;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .terminal-mock .prompt-shell { color: #a6e3a1; }
+  .terminal-mock .prompt-claude { color: #f9c97c; }
+  .terminal-mock .comment { color: #6c7086; font-style: italic; }
+  .terminal-mock .cmd-text { color: #cdd6f4; }
+
+  .primer-callout {
+    background: var(--claude-orange-bg);
+    border-radius: 8px;
+    padding: 0.7rem 0.9rem;
+    margin-bottom: 0.6rem;
+  }
+
+  .primer-callout-label {
+    font-family: var(--mono);
+    font-size: var(--fs-xs);
+    font-weight: 600;
+    color: var(--claude-orange);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-bottom: 0.25rem;
+  }
+
+  .primer-callout p {
+    font-size: var(--fs-sm);
+    color: var(--dim);
+    line-height: 1.55;
+  }
+
+  .primer-callout code {
+    font-family: var(--mono);
+    font-size: var(--fs-code);
+    font-weight: 600;
+    color: var(--code);
+  }
+
+  .primer-key-row {
+    display: flex;
+    align-items: baseline;
+    gap: 0.4rem;
+    padding: 0.15rem 0;
+    font-size: var(--fs-sm);
+    color: var(--dim);
+    line-height: 1.5;
+  }
+
+  .primer-key-row .kbd { flex-shrink: 0; }
+
+  /* ---- EDITORIAL / BEST PRACTICES (card 3) ---- */
+  .editorial-layout {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    flex: 1;
+  }
+
+  .practice-editorial {
+    padding: 0.6rem 0;
+  }
+
+  .practice-editorial + .practice-editorial {
+    border-top: 1px solid var(--border);
+  }
+
+  .practice-head {
+    display: flex;
+    align-items: baseline;
+    gap: 0.5rem;
+    margin-bottom: 0.15rem;
+  }
+
+  .practice-num {
+    font-family: var(--serif);
+    font-size: var(--fs-xl);
+    font-weight: 500;
+    color: var(--claude-orange);
+    line-height: 1;
+    opacity: 0.35;
+    flex-shrink: 0;
+  }
+
+  .practice-editorial h3 {
+    font-family: var(--serif);
+    font-size: var(--fs-md);
+    font-weight: 600;
+    font-style: italic;
+    color: var(--text);
+    line-height: 1.3;
+  }
+
+  .practice-editorial p {
+    font-size: var(--fs-sm);
+    color: var(--dim);
+    line-height: 1.6;
+    padding-left: 0;
+  }
+
+  .practice-editorial code {
+    font-family: var(--mono);
+    font-size: var(--fs-code);
+    color: var(--code);
+    background: var(--card);
+    padding: 0.06em 0.25em;
+    border-radius: 3px;
+  }
+
+  /* ---- GLOSSARY (card 4) ---- */
+  .glossary-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    flex: 1;
+  }
+
+  .glossary-term { padding: 0.15rem 0; }
+
+  .glossary-term dt {
+    font-family: var(--mono);
+    font-size: var(--fs-base);
+    font-weight: 600;
+    color: var(--text);
+    margin-bottom: 0.1rem;
+  }
+
+  .glossary-term dd {
+    font-size: var(--fs-sm);
+    color: var(--dim);
+    line-height: 1.55;
+  }
+
+  .glossary-term dd code {
+    font-family: var(--mono);
+    font-size: var(--fs-code);
+    color: var(--code);
+  }
+
+  /* ---- THEME TOGGLE ---- */
+  .theme-toggle {
+    font-family: var(--mono);
+    font-size: var(--fs-xs);
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    color: var(--dim);
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    padding: 0.2rem 0.5rem;
+    cursor: pointer;
+    margin-left: auto;
+    transition: color 0.15s, background 0.15s, border-color 0.15s;
+    white-space: nowrap;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  .theme-toggle:hover { color: var(--text); border-color: var(--dim); }
+
+  /* ---- PAGINATION DOTS (mobile) ---- */
+  .pagination {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.6rem;
+    padding: 0.7rem 1rem;
+    background: var(--bg);
+    border-top: 1px solid var(--border);
+    z-index: 100;
+  }
+
+  .pagination .dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--border);
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.2s;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  .pagination .dot.active {
+    background: var(--claude-orange);
+    transform: scale(1.3);
+  }
+
+  .pagination .page-label {
+    font-family: var(--mono);
+    font-size: var(--fs-xs);
+    color: var(--dim);
+    margin-left: 0.4rem;
+  }
+
+  .pagination .nav-arrow {
+    background: none;
+    border: none;
+    font-size: 1.2rem;
+    color: var(--dim);
+    cursor: pointer;
+    padding: 0.3rem;
+    -webkit-tap-highlight-color: transparent;
+    transition: color 0.15s;
+    line-height: 1;
+  }
+  .pagination .nav-arrow:hover { color: var(--text); }
+  .pagination .nav-arrow:disabled { opacity: 0.25; cursor: default; }
+
+  [data-theme="dark"] .terminal-mock { background: #15151a; }
+  [data-theme="dark"] .practice-editorial code,
+  [data-theme="dark"] .primer-section code { background: rgba(255,255,255,0.06); }
+
+  /* ===================================================================
+     TABLET BREAKPOINT (640px+)
+     =================================================================== */
+  @media (min-width: 640px) {
+    .columns {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0 1.5rem;
+    }
+
+    .tips-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.5rem 1.2rem;
+    }
+
+    .editorial-layout {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0 1.5rem;
+    }
+
+    .glossary-grid {
+      columns: 2;
+      column-gap: 1.5rem;
+      display: block;
+    }
+
+    .glossary-term {
+      break-inside: avoid;
+    }
+
+    .primer-layout {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 0 1.5rem;
+    }
+  }
+
+  /* ===================================================================
+     DESKTOP BREAKPOINT (1024px+): scroll layout, no swipe
+     =================================================================== */
+  @media (min-width: 1024px) {
+    body {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 2rem;
+      padding: 2rem 1.5rem;
+    }
+
+    .cards-viewport {
+      height: auto;
+      overflow: visible;
+      scroll-snap-type: none;
+    }
+
+    .cards-track {
+      flex-direction: column;
+      align-items: center;
+      gap: 2rem;
+    }
+
+    .card {
+      flex: none;
+      width: min(100%, 64rem);
+      height: auto;
+      border-radius: 14px;
+      box-shadow: var(--card-shadow);
+      padding: 1.8rem 2.2rem 1.8rem;
+      overflow: visible;
+      scroll-snap-align: none;
+    }
+
+    .header {
+      position: static;
+      padding-top: 0;
+    }
+
+    .pagination { display: none; }
+
+    .columns {
+      grid-template-columns: 1fr 1fr 1fr;
+    }
+
+    .tips-grid {
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+
+    .glossary-grid {
+      columns: 3;
+    }
+
+    .practice-editorial p {
+      padding-left: 1.6rem;
+    }
+
+    .tip-bar {
+      flex-direction: row;
+      align-items: baseline;
+      gap: 1rem;
+    }
+  }
+
+  /* ===================================================================
+     WIDE DESKTOP (1400px+): even more breathing room
+     =================================================================== */
+  @media (min-width: 1400px) {
+    .card {
+      padding: 2.2rem 2.8rem 2.2rem;
+    }
+  }
+
+  /* ---- PRINT ---- */
+  @media print {
+    body { background: #fff; padding: 0; gap: 0; display: block; }
+    .theme-toggle, .pagination { display: none; }
+    .cards-viewport { overflow: visible; scroll-snap-type: none; height: auto; }
+    .cards-track {
+      flex-direction: column;
+    }
+    .card {
+      flex: none;
+      width: 8.5in;
+      min-height: auto;
+      height: 5.5in;
+      border-radius: 0;
+      box-shadow: none;
+      page-break-inside: avoid;
+      overflow: hidden;
+      padding: 0.3in 0.35in 0.25in;
+      font-size: 0.6rem;
+    }
+    .header { position: static; padding-top: 0; }
+    .card-2 { transform: rotate(180deg); }
+    .card-3 { page-break-before: always; }
+    .card-4 { transform: rotate(180deg); }
+    .section-title, .kbd, .terminal-mock, .primer-callout {
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+  }
+</style>
+</head>
+<body>
+
+<div class="cards-viewport" id="viewport">
+<div class="cards-track" id="track">
+
+<!-- ==================== CARD 0: GETTING STARTED PRIMER ==================== -->
+<div class="card card-0">
+  <div class="header">
+    <h1>Getting Started with <span>Claude Code</span></h1>
+    <button class="theme-toggle" id="themeBtn" onclick="toggleTheme()" title="Toggle dark/light mode">◑ dark</button>
+    <span class="page-num">1 / 5</span>
+  </div>
+
+  <div class="primer-layout">
+    <div class="primer-col">
+      <div class="primer-section">
+        <div class="primer-section-title">Two modes, one window</div>
+        <p>Your terminal has different modes with limited visual clues for which one you're in. The <strong>shell</strong> is where you talk to your computer — run programs, move files, navigate folders. <strong>Claude Code</strong> is where you talk to Claude. You switch between them, but they look almost identical. The key difference is the prompt (that little symbol waiting for your input).</p>
+      </div>
+
+      <div class="primer-section">
+        <div class="primer-section-title">Installing Claude Code</div>
+        <p>Open your terminal and paste one of these commands:<br><br>
+        <strong>Mac / Linux / WSL:</strong> <code>curl -fsSL https://claude.ai/install.sh | bash</code><br>
+        <strong>Windows PowerShell:</strong> <code>irm https://claude.ai/install.ps1 | iex</code><br><br>
+        That's it — nothing else to install.</p>
+      </div>
+
+      <div class="primer-section">
+        <div class="primer-section-title">Getting in and getting out</div>
+        <p>Type <code>claude</code> at your shell prompt and hit Enter. That's it — you're in. Claude will greet you and wait for instructions. To leave, type <code>/exit</code> or press <code>Ctrl+C</code> twice. You'll land back at your shell prompt. You can always get out. Your escape keys are always safe — but Claude's actions on your files are real, so review what it's doing before approving changes.</p>
+      </div>
+
+      <div class="primer-section">
+        <div class="primer-section-title">Where am I? What's here?</div>
+        <p>The terminal always operates inside a folder on your computer. By default, new terminal windows start in your home folder (<code>~</code>). Claude Code inherits that location when it starts. Use <code>pwd</code> to see where you are and <code>ls</code> to see what's in the current folder. Navigate with <code>cd foldername</code> to go deeper or <code>cd ..</code> to go up. Think of it like a file browser, but you type instead of click.</p>
+      </div>
+
+      <div class="primer-section">
+        <div class="primer-section-title">Start in your project folder</div>
+        <p>Claude needs a folder to work in. Always <code>cd</code> into your project directory before running <code>claude</code>. It reads the files around it to understand your project. If you start from the wrong folder, it's like handing someone a map of the wrong city.</p>
+      </div>
+    </div>
+
+    <div class="primer-col">
+      <div class="terminal-mock">
+        <span class="comment"># This is your shell. The $ is your prompt.</span><br>
+        <span class="prompt-shell">~$</span> <span class="cmd-text">cd my-project</span><br>
+        <span class="prompt-shell">~/my-project$</span> <span class="cmd-text">claude</span><br>
+        <br>
+        <span class="comment"># Now you're in Claude Code.</span><br>
+        <span class="comment"># The prompt changes — type normally.</span><br>
+        <span class="prompt-claude">claude&gt;</span> <span class="cmd-text">explain what this project does</span><br>
+        <br>
+        <span class="comment"># Claude responds, then waits for more.</span><br>
+        <span class="prompt-claude">claude&gt;</span> <span class="cmd-text">/exit</span><br>
+        <br>
+        <span class="comment"># Back to your shell.</span><br>
+        <span class="prompt-shell">~/my-project$</span> <span class="cmd-text">▌</span>
+      </div>
+
+      <div class="primer-callout">
+        <div class="primer-callout-label">Panic button</div>
+        <p>If something looks wrong, something is running that you didn't expect, or you just feel lost:</p>
+        <div class="primer-key-row"><span class="kbd">Ctrl + C</span> Cancel whatever is happening right now</div>
+        <div class="primer-key-row"><span class="kbd">Ctrl + C</span> <span class="kbd">Ctrl + C</span> Hit it twice to exit Claude Code entirely</div>
+        <p style="margin-top: 0.3rem;">These won't break anything. Use them liberally.</p>
+      </div>
+
+      <div class="primer-callout">
+        <div class="primer-callout-label">If you get lost</div>
+        <p>Look at your prompt. See <code>$</code> or <code>%</code>? You're in the shell — type <code>claude</code> to start. See <code>claude&gt;</code> or a Claude input area? You're already in Claude Code — just type your question.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ==================== CARD 1: TERMINAL COMMANDS ==================== -->
+<div class="card card-1">
+  <div class="header">
+    <h1>Terminal Commands for <span>Claude Code</span></h1>
+    <span class="page-num">2 / 5</span>
+  </div>
+
+  <div class="columns">
+    <div>
+      <div class="section">
+        <div class="section-title green">Navigation</div>
+        <div class="cmd"><code>pwd</code><span class="d">"Print working directory" — your current path</span></div>
+        <div class="cmd"><code>ls</code><span class="d">List files here</span></div>
+        <div class="cmd"><code>ls -la</code><span class="d">Detailed list with hidden files</span></div>
+        <div class="cmd"><code>cd foldername</code><span class="d">"Change directory" — move into a folder</span></div>
+        <div class="cmd"><code>cd ..</code><span class="d">Go up one level</span></div>
+        <div class="cmd"><code>cd ~</code><span class="d">Go to home directory</span></div>
+        <div class="cmd"><code>cd -</code><span class="d">Go to previous directory</span></div>
+      </div>
+
+      <div class="section">
+        <div class="section-title purple">Opening</div>
+        <div class="cmd"><code>open .</code><span class="d">Open current folder in Finder</span></div>
+        <div class="cmd"><code>open filename</code><span class="d">Open file in its default app</span></div>
+      </div>
+
+      <div class="section">
+        <div class="section-title red">Deleting</div>
+        <div class="section-note">&#x26A0; No undo for <code>rm</code>. It skips Trash entirely. Use <code>ls</code> first to confirm what you're deleting.</div>
+        <div class="cmd danger"><code>rm filename</code><span class="d">Delete a file</span></div>
+        <div class="cmd danger"><code>rm -r foldername</code><span class="d">Delete folder + contents</span></div>
+        <div class="cmd danger"><code>sudo command</code><span class="d">Run as admin. Use with caution.</span></div>
+      </div>
+    </div>
+
+    <div>
+      <div class="section">
+        <div class="section-title blue">Reading &amp; Searching</div>
+        <div class="cmd"><code>cat filename</code><span class="d">Print file contents</span></div>
+        <div class="cmd"><code>less filename</code><span class="d">Scroll through file (q to quit)</span></div>
+        <div class="cmd"><code>head -n 20 file</code><span class="d">First 20 lines</span></div>
+        <div class="cmd"><code>tail -n 20 file</code><span class="d">Last 20 lines</span></div>
+        <div class="cmd"><code>grep "text" file</code><span class="d">Search inside a file</span></div>
+        <div class="cmd"><code>find . -name "*.js"</code><span class="d">Find files by name pattern</span></div>
+      </div>
+
+      <div class="section">
+        <div class="section-title cyan">Creating &amp; Moving</div>
+        <div class="cmd"><code>mkdir foldername</code><span class="d">Make a new folder</span></div>
+        <div class="cmd"><code>touch filename</code><span class="d">Create an empty file</span></div>
+        <div class="cmd"><code>cp source dest</code><span class="d">Copy a file (-r for folders)</span></div>
+        <div class="cmd"><code>mv source dest</code><span class="d">Move or rename</span></div>
+      </div>
+
+      <div class="section">
+        <div class="section-title orange">Git Basics</div>
+        <div class="cmd"><code>git status</code><span class="d">See what's changed</span></div>
+        <div class="cmd"><code>git diff</code><span class="d">See exact changes (q to exit)</span></div>
+        <div class="cmd"><code>git log --oneline</code><span class="d">Compact commit history</span></div>
+        <div class="cmd"><code>git checkout -b name</code><span class="d">Create + switch branch</span></div>
+        <div class="cmd"><code>git stash</code><span class="d">Shelve changes temporarily</span></div>
+      </div>
+    </div>
+
+    <div>
+      <div class="section">
+        <div class="section-title green">Helpful Extras</div>
+        <div class="cmd"><code>clear</code><span class="d">Clear the screen</span></div>
+        <div class="cmd"><code>history</code><span class="d">See past commands</span></div>
+        <div class="cmd"><code>which command</code><span class="d">Check if something is installed</span></div>
+        <div class="cmd"><code>man command</code><span class="d">Read the manual (q to exit)</span></div>
+        <div class="cmd"><code>command --help</code><span class="d">Quick usage info for any tool</span></div>
+      </div>
+
+      <div class="section">
+        <div class="section-title blue">Keyboard Shortcuts</div>
+        <div class="cmd"><span class="kbd">Tab</span><span class="d">Auto-complete names</span></div>
+        <div class="cmd"><span class="kbd">&#x2191; / &#x2193;</span><span class="d">Cycle through past commands</span></div>
+        <div class="cmd"><span class="kbd">Ctrl + C</span><span class="d">Cancel current command</span></div>
+        <div class="cmd"><span class="kbd">Ctrl + D</span><span class="d">Exit / close (when Ctrl+C won't)</span></div>
+        <div class="cmd"><span class="kbd">Ctrl + A / E</span><span class="d">Jump to start / end of line</span></div>
+        <div class="cmd"><span class="kbd">Ctrl + U / K</span><span class="d">Delete to start / end of line</span></div>
+        <div class="cmd"><span class="kbd">Ctrl + W</span><span class="d">Delete previous word</span></div>
+        <div class="cmd"><span class="kbd">Ctrl + Y</span><span class="d">Paste back what you deleted</span></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ==================== CARD 2: CLAUDE CODE COMMANDS ==================== -->
+<div class="card card-2">
+  <div class="header">
+    <h1><span>Claude Code</span> Commands &amp; Tips</h1>
+    <span class="page-num">3 / 5</span>
+  </div>
+
+  <div class="columns">
+    <div>
+      <div class="section">
+        <div class="section-title cc">Session</div>
+        <div class="cmd"><code>/clear</code><span class="d">Wipe conversation, fresh start</span></div>
+        <div class="cmd"><code>/compact</code><span class="d">Compress context to free up space</span></div>
+        <div class="cmd"><code>/compact [focus]</code><span class="d">Compress but keep a specific topic</span></div>
+        <div class="cmd"><code>/context</code><span class="d">See how full your context window is</span></div>
+        <div class="cmd"><code>/cost</code><span class="d">Check token usage and session cost</span></div>
+        <div class="cmd"><code>/exit</code><span class="d">End the session</span></div>
+      </div>
+
+      <div class="section">
+        <div class="section-title blue">Working</div>
+        <div class="cmd"><code>/review</code><span class="d">Code review of recent changes</span></div>
+        <div class="cmd"><code>/memory</code><span class="d">Edit your CLAUDE.md files</span></div>
+        <div class="cmd"><code>/resume</code><span class="d">Pick up a previous conversation</span></div>
+        <div class="cmd"><code>/add-dir path</code><span class="d">Add another directory to context</span></div>
+        <div class="cmd"><code>/btw question</code><span class="d">Side question without interrupting</span></div>
+        <div class="cmd"><code>/hooks</code><span class="d">Automated actions on events</span></div>
+        <div class="cmd"><code>/mcp</code><span class="d">Manage external tool integrations</span></div>
+      </div>
+    </div>
+
+    <div>
+      <div class="section">
+        <div class="section-title purple">Setup &amp; Config</div>
+        <div class="cmd"><code>/init</code><span class="d">Create a CLAUDE.md for your project</span></div>
+        <div class="cmd"><code>/model</code><span class="d">Switch between Opus, Sonnet, Haiku</span></div>
+        <div class="cmd"><code>/config</code><span class="d">Open settings</span></div>
+        <div class="cmd"><code>/permissions</code><span class="d">Manage tool permissions</span></div>
+        <div class="cmd"><code>/doctor</code><span class="d">Diagnose installation issues</span></div>
+        <div class="cmd"><code>/status</code><span class="d">Version info + connectivity check</span></div>
+      </div>
+
+      <div class="section">
+        <div class="section-title green">CLI Flags</div>
+        <div class="cmd"><code>claude</code><span class="d">Start interactive session</span></div>
+        <div class="cmd"><code>claude "prompt"</code><span class="d">Start with an initial prompt</span></div>
+        <div class="cmd"><code>claude -c</code><span class="d">Continue your last session</span></div>
+        <div class="cmd"><code>claude -r &lt;id&gt;</code><span class="d">Resume a specific session by ID</span></div>
+        <div class="cmd"><code>claude -p "prompt"</code><span class="d">One-shot, no interactive session</span></div>
+        <div class="cmd"><code>claude --model opus</code><span class="d">Start with a specific model</span></div>
+        <div class="cmd"><code>cat file | claude -p</code><span class="d">Pipe input as context</span></div>
+        <div class="cmd"><code>claude config set</code><span class="d">Change defaults (model, telemetry)</span></div>
+      </div>
+    </div>
+
+    <div>
+      <div class="section">
+        <div class="section-title orange">Keyboard Shortcuts</div>
+        <div class="cmd"><span class="kbd">Shift + Tab</span><span class="d">Toggle permission modes</span></div>
+        <div class="cmd"><span class="kbd">Escape</span><span class="d">Back out of tool approval</span></div>
+        <div class="cmd"><span class="kbd">Ctrl + C</span><span class="d">Cancel current operation</span></div>
+        <div class="cmd"><span class="kbd">Ctrl + C ×2</span><span class="d">Exit session (same as /exit)</span></div>
+        <div class="cmd"><span class="kbd">Ctrl + D</span><span class="d">Exit session</span></div>
+        <div class="cmd"><span class="kbd">Ctrl + G</span><span class="d">Open prompt in editor</span></div>
+        <div class="cmd"><span class="kbd">@ + path</span><span class="d">Autocomplete file references</span></div>
+        <div class="cmd"><span class="kbd">! command</span><span class="d">Run shell command directly</span></div>
+      </div>
+
+      <div class="section">
+        <div class="section-title cyan">Skills</div>
+        <div class="cmd"><code>/help</code><span class="d">List all commands incl. skills</span></div>
+        <div class="cmd"><code>.claude/skills/</code><span class="d">Project skills (shared via git)</span></div>
+        <div class="cmd"><code>SKILL.md</code><span class="d">Each skill has a SKILL.md file</span></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="tips-footer">
+    <div class="tips-footer-label">How to get the most out of it</div>
+    <div class="tips-grid">
+      <div class="tip-item"><strong>Be specific.</strong> Tell it what you want, where it is, and what done looks like. Vague prompts get vague results.</div>
+      <div class="tip-item"><strong>Work in small chunks.</strong> One task per prompt. Easier to review, easier to course-correct if it goes sideways.</div>
+      <div class="tip-item"><strong>Use CLAUDE.md.</strong> Run <code>/init</code> to create one. It's how you teach Claude about your project so you stop repeating yourself.</div>
+      <div class="tip-item"><strong>Review before approving.</strong> Read what it changed. Use git branches so you can always undo everything.</div>
+    </div>
+  </div>
+</div>
+
+<!-- ==================== CARD 3: BEST PRACTICES ==================== -->
+<div class="card card-3">
+  <div class="header">
+    <h1>Best Practices for <span>Claude Code</span></h1>
+    <span class="page-num">4 / 5</span>
+  </div>
+
+  <div class="editorial-layout">
+    <div class="editorial-col">
+      <div class="practice-editorial">
+        <div class="practice-head">
+          <span class="practice-num">1</span>
+          <h3>Plan first, then execute</h3>
+        </div>
+        <p>Before any non-trivial task, ask Claude to outline its approach first. Read the plan, push back, then say "go." This one habit prevents most bad outcomes.</p>
+      </div>
+
+      <div class="practice-editorial">
+        <div class="practice-head">
+          <span class="practice-num">2</span>
+          <h3>If you don't know, just ask</h3>
+        </div>
+        <p>People forget this one. If you don't know how to do something, ask Claude to explain it. It's not just a code generator — it's a teacher, a debugger, and a sounding board.</p>
+      </div>
+
+      <div class="practice-editorial">
+        <div class="practice-head">
+          <span class="practice-num">3</span>
+          <h3>Use /btw for side questions</h3>
+        </div>
+        <p>Need a quick answer without derailing Claude's current task? Use <code>/btw</code> to ask a side question. It won't interrupt the flow of what it's working on.</p>
+      </div>
+
+      <div class="practice-editorial">
+        <div class="practice-head">
+          <span class="practice-num">4</span>
+          <h3>Pipe in context, don't paste it</h3>
+        </div>
+        <p>Instead of pasting logs or file contents, pipe them in: <code>cat error.log | claude -p "explain"</code>. Cleaner, preserves formatting, and keeps your prompt focused.</p>
+      </div>
+
+    </div>
+
+    <div class="editorial-col">
+      <div class="practice-editorial">
+        <div class="practice-head">
+          <span class="practice-num">5</span>
+          <h3>Watch your context window</h3>
+        </div>
+        <p>Check <code>/context</code> regularly. When it's getting full, <code>/compact</code> if you're still on the same task, or <code>/clear</code> if you're switching gears. Quality drops as context fills up.</p>
+      </div>
+
+      <div class="practice-editorial">
+        <div class="practice-head">
+          <span class="practice-num">6</span>
+          <h3>Save context before clearing</h3>
+        </div>
+        <p>Claude Code has no cross-session memory. Before you <code>/clear</code>, tell Claude to update its CLAUDE.md with anything important from the conversation. Otherwise it's gone.</p>
+      </div>
+
+      <div class="practice-editorial">
+        <div class="practice-head">
+          <span class="practice-num">7</span>
+          <h3>Let Claude write its own memory</h3>
+        </div>
+        <p>Have Claude write and maintain its own CLAUDE.md files. Periodically ask it to audit them for stale info and bloat. It re-reads this file constantly, so keeping it concise matters.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ==================== CARD 4: GLOSSARY ==================== -->
+<div class="card card-4">
+  <div class="header">
+    <h1><span>Claude Code</span> Glossary</h1>
+    <span class="page-num">5 / 5</span>
+  </div>
+
+  <div class="glossary-grid">
+    <dl class="glossary-term">
+      <dt>CLAUDE.md</dt>
+      <dd>A markdown file that acts as project memory. Claude reads it at the start of every session. Put your project conventions, preferences, and key context here so you don't repeat yourself.</dd>
+    </dl>
+
+    <dl class="glossary-term">
+      <dt>Compacting</dt>
+      <dd>Compressing your conversation history to free up context space. Claude summarizes what's happened so far and discards the details. Triggered automatically or manually with <code>/compact</code>.</dd>
+    </dl>
+
+    <dl class="glossary-term">
+      <dt>Context Rot</dt>
+      <dd>The gradual decline in quality during long sessions. As context fills with old back-and-forth, Claude's responses get less focused. The fix: <code>/compact</code> or <code>/clear</code> and start fresh.</dd>
+    </dl>
+
+    <dl class="glossary-term">
+      <dt>Context Window</dt>
+      <dd>Claude's working memory for the current session. Everything you say, every file it reads, and every response it gives takes up space here. When it fills up, quality suffers.</dd>
+    </dl>
+
+    <dl class="glossary-term">
+      <dt>Dangling Context</dt>
+      <dd>When Claude references files or decisions from earlier in a session that have been compacted or pushed out of the active window. Often shows up as sudden confusion about your project structure. Fix by re-stating key details or starting fresh.</dd>
+    </dl>
+
+    <dl class="glossary-term">
+      <dt>Extended Thinking</dt>
+      <dd>When Claude pauses to reason through a complex problem before responding. Uses extra tokens but produces better results for hard tasks. Happens automatically.</dd>
+    </dl>
+
+    <dl class="glossary-term">
+      <dt>Headless Mode</dt>
+      <dd>Running Claude Code non-interactively, e.g. in CI/CD pipelines or scripts. Use <code>claude -p</code> with piped input. No human in the loop — it runs and exits.</dd>
+    </dl>
+
+    <dl class="glossary-term">
+      <dt>Hooks</dt>
+      <dd>Automated actions that run when specific events happen, like formatting code after a file is saved or running tests after changes. Set up with <code>/hooks</code>.</dd>
+    </dl>
+
+    <dl class="glossary-term">
+      <dt>MCP (Model Context Protocol)</dt>
+      <dd>A way to connect Claude to external tools and services like databases, APIs, GitHub, or browsers. Managed with the <code>/mcp</code> command.</dd>
+    </dl>
+
+    <dl class="glossary-term">
+      <dt>Permissions</dt>
+      <dd>Controls for what Claude can do without asking. Tools like file editing, bash commands, and web access can be set to allow, deny, or ask each time. Managed with <code>/permissions</code>.</dd>
+    </dl>
+
+    <dl class="glossary-term">
+      <dt>Plan Mode</dt>
+      <dd>A way of working where you ask Claude to plan before executing. It thinks through the approach without making changes, so you can review and adjust before any code is written.</dd>
+    </dl>
+
+    <dl class="glossary-term">
+      <dt>Skills</dt>
+      <dd>Like slash commands, but Claude can also trigger them automatically when relevant. Stored in <code>.claude/skills/</code> with a SKILL.md file. The recommended way to extend Claude Code.</dd>
+    </dl>
+
+    <dl class="glossary-term">
+      <dt>Slash Commands</dt>
+      <dd>Built-in commands starting with <code>/</code> that you type directly — like <code>/clear</code>, <code>/compact</code>, and <code>/model</code>. Custom slash commands (via <code>.claude/commands/</code>) have been replaced by skills.</dd>
+    </dl>
+
+    <dl class="glossary-term">
+      <dt>Subagent</dt>
+      <dd>A separate Claude instance that works in its own context window and reports back. Used for parallel tasks or to keep specialized work from cluttering your main session.</dd>
+    </dl>
+
+    <dl class="glossary-term">
+      <dt>Tokens</dt>
+      <dd>How text is measured. Roughly one token per word, though code and punctuation break differently. Context size and cost are both counted in tokens.</dd>
+    </dl>
+  </div>
+
+  <div class="tips-footer">
+    <div class="tips-footer-label">Ready for more?</div>
+    <div class="tip-item" style="font-size: var(--fs-sm); color: var(--dim);">Done with the cheat sheets? <a href="claude-code-next-steps.html" style="color: var(--claude-orange); font-weight: 600; text-decoration: none;">Claude Code Next Steps &rarr;</a></div>
+  </div>
+</div>
+
+</div><!-- /cards-track -->
+</div><!-- /cards-viewport -->
+
+<!-- PAGINATION (mobile/tablet) -->
+<nav class="pagination" id="pagination">
+  <button class="nav-arrow" id="prevBtn" onclick="goTo(current-1)" aria-label="Previous page">‹</button>
+  <button class="dot active" onclick="goTo(0)" aria-label="Page 1"></button>
+  <button class="dot" onclick="goTo(1)" aria-label="Page 2"></button>
+  <button class="dot" onclick="goTo(2)" aria-label="Page 3"></button>
+  <button class="dot" onclick="goTo(3)" aria-label="Page 4"></button>
+  <button class="dot" onclick="goTo(4)" aria-label="Page 5"></button>
+  <span class="page-label" id="pageLabel">1 / 5</span>
+  <button class="nav-arrow" id="nextBtn" onclick="goTo(current+1)" aria-label="Next page">›</button>
+</nav>
+
+<script>
+// ---- Theme ----
+function toggleTheme() {
+  const html = document.documentElement;
+  const next = html.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+  html.setAttribute('data-theme', next);
+  document.getElementById('themeBtn').textContent = next === 'dark' ? '◑ light' : '◑ dark';
+  try { localStorage.setItem('theme', next); } catch(e) {}
+}
+try {
+  if (localStorage.getItem('theme') === 'dark') {
+    document.documentElement.setAttribute('data-theme', 'dark');
+    document.getElementById('themeBtn').textContent = '◑ light';
+  }
+} catch(e) {}
+
+// ---- Scroll-snap pagination ----
+const viewport = document.getElementById('viewport');
+const dots = document.querySelectorAll('.pagination .dot');
+const pageLabel = document.getElementById('pageLabel');
+const prevBtn = document.getElementById('prevBtn');
+const nextBtn = document.getElementById('nextBtn');
+const totalCards = 5;
+let current = 0;
+
+function isMobile() {
+  return window.innerWidth < 1024;
+}
+
+function updateUI(idx) {
+  idx = Math.max(0, Math.min(totalCards - 1, idx));
+  current = idx;
+  dots.forEach((d, i) => d.classList.toggle('active', i === current));
+  pageLabel.textContent = `${current + 1} / ${totalCards}`;
+  prevBtn.disabled = current === 0;
+  nextBtn.disabled = current === totalCards - 1;
+}
+
+function goTo(idx) {
+  if (!isMobile()) return;
+  idx = Math.max(0, Math.min(totalCards - 1, idx));
+  viewport.scrollTo({ left: idx * viewport.offsetWidth, behavior: 'smooth' });
+}
+
+// Detect which card is visible via scroll position
+let scrollTimer;
+viewport.addEventListener('scroll', () => {
+  clearTimeout(scrollTimer);
+  scrollTimer = setTimeout(() => {
+    const idx = Math.round(viewport.scrollLeft / viewport.offsetWidth);
+    if (idx !== current) updateUI(idx);
+  }, 50);
+}, { passive: true });
+
+// Keyboard nav
+document.addEventListener('keydown', e => {
+  if (!isMobile()) return;
+  if (e.key === 'ArrowRight') goTo(current + 1);
+  if (e.key === 'ArrowLeft') goTo(current - 1);
+});
+
+updateUI(0);
+</script>
+</body>
+</html>
