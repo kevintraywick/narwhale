@@ -121,10 +121,9 @@ export default function Blog() {
     <div className="min-h-screen bg-white font-sans">
       <div className="max-w-2xl mx-auto px-6 py-12">
         <div className="flex items-baseline justify-between mb-8">
-          <h1 className="text-sm font-semibold text-gray-400 uppercase tracking-widest">
+          <Link to="/" className="text-sm font-semibold text-gray-400 uppercase tracking-widest hover:text-gray-600">
             Kevin Traywick · thoughts &amp; links
-          </h1>
-          <Link to="/" className="text-xs text-gray-400 hover:text-gray-600">← home</Link>
+          </Link>
         </div>
 
         {/* Post form */}
