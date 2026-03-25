@@ -102,7 +102,8 @@ export default function Blog() {
   const { entries, loading, postEntry, postComment } = useFeed()
   const navigate = useNavigate()
   const location = useLocation()
-  const pending = location.state as { title?: string; link?: string } | null
+  const pending = location.state as { title?: string; link?: string; imageUrl?: string } | null
+  const [previewUrl, setPreviewUrl] = useState<string | undefined>()
 
   const titleRef = useRef<HTMLInputElement>(null)
   const linkRef = useRef<HTMLInputElement>(null)
@@ -111,16 +112,18 @@ export default function Blog() {
   useEffect(() => {
     if (pending?.title && titleRef.current) titleRef.current.value = pending.title
     if (pending?.link && linkRef.current) linkRef.current.value = pending.link
+    if (pending?.imageUrl) setPreviewUrl(pending.imageUrl)
   }, []) // eslint-disable-line react-hooks/exhaustive-deps
 
   async function handlePost() {
     const title = titleRef.current!.value.trim()
     if (!title) return
     try {
-      await postEntry(title, linkRef.current!.value.trim(), noteRef.current!.value.trim())
+      await postEntry(title, linkRef.current!.value.trim(), noteRef.current!.value.trim(), previewUrl)
       titleRef.current!.value = ''
       linkRef.current!.value = ''
       noteRef.current!.value = ''
+      setPreviewUrl(undefined)
       navigate('/blog')
     } catch {}
   }
@@ -137,6 +140,22 @@ export default function Blog() {
         {/* Post form */}
         <div className="mb-10 pb-8 border-b border-gray-100">
           <div className="flex flex-col gap-2">
+            {previewUrl && (
+              <div className="relative">
+                <img
+                  src={previewUrl}
+                  alt=""
+                  className="w-full max-h-48 rounded object-contain bg-gray-50"
+                />
+                <button
+                  type="button"
+                  onClick={() => setPreviewUrl(undefined)}
+                  className="absolute top-1 right-1 text-xs bg-black/40 text-white rounded px-1.5 py-0.5 hover:bg-black/60"
+                >
+                  ✕
+                </button>
+              </div>
+            )}
             <input
               ref={titleRef}
               className="w-full text-sm border border-gray-200 rounded px-2.5 py-1.5 focus:outline-none"
