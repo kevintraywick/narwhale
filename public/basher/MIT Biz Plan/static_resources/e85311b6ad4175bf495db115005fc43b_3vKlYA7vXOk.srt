@@ -1,0 +1,7515 @@
+1
+00:00:00,090 --> 00:00:02,430
+The following content is
+provided under a Creative
+
+2
+00:00:02,430 --> 00:00:03,820
+Commons license.
+
+3
+00:00:03,820 --> 00:00:06,050
+Your support will help
+MIT OpenCourseWare
+
+4
+00:00:06,050 --> 00:00:10,160
+continue to offer high quality
+educational resources for free.
+
+5
+00:00:10,160 --> 00:00:12,700
+To make a donation or to
+view additional materials
+
+6
+00:00:12,700 --> 00:00:16,600
+from hundreds of MIT courses,
+visit MIT OpenCourseWare
+
+7
+00:00:16,600 --> 00:00:17,261
+at ocw.mit.edu.
+
+8
+00:00:24,320 --> 00:00:26,720
+JOSEPH HADZIMA: OK, you
+met the financing sources.
+
+9
+00:00:26,720 --> 00:00:29,909
+You got a little bit
+of an insight there.
+
+10
+00:00:29,909 --> 00:00:32,200
+Part of what you're going to
+need when you talk to them
+
+11
+00:00:32,200 --> 00:00:34,150
+is some idea of what
+the financials look
+
+12
+00:00:34,150 --> 00:00:35,210
+like for your business.
+
+13
+00:00:35,210 --> 00:00:38,770
+And joining us tonight
+to show you how
+
+14
+00:00:38,770 --> 00:00:40,610
+to do that is Charlie Tillet.
+
+15
+00:00:40,610 --> 00:00:43,290
+Now, Charlie's been doing
+this for-- he was in the $10K.
+
+16
+00:00:43,290 --> 00:00:45,310
+I think he'll talk
+about that a bit.
+
+17
+00:00:45,310 --> 00:00:47,240
+CHARLIE TILLETT: Yep.
+
+18
+00:00:47,240 --> 00:00:50,660
+JOSEPH HADZIMA: And I was
+in-- I've been doing things
+
+19
+00:00:50,660 --> 00:00:53,070
+around the world-- I
+was in Istanbul two
+
+20
+00:00:53,070 --> 00:00:57,090
+years ago, in a
+setting with 25 teams
+
+21
+00:00:57,090 --> 00:00:59,040
+from around the Muslim world.
+
+22
+00:00:59,040 --> 00:01:01,340
+And I was mentoring
+a team from Pakistan.
+
+23
+00:01:01,340 --> 00:01:03,720
+And I'm looking at
+their slide deck,
+
+24
+00:01:03,720 --> 00:01:07,510
+and I get to the financials,
+and I say, where did you
+
+25
+00:01:07,510 --> 00:01:08,346
+get this template?
+
+26
+00:01:08,346 --> 00:01:10,470
+And they didn't quite
+understand what I was saying.
+
+27
+00:01:10,470 --> 00:01:12,840
+And I'm looking at it,
+it was Charlie's template
+
+28
+00:01:12,840 --> 00:01:13,990
+that he uses in the course.
+
+29
+00:01:13,990 --> 00:01:17,910
+So his speeches here have
+transformed financial plans
+
+30
+00:01:17,910 --> 00:01:22,210
+all over the world, in
+Pakistan, and he's graciously
+
+31
+00:01:22,210 --> 00:01:24,720
+come back to talk to us.
+
+32
+00:01:24,720 --> 00:01:26,460
+Charlie was the
+person I mentioned
+
+33
+00:01:26,460 --> 00:01:31,550
+who I met outside of the MIT
+Enterprise Forum meeting,
+
+34
+00:01:31,550 --> 00:01:34,690
+and asked him what he was doing,
+and that led to a whole career
+
+35
+00:01:34,690 --> 00:01:36,560
+with a bunch of
+entrepreneurs up north.
+
+36
+00:01:36,560 --> 00:01:36,920
+CHARLIE TILLETT: Yep.
+
+37
+00:01:36,920 --> 00:01:37,450
+JOSEPH HADZIMA: And
+I'll sort of let
+
+38
+00:01:37,450 --> 00:01:38,500
+you pick it up there, Charlie.
+
+39
+00:01:38,500 --> 00:01:39,130
+CHARLIE TILLETT: OK, great.
+
+40
+00:01:39,130 --> 00:01:39,941
+Thanks, Joe.
+
+41
+00:01:44,530 --> 00:01:48,280
+What was the first
+story he told?
+
+42
+00:01:48,280 --> 00:01:50,190
+AUDIENCE: Jumping in
+your pickup truck.
+
+43
+00:01:50,190 --> 00:01:51,273
+CHARLIE TILLETT: OK, yeah.
+
+44
+00:01:51,273 --> 00:01:52,830
+So we will get to that.
+
+45
+00:01:52,830 --> 00:01:55,440
+So it's great to
+be here tonight.
+
+46
+00:01:55,440 --> 00:01:57,365
+I've got probably
+twice as many slides
+
+47
+00:01:57,365 --> 00:02:01,210
+as I should cover in my little
+over an hour that I've got.
+
+48
+00:02:01,210 --> 00:02:02,320
+So I'm going to go quick.
+
+49
+00:02:02,320 --> 00:02:05,560
+But feel free to ask any
+questions as we go along.
+
+50
+00:02:05,560 --> 00:02:08,310
+And what I'll try and do is,
+I wrote down a few notes,
+
+51
+00:02:08,310 --> 00:02:10,090
+listening to the
+panel, the great panel
+
+52
+00:02:10,090 --> 00:02:12,330
+that we had here,
+maybe some terms
+
+53
+00:02:12,330 --> 00:02:15,880
+that they brought up
+that they didn't really
+
+54
+00:02:15,880 --> 00:02:18,170
+give enough explanation
+or background on.
+
+55
+00:02:18,170 --> 00:02:22,419
+So I'm going to try to touch
+on those as we go as well.
+
+56
+00:02:22,419 --> 00:02:24,710
+So tonight we're going to
+talk about your business plan
+
+57
+00:02:24,710 --> 00:02:25,300
+financials.
+
+58
+00:02:25,300 --> 00:02:27,740
+Putting together that
+critical spreadsheet
+
+59
+00:02:27,740 --> 00:02:31,300
+that you've got to have when you
+walk into that meeting, right?
+
+60
+00:02:31,300 --> 00:02:33,180
+Or when you send
+someone your deck,
+
+61
+00:02:33,180 --> 00:02:35,570
+and how to put that together.
+
+62
+00:02:35,570 --> 00:02:37,860
+But we're going to
+step back a little bit.
+
+63
+00:02:37,860 --> 00:02:41,120
+And as people say, I was a
+CFO of a couple of companies.
+
+64
+00:02:41,120 --> 00:02:43,662
+But part of my job was
+being a salesperson.
+
+65
+00:02:43,662 --> 00:02:45,120
+And what I would
+do is I would walk
+
+66
+00:02:45,120 --> 00:02:48,710
+into these meetings with
+a deck and with a team.
+
+67
+00:02:48,710 --> 00:02:52,990
+But my job was to sell
+that team to the investors.
+
+68
+00:02:52,990 --> 00:02:55,062
+And in return, they
+would give us money,
+
+69
+00:02:55,062 --> 00:02:56,270
+and we would give them stock.
+
+70
+00:02:56,270 --> 00:03:01,000
+But what we're really
+selling is the team,
+
+71
+00:03:01,000 --> 00:03:07,690
+and the concept of the business
+that we're trying to build.
+
+72
+00:03:07,690 --> 00:03:10,390
+Then, will talk about what
+is your business model,
+
+73
+00:03:10,390 --> 00:03:12,430
+and building your
+financial projections.
+
+74
+00:03:12,430 --> 00:03:15,330
+And so this template that
+I'm going to show you tonight
+
+75
+00:03:15,330 --> 00:03:17,030
+is up on the website.
+
+76
+00:03:17,030 --> 00:03:18,769
+There's a new
+template this year.
+
+77
+00:03:18,769 --> 00:03:21,310
+It's got a little more detail
+in terms of cost of goods sold,
+
+78
+00:03:21,310 --> 00:03:24,450
+in case you're doing something
+that's got more of a hardware
+
+79
+00:03:24,450 --> 00:03:25,010
+component.
+
+80
+00:03:25,010 --> 00:03:26,719
+This gives a little
+more detail on that.
+
+81
+00:03:26,719 --> 00:03:28,510
+But that was what I
+was trying to think of.
+
+82
+00:03:28,510 --> 00:03:31,700
+So this template is
+going to be out there, so
+
+83
+00:03:31,700 --> 00:03:32,860
+that you can download it.
+
+84
+00:03:32,860 --> 00:03:33,990
+It's an Excel spreadsheet.
+
+85
+00:03:33,990 --> 00:03:35,989
+You can start plugging
+in your own stuff in it.
+
+86
+00:03:35,989 --> 00:03:37,530
+And I'll tell you
+the things that you
+
+87
+00:03:37,530 --> 00:03:40,867
+need to take out when you
+actually show it to someone.
+
+88
+00:03:40,867 --> 00:03:42,450
+And then, the last
+part is we're going
+
+89
+00:03:42,450 --> 00:03:44,150
+to talk about sharing the pie.
+
+90
+00:03:44,150 --> 00:03:46,640
+So I've added a couple
+things to this talk
+
+91
+00:03:46,640 --> 00:03:52,310
+about putting together your
+business plan spreadsheet.
+
+92
+00:03:52,310 --> 00:03:55,260
+And one of them is talking
+about the venture capital
+
+93
+00:03:55,260 --> 00:03:59,610
+perspective, and helping
+you sit it in their shoes
+
+94
+00:03:59,610 --> 00:04:03,120
+and evaluate your opportunity.
+
+95
+00:04:03,120 --> 00:04:09,100
+But also thinking about the
+other uses or takers of equity
+
+96
+00:04:09,100 --> 00:04:09,830
+in your company.
+
+97
+00:04:09,830 --> 00:04:12,200
+And by equity, I mean stock.
+
+98
+00:04:12,200 --> 00:04:14,320
+So I've got couple
+slides on here
+
+99
+00:04:14,320 --> 00:04:18,040
+on thinking about your
+company, and all of the people,
+
+100
+00:04:18,040 --> 00:04:22,580
+and all of the entities that
+could potentially get stock
+
+101
+00:04:22,580 --> 00:04:25,230
+in your company,
+and what that does
+
+102
+00:04:25,230 --> 00:04:28,970
+to your ownership
+in the company.
+
+103
+00:04:28,970 --> 00:04:32,710
+So my background is I was a
+graduate from Sloan in '91.
+
+104
+00:04:32,710 --> 00:04:36,080
+That was the inaugural
+year-- oh, well, in 1990
+
+105
+00:04:36,080 --> 00:04:38,810
+was the inaugural year
+of the $10K Contest.
+
+106
+00:04:38,810 --> 00:04:40,510
+Well, it's now the $100K.
+
+107
+00:04:40,510 --> 00:04:42,400
+And we were the
+third place team.
+
+108
+00:04:42,400 --> 00:04:44,370
+So rather than get,
+you know, I think
+
+109
+00:04:44,370 --> 00:04:47,720
+it's now $20,000 or $30,000
+worth of free legal service
+
+110
+00:04:47,720 --> 00:04:51,040
+and accounting
+service, we got $300
+
+111
+00:04:51,040 --> 00:04:53,940
+to split between
+the three of us.
+
+112
+00:04:53,940 --> 00:04:56,510
+So since that wasn't enough
+to start our business,
+
+113
+00:04:56,510 --> 00:04:59,220
+we all went our separate ways.
+
+114
+00:04:59,220 --> 00:05:00,890
+But what I did,
+Joe introduced me
+
+115
+00:05:00,890 --> 00:05:03,780
+to some guys who had
+an interesting idea
+
+116
+00:05:03,780 --> 00:05:07,514
+for some network
+monitoring equipment.
+
+117
+00:05:07,514 --> 00:05:09,180
+And they didn't really
+know how to build
+
+118
+00:05:09,180 --> 00:05:10,670
+a business around that.
+
+119
+00:05:10,670 --> 00:05:14,970
+And that experience
+in the $10K Contest
+
+120
+00:05:14,970 --> 00:05:18,700
+was critical, because I'd
+worked with these two guys.
+
+121
+00:05:18,700 --> 00:05:23,100
+And we'd sat at the-- we didn't
+have Wi-Fi at that time--
+
+122
+00:05:23,100 --> 00:05:24,990
+so we're sitting in
+the computer lab,
+
+123
+00:05:24,990 --> 00:05:28,540
+plugging it into a
+spreadsheet late at night,
+
+124
+00:05:28,540 --> 00:05:33,030
+going, well, if we increase
+the sales price by this much,
+
+125
+00:05:33,030 --> 00:05:34,470
+what does it do to our business?
+
+126
+00:05:34,470 --> 00:05:36,657
+If we are able to reduce
+cost by this much,
+
+127
+00:05:36,657 --> 00:05:37,990
+what does it do to our business?
+
+128
+00:05:37,990 --> 00:05:40,580
+How many salespeople
+are we going to need?
+
+129
+00:05:40,580 --> 00:05:42,460
+And I went through
+that whole exercise
+
+130
+00:05:42,460 --> 00:05:48,830
+of building that template for
+the business plan contest.
+
+131
+00:05:48,830 --> 00:05:52,770
+And because of that, I
+had tremendous credibility
+
+132
+00:05:52,770 --> 00:05:53,660
+when I started.
+
+133
+00:05:53,660 --> 00:05:56,280
+I knew what I was talking
+about when I went in
+
+134
+00:05:56,280 --> 00:05:59,610
+to talk to these guys who
+had this data communications
+
+135
+00:05:59,610 --> 00:06:00,610
+product.
+
+136
+00:06:00,610 --> 00:06:02,800
+And I was able to
+convince them that I could
+
+137
+00:06:02,800 --> 00:06:04,170
+help them build their model.
+
+138
+00:06:04,170 --> 00:06:07,730
+And sure enough, I
+was able to do that.
+
+139
+00:06:07,730 --> 00:06:09,767
+But it was the entering
+into the contest,
+
+140
+00:06:09,767 --> 00:06:11,350
+and working with the
+team, and working
+
+141
+00:06:11,350 --> 00:06:14,830
+through all of that, that
+helped give me that experience.
+
+142
+00:06:14,830 --> 00:06:17,630
+The company was
+NetScout Systems.
+
+143
+00:06:17,630 --> 00:06:21,300
+We completed several
+rounds of venture financing
+
+144
+00:06:21,300 --> 00:06:24,780
+there, and went public in 1999.
+
+145
+00:06:24,780 --> 00:06:26,626
+I then got involved
+with a dot.com
+
+146
+00:06:26,626 --> 00:06:29,770
+company, which fortunately
+didn't last too long.
+
+147
+00:06:29,770 --> 00:06:35,120
+And then was at a
+Homeland Security
+
+148
+00:06:35,120 --> 00:06:38,630
+company that made bomb detection
+equipment for airports.
+
+149
+00:06:38,630 --> 00:06:43,450
+So completely different
+industry, but the same metrics.
+
+150
+00:06:43,450 --> 00:06:45,010
+The same tools apply.
+
+151
+00:06:45,010 --> 00:06:48,930
+The same spreadsheet that
+I'd built to get NetScout
+
+152
+00:06:48,930 --> 00:06:51,500
+off the ground was
+the same spreadsheet
+
+153
+00:06:51,500 --> 00:06:53,810
+that I used to get
+Reveal off the ground.
+
+154
+00:06:53,810 --> 00:06:56,080
+And it's the same spreadsheet
+that you guys can all
+
+155
+00:06:56,080 --> 00:06:58,060
+use to get your
+business off the ground.
+
+156
+00:06:58,060 --> 00:07:02,320
+I raised $125 million in
+more than 10 transactions
+
+157
+00:07:02,320 --> 00:07:04,800
+over that period.
+
+158
+00:07:04,800 --> 00:07:07,540
+So you're probably
+saying to yourself,
+
+159
+00:07:07,540 --> 00:07:10,320
+I'm too busy to
+do my financials.
+
+160
+00:07:10,320 --> 00:07:10,860
+Right?
+
+161
+00:07:10,860 --> 00:07:13,040
+I've got more
+important things to do.
+
+162
+00:07:13,040 --> 00:07:15,200
+One, they're not going
+to be right anyway.
+
+163
+00:07:15,200 --> 00:07:17,190
+I mean, who can
+sit here and say,
+
+164
+00:07:17,190 --> 00:07:20,390
+we're going to be able to be
+spot on on our financials?
+
+165
+00:07:20,390 --> 00:07:22,180
+Right?
+
+166
+00:07:22,180 --> 00:07:25,727
+The second is, the VCs aren't
+going to believe it anyway.
+
+167
+00:07:25,727 --> 00:07:27,310
+They're going to
+look at your numbers,
+
+168
+00:07:27,310 --> 00:07:29,500
+and they're going
+to say, they've
+
+169
+00:07:29,500 --> 00:07:32,610
+got their own ideas of this.
+
+170
+00:07:32,610 --> 00:07:35,080
+And the third is, you've got
+more important things to do.
+
+171
+00:07:35,080 --> 00:07:37,890
+Building the team, figuring
+out what the product is,
+
+172
+00:07:37,890 --> 00:07:41,140
+and looking at who
+your customers are.
+
+173
+00:07:41,140 --> 00:07:43,680
+But the reality
+is the financials
+
+174
+00:07:43,680 --> 00:07:47,820
+are the scoreboard, the
+scorecard for your company.
+
+175
+00:07:47,820 --> 00:07:51,220
+So if you don't know
+what you're shooting for,
+
+176
+00:07:51,220 --> 00:07:53,360
+then how do you know
+whether you're making
+
+177
+00:07:53,360 --> 00:07:55,920
+progress against those goals?
+
+178
+00:07:55,920 --> 00:07:57,470
+But the more important
+thing is kind
+
+179
+00:07:57,470 --> 00:07:59,860
+of what I was
+talking about with me
+
+180
+00:07:59,860 --> 00:08:02,970
+and my team in the $10K Contest.
+
+181
+00:08:02,970 --> 00:08:06,930
+It helps you understand what
+your key assumptions are,
+
+182
+00:08:06,930 --> 00:08:10,910
+because you've got to put those
+assumptions into either numbers
+
+183
+00:08:10,910 --> 00:08:12,200
+or formulas.
+
+184
+00:08:12,200 --> 00:08:14,600
+You've got to understand
+what the drivers are.
+
+185
+00:08:14,600 --> 00:08:18,340
+So if you're able to
+increase prices by 10%,
+
+186
+00:08:18,340 --> 00:08:19,360
+what does that do?
+
+187
+00:08:19,360 --> 00:08:21,360
+Is that an important
+lever or not?
+
+188
+00:08:21,360 --> 00:08:24,500
+Or is it more important
+to get your costs down?
+
+189
+00:08:24,500 --> 00:08:28,180
+Or is it more important to
+outsource your development
+
+190
+00:08:28,180 --> 00:08:31,790
+and get your R&D spending down?
+
+191
+00:08:31,790 --> 00:08:36,210
+Is it more important to do
+software as a service model,
+
+192
+00:08:36,210 --> 00:08:37,760
+or sell it is a product?
+
+193
+00:08:37,760 --> 00:08:40,690
+And how do those things
+impact how much cash
+
+194
+00:08:40,690 --> 00:08:41,580
+you're going to need?
+
+195
+00:08:44,200 --> 00:08:48,660
+So it's a great exercise that
+helps you understand what's
+
+196
+00:08:48,660 --> 00:08:50,860
+going on in your business.
+
+197
+00:08:50,860 --> 00:08:53,990
+Because as the CEO
+of your company,
+
+198
+00:08:53,990 --> 00:08:56,060
+the number one
+job is to maintain
+
+199
+00:08:56,060 --> 00:08:58,360
+the cash in the company.
+
+200
+00:08:58,360 --> 00:09:00,080
+It's the oxygen supply.
+
+201
+00:09:00,080 --> 00:09:04,350
+And without that, you could be
+doing everything else right,
+
+202
+00:09:04,350 --> 00:09:06,490
+but it doesn't take
+long for people
+
+203
+00:09:06,490 --> 00:09:08,000
+to start walking
+out the door when
+
+204
+00:09:08,000 --> 00:09:09,680
+they're not getting a paycheck.
+
+205
+00:09:09,680 --> 00:09:11,160
+Now, your management
+team-- we've
+
+206
+00:09:11,160 --> 00:09:13,670
+had those days where I
+have to go to the guys
+
+207
+00:09:13,670 --> 00:09:16,380
+and say, hey, guys, there's
+not going to be anything
+
+208
+00:09:16,380 --> 00:09:17,920
+in the envelope this week.
+
+209
+00:09:17,920 --> 00:09:20,050
+But for your rank
+and file employees,
+
+210
+00:09:20,050 --> 00:09:22,290
+you can't be missing payroll.
+
+211
+00:09:22,290 --> 00:09:25,510
+And your vendors will only
+let you stretch out payables
+
+212
+00:09:25,510 --> 00:09:26,260
+for so long.
+
+213
+00:09:26,260 --> 00:09:32,400
+So you've got to know where
+you stand with your cash,
+
+214
+00:09:32,400 --> 00:09:34,430
+and what cash you need.
+
+215
+00:09:34,430 --> 00:09:36,290
+So you don't need
+to be an accountant,
+
+216
+00:09:36,290 --> 00:09:39,370
+but you've got to
+understand these key terms.
+
+217
+00:09:39,370 --> 00:09:41,120
+And you've got to be
+able to discuss them.
+
+218
+00:09:41,120 --> 00:09:44,960
+Because the investors
+up here, they also
+
+219
+00:09:44,960 --> 00:09:46,950
+don't expect you to
+be an accountant.
+
+220
+00:09:46,950 --> 00:09:49,980
+But they do expect you
+to understand the drivers
+
+221
+00:09:49,980 --> 00:09:54,430
+in your business, and what the
+key metrics in your business
+
+222
+00:09:54,430 --> 00:09:54,930
+are.
+
+223
+00:09:57,600 --> 00:09:59,260
+In Reveal Imaging--
+Reveal Imaging
+
+224
+00:09:59,260 --> 00:10:01,900
+was a company that made
+bomb detection equipment.
+
+225
+00:10:01,900 --> 00:10:04,350
+And there we had an
+all-star management team.
+
+226
+00:10:04,350 --> 00:10:09,210
+We had five guys-- this
+was founded in 2003,
+
+227
+00:10:09,210 --> 00:10:13,050
+18 months after 9/11--
+we had five guys who'd
+
+228
+00:10:13,050 --> 00:10:16,565
+been in Homeland Security
+for more than a decade each.
+
+229
+00:10:16,565 --> 00:10:17,940
+So there were a
+lot of people who
+
+230
+00:10:17,940 --> 00:10:22,774
+wanted to get into Homeland
+Security on September 12, OK?
+
+231
+00:10:22,774 --> 00:10:24,190
+But there were not
+a lot of people
+
+232
+00:10:24,190 --> 00:10:27,720
+who were in Homeland Security,
+the Homeland Security business,
+
+233
+00:10:27,720 --> 00:10:29,060
+on September 10.
+
+234
+00:10:29,060 --> 00:10:31,250
+And we had five of
+those guys here.
+
+235
+00:10:31,250 --> 00:10:33,650
+So we had a market opportunity.
+
+236
+00:10:33,650 --> 00:10:39,490
+The Congress had said,
+all passenger bags
+
+237
+00:10:39,490 --> 00:10:42,500
+that go on a passenger
+airliner in the United States
+
+238
+00:10:42,500 --> 00:10:44,710
+have to be screened
+for explosives.
+
+239
+00:10:44,710 --> 00:10:47,680
+And we want a machine that
+can automatically do that.
+
+240
+00:10:47,680 --> 00:10:49,900
+We don't want people
+looking at X-ray images.
+
+241
+00:10:49,900 --> 00:10:52,090
+And there were
+machines on the market.
+
+242
+00:10:52,090 --> 00:10:54,980
+These guys had actually--
+of the eight machines that
+
+243
+00:10:54,980 --> 00:10:56,940
+had been certified--
+these guys had
+
+244
+00:10:56,940 --> 00:10:59,930
+been involved in getting four
+of those machines certified.
+
+245
+00:10:59,930 --> 00:11:02,270
+So we really had
+an all-star team.
+
+246
+00:11:02,270 --> 00:11:04,510
+They had come up with an
+idea for a product that
+
+247
+00:11:04,510 --> 00:11:07,890
+was half the size of
+the existing equipment.
+
+248
+00:11:07,890 --> 00:11:11,620
+Also half of the throughput,
+but half of the cost.
+
+249
+00:11:11,620 --> 00:11:15,280
+And so those metrics were very
+compelling for the smaller
+
+250
+00:11:15,280 --> 00:11:19,340
+airports like Burlington,
+Vermont, or Nantucket, Mass,
+
+251
+00:11:19,340 --> 00:11:21,920
+rather than the Logan's.
+
+252
+00:11:21,920 --> 00:11:25,430
+But there's 500 airports in
+the country, and one by one
+
+253
+00:11:25,430 --> 00:11:27,760
+they were getting ticked
+off by our competitors.
+
+254
+00:11:27,760 --> 00:11:29,770
+So we had an opportunity
+to get to market
+
+255
+00:11:29,770 --> 00:11:33,410
+that we had to get to fast,
+because once those airports
+
+256
+00:11:33,410 --> 00:11:37,000
+were staffed with our
+competitors' equipment,
+
+257
+00:11:37,000 --> 00:11:39,040
+they were no longer
+an opportunity.
+
+258
+00:11:39,040 --> 00:11:41,470
+So we went out, and we
+hit the ground running.
+
+259
+00:11:41,470 --> 00:11:46,500
+And we started raising money
+the first day we got together
+
+260
+00:11:46,500 --> 00:11:47,770
+as a management team.
+
+261
+00:11:47,770 --> 00:11:51,880
+We raised an angel round within
+90 days of $1 million dollars.
+
+262
+00:11:51,880 --> 00:11:54,830
+And then, within six months, we
+raised our first venture round.
+
+263
+00:11:54,830 --> 00:11:59,810
+And it was a $5 million,
+but it was in two tranches.
+
+264
+00:11:59,810 --> 00:12:03,200
+The tranches were a
+$5 million tranche,
+
+265
+00:12:03,200 --> 00:12:08,410
+and a second $5 million tranche,
+based upon hitting milestones.
+
+266
+00:12:08,410 --> 00:12:11,760
+Because we wanted to raise
+as much money as possible,
+
+267
+00:12:11,760 --> 00:12:15,170
+but our investors were reluctant
+to give us everything up front.
+
+268
+00:12:15,170 --> 00:12:16,990
+So we reached this
+compromise, where
+
+269
+00:12:16,990 --> 00:12:19,630
+we said, OK, we're going
+to hit some milestones,
+
+270
+00:12:19,630 --> 00:12:21,850
+and because we had
+the financial plan,
+
+271
+00:12:21,850 --> 00:12:24,950
+and we knew how far $5
+million would take us,
+
+272
+00:12:24,950 --> 00:12:29,480
+we knew what we could get done
+before we ran out of money.
+
+273
+00:12:29,480 --> 00:12:33,700
+And so we were able
+to pre-negotiate
+
+274
+00:12:33,700 --> 00:12:39,830
+an increase in value upon
+hitting that milestone.
+
+275
+00:12:39,830 --> 00:12:43,360
+So it was kind of a
+win-win, because we did not
+
+276
+00:12:43,360 --> 00:12:46,130
+have to spend-- once we
+raised the $5 million,
+
+277
+00:12:46,130 --> 00:12:49,110
+we didn't have to immediately
+start thinking about raising
+
+278
+00:12:49,110 --> 00:12:51,270
+the next $5 million,
+because we had
+
+279
+00:12:51,270 --> 00:12:54,510
+that kind of in our hip pocket.
+
+280
+00:12:54,510 --> 00:12:56,970
+All I can say is that,
+as soon as we raised
+
+281
+00:12:56,970 --> 00:12:58,760
+a round of financing,
+I started thinking
+
+282
+00:12:58,760 --> 00:13:01,640
+about the next financing
+that we were going to do.
+
+283
+00:13:01,640 --> 00:13:03,480
+It could have been
+bank financing,
+
+284
+00:13:03,480 --> 00:13:06,270
+like an equipment
+line, which is simply
+
+285
+00:13:06,270 --> 00:13:11,680
+as you buy equipment for
+your manufacturing facility,
+
+286
+00:13:11,680 --> 00:13:16,190
+or as you buy computers for
+your software engineers,
+
+287
+00:13:16,190 --> 00:13:20,150
+you send a copy of the
+invoice over to the bank,
+
+288
+00:13:20,150 --> 00:13:23,250
+and they will provide--
+they will give you
+
+289
+00:13:23,250 --> 00:13:29,730
+90% of that money back-- and
+you now have a loan to the bank.
+
+290
+00:13:29,730 --> 00:13:32,860
+So it didn't look like a
+lot of money, $500,000.
+
+291
+00:13:32,860 --> 00:13:36,530
+But as we were getting close
+to running out of money,
+
+292
+00:13:36,530 --> 00:13:38,410
+and we hadn't met
+that milestone there
+
+293
+00:13:38,410 --> 00:13:42,420
+we had committed to to
+get the second $5 million,
+
+294
+00:13:42,420 --> 00:13:45,400
+that $500,000 was
+very important to us.
+
+295
+00:13:45,400 --> 00:13:50,270
+Because that gave us an
+extra three months of runway
+
+296
+00:13:50,270 --> 00:13:51,920
+to get closer to the goal.
+
+297
+00:13:55,480 --> 00:13:59,680
+So I'm going to kind of
+take you behind the scenes
+
+298
+00:13:59,680 --> 00:14:03,000
+to think about what does
+a venture capitalist want.
+
+299
+00:14:03,000 --> 00:14:04,840
+When they put in
+their money, they're
+
+300
+00:14:04,840 --> 00:14:10,200
+interested in getting 3x
+to 5x absolute returns.
+
+301
+00:14:10,200 --> 00:14:14,080
+So if they put $1 million
+into your company,
+
+302
+00:14:14,080 --> 00:14:17,810
+they want to get $3
+million back to $5 million
+
+303
+00:14:17,810 --> 00:14:20,060
+back, on top of the $1 million.
+
+304
+00:14:20,060 --> 00:14:24,370
+So they've got to get $4
+million to $6 million back.
+
+305
+00:14:24,370 --> 00:14:27,800
+And if it's $5
+million, do the math.
+
+306
+00:14:27,800 --> 00:14:31,140
+Their investment horizon
+is five to seven years.
+
+307
+00:14:31,140 --> 00:14:37,900
+And what I will say is that,
+when you take venture money,
+
+308
+00:14:37,900 --> 00:14:41,540
+that clock starts ticking
+the day that that money gets
+
+309
+00:14:41,540 --> 00:14:43,450
+wired into your account.
+
+310
+00:14:43,450 --> 00:14:50,690
+And while five years
+seems like forever,
+
+311
+00:14:50,690 --> 00:14:55,720
+the investors realize that five
+years goes by in a heartbeat.
+
+312
+00:14:55,720 --> 00:14:58,500
+And they will start
+pounding you to run
+
+313
+00:14:58,500 --> 00:15:02,780
+faster than you think you can
+possibly run from day one.
+
+314
+00:15:02,780 --> 00:15:07,150
+And it's motivating,
+and it's a great thing.
+
+315
+00:15:07,150 --> 00:15:09,100
+And if you have
+the right partners,
+
+316
+00:15:09,100 --> 00:15:11,360
+they're helping you
+do the right things.
+
+317
+00:15:11,360 --> 00:15:13,400
+But you got to
+recognize that it's
+
+318
+00:15:13,400 --> 00:15:16,080
+going to be-- I think they
+admitted up here-- it's
+
+319
+00:15:16,080 --> 00:15:18,730
+going to be a very
+intense environment when
+
+320
+00:15:18,730 --> 00:15:19,650
+you take that money.
+
+321
+00:15:19,650 --> 00:15:26,410
+So you better be prepared for
+it when you take the money.
+
+322
+00:15:26,410 --> 00:15:29,080
+They also want to get--
+I mean, you heard up here
+
+323
+00:15:29,080 --> 00:15:31,410
+that they want to get a
+significant amount of money
+
+324
+00:15:31,410 --> 00:15:31,910
+invested.
+
+325
+00:15:31,910 --> 00:15:33,300
+It depends on the firm.
+
+326
+00:15:33,300 --> 00:15:35,390
+Some firms might want
+to put in $1 million,
+
+327
+00:15:35,390 --> 00:15:38,100
+some firms might want
+to put in $5 million.
+
+328
+00:15:38,100 --> 00:15:39,291
+It depends on the firm.
+
+329
+00:15:39,291 --> 00:15:41,040
+But they want to have
+a significant amount
+
+330
+00:15:41,040 --> 00:15:43,240
+of money invested.
+
+331
+00:15:43,240 --> 00:15:45,360
+And they want to have a
+significant ownership.
+
+332
+00:15:45,360 --> 00:15:49,051
+So if $5 million
+is their target,
+
+333
+00:15:49,051 --> 00:15:50,550
+they don't want to
+put in $5 million
+
+334
+00:15:50,550 --> 00:15:52,890
+and get 10% of the company.
+
+335
+00:15:52,890 --> 00:15:56,780
+They want to have-- at an
+early stage investment--
+
+336
+00:15:56,780 --> 00:15:59,720
+they want to have a
+significant amount.
+
+337
+00:15:59,720 --> 00:16:02,430
+So the formula to think
+about how much equity
+
+338
+00:16:02,430 --> 00:16:07,420
+you have to give up is
+the percentage of equity
+
+339
+00:16:07,420 --> 00:16:09,730
+that the venture
+capitalists are going to get
+
+340
+00:16:09,730 --> 00:16:12,030
+is the money that they
+invest-- and we'll
+
+341
+00:16:12,030 --> 00:16:14,720
+have some examples on
+the next page-- divided
+
+342
+00:16:14,720 --> 00:16:19,091
+by the pre-money value plus
+the money that they invested.
+
+343
+00:16:19,091 --> 00:16:20,090
+Now, that's the formula.
+
+344
+00:16:20,090 --> 00:16:23,000
+It doesn't really give you
+the answer, because what's
+
+345
+00:16:23,000 --> 00:16:24,380
+the pre-money valuation?
+
+346
+00:16:24,380 --> 00:16:31,460
+But as you heard up here, kind
+of where is the market today,
+
+347
+00:16:31,460 --> 00:16:33,600
+he was saying he sees
+a lot of companies
+
+348
+00:16:33,600 --> 00:16:39,030
+in the $3 million to $6
+million pre-money range, right?
+
+349
+00:16:39,030 --> 00:16:43,780
+So there is kind of a sense
+of where the market is today,
+
+350
+00:16:43,780 --> 00:16:47,600
+and what other
+companies are getting.
+
+351
+00:16:47,600 --> 00:16:51,440
+But where that pre-money
+valuation comes in,
+
+352
+00:16:51,440 --> 00:16:56,347
+that's the key to
+the negotiation
+
+353
+00:16:56,347 --> 00:16:57,180
+that you have to do.
+
+354
+00:16:57,180 --> 00:17:00,650
+The other part is how much
+money they're investing.
+
+355
+00:17:00,650 --> 00:17:04,640
+So if we look at a
+couple of examples here.
+
+356
+00:17:04,640 --> 00:17:08,680
+Say a Series A round, $5
+million invested on a $5 million
+
+357
+00:17:08,680 --> 00:17:10,170
+pre-money.
+
+358
+00:17:10,170 --> 00:17:14,000
+So we take the $5 million
+invested, we add that
+
+359
+00:17:14,000 --> 00:17:15,400
+to the pre-money of $5 million.
+
+360
+00:17:15,400 --> 00:17:18,609
+It's 5 over 10, it
+comes out to 50%.
+
+361
+00:17:18,609 --> 00:17:20,960
+If there's a Series B,
+let's say it's $10 million
+
+362
+00:17:20,960 --> 00:17:23,530
+invested on a $15
+million pre-money.
+
+363
+00:17:23,530 --> 00:17:29,090
+That'd be $10 million over 10
+plus 15, would be 10 over 25,
+
+364
+00:17:29,090 --> 00:17:30,480
+or 40%.
+
+365
+00:17:30,480 --> 00:17:34,950
+But recognize that when the
+Series B money comes in,
+
+366
+00:17:34,950 --> 00:17:39,820
+the Series A investors get
+diluted by the same 40%
+
+367
+00:17:39,820 --> 00:17:42,060
+that everyone else
+gets diluted by.
+
+368
+00:17:42,060 --> 00:17:46,700
+And I have an example
+walking through that.
+
+369
+00:17:46,700 --> 00:17:48,530
+Typically, the A
+and the B investors
+
+370
+00:17:48,530 --> 00:17:49,980
+are going to be the same people.
+
+371
+00:17:49,980 --> 00:17:53,500
+So the B investors are kind
+of diluting themselves.
+
+372
+00:17:53,500 --> 00:17:56,260
+But recognize that
+that dilution happens.
+
+373
+00:17:56,260 --> 00:17:59,190
+So don't think that you're
+giving up 50% of your company,
+
+374
+00:17:59,190 --> 00:18:00,920
+and then 40% of your
+company, and you're
+
+375
+00:18:00,920 --> 00:18:03,170
+left with 10% of your company.
+
+376
+00:18:03,170 --> 00:18:09,790
+You're really left with
+30% of your company, right?
+
+377
+00:18:09,790 --> 00:18:14,670
+So if an investor is looking
+for three to five times
+
+378
+00:18:14,670 --> 00:18:18,060
+on their money, and
+they've put $15 million in,
+
+379
+00:18:18,060 --> 00:18:26,100
+and they own 70% of
+the company, then
+
+380
+00:18:26,100 --> 00:18:31,730
+three times the $15 million
+invested is $45 million,
+
+381
+00:18:31,730 --> 00:18:34,100
+plus the original
+$15 million back,
+
+382
+00:18:34,100 --> 00:18:35,820
+so they've got to
+get $60 million.
+
+383
+00:18:35,820 --> 00:18:37,700
+They own 70% of the company.
+
+384
+00:18:37,700 --> 00:18:43,980
+So that company has to be valued
+at $85 million to $130 million
+
+385
+00:18:43,980 --> 00:18:47,480
+for them to get
+that type of return.
+
+386
+00:18:47,480 --> 00:18:51,640
+And so in order to
+get so that valuation,
+
+387
+00:18:51,640 --> 00:18:56,240
+you've got to grow your
+revenues to $40 to $60 million.
+
+388
+00:18:56,240 --> 00:18:59,940
+So there's a lot of
+businesses that you guys
+
+389
+00:18:59,940 --> 00:19:04,680
+could start that can grow to--
+you know, another comment you
+
+390
+00:19:04,680 --> 00:19:07,640
+heard here was make
+sure that your investors
+
+391
+00:19:07,640 --> 00:19:11,230
+and your opportunity and
+your investment dollars
+
+392
+00:19:11,230 --> 00:19:12,430
+are aligned, right?
+
+393
+00:19:12,430 --> 00:19:14,660
+One of the big
+problems was people
+
+394
+00:19:14,660 --> 00:19:19,920
+going after what turned out to
+be a small opportunity with too
+
+395
+00:19:19,920 --> 00:19:21,460
+much capital.
+
+396
+00:19:21,460 --> 00:19:24,970
+So the problem is, is that
+once someone has $15 million
+
+397
+00:19:24,970 --> 00:19:31,970
+invested in your company, you've
+got to go after the big return.
+
+398
+00:19:31,970 --> 00:19:34,380
+So you could have
+a business that
+
+399
+00:19:34,380 --> 00:19:36,090
+could be a great
+business for you
+
+400
+00:19:36,090 --> 00:19:39,780
+and a couple of your MIT
+pals that goes to $5 million
+
+401
+00:19:39,780 --> 00:19:43,310
+in revenue, or $10
+million in revenue,
+
+402
+00:19:43,310 --> 00:19:46,630
+and there's three of you,
+and you each own 33%,
+
+403
+00:19:46,630 --> 00:19:50,135
+and you have no outside income,
+and no outside investors,
+
+404
+00:19:50,135 --> 00:19:51,300
+and it's very profitable.
+
+405
+00:19:51,300 --> 00:19:54,330
+It could be a
+great business that
+
+406
+00:19:54,330 --> 00:19:56,430
+could be just a
+gold mine for you,
+
+407
+00:19:56,430 --> 00:19:59,790
+but it would not be an
+appropriate investment
+
+408
+00:19:59,790 --> 00:20:01,900
+for some of our panelists here.
+
+409
+00:20:01,900 --> 00:20:04,540
+And if they had come
+in as an investor,
+
+410
+00:20:04,540 --> 00:20:09,530
+then there's going to be a
+mismatch, and a lot of tension.
+
+411
+00:20:09,530 --> 00:20:15,770
+Because you can't get to a
+happy place for both of you.
+
+412
+00:20:15,770 --> 00:20:19,180
+So I know that this screen's a
+little bit hard to read here,
+
+413
+00:20:19,180 --> 00:20:22,070
+but let me just walk you
+real quickly through.
+
+414
+00:20:22,070 --> 00:20:26,420
+If you've got a
+founding group here
+
+415
+00:20:26,420 --> 00:20:30,350
+that has four million shares
+between all of the founders,
+
+416
+00:20:30,350 --> 00:20:34,870
+they've got 100% of the equity,
+and there's 100% right there.
+
+417
+00:20:34,870 --> 00:20:40,410
+You then bring in some early
+employees and give them--
+
+418
+00:20:40,410 --> 00:20:41,910
+and there'd be a
+list, I have a list
+
+419
+00:20:41,910 --> 00:20:45,490
+in the back of showing kind
+of who would get what--
+
+420
+00:20:45,490 --> 00:20:46,980
+but you have some
+early employees,
+
+421
+00:20:46,980 --> 00:20:49,890
+and maybe some advisors,
+that get a number of shares.
+
+422
+00:20:49,890 --> 00:20:52,930
+And so already the founders
+get diluted a little bit.
+
+423
+00:20:52,930 --> 00:20:54,580
+They then bring
+in an angel round
+
+424
+00:20:54,580 --> 00:20:58,720
+of $500,000 at a $4.5
+million pre-money.
+
+425
+00:20:58,720 --> 00:21:02,600
+So we know for our formula,
+$500,000 divided by $5 million,
+
+426
+00:21:02,600 --> 00:21:05,290
+the angel investors
+are going to get 10%.
+
+427
+00:21:05,290 --> 00:21:10,040
+In this case, and in all these
+cases, new shares are issued.
+
+428
+00:21:10,040 --> 00:21:13,080
+The founders continue to own
+their four million shares,
+
+429
+00:21:13,080 --> 00:21:15,790
+but now there's five million
+shares in the company,
+
+430
+00:21:15,790 --> 00:21:20,050
+and the founders have
+been diluted to 80%, OK?
+
+431
+00:21:20,050 --> 00:21:25,390
+We now have kind of the
+classic A round venture
+
+432
+00:21:25,390 --> 00:21:28,360
+capitalists come in, and
+they put in $5 million
+
+433
+00:21:28,360 --> 00:21:31,170
+at the $5 million that
+I talked about earlier.
+
+434
+00:21:31,170 --> 00:21:32,930
+They get 50%.
+
+435
+00:21:32,930 --> 00:21:34,980
+But one of the
+things that is going
+
+436
+00:21:34,980 --> 00:21:37,190
+to happen when the
+A round comes in
+
+437
+00:21:37,190 --> 00:21:38,720
+is the investors
+are going to want
+
+438
+00:21:38,720 --> 00:21:40,930
+to see that you
+have an option pool
+
+439
+00:21:40,930 --> 00:21:46,480
+so that you can issue stock
+options to your employees.
+
+440
+00:21:46,480 --> 00:21:49,540
+Because all employees
+like stock options,
+
+441
+00:21:49,540 --> 00:21:55,110
+and it provides extra
+incentive to your employees.
+
+442
+00:21:55,110 --> 00:21:57,760
+But the investors
+are saying, we don't
+
+443
+00:21:57,760 --> 00:22:03,100
+want to be diluted for the
+first 100 people that you hire.
+
+444
+00:22:03,100 --> 00:22:05,990
+So you've got to
+set aside options
+
+445
+00:22:05,990 --> 00:22:10,270
+to take care of those people
+without them being diluted.
+
+446
+00:22:10,270 --> 00:22:14,460
+So they still get their 50%, but
+you've got to create this pool.
+
+447
+00:22:14,460 --> 00:22:16,690
+And in my example, it's 12%.
+
+448
+00:22:16,690 --> 00:22:22,970
+But it's somewhere in the
+10% to 20% range, right?
+
+449
+00:22:22,970 --> 00:22:28,110
+And that's a topic for
+discussion and negotiation
+
+450
+00:22:28,110 --> 00:22:29,530
+with your venture capitalists.
+
+451
+00:22:29,530 --> 00:22:33,490
+Anything I'm saying wrong
+here, feel free to hop in.
+
+452
+00:22:33,490 --> 00:22:37,420
+So then we have our final
+round is that $10 million
+
+453
+00:22:37,420 --> 00:22:40,950
+at $15 million, and
+these investors get 40%.
+
+454
+00:22:40,950 --> 00:22:44,640
+Notice the A investors
+are now down to 30%,
+
+455
+00:22:44,640 --> 00:22:48,340
+and our founding team
+is down to 18.2%.
+
+456
+00:22:48,340 --> 00:22:50,960
+So this kind of walks you
+through the progression
+
+457
+00:22:50,960 --> 00:22:56,720
+of how stock gets distributed
+to both employees,
+
+458
+00:22:56,720 --> 00:22:59,900
+angel investors, and
+venture capital investors.
+
+459
+00:22:59,900 --> 00:23:00,802
+Yep?
+
+460
+00:23:00,802 --> 00:23:04,176
+AUDIENCE: So the question I
+have is other than the stock
+
+461
+00:23:04,176 --> 00:23:06,104
+distribution, do
+they get more control
+
+462
+00:23:06,104 --> 00:23:08,514
+because they ask for
+more seats on the board?
+
+463
+00:23:08,514 --> 00:23:11,888
+Is that something which happens
+a lot when the second round
+
+464
+00:23:11,888 --> 00:23:13,840
+and third round happens?
+
+465
+00:23:13,840 --> 00:23:16,610
+CHARLIE TILLETT: So the question
+is, do they-- so first off is
+
+466
+00:23:16,610 --> 00:23:20,040
+the investors are going to
+get preferred shares that
+
+467
+00:23:20,040 --> 00:23:24,780
+have many more rights than
+the common shares, OK?
+
+468
+00:23:24,780 --> 00:23:27,240
+And there will be
+anti-dilution provisions,
+
+469
+00:23:27,240 --> 00:23:29,010
+there will be
+ratchet provisions,
+
+470
+00:23:29,010 --> 00:23:30,500
+in case there's a down round.
+
+471
+00:23:30,500 --> 00:23:33,900
+But probably the most important
+thing that will always happen
+
+472
+00:23:33,900 --> 00:23:37,150
+is that they will get
+board representation.
+
+473
+00:23:37,150 --> 00:23:42,480
+And that is a little
+bit of a negotiated--
+
+474
+00:23:42,480 --> 00:23:46,080
+it's not negotiated that they
+have board representation,
+
+475
+00:23:46,080 --> 00:23:49,150
+but what I've seen is, so let's
+say that you're the founder,
+
+476
+00:23:49,150 --> 00:23:51,690
+you say we have two
+seats, the founders
+
+477
+00:23:51,690 --> 00:23:54,750
+have two seats on the board,
+your venture capitalists
+
+478
+00:23:54,750 --> 00:23:56,590
+come in, they get two
+seats on the board,
+
+479
+00:23:56,590 --> 00:23:58,700
+and then you agree that
+the fifth board member
+
+480
+00:23:58,700 --> 00:24:02,530
+will be mutually agreed upon.
+
+481
+00:24:02,530 --> 00:24:07,860
+And you've got to
+figure out-- again,
+
+482
+00:24:07,860 --> 00:24:12,140
+if you have problems
+deciding on a mutually
+
+483
+00:24:12,140 --> 00:24:17,430
+agreeable fifth board member at
+this stage in the relationship,
+
+484
+00:24:17,430 --> 00:24:19,900
+then these are not the
+right venture guys for you
+
+485
+00:24:19,900 --> 00:24:21,400
+to be working with, OK?
+
+486
+00:24:21,400 --> 00:24:23,420
+So it should be pretty
+easy to find someone
+
+487
+00:24:23,420 --> 00:24:27,520
+that everyone agrees
+has domain knowledge,
+
+488
+00:24:27,520 --> 00:24:32,520
+has expertise in the field, is
+entrepreneurial, and is going
+
+489
+00:24:32,520 --> 00:24:35,674
+to be kind of neutral, right?
+
+490
+00:24:35,674 --> 00:24:37,090
+So does that answer
+your question?
+
+491
+00:24:37,090 --> 00:24:37,370
+Yep?
+
+492
+00:24:37,370 --> 00:24:39,869
+AUDIENCE: Yeah, on a previous
+slide, you were talking about,
+
+493
+00:24:39,869 --> 00:24:42,200
+say you've taken $10
+million in VC money,
+
+494
+00:24:42,200 --> 00:24:44,132
+but it turns out the
+opportunity was smaller.
+
+495
+00:24:44,132 --> 00:24:46,547
+It's only $5 million
+in revenue per year.
+
+496
+00:24:46,547 --> 00:24:48,310
+What are the
+options, then, there?
+
+497
+00:24:48,310 --> 00:24:49,810
+CHARLIE TILLETT:
+So her question is,
+
+498
+00:24:49,810 --> 00:24:52,101
+let's say you've taken more
+money than the opportunity.
+
+499
+00:24:56,600 --> 00:24:59,200
+There's really no
+happy ending there,
+
+500
+00:24:59,200 --> 00:25:02,570
+because the investors
+are going to want
+
+501
+00:25:02,570 --> 00:25:04,280
+to get their money back.
+
+502
+00:25:04,280 --> 00:25:07,720
+And a company that
+grows to $5 million,
+
+503
+00:25:07,720 --> 00:25:11,010
+it's kind of the
+walking dead, right?
+
+504
+00:25:11,010 --> 00:25:12,670
+So you're now
+making enough money
+
+505
+00:25:12,670 --> 00:25:14,870
+to where you're not
+going out of business,
+
+506
+00:25:14,870 --> 00:25:19,470
+but there's another problem
+there, is that companies that
+
+507
+00:25:19,470 --> 00:25:25,690
+only get to $5 million and $10
+million-- now, I don't know,
+
+508
+00:25:25,690 --> 00:25:28,800
+how much revenue does
+Pinterest-- you know,
+
+509
+00:25:28,800 --> 00:25:32,050
+there's a lot of companies
+out there that have no revenue
+
+510
+00:25:32,050 --> 00:25:33,490
+and have tremendous valuations.
+
+511
+00:25:33,490 --> 00:25:37,750
+But let's not plan that we're
+going to catch lightning
+
+512
+00:25:37,750 --> 00:25:39,250
+in a bottle, OK?
+
+513
+00:25:39,250 --> 00:25:41,820
+So a company that has $5
+million to $10 million
+
+514
+00:25:41,820 --> 00:25:46,160
+in revenue, the reality is that
+there's a very small market.
+
+515
+00:25:46,160 --> 00:25:48,780
+Who's going to buy
+a company like that?
+
+516
+00:25:48,780 --> 00:25:51,650
+When we were at Reveal
+Imaging, we grew the company
+
+517
+00:25:51,650 --> 00:25:55,860
+to $100 million, and we grew
+the company to $50 million
+
+518
+00:25:55,860 --> 00:26:01,460
+in revenue, but our buyers were
+aerospace defense companies
+
+519
+00:26:01,460 --> 00:26:03,740
+that are huge.
+
+520
+00:26:03,740 --> 00:26:08,450
+And they were willing
+to pay us $125 million
+
+521
+00:26:08,450 --> 00:26:14,070
+for $50 million revenue,
+but nothing more than that.
+
+522
+00:26:14,070 --> 00:26:18,010
+They were only willing to pay
+us kind of 1.5 times revenue.
+
+523
+00:26:18,010 --> 00:26:21,160
+They were hoping that we would
+have $500 million in revenue,
+
+524
+00:26:21,160 --> 00:26:24,480
+because they were willing
+to pay $1.25 billion.
+
+525
+00:26:24,480 --> 00:26:27,080
+But the problem is that a
+$5 million to $10 million
+
+526
+00:26:27,080 --> 00:26:30,600
+company doesn't get
+any big company who's
+
+527
+00:26:30,600 --> 00:26:35,050
+your-- it's too small to go
+public, and the big companies,
+
+528
+00:26:35,050 --> 00:26:36,870
+it's not big enough
+to move the needle.
+
+529
+00:26:36,870 --> 00:26:40,450
+Especially if you've
+already proven that it's not
+
+530
+00:26:40,450 --> 00:26:41,690
+going to go like that, right?
+
+531
+00:26:41,690 --> 00:26:44,230
+You've already decided that
+it's going to go $5 million,
+
+532
+00:26:44,230 --> 00:26:45,880
+$6 million, $7 million.
+
+533
+00:26:45,880 --> 00:26:47,625
+It doesn't get anyone excited.
+
+534
+00:26:52,472 --> 00:26:56,870
+So the business model,
+and in my mind-- I mean,
+
+535
+00:26:56,870 --> 00:26:59,860
+you heard the term used a
+couple of times on the panel
+
+536
+00:26:59,860 --> 00:27:03,700
+tonight-- how I think
+of it is it's an income
+
+537
+00:27:03,700 --> 00:27:05,450
+statement in percentage terms.
+
+538
+00:27:05,450 --> 00:27:07,710
+And we'll show you some
+of the business models
+
+539
+00:27:07,710 --> 00:27:12,470
+from a number of companies in a
+number of different industries.
+
+540
+00:27:12,470 --> 00:27:14,520
+But when you think about
+your business model,
+
+541
+00:27:14,520 --> 00:27:17,610
+think about your business
+reaching critical mass.
+
+542
+00:27:17,610 --> 00:27:22,280
+Do you have to have some kind
+of geographic dispersion?
+
+543
+00:27:22,280 --> 00:27:25,630
+Or do you need a
+critical mass of sales
+
+544
+00:27:25,630 --> 00:27:30,400
+in order to get your
+volume pricing down?
+
+545
+00:27:30,400 --> 00:27:32,430
+Or maybe it's the
+number of customers that
+
+546
+00:27:32,430 --> 00:27:35,070
+gives you some kind of synergy.
+
+547
+00:27:35,070 --> 00:27:40,900
+So when you think about your
+business model, think about it,
+
+548
+00:27:40,900 --> 00:27:42,920
+it's in the happy times, right?
+
+549
+00:27:42,920 --> 00:27:45,800
+It's reached critical
+mass, and it is kind
+
+550
+00:27:45,800 --> 00:27:47,065
+of hitting on all cylinders.
+
+551
+00:27:49,640 --> 00:27:54,280
+So how many are Course 15?
+
+552
+00:27:54,280 --> 00:27:58,899
+OK, maybe about a
+third, or maybe 40%.
+
+553
+00:27:58,899 --> 00:28:00,690
+So this is going to be
+a little bit boring.
+
+554
+00:28:00,690 --> 00:28:02,650
+This section is going to be a
+little bit boring for you guys,
+
+555
+00:28:02,650 --> 00:28:04,774
+but I want to make sure
+everyone's on the same page
+
+556
+00:28:04,774 --> 00:28:05,480
+here.
+
+557
+00:28:05,480 --> 00:28:08,870
+So when we talk about the income
+statement, we start at the top.
+
+558
+00:28:08,870 --> 00:28:13,140
+And it's your sales number,
+also called your revenue number,
+
+559
+00:28:13,140 --> 00:28:17,700
+and that's the products that
+you're shipping out the door,
+
+560
+00:28:17,700 --> 00:28:19,930
+or the service that
+you're providing,
+
+561
+00:28:19,930 --> 00:28:22,830
+and the dollar number that
+you're putting on that invoice.
+
+562
+00:28:22,830 --> 00:28:25,680
+So it's after any
+discounts that you give.
+
+563
+00:28:25,680 --> 00:28:28,100
+It's after any
+kickbacks or anything.
+
+564
+00:28:28,100 --> 00:28:30,675
+It's the number-- when
+you send out an invoice
+
+565
+00:28:30,675 --> 00:28:33,977
+to that customer, what's
+the dollar on that invoice,
+
+566
+00:28:33,977 --> 00:28:35,560
+and what's the check
+that you're going
+
+567
+00:28:35,560 --> 00:28:37,390
+to get from that customer.
+
+568
+00:28:37,390 --> 00:28:41,200
+Your cost of goods sold
+is the material costs,
+
+569
+00:28:41,200 --> 00:28:44,770
+the labor it costs to
+build your product,
+
+570
+00:28:44,770 --> 00:28:48,090
+it's the facilities in
+which that product is built,
+
+571
+00:28:48,090 --> 00:28:50,710
+but it's also your support cost.
+
+572
+00:28:50,710 --> 00:28:54,440
+So if you ship a product, and
+you have a one year warranty,
+
+573
+00:28:54,440 --> 00:28:58,500
+or you have a tech support
+line that people are calling,
+
+574
+00:28:58,500 --> 00:29:00,370
+that's part of your cost, too.
+
+575
+00:29:00,370 --> 00:29:02,930
+So you've got to staff
+that tech support line.
+
+576
+00:29:02,930 --> 00:29:06,440
+You've got to man
+it, maybe it's 24/7.
+
+577
+00:29:06,440 --> 00:29:08,080
+If you've got a
+hardware product,
+
+578
+00:29:08,080 --> 00:29:10,020
+and it breaks within
+the warranty period,
+
+579
+00:29:10,020 --> 00:29:11,440
+you've got to fix that.
+
+580
+00:29:11,440 --> 00:29:12,880
+You've got shipping costs.
+
+581
+00:29:12,880 --> 00:29:15,260
+You might have to send
+someone out into the field,
+
+582
+00:29:15,260 --> 00:29:17,810
+if you've got a big machine
+like we had at Reveal
+
+583
+00:29:17,810 --> 00:29:20,680
+that weighed two tons.
+
+584
+00:29:20,680 --> 00:29:22,620
+So those are all
+the things that go
+
+585
+00:29:22,620 --> 00:29:24,020
+into your cost of goods sold.
+
+586
+00:29:24,020 --> 00:29:28,670
+It's not your R&D. So it's
+not your programming cost.
+
+587
+00:29:28,670 --> 00:29:32,069
+Your product development
+costs go down in R&D.
+
+588
+00:29:32,069 --> 00:29:33,860
+Then, you have your
+three main departments.
+
+589
+00:29:33,860 --> 00:29:36,310
+Sales and marketing
+is self-explanatory.
+
+590
+00:29:36,310 --> 00:29:38,760
+R&D would be all of your
+programming, product
+
+591
+00:29:38,760 --> 00:29:41,190
+development, any
+material that gets
+
+592
+00:29:41,190 --> 00:29:45,970
+bought as part of your
+product development process.
+
+593
+00:29:45,970 --> 00:29:47,680
+Then, your general
+and administrative
+
+594
+00:29:47,680 --> 00:29:49,290
+is kind of everything else.
+
+595
+00:29:49,290 --> 00:29:51,890
+Your CFO is in there,
+your CEO is in there.
+
+596
+00:29:51,890 --> 00:29:57,910
+HR, IT, your facilities,
+your facility staff
+
+597
+00:29:57,910 --> 00:30:00,660
+for the non-manufacturing
+facility.
+
+598
+00:30:00,660 --> 00:30:02,630
+And at the bottom is
+your operating profit,
+
+599
+00:30:02,630 --> 00:30:07,300
+or EBITDA, earnings before
+interest, taxes, depreciation,
+
+600
+00:30:07,300 --> 00:30:08,360
+and amortization.
+
+601
+00:30:08,360 --> 00:30:12,060
+And I like to use that as the
+yardstick, because it gets
+
+602
+00:30:12,060 --> 00:30:15,380
+really complicated adding
+in capital expenses
+
+603
+00:30:15,380 --> 00:30:19,240
+and depreciating stuff, and that
+kind of obscures what's really
+
+604
+00:30:19,240 --> 00:30:20,870
+going on in your business.
+
+605
+00:30:20,870 --> 00:30:24,590
+So I would urge
+you in your plans
+
+606
+00:30:24,590 --> 00:30:28,790
+don't depreciate
+anything, and also
+
+607
+00:30:28,790 --> 00:30:31,960
+don't start allocating your
+general and administrative
+
+608
+00:30:31,960 --> 00:30:34,300
+expenses across
+other departments.
+
+609
+00:30:34,300 --> 00:30:39,110
+Just let them sit in your G&A.
+
+610
+00:30:39,110 --> 00:30:41,526
+So I get a lot of
+business plans.
+
+611
+00:30:41,526 --> 00:30:43,400
+I'm happy to look at
+anyone's business plans.
+
+612
+00:30:43,400 --> 00:30:45,380
+My email is at the end
+of this presentation.
+
+613
+00:30:45,380 --> 00:30:48,204
+Any time, whether it's part
+of this class, or any time
+
+614
+00:30:48,204 --> 00:30:50,620
+in the next 10 years, you want
+to send me a business plan,
+
+615
+00:30:50,620 --> 00:30:53,030
+say, I'm getting ready
+to make a presentation.
+
+616
+00:30:53,030 --> 00:30:54,890
+I want someone to
+look at this and just
+
+617
+00:30:54,890 --> 00:30:57,970
+make sure it's
+not totally crazy.
+
+618
+00:30:57,970 --> 00:30:59,350
+So I get a lot of
+business plans.
+
+619
+00:30:59,350 --> 00:31:02,370
+And the first thing that I do
+when I look at a business plan
+
+620
+00:31:02,370 --> 00:31:04,740
+is I look at the
+top line, and say,
+
+621
+00:31:04,740 --> 00:31:08,262
+how big is this
+business going to get?
+
+622
+00:31:08,262 --> 00:31:10,660
+What is the market
+opportunity here?
+
+623
+00:31:10,660 --> 00:31:12,320
+So here's an
+opportunity, they think
+
+624
+00:31:12,320 --> 00:31:14,295
+it can grow to $75 million.
+
+625
+00:31:14,295 --> 00:31:17,130
+The next thing that I
+look at is, in year four,
+
+626
+00:31:17,130 --> 00:31:21,080
+kind of the happy times, once
+they've reached critical mass,
+
+627
+00:31:21,080 --> 00:31:22,750
+what does this
+business look like?
+
+628
+00:31:22,750 --> 00:31:24,444
+What are the gross margins?
+
+629
+00:31:24,444 --> 00:31:25,860
+I've worked in
+companies that have
+
+630
+00:31:25,860 --> 00:31:29,700
+80% gross margins and companies
+that have 50% gross margins,
+
+631
+00:31:29,700 --> 00:31:32,140
+and I can tell you it's
+dramatically easier
+
+632
+00:31:32,140 --> 00:31:34,490
+to make money and
+run a business when
+
+633
+00:31:34,490 --> 00:31:39,370
+you have 80% gross margins
+versus 50% gross margins.
+
+634
+00:31:39,370 --> 00:31:41,230
+It's dramatically different.
+
+635
+00:31:41,230 --> 00:31:43,490
+And then, where are the
+big expenses down here?
+
+636
+00:31:43,490 --> 00:31:45,970
+What are they spending on R&D?
+
+637
+00:31:45,970 --> 00:31:47,600
+Particularly, what
+are they spending
+
+638
+00:31:47,600 --> 00:31:48,980
+on sales and marketing?
+
+639
+00:31:48,980 --> 00:31:52,090
+Because most firms end up
+at about the same place
+
+640
+00:31:52,090 --> 00:31:54,470
+in R&D spending once
+they reach critical mass.
+
+641
+00:31:54,470 --> 00:31:57,740
+They end up about the
+same place G&A spending.
+
+642
+00:31:57,740 --> 00:32:02,270
+But the sales and marketing
+wildly varies, depending on
+
+643
+00:32:02,270 --> 00:32:05,780
+is it a consumer product, is it
+a business to business product,
+
+644
+00:32:05,780 --> 00:32:07,770
+is it a luxury
+product that you have
+
+645
+00:32:07,770 --> 00:32:10,590
+to do a lot of advertising,
+is there a lot of trade shows.
+
+646
+00:32:10,590 --> 00:32:14,440
+So it depends on your whole
+sales strategy and distribution
+
+647
+00:32:14,440 --> 00:32:18,650
+strategy, and that shows up
+in your sales and marketing.
+
+648
+00:32:18,650 --> 00:32:21,810
+The last thing that I look at
+is kind of the operating profit
+
+649
+00:32:21,810 --> 00:32:23,810
+over the this four year period.
+
+650
+00:32:23,810 --> 00:32:26,240
+Because that gives you
+a pretty good yardstick
+
+651
+00:32:26,240 --> 00:32:28,780
+for how much cash
+this company is
+
+652
+00:32:28,780 --> 00:32:33,130
+going to take to get
+to profitability.
+
+653
+00:32:33,130 --> 00:32:38,950
+It's not perfect, but it's
+probably within 20% or 30%,
+
+654
+00:32:38,950 --> 00:32:40,890
+which is a good-- you
+know, it at least says
+
+655
+00:32:40,890 --> 00:32:45,350
+to me this company, $3.5
+million plus $2.5 million
+
+656
+00:32:45,350 --> 00:32:48,870
+is $6 million, maybe it lost a
+little bit here in year three,
+
+657
+00:32:48,870 --> 00:32:49,850
+so it's $7 million.
+
+658
+00:32:49,850 --> 00:32:52,964
+It's not a company that's
+going to need $20 million.
+
+659
+00:32:52,964 --> 00:32:54,380
+But it's also not
+a company that's
+
+660
+00:32:54,380 --> 00:32:56,004
+going to need $1
+million or $2 million.
+
+661
+00:32:56,004 --> 00:32:59,810
+So it gives you just a sense
+of what this company needs.
+
+662
+00:32:59,810 --> 00:33:02,040
+Now, let's say you're looking
+at your business plan.
+
+663
+00:33:02,040 --> 00:33:03,831
+I would urge you to
+look at the same thing.
+
+664
+00:33:03,831 --> 00:33:08,590
+Start at the top line,
+and say, do I really
+
+665
+00:33:08,590 --> 00:33:11,400
+think this business can
+do this kind of revenue?
+
+666
+00:33:11,400 --> 00:33:14,810
+I would also urge you to look
+at year four or year five,
+
+667
+00:33:14,810 --> 00:33:16,290
+whatever it's going
+to take you get
+
+668
+00:33:16,290 --> 00:33:19,470
+to that place, the
+critical mass, and say,
+
+669
+00:33:19,470 --> 00:33:22,950
+does this business model
+look like other companies
+
+670
+00:33:22,950 --> 00:33:25,740
+in my space, or is it different?
+
+671
+00:33:25,740 --> 00:33:28,490
+And if it's different, that
+doesn't mean it's wrong.
+
+672
+00:33:28,490 --> 00:33:31,970
+It just means that you better
+understand why it's different.
+
+673
+00:33:31,970 --> 00:33:34,260
+Maybe you're doing something
+dramatically different.
+
+674
+00:33:34,260 --> 00:33:36,360
+Maybe you've got
+some tremendous cost
+
+675
+00:33:36,360 --> 00:33:42,920
+of goods sold value that
+other companies don't have.
+
+676
+00:33:42,920 --> 00:33:46,100
+But you've got to
+understand that.
+
+677
+00:33:46,100 --> 00:33:50,110
+Then, I would urge you to
+think about a year one,
+
+678
+00:33:50,110 --> 00:33:53,530
+because thinking about
+expenses in year four
+
+679
+00:33:53,530 --> 00:33:58,050
+is a very difficult exercise.
+
+680
+00:33:58,050 --> 00:34:00,630
+Because you can't even--
+I mean, here you are,
+
+681
+00:34:00,630 --> 00:34:02,600
+you're getting your
+business off the ground.
+
+682
+00:34:02,600 --> 00:34:07,910
+It's hard to think about if
+I had $75 million in revenue,
+
+683
+00:34:07,910 --> 00:34:09,409
+where would that money be spent.
+
+684
+00:34:09,409 --> 00:34:12,659
+But it's very easy to think
+about the next 12 months.
+
+685
+00:34:12,659 --> 00:34:14,710
+And who are my key hires?
+
+686
+00:34:14,710 --> 00:34:17,020
+And how much are those
+people going to cost?
+
+687
+00:34:17,020 --> 00:34:18,820
+And what are the
+stuff that they're
+
+688
+00:34:18,820 --> 00:34:21,260
+going to need to buy to
+help them do their job?
+
+689
+00:34:21,260 --> 00:34:23,780
+And you're probably not
+going to have a lot of sales,
+
+690
+00:34:23,780 --> 00:34:25,530
+so you don't really
+need to think too much
+
+691
+00:34:25,530 --> 00:34:27,880
+about cost of goods sold yet.
+
+692
+00:34:27,880 --> 00:34:28,620
+OK?
+
+693
+00:34:28,620 --> 00:34:30,500
+But you need to
+start thinking about
+
+694
+00:34:30,500 --> 00:34:33,570
+what are my staffing
+priorities, and what
+
+695
+00:34:33,570 --> 00:34:36,480
+are the things that we need,
+and where are we going to locate
+
+696
+00:34:36,480 --> 00:34:39,070
+our business, and what we don't
+have to spend on facilities,
+
+697
+00:34:39,070 --> 00:34:40,440
+and that kind of thing.
+
+698
+00:34:40,440 --> 00:34:44,570
+And then, while year one
+should be fairly easy to do,
+
+699
+00:34:44,570 --> 00:34:47,120
+year two is not that much
+more of a stretch, because you
+
+700
+00:34:47,120 --> 00:34:50,590
+are ready have kind of thought
+about where I am in month 12.
+
+701
+00:34:50,590 --> 00:34:52,630
+And so you just kind
+of extrapolate that
+
+702
+00:34:52,630 --> 00:34:56,550
+into what are we going to do
+once we start having revenue?
+
+703
+00:34:56,550 --> 00:34:59,620
+OK, so what is my support
+team going to look like?
+
+704
+00:34:59,620 --> 00:35:02,070
+What is my sales team
+going to look like?
+
+705
+00:35:02,070 --> 00:35:03,890
+And put some numbers on that.
+
+706
+00:35:03,890 --> 00:35:05,460
+And then, once you've
+done that, look
+
+707
+00:35:05,460 --> 00:35:08,750
+at where your percentages
+are out here in year two.
+
+708
+00:35:08,750 --> 00:35:12,470
+And you already looked at
+where they are in year four.
+
+709
+00:35:12,470 --> 00:35:16,884
+And kind of make year three as
+kind of a blending process, OK?
+
+710
+00:35:16,884 --> 00:35:19,050
+Now, you're not going to
+do this on an annual basis.
+
+711
+00:35:19,050 --> 00:35:21,360
+I'm going to urge you to
+do it on a quarterly basis.
+
+712
+00:35:21,360 --> 00:35:23,760
+And we'll get into those
+specific spreadsheets
+
+713
+00:35:23,760 --> 00:35:26,080
+and talk you talk you
+through that in a bit.
+
+714
+00:35:29,110 --> 00:35:37,540
+So the business model in terms
+of this percentage of income,
+
+715
+00:35:37,540 --> 00:35:41,060
+or percentage of
+revenue, exercise
+
+716
+00:35:41,060 --> 00:35:47,030
+helps you think about what your
+business is going to look like,
+
+717
+00:35:47,030 --> 00:35:48,650
+and how you're
+going to get there.
+
+718
+00:35:48,650 --> 00:35:50,610
+It's going to show
+how your business is
+
+719
+00:35:50,610 --> 00:35:52,750
+going to make money.
+
+720
+00:35:52,750 --> 00:35:55,740
+So let's look at a number
+of different companies, OK?
+
+721
+00:35:55,740 --> 00:35:57,630
+This is a number in
+the retail sector.
+
+722
+00:35:57,630 --> 00:35:58,960
+You guys all know them.
+
+723
+00:35:58,960 --> 00:36:01,510
+Walmart, the low cost
+leader, Target's kind
+
+724
+00:36:01,510 --> 00:36:05,920
+of a middle market, and
+Nordstrom is more high end.
+
+725
+00:36:05,920 --> 00:36:07,760
+What has categorized
+these businesses.
+
+726
+00:36:07,760 --> 00:36:11,200
+They all have crappy
+gross margins, right?
+
+727
+00:36:11,200 --> 00:36:14,800
+24% for Walmart, 34%
+percent for Target.
+
+728
+00:36:14,800 --> 00:36:17,790
+They spend nothing
+on R&D. Target
+
+729
+00:36:17,790 --> 00:36:20,002
+should probably spend a
+little something on their IT
+
+730
+00:36:20,002 --> 00:36:21,085
+department, though, right?
+
+731
+00:36:26,660 --> 00:36:31,170
+Now, all of this information is
+available from the Securities
+
+732
+00:36:31,170 --> 00:36:34,330
+and Exchange Commission, or you
+can get rid of Yahoo Finance
+
+733
+00:36:34,330 --> 00:36:34,850
+now.
+
+734
+00:36:34,850 --> 00:36:36,600
+So just going to
+Yahoo Finance, you
+
+735
+00:36:36,600 --> 00:36:38,310
+can pull up the annual reports.
+
+736
+00:36:38,310 --> 00:36:40,720
+You can get all this
+information off of there.
+
+737
+00:36:40,720 --> 00:36:44,470
+Most companies do
+the lump sales,
+
+738
+00:36:44,470 --> 00:36:46,640
+general and administrative
+expenses together.
+
+739
+00:36:46,640 --> 00:36:48,590
+So I don't have a
+breakout on what
+
+740
+00:36:48,590 --> 00:36:52,000
+they're spending on sales
+and marketing versus G&A.
+
+741
+00:36:52,000 --> 00:36:54,900
+But you can see
+the sales, and SG&A
+
+742
+00:36:54,900 --> 00:36:57,510
+comes in kind of
+across the board here.
+
+743
+00:36:57,510 --> 00:37:00,300
+But not tremendously profitable.
+
+744
+00:37:00,300 --> 00:37:03,470
+But very high annual revenue.
+
+745
+00:37:03,470 --> 00:37:05,800
+I mean, look at Walmart
+at $344 billion.
+
+746
+00:37:05,800 --> 00:37:10,440
+So 6% of a big number
+is still a big number.
+
+747
+00:37:10,440 --> 00:37:12,350
+One of the things that's
+useful to look at,
+
+748
+00:37:12,350 --> 00:37:15,530
+not comparing yourself
+to these companies,
+
+749
+00:37:15,530 --> 00:37:17,840
+but comparing yourself
+to your peers,
+
+750
+00:37:17,840 --> 00:37:20,870
+is going to be looking
+at revenue per employee.
+
+751
+00:37:20,870 --> 00:37:22,710
+So I just threw this
+on here so you could--
+
+752
+00:37:22,710 --> 00:37:28,880
+it does tell a lot how companies
+within similar industries
+
+753
+00:37:28,880 --> 00:37:32,190
+have very similar
+revenue per employee.
+
+754
+00:37:32,190 --> 00:37:37,147
+And in retail, it's in the
+$150,000 to $200,000 range.
+
+755
+00:37:37,147 --> 00:37:38,730
+Let's look at the
+restaurant business.
+
+756
+00:37:38,730 --> 00:37:40,360
+It's probably even worse, right?
+
+757
+00:37:40,360 --> 00:37:45,010
+Again, terrible gross margins,
+but actually the profitability
+
+758
+00:37:45,010 --> 00:37:48,000
+is a little bit better
+than the retail stores.
+
+759
+00:37:48,000 --> 00:37:57,610
+But look at the revenue per
+employee, $45,000 per employee.
+
+760
+00:37:57,610 --> 00:37:59,230
+So think of this.
+
+761
+00:37:59,230 --> 00:38:01,445
+The cost of goods are 68%.
+
+762
+00:38:05,072 --> 00:38:06,530
+And a lot of that's
+got to actually
+
+763
+00:38:06,530 --> 00:38:09,560
+be meat and potatoes, right?
+
+764
+00:38:09,560 --> 00:38:11,640
+So how much money is
+actually left over
+
+765
+00:38:11,640 --> 00:38:16,200
+to pay-- if your average
+employee is $45,000 per person,
+
+766
+00:38:16,200 --> 00:38:19,740
+you can't pay that
+person $45,000 a year.
+
+767
+00:38:19,740 --> 00:38:22,310
+So this idea that
+they're going start
+
+768
+00:38:22,310 --> 00:38:26,020
+being able to pay fast
+food workers $15 an hour,
+
+769
+00:38:26,020 --> 00:38:29,000
+which is this big
+argument, there's
+
+770
+00:38:29,000 --> 00:38:31,886
+just not enough money there.
+
+771
+00:38:31,886 --> 00:38:34,257
+It's a crazy
+business here, and I
+
+772
+00:38:34,257 --> 00:38:36,340
+suspect that there are a
+lot of part-time workers.
+
+773
+00:38:36,340 --> 00:38:38,550
+But it is an
+interesting fact here
+
+774
+00:38:38,550 --> 00:38:43,400
+that all these businesses have
+such low revenue per employee.
+
+775
+00:38:43,400 --> 00:38:45,690
+Let's look at some
+interesting companies now.
+
+776
+00:38:45,690 --> 00:38:49,800
+Cisco, very good
+gross margin, 64%.
+
+777
+00:38:49,800 --> 00:38:54,580
+We see R&D is at 13% and
+operating profit at 25%.
+
+778
+00:38:54,580 --> 00:38:56,160
+These might be a
+couple years old,
+
+779
+00:38:56,160 --> 00:38:59,080
+but they're in line with this.
+
+780
+00:38:59,080 --> 00:39:04,510
+And revenue per employee
+is $573,000 per employee.
+
+781
+00:39:04,510 --> 00:39:08,230
+Think of that versus
+$45,000 per employee, OK?
+
+782
+00:39:08,230 --> 00:39:10,600
+So you can afford
+to pay your Cisco
+
+783
+00:39:10,600 --> 00:39:14,510
+employees $100,000 to $125,000.
+
+784
+00:39:14,510 --> 00:39:16,940
+You can't afford to do
+that at McDonald's, right?
+
+785
+00:39:16,940 --> 00:39:19,700
+So again, these
+are characterized
+
+786
+00:39:19,700 --> 00:39:23,870
+by R&D spending of kind
+of the 10% to 15% range.
+
+787
+00:39:23,870 --> 00:39:25,060
+Except for Dell.
+
+788
+00:39:25,060 --> 00:39:29,150
+And Dell is really
+just a box manufacture.
+
+789
+00:39:29,150 --> 00:39:30,330
+They're just an assembler.
+
+790
+00:39:30,330 --> 00:39:32,230
+They're just a
+supply chain story.
+
+791
+00:39:32,230 --> 00:39:33,980
+They're not an R&D story.
+
+792
+00:39:33,980 --> 00:39:35,820
+And it comes out
+in their numbers.
+
+793
+00:39:35,820 --> 00:39:38,200
+Medtronic is a
+medical device maker,
+
+794
+00:39:38,200 --> 00:39:42,300
+but it really has all the
+characteristics of a technology
+
+795
+00:39:42,300 --> 00:39:44,487
+hardware company.
+
+796
+00:39:44,487 --> 00:39:46,070
+Let's look at some
+software companies.
+
+797
+00:39:46,070 --> 00:39:49,110
+Again, even better
+gross margins.
+
+798
+00:39:49,110 --> 00:39:53,250
+Say R&D is in that
+same 10% to 15%.
+
+799
+00:39:53,250 --> 00:39:55,510
+And the revenue per
+employee at Microsoft
+
+800
+00:39:55,510 --> 00:39:57,430
+is about the same as Cisco.
+
+801
+00:39:57,430 --> 00:40:00,670
+Oracle and SAP,
+which are more peers,
+
+802
+00:40:00,670 --> 00:40:03,720
+have very similar
+revenue per employee
+
+803
+00:40:03,720 --> 00:40:08,790
+in that $250,000
+to $300,000 range.
+
+804
+00:40:08,790 --> 00:40:12,562
+The internet companies
+are all across the board.
+
+805
+00:40:12,562 --> 00:40:14,520
+I mean, Apple's not really
+an internet company,
+
+806
+00:40:14,520 --> 00:40:17,900
+but they are kind
+of interesting here
+
+807
+00:40:17,900 --> 00:40:22,660
+in that they have $2 million
+of revenue per employee.
+
+808
+00:40:22,660 --> 00:40:23,610
+Mind-boggling.
+
+809
+00:40:23,610 --> 00:40:27,210
+I mean, Google is at $1 million.
+
+810
+00:40:27,210 --> 00:40:29,750
+I started putting Google on
+this after they went public.
+
+811
+00:40:29,750 --> 00:40:32,490
+And I said, well, they
+can't sustain that.
+
+812
+00:40:32,490 --> 00:40:34,230
+They were about $1
+million when I first
+
+813
+00:40:34,230 --> 00:40:35,740
+did it I think three years ago.
+
+814
+00:40:35,740 --> 00:40:39,510
+And they've actually increased
+their revenue per employee
+
+815
+00:40:39,510 --> 00:40:40,230
+as they've grown.
+
+816
+00:40:40,230 --> 00:40:42,550
+So they've become
+more productive,
+
+817
+00:40:42,550 --> 00:40:45,940
+which is kind of-- few
+companies are able to do that.
+
+818
+00:40:45,940 --> 00:40:47,900
+Usually, companies
+have a decrease
+
+819
+00:40:47,900 --> 00:40:50,320
+in revenue per employee
+as they get bigger.
+
+820
+00:40:50,320 --> 00:40:52,880
+Google's been able
+to increase it.
+
+821
+00:40:52,880 --> 00:40:55,250
+Again, here, R&D spending.
+
+822
+00:40:55,250 --> 00:40:58,931
+I mean, Apple is so big that
+that 2% is still a huge number,
+
+823
+00:40:58,931 --> 00:40:59,430
+right?
+
+824
+00:40:59,430 --> 00:41:02,490
+But if we look at
+the rest of these,
+
+825
+00:41:02,490 --> 00:41:04,000
+it is a little bit
+across the board,
+
+826
+00:41:04,000 --> 00:41:08,350
+and it's part of where a company
+is in this stage of their life
+
+827
+00:41:08,350 --> 00:41:09,810
+cycle.
+
+828
+00:41:09,810 --> 00:41:12,679
+But this gives you kind of a
+sense of where companies are.
+
+829
+00:41:12,679 --> 00:41:14,220
+Another thing that's
+interesting here
+
+830
+00:41:14,220 --> 00:41:16,680
+is the two companies with
+the lowest gross margin
+
+831
+00:41:16,680 --> 00:41:20,970
+are Apple, which is
+selling hardware,
+
+832
+00:41:20,970 --> 00:41:23,580
+and Pandora, which
+is selling music.
+
+833
+00:41:23,580 --> 00:41:27,900
+So just because you're in a
+intellectual property business,
+
+834
+00:41:27,900 --> 00:41:32,670
+or in a-- I don't know what you
+would call music, if you're not
+
+835
+00:41:32,670 --> 00:41:34,120
+calling it hardware.
+
+836
+00:41:34,120 --> 00:41:38,140
+But it's kind of interesting
+that their cost of goods
+
+837
+00:41:38,140 --> 00:41:41,280
+are actually as high as Apple's,
+because of the royalties
+
+838
+00:41:41,280 --> 00:41:42,670
+that they have to pay.
+
+839
+00:41:42,670 --> 00:41:46,484
+And that creates some
+problems for them.
+
+840
+00:41:46,484 --> 00:41:48,400
+I think they're now
+starting to show a profit,
+
+841
+00:41:48,400 --> 00:41:50,115
+but it's still a
+very tough business.
+
+842
+00:41:53,560 --> 00:41:56,170
+Looking at business models
+over a period of time,
+
+843
+00:41:56,170 --> 00:41:57,670
+they evolve slowly.
+
+844
+00:41:57,670 --> 00:42:00,230
+I've been doing this
+talk since at least '98.
+
+845
+00:42:00,230 --> 00:42:07,730
+And just looking at Cisco,
+it looks like the same.
+
+846
+00:42:07,730 --> 00:42:10,380
+I mean, yeah, it goes up
+and down a little bit.
+
+847
+00:42:10,380 --> 00:42:12,520
+But companies do
+not dramatically
+
+848
+00:42:12,520 --> 00:42:15,120
+change over a period of
+time once they kind of
+
+849
+00:42:15,120 --> 00:42:17,600
+hit that critical mass.
+
+850
+00:42:20,630 --> 00:42:23,530
+So as you're
+building your model--
+
+851
+00:42:23,530 --> 00:42:27,010
+I know the talk yesterday was
+on your product and pricing
+
+852
+00:42:27,010 --> 00:42:31,470
+your product-- what's the value
+that you bring to the customer?
+
+853
+00:42:35,040 --> 00:42:38,240
+And how is that value
+going to be split
+
+854
+00:42:38,240 --> 00:42:40,270
+between you and the customer?
+
+855
+00:42:40,270 --> 00:42:41,730
+I hear a lot of
+people say, well,
+
+856
+00:42:41,730 --> 00:42:46,980
+we have a product that will
+save our customers $10,000.
+
+857
+00:42:46,980 --> 00:42:50,060
+So we think we should
+charge them $10,000.
+
+858
+00:42:50,060 --> 00:42:52,380
+Well, at $10,000,
+they're indifferent
+
+859
+00:42:52,380 --> 00:42:54,520
+whether they do it manually
+or whether they do it
+
+860
+00:42:54,520 --> 00:42:56,640
+with your new
+piece of equipment.
+
+861
+00:42:56,640 --> 00:42:59,260
+So you've got to
+price that product
+
+862
+00:42:59,260 --> 00:43:04,040
+to where it's compelling for
+the customer to take that risk
+
+863
+00:43:04,040 --> 00:43:05,600
+and make that change.
+
+864
+00:43:05,600 --> 00:43:09,190
+And if it's a $10,000
+value to them,
+
+865
+00:43:09,190 --> 00:43:13,580
+you've probably got to price
+that at $2,000 or $3,000,
+
+866
+00:43:13,580 --> 00:43:17,670
+and let them capture the
+majority of that savings,
+
+867
+00:43:17,670 --> 00:43:19,890
+because they're taking the risk.
+
+868
+00:43:19,890 --> 00:43:21,920
+And so you've got
+to figure out how,
+
+869
+00:43:21,920 --> 00:43:24,050
+at a $2,000 or
+$3,000 price, you're
+
+870
+00:43:24,050 --> 00:43:27,280
+going to be able to sell
+that and capture enough value
+
+871
+00:43:27,280 --> 00:43:29,980
+yourself, OK?
+
+872
+00:43:29,980 --> 00:43:33,140
+Your distribution strategy.
+
+873
+00:43:33,140 --> 00:43:36,690
+So think about the price, and
+then your cost of goods sold
+
+874
+00:43:36,690 --> 00:43:39,010
+should be pretty
+straightforward.
+
+875
+00:43:39,010 --> 00:43:41,370
+I mean, you know the
+material that goes in there.
+
+876
+00:43:41,370 --> 00:43:43,680
+Again, it's not how
+long is it going to take
+
+877
+00:43:43,680 --> 00:43:45,140
+to develop this product.
+
+878
+00:43:45,140 --> 00:43:48,660
+That's part of your R&D, and
+that's a whole other exercise.
+
+879
+00:43:48,660 --> 00:43:54,010
+But it's, if I sell a unit, how
+much material goes into it, how
+
+880
+00:43:54,010 --> 00:43:57,400
+much labor goes into
+it, how much overhead
+
+881
+00:43:57,400 --> 00:44:00,310
+in the manufacturing
+facility goes into it,
+
+882
+00:44:00,310 --> 00:44:02,570
+how much support am I
+going to have to provide?
+
+883
+00:44:02,570 --> 00:44:06,110
+These are all questions that,
+if you sit there and noodle away
+
+884
+00:44:06,110 --> 00:44:11,932
+at it, you can come up with
+a pretty reasonable range,
+
+885
+00:44:11,932 --> 00:44:14,820
+and come up with your
+cost of goods sold.
+
+886
+00:44:14,820 --> 00:44:16,966
+When you think about your
+distribution strategy,
+
+887
+00:44:16,966 --> 00:44:18,590
+how am I going to
+sell my product, that
+
+888
+00:44:18,590 --> 00:44:20,850
+could have-- I have an
+example of that in here--
+
+889
+00:44:20,850 --> 00:44:26,220
+that could have a huge impact
+on everything involving
+
+890
+00:44:26,220 --> 00:44:30,130
+your business, in both your
+revenue all the way down
+
+891
+00:44:30,130 --> 00:44:32,530
+to your sales and marketing
+and your operating profit.
+
+892
+00:44:32,530 --> 00:44:35,100
+So that's a huge decision
+you're going to have to make.
+
+893
+00:44:35,100 --> 00:44:38,110
+R&D, I would argue, should
+end up at the 10% to 20%
+
+894
+00:44:38,110 --> 00:44:39,880
+range generally.
+
+895
+00:44:39,880 --> 00:44:41,620
+As we've looked at
+a lot of companies,
+
+896
+00:44:41,620 --> 00:44:42,920
+that's where they end up.
+
+897
+00:44:42,920 --> 00:44:46,470
+That doesn't mean you shouldn't
+be at 30%, like Zynga was,
+
+898
+00:44:46,470 --> 00:44:49,550
+depending on where you
+are in your life cycle.
+
+899
+00:44:49,550 --> 00:44:52,060
+But if you're a
+technology company,
+
+900
+00:44:52,060 --> 00:44:58,080
+and you're not spending
+10% of your revenue on R&D,
+
+901
+00:44:58,080 --> 00:45:01,210
+you're yourself short for
+tomorrow's products, right?
+
+902
+00:45:01,210 --> 00:45:03,540
+Because you've always
+got to be evolving.
+
+903
+00:45:03,540 --> 00:45:06,110
+G&A is going to end
+up at 5% to 15%.
+
+904
+00:45:06,110 --> 00:45:09,950
+The lower you can
+get that, the better.
+
+905
+00:45:09,950 --> 00:45:13,210
+That's where the CFO is,
+so just squeeze that down.
+
+906
+00:45:13,210 --> 00:45:16,400
+And make sure you build
+in an operating profit.
+
+907
+00:45:16,400 --> 00:45:21,770
+Now, you're operating profit
+shouldn't be 40% to 50%.
+
+908
+00:45:21,770 --> 00:45:24,360
+There's a few companies
+that can get away with that.
+
+909
+00:45:24,360 --> 00:45:26,910
+But to think that your
+company is one of those
+
+910
+00:45:26,910 --> 00:45:30,360
+is probably unrealistic.
+
+911
+00:45:30,360 --> 00:45:36,140
+So if you're putting
+together your model,
+
+912
+00:45:36,140 --> 00:45:40,174
+and you keep coming up with a
+40% to 50% operating profit,
+
+913
+00:45:40,174 --> 00:45:42,340
+you should really question
+some of your assumptions.
+
+914
+00:45:42,340 --> 00:45:45,390
+Do I really, am I
+missing anything here?
+
+915
+00:45:45,390 --> 00:45:47,780
+I'm not saying it's wrong.
+
+916
+00:45:47,780 --> 00:45:49,500
+It might be doable.
+
+917
+00:45:49,500 --> 00:45:52,860
+But you're going to get
+some pushback on that
+
+918
+00:45:52,860 --> 00:45:56,780
+from people who've looked
+at a lot of business plans.
+
+919
+00:45:56,780 --> 00:46:00,520
+So I talked about how
+your distribution strategy
+
+920
+00:46:00,520 --> 00:46:03,260
+is going to impact
+your operating profit.
+
+921
+00:46:03,260 --> 00:46:04,970
+So let's look at an
+example here where
+
+922
+00:46:04,970 --> 00:46:07,220
+you're selling it through
+your own direct sales force.
+
+923
+00:46:07,220 --> 00:46:09,590
+You have $100 million in
+revenue, your cost of goods
+
+924
+00:46:09,590 --> 00:46:11,880
+is $40 million, leaving
+you with $60 million,
+
+925
+00:46:11,880 --> 00:46:13,900
+or 60% gross margin.
+
+926
+00:46:13,900 --> 00:46:17,040
+You have $23 million in sales
+and marketing, $12 million
+
+927
+00:46:17,040 --> 00:46:20,540
+in R&D, and some G&A,
+bringing your total expenses
+
+928
+00:46:20,540 --> 00:46:24,475
+to $40 million, and an operating
+profit of $20 million, or 20%.
+
+929
+00:46:24,475 --> 00:46:26,100
+So let's say, instead
+of that, you say,
+
+930
+00:46:26,100 --> 00:46:28,290
+I'm going to bring
+in a distributor,
+
+931
+00:46:28,290 --> 00:46:33,250
+and give him a 20% discount off
+of our list price or selling
+
+932
+00:46:33,250 --> 00:46:34,090
+price.
+
+933
+00:46:34,090 --> 00:46:37,814
+And in return for that 20%,
+he's going to go out and sell it
+
+934
+00:46:37,814 --> 00:46:38,480
+to the customer.
+
+935
+00:46:38,480 --> 00:46:41,630
+He gets to keep the
+20%, but he frees me up
+
+936
+00:46:41,630 --> 00:46:44,530
+of all the sales and
+marketing activity.
+
+937
+00:46:44,530 --> 00:46:46,370
+Well, not entirely.
+
+938
+00:46:46,370 --> 00:46:48,760
+Because even the
+distribution channel
+
+939
+00:46:48,760 --> 00:46:50,360
+needs some care and feeding.
+
+940
+00:46:50,360 --> 00:46:53,260
+So you can't completely get
+rid of your sales force.
+
+941
+00:46:53,260 --> 00:46:56,020
+You can't completely get rid
+of your marketing efforts.
+
+942
+00:46:56,020 --> 00:46:57,270
+But you can cut those back.
+
+943
+00:46:57,270 --> 00:46:59,580
+And in my example, I said,
+well, you could cut it back
+
+944
+00:46:59,580 --> 00:47:02,390
+from $23 million to $8 million.
+
+945
+00:47:02,390 --> 00:47:05,050
+Now, your R&D is
+still going to be
+
+946
+00:47:05,050 --> 00:47:06,810
+the same, because
+you've got to keep
+
+947
+00:47:06,810 --> 00:47:10,230
+feeding the machine with
+new products, right?
+
+948
+00:47:10,230 --> 00:47:12,630
+And your cost of goods is
+going to be exactly the same,
+
+949
+00:47:12,630 --> 00:47:15,190
+because you're shipping
+the same number of units.
+
+950
+00:47:15,190 --> 00:47:16,810
+But because you have
+fewer employees,
+
+951
+00:47:16,810 --> 00:47:19,610
+you probably don't need
+quite as many people in HR,
+
+952
+00:47:19,610 --> 00:47:21,380
+you don't need as
+many bean counters.
+
+953
+00:47:21,380 --> 00:47:23,720
+Your G&A is going to
+be a little bit less,
+
+954
+00:47:23,720 --> 00:47:25,500
+and so that's going
+to be $4 million.
+
+955
+00:47:25,500 --> 00:47:30,920
+So in this example, your revenue
+is reduced from $100 million
+
+956
+00:47:30,920 --> 00:47:33,090
+to $80 million, and
+your operating profit
+
+957
+00:47:33,090 --> 00:47:35,560
+is reduced from $20
+million to $16 million,
+
+958
+00:47:35,560 --> 00:47:38,030
+but you're still
+getting a 20% profit.
+
+959
+00:47:38,030 --> 00:47:43,400
+Now, I don't know whether
+one is right or wrong.
+
+960
+00:47:43,400 --> 00:47:45,900
+I would say that the
+distributor model
+
+961
+00:47:45,900 --> 00:47:48,790
+is going to be great if it
+can get you to market faster,
+
+962
+00:47:48,790 --> 00:47:52,390
+or if it can take you from
+$80 million to $160 million
+
+963
+00:47:52,390 --> 00:47:56,030
+faster than you could grow
+organically from $100 million
+
+964
+00:47:56,030 --> 00:47:57,750
+to $160 million.
+
+965
+00:47:57,750 --> 00:47:59,490
+You're still getting
+the same 20%.
+
+966
+00:47:59,490 --> 00:48:06,230
+And whether that 20%
+came out at 15% or 25%,
+
+967
+00:48:06,230 --> 00:48:08,990
+the more important number
+here is the $16 million
+
+968
+00:48:08,990 --> 00:48:12,300
+in operating profit
+versus the $20 million
+
+969
+00:48:12,300 --> 00:48:15,600
+in operating profit.
+
+970
+00:48:15,600 --> 00:48:17,470
+So as you're
+building your model,
+
+971
+00:48:17,470 --> 00:48:19,560
+there is some business
+planing software out there,
+
+972
+00:48:19,560 --> 00:48:20,560
+kind of like a TurboTax.
+
+973
+00:48:20,560 --> 00:48:23,080
+It asks you a
+bunch of questions.
+
+974
+00:48:23,080 --> 00:48:25,940
+It asks you the questions,
+you answer the assumptions,
+
+975
+00:48:25,940 --> 00:48:28,630
+and it spits out a plan.
+
+976
+00:48:28,630 --> 00:48:31,410
+Do not use that software,
+because the beauty
+
+977
+00:48:31,410 --> 00:48:34,310
+of this exercise, the
+benefit of this exercise,
+
+978
+00:48:34,310 --> 00:48:38,880
+is understanding exactly
+what's going into your model,
+
+979
+00:48:38,880 --> 00:48:40,510
+and building it yourself.
+
+980
+00:48:40,510 --> 00:48:47,530
+And when something doesn't add
+up, figuring out what's broken.
+
+981
+00:48:47,530 --> 00:48:52,080
+When you start getting
+50% operating profits,
+
+982
+00:48:52,080 --> 00:48:58,200
+start saying, let's look
+at my revenue per employee.
+
+983
+00:48:58,200 --> 00:49:02,190
+Oh, my revenue per employee
+is $1 million per employee.
+
+984
+00:49:02,190 --> 00:49:05,659
+Well, Google does that,
+and Apple does that,
+
+985
+00:49:05,659 --> 00:49:07,450
+but there are not very
+many other companies
+
+986
+00:49:07,450 --> 00:49:10,200
+that have $1 million in
+revenue per employee.
+
+987
+00:49:10,200 --> 00:49:15,910
+So maybe I need to add more
+employees to my staffing plan.
+
+988
+00:49:15,910 --> 00:49:20,740
+And where am I going to
+deploy those people in order
+
+989
+00:49:20,740 --> 00:49:23,790
+to build up my organization?
+
+990
+00:49:23,790 --> 00:49:26,910
+So it's doing it, it's
+working the exercise
+
+991
+00:49:26,910 --> 00:49:29,870
+that is the real benefit.
+
+992
+00:49:29,870 --> 00:49:35,420
+Build your sales projections
+from the bottom up.
+
+993
+00:49:35,420 --> 00:49:38,000
+Anyone watch Shark Tank?
+
+994
+00:49:38,000 --> 00:49:38,880
+OK.
+
+995
+00:49:38,880 --> 00:49:41,651
+I gave this talk
+about two months ago,
+
+996
+00:49:41,651 --> 00:49:43,900
+and everyone said, no, it's
+on Friday night, I go out.
+
+997
+00:49:43,900 --> 00:49:46,240
+You know, I'm not waiting
+at home Friday night.
+
+998
+00:49:46,240 --> 00:49:48,210
+So someone was on
+Shark Tank last week,
+
+999
+00:49:48,210 --> 00:49:50,580
+and they said they're
+selling a product that
+
+1000
+00:49:50,580 --> 00:49:52,090
+went into school lockers.
+
+1001
+00:49:52,090 --> 00:49:56,080
+And they said, why are
+you valuing your company
+
+1002
+00:49:56,080 --> 00:49:57,040
+at $5 million?
+
+1003
+00:49:57,040 --> 00:50:01,570
+And he said, well, there's
+50 million school lockers
+
+1004
+00:50:01,570 --> 00:50:05,170
+in the country, and we only
+need to get 5% of them.
+
+1005
+00:50:05,170 --> 00:50:10,810
+I mean, it's a crazy-- that's
+wrong on so many counts.
+
+1006
+00:50:10,810 --> 00:50:12,917
+Because it doesn't
+talk about how
+
+1007
+00:50:12,917 --> 00:50:15,250
+you're going to get into each
+school, how many are going
+
+1008
+00:50:15,250 --> 00:50:18,920
+to sell into each school, what
+is your distribution strategy
+
+1009
+00:50:18,920 --> 00:50:20,090
+to get there.
+
+1010
+00:50:20,090 --> 00:50:22,790
+So instead of saying,
+the market is huge
+
+1011
+00:50:22,790 --> 00:50:24,650
+and we're going to
+get a slice of it,
+
+1012
+00:50:24,650 --> 00:50:26,600
+what you said need
+to say is, we're
+
+1013
+00:50:26,600 --> 00:50:28,590
+going to have five sales guys.
+
+1014
+00:50:28,590 --> 00:50:30,330
+And each sales
+guy is going to be
+
+1015
+00:50:30,330 --> 00:50:32,760
+responsible for a
+territory in the country.
+
+1016
+00:50:32,760 --> 00:50:35,750
+And each territory has--
+I'm kind of making this up
+
+1017
+00:50:35,750 --> 00:50:37,780
+about the school
+lockers as I go here--
+
+1018
+00:50:37,780 --> 00:50:41,860
+but each territory
+has 25,000 schools.
+
+1019
+00:50:41,860 --> 00:50:45,320
+And I expect each sales
+guy to higher 10 reps.
+
+1020
+00:50:45,320 --> 00:50:48,460
+And each rep is going to
+go to two schools a day.
+
+1021
+00:50:48,460 --> 00:50:55,040
+And we expect a closure rate of
+10% when they go to a school,
+
+1022
+00:50:55,040 --> 00:51:00,670
+and each school that buys these
+is going to buy 50 lockers.
+
+1023
+00:51:00,670 --> 00:51:02,610
+And you put that
+all in, and it'll
+
+1024
+00:51:02,610 --> 00:51:05,230
+come up with a model for how
+many you're going to sell.
+
+1025
+00:51:05,230 --> 00:51:10,320
+And that may not be--
+it will not be accurate.
+
+1026
+00:51:10,320 --> 00:51:13,554
+Because as you put this
+together, it's a crystal ball.
+
+1027
+00:51:13,554 --> 00:51:14,970
+And when you get
+out there, you're
+
+1028
+00:51:14,970 --> 00:51:19,730
+going to find out a sales guy
+can't go to two schools a day,
+
+1029
+00:51:19,730 --> 00:51:24,000
+and he can't close 10%,
+and they don't buy 50.
+
+1030
+00:51:24,000 --> 00:51:27,540
+But when you get a guy
+out there selling stuff,
+
+1031
+00:51:27,540 --> 00:51:29,710
+he's going to be
+providing data, and you're
+
+1032
+00:51:29,710 --> 00:51:32,480
+going to start getting
+feedback to say,
+
+1033
+00:51:32,480 --> 00:51:34,860
+we can visit three
+schools a day,
+
+1034
+00:51:34,860 --> 00:51:37,270
+but there's only
+a 5% closure rate,
+
+1035
+00:51:37,270 --> 00:51:40,210
+but each school that does
+buy is going to buy 75.
+
+1036
+00:51:40,210 --> 00:51:43,130
+And then, you can
+adjust your model.
+
+1037
+00:51:43,130 --> 00:51:45,040
+But since you've
+built your model,
+
+1038
+00:51:45,040 --> 00:51:48,610
+now you can adjust
+it, and figure out
+
+1039
+00:51:48,610 --> 00:51:50,490
+where you're going to go next.
+
+1040
+00:51:50,490 --> 00:51:54,490
+The last thing is that
+there's spreadsheet overload.
+
+1041
+00:51:54,490 --> 00:51:58,380
+So never do a best
+case, worst case,
+
+1042
+00:51:58,380 --> 00:52:00,550
+and present three
+different models, and say,
+
+1043
+00:52:00,550 --> 00:52:03,000
+if everything goes right,
+here's what we need.
+
+1044
+00:52:03,000 --> 00:52:06,990
+I'm not saying don't
+look at contingencies.
+
+1045
+00:52:06,990 --> 00:52:10,320
+But just put your
+best foot forward.
+
+1046
+00:52:10,320 --> 00:52:12,289
+Put your best
+estimate on the paper.
+
+1047
+00:52:12,289 --> 00:52:13,830
+Say, here's what we
+think we're going
+
+1048
+00:52:13,830 --> 00:52:23,430
+to do, and leave the best case,
+worst case for someone else.
+
+1049
+00:52:23,430 --> 00:52:26,110
+I might give you some rules of
+thumb on the next spreadsheet.
+
+1050
+00:52:26,110 --> 00:52:29,730
+These are focused on making
+your investment interest
+
+1051
+00:52:29,730 --> 00:52:30,870
+attractive to investors.
+
+1052
+00:52:30,870 --> 00:52:33,410
+Just like your $5
+million business
+
+1053
+00:52:33,410 --> 00:52:35,021
+might be a great
+business, it's not
+
+1054
+00:52:35,021 --> 00:52:36,520
+going to be attractive
+to investors.
+
+1055
+00:52:36,520 --> 00:52:39,370
+So I may say, don't put
+together a business plan that
+
+1056
+00:52:39,370 --> 00:52:41,189
+only gets you to $5 million.
+
+1057
+00:52:41,189 --> 00:52:42,480
+That could be a great business.
+
+1058
+00:52:42,480 --> 00:52:44,720
+OK, so don't let me
+discourage you from that.
+
+1059
+00:52:44,720 --> 00:52:47,770
+It's most relevant for
+technology companies.
+
+1060
+00:52:47,770 --> 00:52:52,050
+So if you're going to
+start a fast food chain,
+
+1061
+00:52:52,050 --> 00:52:54,770
+these metrics are not
+going to apply to you.
+
+1062
+00:52:54,770 --> 00:52:57,710
+And like I said, it might
+not apply to your industry.
+
+1063
+00:53:00,320 --> 00:53:04,520
+Staffing is what's going
+to drive your expenses, OK?
+
+1064
+00:53:04,520 --> 00:53:09,720
+Most technology companies,
+staffing is 50% to 66%
+
+1065
+00:53:09,720 --> 00:53:11,100
+of your expense.
+
+1066
+00:53:11,100 --> 00:53:12,680
+And your average
+cost per employee
+
+1067
+00:53:12,680 --> 00:53:15,900
+is going to be about $90,000.
+
+1068
+00:53:15,900 --> 00:53:18,590
+I know it sounds crazy,
+sounds crazy high.
+
+1069
+00:53:18,590 --> 00:53:20,870
+But the reality is,
+in Boston, first
+
+1070
+00:53:20,870 --> 00:53:24,740
+off is, who has administrative
+assistants anymore?
+
+1071
+00:53:24,740 --> 00:53:28,130
+Unless you have like a
+large manufacturing staff
+
+1072
+00:53:28,130 --> 00:53:31,950
+that's doing kind of
+assembly and stuff like that.
+
+1073
+00:53:31,950 --> 00:53:34,820
+But in most of the companies
+that you guys are going
+
+1074
+00:53:34,820 --> 00:53:38,360
+to be starting, it's going to
+be a lot of technology workers,
+
+1075
+00:53:38,360 --> 00:53:40,240
+it's going to be a
+lot of programmers,
+
+1076
+00:53:40,240 --> 00:53:43,270
+it's going to be a lot of
+sales and marketing staff,
+
+1077
+00:53:43,270 --> 00:53:45,780
+it's going to be a
+few finance people.
+
+1078
+00:53:45,780 --> 00:53:47,490
+I mean, the finance
+and HR are probably
+
+1079
+00:53:47,490 --> 00:53:49,810
+going to be the cheapest
+people in your company.
+
+1080
+00:53:49,810 --> 00:53:50,960
+I mean, really.
+
+1081
+00:53:50,960 --> 00:53:52,770
+A programmer these
+days, especially
+
+1082
+00:53:52,770 --> 00:53:54,850
+if you want to get a
+algorithm engineer,
+
+1083
+00:53:54,850 --> 00:53:57,000
+algorithm engineer is
+probably going to cost you
+
+1084
+00:53:57,000 --> 00:54:00,070
+$125,000, $150,000 a year.
+
+1085
+00:54:00,070 --> 00:54:02,410
+OK?
+
+1086
+00:54:02,410 --> 00:54:05,590
+Just a programmer's
+going to cost you
+
+1087
+00:54:05,590 --> 00:54:07,370
+$80,000, $90,000, $100,000.
+
+1088
+00:54:07,370 --> 00:54:10,310
+And these folks are going
+to want raises every year.
+
+1089
+00:54:10,310 --> 00:54:17,890
+So salaries are going to
+come in at about $90,000.
+
+1090
+00:54:17,890 --> 00:54:20,920
+Employee benefits are going
+to add about 15% to that.
+
+1091
+00:54:20,920 --> 00:54:23,510
+So I know you've all heard
+horror stories about General
+
+1092
+00:54:23,510 --> 00:54:26,530
+Motors pays their
+guys $25 an hour,
+
+1093
+00:54:26,530 --> 00:54:29,190
+but they're true
+cost is $50 an hour.
+
+1094
+00:54:29,190 --> 00:54:31,760
+Ignore all that
+accounting mumbo-jumbo.
+
+1095
+00:54:31,760 --> 00:54:35,030
+You can add in 15%, and that'll
+be a pretty good yardstick
+
+1096
+00:54:35,030 --> 00:54:37,440
+to cover their FICA
+expenses, which
+
+1097
+00:54:37,440 --> 00:54:40,660
+is Social Security tax,
+and their health insurance.
+
+1098
+00:54:40,660 --> 00:54:42,180
+OK?
+
+1099
+00:54:42,180 --> 00:54:45,920
+As I said, salaries are going to
+be about 2/3 of your expenses.
+
+1100
+00:54:45,920 --> 00:54:49,040
+And sales staff is really
+industry dependent.
+
+1101
+00:54:49,040 --> 00:54:50,990
+So I've got some
+yardsticks on here,
+
+1102
+00:54:50,990 --> 00:54:53,330
+but it really
+depends on-- if you
+
+1103
+00:54:53,330 --> 00:54:55,930
+got a guy who's selling
+lockers to a school system,
+
+1104
+00:54:55,930 --> 00:54:59,490
+OK, you can probably get that
+guy for, I don't know, probably
+
+1105
+00:54:59,490 --> 00:55:02,459
+$50,000 a year, and maybe
+give him a 10% commission
+
+1106
+00:55:02,459 --> 00:55:03,000
+or something.
+
+1107
+00:55:03,000 --> 00:55:04,870
+Or maybe $40,000 a year.
+
+1108
+00:55:04,870 --> 00:55:06,790
+So you know, this
+is not a guy that's
+
+1109
+00:55:06,790 --> 00:55:10,360
+selling complicated
+software sale, OK?
+
+1110
+00:55:10,360 --> 00:55:12,470
+But someone who is selling
+something like that
+
+1111
+00:55:12,470 --> 00:55:18,900
+is going to need $150,000
+to $250,000 a year.
+
+1112
+00:55:18,900 --> 00:55:22,150
+So I don't have time to go
+through a case study here,
+
+1113
+00:55:22,150 --> 00:55:29,980
+but a couple years ago,
+I went in when OpenTable
+
+1114
+00:55:29,980 --> 00:55:32,400
+went public, and just looked
+at some of their publicly
+
+1115
+00:55:32,400 --> 00:55:33,980
+available information.
+
+1116
+00:55:33,980 --> 00:55:37,030
+And this first page is all
+of the publicly available
+
+1117
+00:55:37,030 --> 00:55:37,980
+information.
+
+1118
+00:55:37,980 --> 00:55:41,720
+But I was able to really
+uncover a lot of things
+
+1119
+00:55:41,720 --> 00:55:43,540
+about how they ran
+their business,
+
+1120
+00:55:43,540 --> 00:55:46,660
+and how they were
+generating revenue.
+
+1121
+00:55:46,660 --> 00:55:49,750
+And I would just urge you to
+look at these next few pages.
+
+1122
+00:55:49,750 --> 00:55:51,835
+This presentation will
+be on the website.
+
+1123
+00:55:54,720 --> 00:55:58,270
+In terms of cash flow, it's
+critical to understand it.
+
+1124
+00:55:58,270 --> 00:56:01,100
+But producing a
+cash flow statement
+
+1125
+00:56:01,100 --> 00:56:04,260
+is really complicated, and
+it's really prone to error.
+
+1126
+00:56:04,260 --> 00:56:06,090
+And the reason is
+that you have to put
+
+1127
+00:56:06,090 --> 00:56:08,030
+in all of these
+formulas, and then
+
+1128
+00:56:08,030 --> 00:56:12,460
+the plug number that makes
+all the formulas work is cash.
+
+1129
+00:56:12,460 --> 00:56:18,100
+So any error in any formula, or
+anything that you fat-fingered
+
+1130
+00:56:18,100 --> 00:56:22,280
+wrong shows up as cash.
+
+1131
+00:56:22,280 --> 00:56:24,120
+And sometimes it's
+to the negative,
+
+1132
+00:56:24,120 --> 00:56:26,840
+sometimes it's to the positive.
+
+1133
+00:56:26,840 --> 00:56:28,480
+Every time I do
+this, I say I'm going
+
+1134
+00:56:28,480 --> 00:56:32,140
+to put together a cash flow
+just so people can look at one.
+
+1135
+00:56:32,140 --> 00:56:35,070
+And maybe I'll chastise myself,
+and I'll go home and do this.
+
+1136
+00:56:35,070 --> 00:56:37,200
+And if I do, I'll
+send it to Joe.
+
+1137
+00:56:37,200 --> 00:56:40,150
+But a good proxy for
+cash flow is just
+
+1138
+00:56:40,150 --> 00:56:42,150
+looking at your
+cumulative operating
+
+1139
+00:56:42,150 --> 00:56:46,150
+losses over the period of
+time, and adding in any capital
+
+1140
+00:56:46,150 --> 00:56:47,780
+expenses that you had.
+
+1141
+00:56:47,780 --> 00:56:50,030
+And while that's
+not perfect, it's
+
+1142
+00:56:50,030 --> 00:56:52,870
+a pretty good number
+for how much money
+
+1143
+00:56:52,870 --> 00:56:56,670
+this business is going to need.
+
+1144
+00:56:56,670 --> 00:57:01,200
+So a lot of people ask me, well,
+how much should I pay myself?
+
+1145
+00:57:01,200 --> 00:57:05,650
+And venture catalysts, they
+don't want their entrepreneurs
+
+1146
+00:57:05,650 --> 00:57:09,790
+to starve, but they
+want them to be hungry.
+
+1147
+00:57:09,790 --> 00:57:14,780
+So what I would urge you
+to do is think about maybe
+
+1148
+00:57:14,780 --> 00:57:17,384
+what you made before
+you came back to school.
+
+1149
+00:57:17,384 --> 00:57:19,550
+I mean, I assume a lot of
+you are graduate students.
+
+1150
+00:57:19,550 --> 00:57:22,240
+Or think about
+what your peers are
+
+1151
+00:57:22,240 --> 00:57:24,960
+going to make as they're
+going out into industry.
+
+1152
+00:57:24,960 --> 00:57:31,330
+Now, if you're in a very
+specific discipline,
+
+1153
+00:57:31,330 --> 00:57:35,010
+and your peers are going out
+to work in that discipline,
+
+1154
+00:57:35,010 --> 00:57:37,565
+and because-- let's say
+they're geological engineers,
+
+1155
+00:57:37,565 --> 00:57:39,315
+and they're going to
+go up to North Dakota
+
+1156
+00:57:39,315 --> 00:57:44,020
+and make $250,000 a year because
+they're helping drill for oil.
+
+1157
+00:57:44,020 --> 00:57:45,840
+Well, you can't
+say, well, look, I
+
+1158
+00:57:45,840 --> 00:57:49,070
+could be drilling for oil
+in North Dakota for $250,000
+
+1159
+00:57:49,070 --> 00:57:49,660
+a year.
+
+1160
+00:57:49,660 --> 00:57:52,050
+Therefore, that's what
+I need to pay myself.
+
+1161
+00:57:52,050 --> 00:57:54,550
+So that's kind of
+an extreme case.
+
+1162
+00:57:54,550 --> 00:57:56,520
+But think about what
+your peers are making,
+
+1163
+00:57:56,520 --> 00:57:58,590
+and generally you
+can argue that that's
+
+1164
+00:57:58,590 --> 00:58:00,280
+what you ought to be paid.
+
+1165
+00:58:00,280 --> 00:58:02,420
+Or what you were getting
+paid in your prior life,
+
+1166
+00:58:02,420 --> 00:58:05,460
+unless you were an investment
+banker in your prior life,
+
+1167
+00:58:05,460 --> 00:58:05,960
+right?
+
+1168
+00:58:09,030 --> 00:58:11,030
+Your investors want you
+to earn a living wage.
+
+1169
+00:58:11,030 --> 00:58:13,120
+They don't want you to be
+worried about paying the bills,
+
+1170
+00:58:13,120 --> 00:58:14,203
+or getting your car fixed.
+
+1171
+00:58:14,203 --> 00:58:16,850
+They don't want you
+to work 23 hours a day
+
+1172
+00:58:16,850 --> 00:58:19,620
+with as few distractions
+as possible.
+
+1173
+00:58:19,620 --> 00:58:21,880
+But they want to make sure
+that you're still hungry,
+
+1174
+00:58:21,880 --> 00:58:27,840
+and increasing shareholder
+value every day.
+
+1175
+00:58:27,840 --> 00:58:31,480
+So here's what we want to
+get to is our profit and loss
+
+1176
+00:58:31,480 --> 00:58:34,250
+statement for four years, OK?
+
+1177
+00:58:34,250 --> 00:58:37,070
+And so I've got this
+color coded spreadsheet,
+
+1178
+00:58:37,070 --> 00:58:39,260
+and here's the code here.
+
+1179
+00:58:39,260 --> 00:58:42,510
+Anything that's in blue comes
+from another spreadsheet.
+
+1180
+00:58:42,510 --> 00:58:44,050
+And I've got a
+little column here
+
+1181
+00:58:44,050 --> 00:58:46,550
+that you would take out when
+you actually presented this
+
+1182
+00:58:46,550 --> 00:58:51,030
+to anyone that says, here,
+this is coming from the P&L
+
+1183
+00:58:51,030 --> 00:58:52,780
+by quarter spreadsheet.
+
+1184
+00:58:52,780 --> 00:58:56,940
+And so this spreadsheet's got
+about 12 pages on it, right?
+
+1185
+00:58:56,940 --> 00:59:00,090
+So here's your summary page
+here, and as you can see,
+
+1186
+00:59:00,090 --> 00:59:01,870
+everything comes
+from another page.
+
+1187
+00:59:01,870 --> 00:59:04,490
+So nothing shows
+up on this page.
+
+1188
+00:59:04,490 --> 00:59:06,714
+But as you're putting
+together your spreadsheet,
+
+1189
+00:59:06,714 --> 00:59:08,380
+you're going to keep
+coming back to this
+
+1190
+00:59:08,380 --> 00:59:10,040
+and say, how does this look?
+
+1191
+00:59:10,040 --> 00:59:11,380
+Does this make sense?
+
+1192
+00:59:11,380 --> 00:59:13,350
+Do my sales go like this?
+
+1193
+00:59:13,350 --> 00:59:15,440
+Or do my expenses go like this?
+
+1194
+00:59:15,440 --> 00:59:19,080
+Or is everything kind of in
+a nice, smooth trend line?
+
+1195
+00:59:19,080 --> 00:59:21,080
+Or if it's not,
+can I explain it?
+
+1196
+00:59:21,080 --> 00:59:24,540
+So for example, I might have no
+marketing expenses in year one.
+
+1197
+00:59:24,540 --> 00:59:27,190
+I might have a tremendous amount
+of marketing expenses in year
+
+1198
+00:59:27,190 --> 00:59:28,830
+two as we launch our product.
+
+1199
+00:59:28,830 --> 00:59:31,780
+And then those expenses,
+maybe not in absolute terms,
+
+1200
+00:59:31,780 --> 00:59:34,750
+but in percentage terms,
+come down in year three,
+
+1201
+00:59:34,750 --> 00:59:40,210
+because now we've already
+reached the market.
+
+1202
+00:59:40,210 --> 00:59:43,050
+So the next spreadsheet, and
+this spreadsheet is actually--
+
+1203
+00:59:43,050 --> 00:59:46,020
+I would urge you to,
+at least to start with,
+
+1204
+00:59:46,020 --> 00:59:48,879
+do for your projections
+on quarterly terms.
+
+1205
+00:59:48,879 --> 00:59:50,420
+Because there's a
+lot of times you're
+
+1206
+00:59:50,420 --> 00:59:52,640
+going to be fat-fingering
+stuff in here,
+
+1207
+00:59:52,640 --> 00:59:56,250
+and when you have
+48 cells that you
+
+1208
+00:59:56,250 --> 00:59:58,630
+have to fat-finger
+something in, you're
+
+1209
+00:59:58,630 --> 01:00:00,670
+going to make more
+errors than if you only
+
+1210
+01:00:00,670 --> 01:00:02,730
+have 16 to put them in.
+
+1211
+01:00:02,730 --> 01:00:05,380
+And so this spreadsheet goes
+out to about here, which
+
+1212
+01:00:05,380 --> 01:00:09,900
+is year 4, Q4, right?
+
+1213
+01:00:09,900 --> 01:00:12,570
+But as we can see, everything
+from our quarterly statement
+
+1214
+01:00:12,570 --> 01:00:14,560
+also comes from
+another spreadsheet.
+
+1215
+01:00:14,560 --> 01:00:16,440
+So let's look at the
+detailed spreadsheets.
+
+1216
+01:00:16,440 --> 01:00:18,680
+And the first one is
+our sales spreadsheet.
+
+1217
+01:00:18,680 --> 01:00:21,020
+So here, in the red,
+is input numbers.
+
+1218
+01:00:21,020 --> 01:00:24,970
+So I've got my unit
+sales in units,
+
+1219
+01:00:24,970 --> 01:00:26,960
+and I've just plugged
+in some numbers here.
+
+1220
+01:00:26,960 --> 01:00:29,360
+Now, you're going to
+have to justify these
+
+1221
+01:00:29,360 --> 01:00:32,710
+in the rest of your projections
+by what's my sales staff,
+
+1222
+01:00:32,710 --> 01:00:38,010
+and how much units am I
+expecting a salesperson
+
+1223
+01:00:38,010 --> 01:00:40,040
+to sell.
+
+1224
+01:00:40,040 --> 01:00:42,990
+Here's my unit price, and I've
+got a couple different models.
+
+1225
+01:00:42,990 --> 01:00:46,730
+And as you can see,
+when I launch model two,
+
+1226
+01:00:46,730 --> 01:00:49,460
+I decrease the
+price on model one,
+
+1227
+01:00:49,460 --> 01:00:54,380
+because now it's old technology.
+
+1228
+01:00:54,380 --> 01:00:58,830
+And so our product revenue
+is simply a multi-- you know,
+
+1229
+01:00:58,830 --> 01:01:00,640
+the black is a
+calculated figure--
+
+1230
+01:01:00,640 --> 01:01:03,700
+it's just a multiplication
+of those two.
+
+1231
+01:01:03,700 --> 01:01:05,560
+And then the magenta
+number, that's
+
+1232
+01:01:05,560 --> 01:01:09,000
+what goes to our
+other spreadsheet.
+
+1233
+01:01:09,000 --> 01:01:14,340
+So our support revenue,
+here's our installed base,
+
+1234
+01:01:14,340 --> 01:01:16,690
+and there's some retention
+on our installed base,
+
+1235
+01:01:16,690 --> 01:01:19,980
+and then we charge 15% of
+what the value of that product
+
+1236
+01:01:19,980 --> 01:01:22,187
+is to show what our
+support revenue would be.
+
+1237
+01:01:22,187 --> 01:01:24,020
+But you're just going
+to have to play around
+
+1238
+01:01:24,020 --> 01:01:25,750
+with these
+percentages, depending
+
+1239
+01:01:25,750 --> 01:01:27,540
+on your product
+and your company.
+
+1240
+01:01:27,540 --> 01:01:30,590
+But I just wanted to show that
+there was actually some support
+
+1241
+01:01:30,590 --> 01:01:33,250
+revenue in it as well,
+and this support revenue
+
+1242
+01:01:33,250 --> 01:01:36,400
+goes to the other spreadsheet.
+
+1243
+01:01:36,400 --> 01:01:38,500
+So then we have our
+cost of goods sold.
+
+1244
+01:01:38,500 --> 01:01:42,240
+So we have our units that
+are coming from our others
+
+1245
+01:01:42,240 --> 01:01:52,770
+spreadsheet, and we've plugged
+in our unit cost down here.
+
+1246
+01:01:52,770 --> 01:01:55,450
+And so this gives us our
+variable cost per unit.
+
+1247
+01:01:55,450 --> 01:01:58,850
+We've got the 20 units at
+$1,500 per unit, comes down
+
+1248
+01:01:58,850 --> 01:02:02,390
+to $30,000 in material cost.
+
+1249
+01:02:02,390 --> 01:02:03,960
+But I've also got some staffing.
+
+1250
+01:02:03,960 --> 01:02:07,220
+I've got a VP of manufacturing,
+I've got a supervisor,
+
+1251
+01:02:07,220 --> 01:02:08,650
+I've got a technician.
+
+1252
+01:02:08,650 --> 01:02:10,710
+He can build one unit a day.
+
+1253
+01:02:10,710 --> 01:02:13,220
+And so I've got to think
+about how many technicians I
+
+1254
+01:02:13,220 --> 01:02:15,890
+need as I ramp up
+that product volume.
+
+1255
+01:02:15,890 --> 01:02:16,390
+OK?
+
+1256
+01:02:24,200 --> 01:02:26,670
+So we'll talk about the
+staffing plan on another page,
+
+1257
+01:02:26,670 --> 01:02:29,050
+but those staffing
+costs get added up
+
+1258
+01:02:29,050 --> 01:02:31,160
+into salary and benefits.
+
+1259
+01:02:31,160 --> 01:02:33,170
+We have our variable cost here.
+
+1260
+01:02:33,170 --> 01:02:36,910
+We have a facilities cost that
+is really a step function,
+
+1261
+01:02:36,910 --> 01:02:39,890
+because you can't ramp
+up facilities in line
+
+1262
+01:02:39,890 --> 01:02:43,240
+with-- you can't add
+another 100 square feet,
+
+1263
+01:02:43,240 --> 01:02:47,130
+you've got to rent 10,000 square
+feet, and then another 10,000
+
+1264
+01:02:47,130 --> 01:02:48,880
+square feet if you need more.
+
+1265
+01:02:48,880 --> 01:02:50,830
+So we just plugged
+in some numbers
+
+1266
+01:02:50,830 --> 01:02:54,550
+on our facilities expense, and
+that gives us our total product
+
+1267
+01:02:54,550 --> 01:02:56,650
+cost of goods sold here.
+
+1268
+01:02:56,650 --> 01:02:58,090
+When we look at
+the staffing plan,
+
+1269
+01:02:58,090 --> 01:03:00,131
+this is a spreadsheet
+you're going to keep coming
+
+1270
+01:03:00,131 --> 01:03:02,170
+back to over and over
+again, because, as I said,
+
+1271
+01:03:02,170 --> 01:03:05,480
+this is where 66% of your
+expenses are going to be.
+
+1272
+01:03:05,480 --> 01:03:07,710
+So first is, you've
+got a spreadsheet that
+
+1273
+01:03:07,710 --> 01:03:10,950
+goes down to about here with
+all of your departments.
+
+1274
+01:03:10,950 --> 01:03:14,200
+And I would urge you, don't
+create too many lines in here.
+
+1275
+01:03:14,200 --> 01:03:16,920
+Don't create a junior
+programmer, senior programmer,
+
+1276
+01:03:16,920 --> 01:03:18,620
+programmer level three.
+
+1277
+01:03:18,620 --> 01:03:20,860
+You know, kind of
+glom things together,
+
+1278
+01:03:20,860 --> 01:03:23,380
+because you're going to be
+fat-fingering a lot of stuff
+
+1279
+01:03:23,380 --> 01:03:23,880
+in.
+
+1280
+01:03:23,880 --> 01:03:26,690
+And do the same thing
+with their salaries.
+
+1281
+01:03:26,690 --> 01:03:30,580
+If a junior programmer
+makes $80,000,
+
+1282
+01:03:30,580 --> 01:03:33,340
+and a programmer makes $100,000,
+and a senior programmer makes
+
+1283
+01:03:33,340 --> 01:03:36,550
+$120,000, just
+put in programmer,
+
+1284
+01:03:36,550 --> 01:03:38,990
+put them all in at $100,000.
+
+1285
+01:03:38,990 --> 01:03:46,070
+You know, again, this is going
+to be your guideline, right?
+
+1286
+01:03:48,610 --> 01:03:51,040
+So you've got this for all of
+your departments down here,
+
+1287
+01:03:51,040 --> 01:03:53,790
+and again, this spreadsheet
+goes all the way out to here.
+
+1288
+01:03:53,790 --> 01:03:56,450
+So the companion part
+to this spreadsheet
+
+1289
+01:03:56,450 --> 01:03:59,950
+is actually over on the
+right side of this thing.
+
+1290
+01:03:59,950 --> 01:04:03,980
+And now you plug in salaries
+for each of these staffing
+
+1291
+01:04:03,980 --> 01:04:05,030
+positions.
+
+1292
+01:04:05,030 --> 01:04:11,000
+And all this spreadsheet does is
+take your number of employees,
+
+1293
+01:04:11,000 --> 01:04:12,580
+and remember, this
+is a quarterly,
+
+1294
+01:04:12,580 --> 01:04:15,200
+so we're taking the annual
+salary, dividing it by 4,
+
+1295
+01:04:15,200 --> 01:04:18,100
+multiplying it by the number
+of people in that position,
+
+1296
+01:04:18,100 --> 01:04:22,400
+and then we're adding
+in our benefits at 15%.
+
+1297
+01:04:22,400 --> 01:04:24,390
+So FICA is 7%.
+
+1298
+01:04:24,390 --> 01:04:29,150
+And I've done the math, I've
+done the math dozens of times,
+
+1299
+01:04:29,150 --> 01:04:33,830
+8% of your total
+payroll is usually
+
+1300
+01:04:33,830 --> 01:04:37,660
+enough to cover health
+insurance for everyone,
+
+1301
+01:04:37,660 --> 01:04:41,130
+at kind of a 75% to 25% ratio.
+
+1302
+01:04:41,130 --> 01:04:43,310
+Because some people
+aren't going to take it.
+
+1303
+01:04:43,310 --> 01:04:45,907
+Some people are going to
+be on their spouse's plan.
+
+1304
+01:04:45,907 --> 01:04:47,490
+If you're a tech
+company, you're going
+
+1305
+01:04:47,490 --> 01:04:50,770
+to have a lot of single people,
+so they cost about a third
+
+1306
+01:04:50,770 --> 01:04:52,610
+as much as the married people.
+
+1307
+01:04:52,610 --> 01:04:55,990
+And so 8% works out
+to be pretty good.
+
+1308
+01:04:55,990 --> 01:04:58,000
+But your employees
+are still going
+
+1309
+01:04:58,000 --> 01:04:59,620
+to want to get
+raises in year two.
+
+1310
+01:04:59,620 --> 01:05:01,670
+Just because you're a
+start up, they still
+
+1311
+01:05:01,670 --> 01:05:03,070
+want a little something extra.
+
+1312
+01:05:03,070 --> 01:05:05,290
+And as I mentioned,
+a lot of companies
+
+1313
+01:05:05,290 --> 01:05:07,130
+have problems getting
+those expenses up
+
+1314
+01:05:07,130 --> 01:05:10,697
+in years three and four because
+they don't add people enough.
+
+1315
+01:05:10,697 --> 01:05:12,280
+One of the things
+that people don't do
+
+1316
+01:05:12,280 --> 01:05:14,230
+is they don't ramp
+up their salaries.
+
+1317
+01:05:14,230 --> 01:05:19,040
+So add in 2% a quarter,
+that gives you 8% a year.
+
+1318
+01:05:19,040 --> 01:05:21,000
+It's not an unreasonable number.
+
+1319
+01:05:21,000 --> 01:05:25,800
+And again, while most payrolls
+are going up kind of 3%
+
+1320
+01:05:25,800 --> 01:05:30,772
+these days, if you're trying to
+hold on to technology talent,
+
+1321
+01:05:30,772 --> 01:05:33,230
+you're going to have to give
+them a little something extra.
+
+1322
+01:05:33,230 --> 01:05:36,000
+So again, this goes out--
+just add 2% a year out
+
+1323
+01:05:36,000 --> 01:05:37,160
+until year four.
+
+1324
+01:05:37,160 --> 01:05:39,340
+And so the math gets
+done, and these go
+
+1325
+01:05:39,340 --> 01:05:42,760
+to the departmental expenses.
+
+1326
+01:05:42,760 --> 01:05:44,970
+Non-salary expenses.
+
+1327
+01:05:44,970 --> 01:05:46,480
+Well, we've got our
+salary expenses,
+
+1328
+01:05:46,480 --> 01:05:51,380
+and then you've got tech
+supplies and miscellaneous.
+
+1329
+01:05:51,380 --> 01:05:54,820
+I would urge you to put in
+as many formulas as you can.
+
+1330
+01:05:54,820 --> 01:05:59,520
+So for like your programmers,
+put in $2,000 per person,
+
+1331
+01:05:59,520 --> 01:06:00,020
+per month.
+
+1332
+01:06:00,020 --> 01:06:03,800
+It sounds like a lot, but I've
+worked in a couple technology
+
+1333
+01:06:03,800 --> 01:06:07,780
+companies, and it could
+be an oscilloscope,
+
+1334
+01:06:07,780 --> 01:06:11,090
+it could be some cabling, it
+could be some CAD software.
+
+1335
+01:06:11,090 --> 01:06:13,940
+Whatever it is, these guys can
+figure out a way to spin it.
+
+1336
+01:06:13,940 --> 01:06:16,870
+If that sounds like too much
+to you, put in $1,000 a month.
+
+1337
+01:06:16,870 --> 01:06:19,710
+But the beauty of that is that,
+as you change your staffing
+
+1338
+01:06:19,710 --> 01:06:23,679
+plan, this number just ramps
+up and down in line with that.
+
+1339
+01:06:23,679 --> 01:06:25,970
+So you can make dramatic
+changes to your staffing plan,
+
+1340
+01:06:25,970 --> 01:06:29,465
+you don't have to come back
+here and fat-finger anything in.
+
+1341
+01:06:29,465 --> 01:06:31,590
+But some of these things,
+you are going to have to,
+
+1342
+01:06:31,590 --> 01:06:33,030
+especially in the
+marketing area.
+
+1343
+01:06:33,030 --> 01:06:36,310
+You're going to have to decide,
+what trade shows do I go to,
+
+1344
+01:06:36,310 --> 01:06:42,040
+and what am I going to
+do for sales expenses?
+
+1345
+01:06:45,520 --> 01:06:48,910
+And then you could
+even put in commissions
+
+1346
+01:06:48,910 --> 01:06:52,300
+in here, commissions as
+a percentage of sales,
+
+1347
+01:06:52,300 --> 01:06:53,980
+if that seems to work.
+
+1348
+01:06:53,980 --> 01:06:56,350
+And so therefore, as
+your cells ramp up,
+
+1349
+01:06:56,350 --> 01:07:00,550
+your commissions ramp
+up in line with that.
+
+1350
+01:07:00,550 --> 01:07:04,230
+And here's your travel per
+person per month for your sales
+
+1351
+01:07:04,230 --> 01:07:06,500
+people is $3,000.
+
+1352
+01:07:06,500 --> 01:07:09,890
+That seems to be pretty
+good number there.
+
+1353
+01:07:09,890 --> 01:07:12,480
+I put in telephone and
+internet per person,
+
+1354
+01:07:12,480 --> 01:07:15,170
+and that just ramps up
+as your company ramps up.
+
+1355
+01:07:15,170 --> 01:07:18,940
+So use as many formulas
+in this as you can.
+
+1356
+01:07:18,940 --> 01:07:23,480
+And so that brings us
+back to our quarterly P&L,
+
+1357
+01:07:23,480 --> 01:07:27,570
+and where it all comes together.
+
+1358
+01:07:27,570 --> 01:07:30,500
+I've got a quick example
+here on your CAPEX.
+
+1359
+01:07:30,500 --> 01:07:33,050
+And so what I did was I
+took your total revenues,
+
+1360
+01:07:33,050 --> 01:07:36,220
+but I offset revenues
+by a quarter,
+
+1361
+01:07:36,220 --> 01:07:38,590
+figuring that
+customers are going
+
+1362
+01:07:38,590 --> 01:07:41,830
+to take 60 to 90 days to pay.
+
+1363
+01:07:41,830 --> 01:07:44,520
+So if you bill them
+now, assume that you're
+
+1364
+01:07:44,520 --> 01:07:47,320
+going to get money 90
+days from now, right?
+
+1365
+01:07:47,320 --> 01:07:50,860
+And hopefully,
+you'll get it sooner.
+
+1366
+01:07:50,860 --> 01:07:52,589
+But your other expense
+is your employees,
+
+1367
+01:07:52,589 --> 01:07:53,880
+which are 2/3 of your expenses.
+
+1368
+01:07:53,880 --> 01:07:55,960
+They want to get paid
+on payday, right?
+
+1369
+01:07:55,960 --> 01:07:57,970
+They don't want to get
+paid 30 days from now.
+
+1370
+01:07:57,970 --> 01:07:59,550
+So I just assumed--
+you know, this
+
+1371
+01:07:59,550 --> 01:08:03,180
+is a little bit of a
+conservative look at it--
+
+1372
+01:08:03,180 --> 01:08:08,120
+but I assume your other expenses
+come due in the current period.
+
+1373
+01:08:08,120 --> 01:08:13,170
+And so based on that, you plug
+in a starting balance here,
+
+1374
+01:08:13,170 --> 01:08:17,140
+and you say, where does
+this money get us to?
+
+1375
+01:08:17,140 --> 01:08:22,920
+This money gets us
+to the end of Q3.
+
+1376
+01:08:22,920 --> 01:08:26,180
+In that case, I'm going to
+need to raise additional money,
+
+1377
+01:08:26,180 --> 01:08:29,080
+and how much money am I going
+to have to raise there to get us
+
+1378
+01:08:29,080 --> 01:08:30,710
+to the next milestone?
+
+1379
+01:08:30,710 --> 01:08:32,460
+So in this case, I
+said, well, maybe we've
+
+1380
+01:08:32,460 --> 01:08:34,830
+hit a milestone here
+at the end of Q3,
+
+1381
+01:08:34,830 --> 01:08:36,760
+and that's going to
+allow us to raise
+
+1382
+01:08:36,760 --> 01:08:38,189
+our next round of funding.
+
+1383
+01:08:38,189 --> 01:08:38,689
+OK?
+
+1384
+01:08:41,330 --> 01:08:42,890
+I've talked about most of these.
+
+1385
+01:08:42,890 --> 01:08:47,020
+Showing steady and
+consistent growth.
+
+1386
+01:08:47,020 --> 01:08:48,790
+And here's some
+suggestions in here,
+
+1387
+01:08:48,790 --> 01:08:52,010
+in terms of an executive summary
+versus a full blown business
+
+1388
+01:08:52,010 --> 01:08:52,510
+plan.
+
+1389
+01:08:52,510 --> 01:08:56,046
+In reality, the
+executive summary
+
+1390
+01:08:56,046 --> 01:08:58,045
+is all most people are
+going to want to look at,
+
+1391
+01:08:58,045 --> 01:08:59,858
+at the beginning, and
+then when they really
+
+1392
+01:08:59,858 --> 01:09:01,399
+get into due diligence,
+they're going
+
+1393
+01:09:01,399 --> 01:09:04,390
+to want to look at the rest.
+
+1394
+01:09:04,390 --> 01:09:07,979
+So I think I can get through the
+rest of this in five minutes,
+
+1395
+01:09:07,979 --> 01:09:11,430
+because I've gone
+over a lot of it.
+
+1396
+01:09:11,430 --> 01:09:14,069
+What I would say, as you think
+about equity in your company--
+
+1397
+01:09:14,069 --> 01:09:18,870
+you're sitting around a
+conference table here at MIT,
+
+1398
+01:09:18,870 --> 01:09:21,220
+and you're thinking
+about the company,
+
+1399
+01:09:21,220 --> 01:09:26,060
+or maybe you've been working
+on the company for the last two
+
+1400
+01:09:26,060 --> 01:09:28,420
+years and you're really
+ready to launch it--
+
+1401
+01:09:28,420 --> 01:09:32,149
+all I would urge you is that
+the work that is yet to be done
+
+1402
+01:09:32,149 --> 01:09:34,990
+is far more than the work
+that has been done already.
+
+1403
+01:09:34,990 --> 01:09:38,240
+Even though it feels like
+you've done a tremendous amount,
+
+1404
+01:09:38,240 --> 01:09:42,050
+the work that it takes growing
+to a $1 million dollars
+
+1405
+01:09:42,050 --> 01:09:42,979
+is hard.
+
+1406
+01:09:42,979 --> 01:09:45,770
+But growing from $1
+million to $10 million
+
+1407
+01:09:45,770 --> 01:09:48,490
+is equally hard, if not harder.
+
+1408
+01:09:48,490 --> 01:09:52,750
+And going from $10 million to
+$100 million is really hard.
+
+1409
+01:09:52,750 --> 01:09:56,870
+So the fact that a lot
+has been accomplished,
+
+1410
+01:09:56,870 --> 01:09:59,050
+there's still a lot left to do.
+
+1411
+01:09:59,050 --> 01:10:03,670
+So you don't want to
+reward people for what's
+
+1412
+01:10:03,670 --> 01:10:04,860
+been done in the past.
+
+1413
+01:10:04,860 --> 01:10:09,160
+You want to incentivize them
+to do things in the future.
+
+1414
+01:10:09,160 --> 01:10:13,800
+So I'm a big believer
+that everyone should vest.
+
+1415
+01:10:13,800 --> 01:10:15,690
+I used to be
+adamantly against this
+
+1416
+01:10:15,690 --> 01:10:17,740
+when I was a member
+of a founding team.
+
+1417
+01:10:17,740 --> 01:10:20,570
+But I've heard horror stories
+where three or four people
+
+1418
+01:10:20,570 --> 01:10:24,430
+get together, and one
+guy, or one person,
+
+1419
+01:10:24,430 --> 01:10:26,760
+gets an opportunity
+that they can't pass up
+
+1420
+01:10:26,760 --> 01:10:29,880
+and they leave with
+their 25% of the company.
+
+1421
+01:10:29,880 --> 01:10:32,280
+And then the three
+people that are left
+
+1422
+01:10:32,280 --> 01:10:37,080
+are now working for
+themselves, and not
+
+1423
+01:10:37,080 --> 01:10:41,560
+taking a paycheck, for someone
+who's actually got a great job.
+
+1424
+01:10:41,560 --> 01:10:45,670
+So I think everyone should vest
+over some kind of three or four
+
+1425
+01:10:45,670 --> 01:10:47,630
+your period.
+
+1426
+01:10:47,630 --> 01:10:51,246
+Typically, this is the
+ranges that you would see.
+
+1427
+01:10:51,246 --> 01:10:55,450
+A CEO in the 5% range,
+5% to maybe 10%.
+
+1428
+01:10:55,450 --> 01:10:57,590
+VPs in the 1% to 2 and 1/2%.
+
+1429
+01:10:57,590 --> 01:11:00,160
+This would be after dilution.
+
+1430
+01:11:00,160 --> 01:11:04,490
+Senior managers about 0.25%, and
+a senior individual contributor
+
+1431
+01:11:04,490 --> 01:11:06,790
+about 0.10%.
+
+1432
+01:11:06,790 --> 01:11:12,350
+If you're on the
+founding management team,
+
+1433
+01:11:12,350 --> 01:11:16,560
+you might get two to three
+times this amount, in part
+
+1434
+01:11:16,560 --> 01:11:18,596
+because you're going
+to get diluted.
+
+1435
+01:11:18,596 --> 01:11:20,970
+And if you're founding employee,
+you might get even more.
+
+1436
+01:11:20,970 --> 01:11:26,147
+So if you have a senior
+individual contributor,
+
+1437
+01:11:26,147 --> 01:11:27,730
+who's really important
+to the company,
+
+1438
+01:11:27,730 --> 01:11:31,300
+and he's going to get 0.10%,
+that's the kind of person you
+
+1439
+01:11:31,300 --> 01:11:37,570
+might give 0.25%
+or 0.50% up front.
+
+1440
+01:11:37,570 --> 01:11:39,920
+So let's look at
+some examples here.
+
+1441
+01:11:39,920 --> 01:11:43,910
+You get a sense I always
+like to look at the endpoint,
+
+1442
+01:11:43,910 --> 01:11:45,514
+and then go back
+to the beginning
+
+1443
+01:11:45,514 --> 01:11:47,680
+and figure out how I'm going
+to get to the endpoint.
+
+1444
+01:11:47,680 --> 01:11:50,620
+So my endpoint here is looking
+at this whole dilution,
+
+1445
+01:11:50,620 --> 01:11:52,215
+and here this is
+the same spreadsheet
+
+1446
+01:11:52,215 --> 01:11:54,060
+that we had earlier,
+I've just add
+
+1447
+01:11:54,060 --> 01:11:56,430
+a little more detail
+with some names here,
+
+1448
+01:11:56,430 --> 01:11:59,130
+and some specifics
+about the people.
+
+1449
+01:11:59,130 --> 01:12:03,450
+So looking at this point, this
+is where we're going to get to.
+
+1450
+01:12:03,450 --> 01:12:05,800
+But at the beginning,
+we have four founders
+
+1451
+01:12:05,800 --> 01:12:08,520
+that have split the equity
+$2 million, $1 million,
+
+1452
+01:12:08,520 --> 01:12:09,580
+and $1 million.
+
+1453
+01:12:09,580 --> 01:12:12,240
+OK, that all sounds
+well and good.
+
+1454
+01:12:12,240 --> 01:12:13,800
+They have 100% here.
+
+1455
+01:12:13,800 --> 01:12:16,040
+As we bring in our
+key employees-- here
+
+1456
+01:12:16,040 --> 01:12:18,410
+we have a VP of
+R&D. He's critical.
+
+1457
+01:12:18,410 --> 01:12:22,580
+Normally, you'd say a VP
+of R&D would get about 1%.
+
+1458
+01:12:22,580 --> 01:12:26,550
+Well, in reality, by the
+time we get out to this,
+
+1459
+01:12:26,550 --> 01:12:29,590
+after all of our dilution
+out here, this VP of R&D
+
+1460
+01:12:29,590 --> 01:12:31,290
+is going to be at 1%.
+
+1461
+01:12:34,270 --> 01:12:36,270
+And some other key
+employees here.
+
+1462
+01:12:36,270 --> 01:12:39,080
+And maybe a board of
+advisors or board members,
+
+1463
+01:12:39,080 --> 01:12:40,680
+who would get some equity.
+
+1464
+01:12:40,680 --> 01:12:43,670
+We then bring in our angel
+investors, who get 10%,
+
+1465
+01:12:43,670 --> 01:12:45,790
+and everyone up
+here gets diluted.
+
+1466
+01:12:45,790 --> 01:12:49,290
+And we then bring in
+our VC round at 50%,
+
+1467
+01:12:49,290 --> 01:12:52,560
+and, again, everyone
+up above gets diluted,
+
+1468
+01:12:52,560 --> 01:12:54,010
+including the angels.
+
+1469
+01:12:54,010 --> 01:12:56,520
+One of the things that
+got brought up-- you know,
+
+1470
+01:12:56,520 --> 01:13:00,020
+Axel was talking
+about $50 for 10%.
+
+1471
+01:13:00,020 --> 01:13:04,360
+And my initial reaction was
+that seems really onerous.
+
+1472
+01:13:04,360 --> 01:13:07,190
+It doesn't seem
+like a great deal.
+
+1473
+01:13:07,190 --> 01:13:11,080
+But when you realize that
+he's coming in at this stage,
+
+1474
+01:13:11,080 --> 01:13:15,300
+he's coming in really
+as the angel investor,
+
+1475
+01:13:15,300 --> 01:13:19,340
+and by the time this all gets
+done-- well, what's my example?
+
+1476
+01:13:19,340 --> 01:13:21,250
+My example actually works out.
+
+1477
+01:13:21,250 --> 01:13:23,700
+Just take a zero off of this.
+
+1478
+01:13:23,700 --> 01:13:28,600
+His 10% is going to get
+diluted down to 2.3%.
+
+1479
+01:13:28,600 --> 01:13:35,310
+So if you're getting all that
+other value, then that 2.3%
+
+1480
+01:13:35,310 --> 01:13:39,060
+doesn't seem to be
+too much to give up.
+
+1481
+01:13:39,060 --> 01:13:42,590
+I will say that angel investors
+are pretty keen on looking
+
+1482
+01:13:42,590 --> 01:13:44,450
+at this spreadsheet, too.
+
+1483
+01:13:44,450 --> 01:13:48,530
+And while a lot of people think
+that angel investors will not
+
+1484
+01:13:48,530 --> 01:13:53,210
+be as tough negotiators
+as the VC investors,
+
+1485
+01:13:53,210 --> 01:13:56,820
+I would argue they're investing
+their own money rather than
+
+1486
+01:13:56,820 --> 01:14:00,470
+the firm's money, and they have
+seen this spreadsheet as well,
+
+1487
+01:14:00,470 --> 01:14:08,220
+and the angel investors will
+be every bit as tough as the VC
+
+1488
+01:14:08,220 --> 01:14:09,350
+negotiations.
+
+1489
+01:14:09,350 --> 01:14:12,280
+Now, friends and family
+is a different story.
+
+1490
+01:14:12,280 --> 01:14:15,850
+And I've had very good success
+with friends and family coming
+
+1491
+01:14:15,850 --> 01:14:18,060
+in, but I mean they're
+your friends and family.
+
+1492
+01:14:18,060 --> 01:14:20,200
+You're not going to try
+and screw them over.
+
+1493
+01:14:20,200 --> 01:14:23,990
+So hopefully you're going
+to give them a fair deal
+
+1494
+01:14:23,990 --> 01:14:25,080
+to begin with.
+
+1495
+01:14:25,080 --> 01:14:28,330
+So it's 9 o'clock on the dot.
+
+1496
+01:14:28,330 --> 01:14:30,710
+I can take one or two
+questions, but then I
+
+1497
+01:14:30,710 --> 01:14:34,440
+know that Joe's
+going to shut me off.
+
+1498
+01:14:34,440 --> 01:14:37,460
+Any-- OK, one here.
+
+1499
+01:14:37,460 --> 01:14:40,750
+AUDIENCE: What are the
+usual terms on the vests
+
+1500
+01:14:40,750 --> 01:14:43,570
+with the original founders?
+
+1501
+01:14:43,570 --> 01:14:45,690
+CHARLIE TILLETT: I
+think over four years,
+
+1502
+01:14:45,690 --> 01:14:50,440
+what you might say-- so four
+years with quarterly vesting.
+
+1503
+01:14:50,440 --> 01:14:52,640
+I mean, you could do
+monthly, but I mean it really
+
+1504
+01:14:52,640 --> 01:14:54,330
+doesn't matter at that point.
+
+1505
+01:14:54,330 --> 01:15:00,010
+So four year vesting
+with 1/16 every quarter.
+
+1506
+01:15:00,010 --> 01:15:01,800
+Or you what you could
+say is, let's say
+
+1507
+01:15:01,800 --> 01:15:06,210
+you've been working
+together for a year,
+
+1508
+01:15:06,210 --> 01:15:09,520
+you say, everyone
+starts with 20% vested,
+
+1509
+01:15:09,520 --> 01:15:13,280
+and then the remaining
+80% vests over four years,
+
+1510
+01:15:13,280 --> 01:15:14,200
+or three years.
+
+1511
+01:15:14,200 --> 01:15:16,380
+Something like that,
+just so that someone
+
+1512
+01:15:16,380 --> 01:15:19,020
+doesn't get cold
+feet when they going
+
+1513
+01:15:19,020 --> 01:15:23,268
+starts to get tough and
+bail on the rest the team.
+
+1514
+01:15:23,268 --> 01:15:27,100
+AUDIENCE: So if they leave after
+two years, would they still get
+
+1515
+01:15:27,100 --> 01:15:29,834
+the part they had
+before, or would they--
+
+1516
+01:15:29,834 --> 01:15:30,750
+CHARLIE TILLETT: Yeah.
+
+1517
+01:15:30,750 --> 01:15:33,010
+So let's say you
+were going to get
+
+1518
+01:15:33,010 --> 01:15:35,730
+160,000 shares over four years.
+
+1519
+01:15:35,730 --> 01:15:38,930
+That would be $40,000 a
+year, or $10,000 a quarter.
+
+1520
+01:15:38,930 --> 01:15:41,600
+Every quarter, you vest $10,000.
+
+1521
+01:15:41,600 --> 01:15:45,170
+So if you leave after two years,
+you have your 80,000 shares,
+
+1522
+01:15:45,170 --> 01:15:48,600
+and you go, and they're yours.
+
+1523
+01:15:48,600 --> 01:15:53,845
+And the $80,000 that
+you didn't invest--
+
+1524
+01:15:53,845 --> 01:15:55,970
+look, if you thought it
+was going to be successful,
+
+1525
+01:15:55,970 --> 01:15:57,370
+you shouldn't be leaving.
+
+1526
+01:15:57,370 --> 01:16:00,995
+So you've left that,
+and those are gone.
+
+1527
+01:16:00,995 --> 01:16:02,578
+AUDIENCE: I was
+wondering if you could
+
+1528
+01:16:02,578 --> 01:16:04,161
+talk a little bit
+about the difference
+
+1529
+01:16:04,161 --> 01:16:06,554
+between the CEOs and the CFOs?
+
+1530
+01:16:06,554 --> 01:16:09,701
+First, the difference, B,
+whether a start-up needs
+
+1531
+01:16:09,701 --> 01:16:12,701
+a CFO at a very early
+stage, and the last part
+
+1532
+01:16:12,701 --> 01:16:15,631
+is, you know, who
+makes the decision?
+
+1533
+01:16:15,631 --> 01:16:18,130
+CHARLIE TILLETT: Well, look the
+CEO makes all the decisions.
+
+1534
+01:16:18,130 --> 01:16:21,173
+I serve at the
+pleasure of the CEO.
+
+1535
+01:16:21,173 --> 01:16:26,930
+But the CFO-- I
+think by the time
+
+1536
+01:16:26,930 --> 01:16:30,580
+you take your first
+venture money,
+
+1537
+01:16:30,580 --> 01:16:34,020
+first off you have the
+money to pay a CFO,
+
+1538
+01:16:34,020 --> 01:16:36,470
+and it will be money well spent.
+
+1539
+01:16:36,470 --> 01:16:39,600
+Because as I showed you, all
+those rounds of financing
+
+1540
+01:16:39,600 --> 01:16:44,340
+at Reveal, I can't tell
+you how much dilution
+
+1541
+01:16:44,340 --> 01:16:48,800
+I saved my founders
+by thinking ahead
+
+1542
+01:16:48,800 --> 01:16:51,960
+about what we needed to do.
+
+1543
+01:16:51,960 --> 01:16:58,300
+So I saved my salary and
+equity for him, you know,
+
+1544
+01:16:58,300 --> 01:17:00,860
+10 times over.
+
+1545
+01:17:00,860 --> 01:17:01,870
+But we did have a deal.
+
+1546
+01:17:01,870 --> 01:17:04,520
+For the very first
+year, I worked half time
+
+1547
+01:17:04,520 --> 01:17:06,060
+for half salary.
+
+1548
+01:17:06,060 --> 01:17:11,840
+And then, we agreed that as the
+company-- I was in a position
+
+1549
+01:17:11,840 --> 01:17:13,260
+where I could work half time.
+
+1550
+01:17:13,260 --> 01:17:16,080
+And so I think it's
+good to have-- maybe you
+
+1551
+01:17:16,080 --> 01:17:21,560
+have a mentor advisor for that
+first year and a controller.
+
+1552
+01:17:21,560 --> 01:17:26,210
+But the problem is, is that
+you really want someone,
+
+1553
+01:17:26,210 --> 01:17:28,260
+especially when you
+start raising money,
+
+1554
+01:17:28,260 --> 01:17:31,710
+you want someone who's been
+through the process before.
+
+1555
+01:17:31,710 --> 01:17:36,510
+And they will save
+you-- you know,
+
+1556
+01:17:36,510 --> 01:17:41,080
+an experienced person will
+save you a couple percent
+
+1557
+01:17:41,080 --> 01:17:43,100
+of dilution right off the bat.
+
+1558
+01:17:43,100 --> 01:17:44,130
+So what's that worth?
+
+1559
+01:17:44,130 --> 01:17:44,755
+It all depends.
+
+1560
+01:17:44,755 --> 01:17:48,650
+So you sell your company for
+$200 million, it's worth a lot.
+
+1561
+01:17:48,650 --> 01:17:51,227
+OK, maybe one more.
+
+1562
+01:17:51,227 --> 01:17:52,810
+Oh, looks like I've
+gotten everything.
+
+1563
+01:17:52,810 --> 01:17:53,900
+So thank you very much.
+
+1564
+01:17:53,900 --> 01:17:55,069
+[APPLAUSE]

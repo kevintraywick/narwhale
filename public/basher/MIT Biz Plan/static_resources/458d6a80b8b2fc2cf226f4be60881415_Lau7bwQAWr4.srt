@@ -1,0 +1,5937 @@
+1
+00:00:00,030 --> 00:00:02,400
+The following content is
+provided under a Creative
+
+2
+00:00:02,400 --> 00:00:03,780
+Commons license.
+
+3
+00:00:03,780 --> 00:00:06,020
+Your support will help
+MIT OpenCourseWare
+
+4
+00:00:06,020 --> 00:00:10,090
+continue to offer high quality
+educational resources for free.
+
+5
+00:00:10,090 --> 00:00:12,670
+To make a donation or to
+view additional materials
+
+6
+00:00:12,670 --> 00:00:16,580
+from hundreds of MIT courses,
+visit MIT OpenCourseWare
+
+7
+00:00:16,580 --> 00:00:17,255
+at ocw.mit.edu.
+
+8
+00:00:26,157 --> 00:00:27,990
+STEPHEN PEARSE: How
+many of you guys in here
+
+9
+00:00:27,990 --> 00:00:30,970
+think you might want to one
+day run your own company
+
+10
+00:00:30,970 --> 00:00:35,230
+or begin a startup?
+
+11
+00:00:35,230 --> 00:00:37,480
+The vast majority of you.
+
+12
+00:00:37,480 --> 00:00:38,630
+Good.
+
+13
+00:00:38,630 --> 00:00:42,500
+Remember that, because at
+the end of my presentation,
+
+14
+00:00:42,500 --> 00:00:45,030
+I'm going to give you guys
+an opportunity to begin
+
+15
+00:00:45,030 --> 00:00:46,730
+that process.
+
+16
+00:00:46,730 --> 00:00:54,540
+My name is Steve Pearse and
+my background, let's see.
+
+17
+00:00:54,540 --> 00:00:59,940
+Former CEO, entrepreneur,
+I am an angel investor.
+
+18
+00:00:59,940 --> 00:01:04,280
+I work with venture capital
+companies as a litmus test.
+
+19
+00:01:04,280 --> 00:01:06,820
+If I like it, they
+might like it too.
+
+20
+00:01:06,820 --> 00:01:10,420
+And I advise CEOs and startups.
+
+21
+00:01:10,420 --> 00:01:15,457
+I live in Colorado, Florida,
+I used to live here full-time,
+
+22
+00:01:15,457 --> 00:01:16,540
+now I just come and visit.
+
+23
+00:01:19,050 --> 00:01:23,740
+So my specialty and background,
+primarily telecommunications,
+
+24
+00:01:23,740 --> 00:01:28,770
+IT, and as of late, the last
+10 years or so, health science.
+
+25
+00:01:28,770 --> 00:01:32,790
+I've bought companies,
+I have sold companies.
+
+26
+00:01:32,790 --> 00:01:37,160
+I have raised over $250
+million over six rounds,
+
+27
+00:01:37,160 --> 00:01:41,600
+and my background is kind
+of up through the ranks.
+
+28
+00:01:41,600 --> 00:01:44,890
+AT&T, then I became
+chief engineer at Sprint,
+
+29
+00:01:44,890 --> 00:01:48,890
+ran operations and started
+Time Warner Telecom,
+
+30
+00:01:48,890 --> 00:01:53,490
+I ran a wireless company, was an
+executive vice president at Bay
+
+31
+00:01:53,490 --> 00:01:57,320
+Networks, merged into
+Nortel in a successful sale
+
+32
+00:01:57,320 --> 00:01:59,230
+for $7 billion.
+
+33
+00:01:59,230 --> 00:02:02,090
+And then I did my own
+startup in Silicon Valley,
+
+34
+00:02:02,090 --> 00:02:04,440
+and that was cool.
+
+35
+00:02:04,440 --> 00:02:08,949
+That, I came in when we
+were valued at $18 million,
+
+36
+00:02:08,949 --> 00:02:14,740
+and we sold for $2.7 billion
+less than a year and a half-ish
+
+37
+00:02:14,740 --> 00:02:16,460
+later.
+
+38
+00:02:16,460 --> 00:02:18,910
+Those were the days.
+
+39
+00:02:18,910 --> 00:02:21,070
+You might think
+that was a bubble.
+
+40
+00:02:21,070 --> 00:02:21,920
+Guess what?
+
+41
+00:02:21,920 --> 00:02:24,080
+There's always a bubble.
+
+42
+00:02:24,080 --> 00:02:25,370
+There's always a bubble.
+
+43
+00:02:25,370 --> 00:02:28,270
+Look what's happening now with
+Twitter and social networking.
+
+44
+00:02:28,270 --> 00:02:29,960
+There's always a bubble.
+
+45
+00:02:29,960 --> 00:02:33,960
+Your challenge is to find
+how can I make my own bubble,
+
+46
+00:02:33,960 --> 00:02:35,880
+or where is the next
+bubble going to be.
+
+47
+00:02:35,880 --> 00:02:38,510
+Your challenge is to
+be a hockey player
+
+48
+00:02:38,510 --> 00:02:43,230
+and skate to where the
+puck is going to be,
+
+49
+00:02:43,230 --> 00:02:45,730
+not where it is now,
+because you're too late.
+
+50
+00:02:45,730 --> 00:02:49,040
+Where do you think that next
+big event is going to happen?
+
+51
+00:02:49,040 --> 00:02:49,956
+That's your challenge.
+
+52
+00:02:56,620 --> 00:02:59,030
+The startup.
+
+53
+00:02:59,030 --> 00:03:03,100
+And these statistics
+are about right.
+
+54
+00:03:03,100 --> 00:03:05,860
+Some might say
+I'm over-generous,
+
+55
+00:03:05,860 --> 00:03:09,970
+but out of every 10 startups,
+maybe one will succeed.
+
+56
+00:03:09,970 --> 00:03:12,400
+Kawasaki will say one out of 20.
+
+57
+00:03:12,400 --> 00:03:14,050
+But one out of 10 will succeed.
+
+58
+00:03:14,050 --> 00:03:15,394
+What's a success?
+
+59
+00:03:15,394 --> 00:03:18,470
+Success is, if
+you're an investor,
+
+60
+00:03:18,470 --> 00:03:21,230
+you make at least 10x.
+
+61
+00:03:21,230 --> 00:03:24,600
+The investor really
+wants 100x, and they're
+
+62
+00:03:24,600 --> 00:03:27,760
+going to gun for that,
+but they'll take 10x.
+
+63
+00:03:27,760 --> 00:03:30,180
+They want something that's
+going to make-- it's called,
+
+64
+00:03:30,180 --> 00:03:33,220
+hey this company, thanks,
+Steve, you made the fund.
+
+65
+00:03:33,220 --> 00:03:34,880
+What does that mean,
+I made the fund?
+
+66
+00:03:34,880 --> 00:03:37,260
+They've got a fund, they have
+a lot of private investors
+
+67
+00:03:37,260 --> 00:03:40,540
+give them their money,
+they invest that money,
+
+68
+00:03:40,540 --> 00:03:44,600
+and they want all that
+money back, plus more
+
+69
+00:03:44,600 --> 00:03:46,390
+to the investors.
+
+70
+00:03:46,390 --> 00:03:49,330
+If you have a $100
+million fund, you've
+
+71
+00:03:49,330 --> 00:03:53,470
+got to give that $100 million
+back or you're a failure.
+
+72
+00:03:53,470 --> 00:03:58,290
+You really want to give $200
+million back, $400 million
+
+73
+00:03:58,290 --> 00:03:58,790
+back.
+
+74
+00:03:58,790 --> 00:04:00,830
+You want to give
+much, much, much more,
+
+75
+00:04:00,830 --> 00:04:02,360
+and as a venture
+capitalist, you get
+
+76
+00:04:02,360 --> 00:04:05,200
+to pocket an even
+bigger percentage
+
+77
+00:04:05,200 --> 00:04:08,760
+than your limited partners
+or investors will take.
+
+78
+00:04:08,760 --> 00:04:12,810
+So they want a 10x company
+that makes the fund.
+
+79
+00:04:12,810 --> 00:04:18,000
+So 10 companies, they want one
+to be a factor of 10 better.
+
+80
+00:04:18,000 --> 00:04:22,320
+Three out of 10-ish might
+yield a moderate return.
+
+81
+00:04:22,320 --> 00:04:23,460
+What's a moderate return?
+
+82
+00:04:23,460 --> 00:04:27,630
+Maybe 2 to 4x in
+four to seven years.
+
+83
+00:04:27,630 --> 00:04:30,190
+And you really want
+to be shutting down
+
+84
+00:04:30,190 --> 00:04:32,620
+the fund in about seven years.
+
+85
+00:04:32,620 --> 00:04:35,330
+Sometimes it happens,
+sometimes it doesn't.
+
+86
+00:04:35,330 --> 00:04:39,610
+And then six are failures,
+completely shut down.
+
+87
+00:04:39,610 --> 00:04:43,360
+So that's the odds
+you're facing here.
+
+88
+00:04:43,360 --> 00:04:46,930
+You might think, oh
+God, if I do this,
+
+89
+00:04:46,930 --> 00:04:51,900
+chances are I'm not going to
+be a success, a big success.
+
+90
+00:04:51,900 --> 00:04:57,020
+That's fine, because
+investors know these odds,
+
+91
+00:04:57,020 --> 00:05:01,280
+and if you come from a failure
+or two, there's no problem.
+
+92
+00:05:01,280 --> 00:05:04,080
+As long as you did
+a good job, you
+
+93
+00:05:04,080 --> 00:05:06,650
+learn from the
+failures or mistake.
+
+94
+00:05:06,650 --> 00:05:09,250
+Maybe it was just the wrong
+bid at the wrong time.
+
+95
+00:05:09,250 --> 00:05:12,280
+But they're not afraid
+of reinvesting in people
+
+96
+00:05:12,280 --> 00:05:13,582
+who have done this a few times.
+
+97
+00:05:13,582 --> 00:05:14,540
+And look at the Valley.
+
+98
+00:05:14,540 --> 00:05:16,720
+You have people
+skip companies right
+
+99
+00:05:16,720 --> 00:05:17,960
+and left all over the place.
+
+100
+00:05:17,960 --> 00:05:21,630
+So long history of backgrounds.
+
+101
+00:05:21,630 --> 00:05:23,980
+OK.
+
+102
+00:05:23,980 --> 00:05:26,160
+Why do a startup?
+
+103
+00:05:26,160 --> 00:05:28,600
+I mean, what's the game here?
+
+104
+00:05:28,600 --> 00:05:32,700
+What are you trying to play?
+
+105
+00:05:32,700 --> 00:05:36,920
+Well, if you do a startup, and
+you get money from investors,
+
+106
+00:05:36,920 --> 00:05:39,680
+you have to be able to exit.
+
+107
+00:05:39,680 --> 00:05:40,690
+And what is an exit?
+
+108
+00:05:40,690 --> 00:05:44,490
+You have to either go
+public or get sold.
+
+109
+00:05:44,490 --> 00:05:45,590
+That's an exit.
+
+110
+00:05:45,590 --> 00:05:47,020
+Why is going public an exit?
+
+111
+00:05:47,020 --> 00:05:50,360
+Because finally, I can
+cash out the stocks
+
+112
+00:05:50,360 --> 00:05:52,600
+that I bought from
+you a long time ago.
+
+113
+00:05:52,600 --> 00:05:54,850
+Your investors want
+their money back.
+
+114
+00:05:54,850 --> 00:05:57,160
+If you're interested in
+running a mom and pop
+
+115
+00:05:57,160 --> 00:05:59,470
+business with a cool
+idea and cool technology,
+
+116
+00:05:59,470 --> 00:06:02,940
+no one's going to invest
+in it except family.
+
+117
+00:06:02,940 --> 00:06:03,660
+Why?
+
+118
+00:06:03,660 --> 00:06:05,826
+Because they're never going
+to get their money back.
+
+119
+00:06:05,826 --> 00:06:08,090
+It's not a liquid asset.
+
+120
+00:06:08,090 --> 00:06:14,220
+So you have to plan on going
+public or getting sold.
+
+121
+00:06:14,220 --> 00:06:18,790
+If you're a technology company--
+and by the way, officially,
+
+122
+00:06:18,790 --> 00:06:23,880
+the answer is always
+I'm going public.
+
+123
+00:06:23,880 --> 00:06:25,020
+I'm not going to sell.
+
+124
+00:06:25,020 --> 00:06:26,750
+Never going to sell.
+
+125
+00:06:26,750 --> 00:06:30,210
+I'm going to run this thing
+forever, hand it off to the--
+
+126
+00:06:30,210 --> 00:06:32,380
+why do you have to say that?
+
+127
+00:06:32,380 --> 00:06:37,120
+Why do you have to say we're
+not going to get acquired?
+
+128
+00:06:37,120 --> 00:06:41,060
+Because if you say I'm going to
+get acquired, you're not in it.
+
+129
+00:06:41,060 --> 00:06:42,510
+Your heart's not in it.
+
+130
+00:06:42,510 --> 00:06:45,850
+You're looking for a
+trick, a magic pony,
+
+131
+00:06:45,850 --> 00:06:48,140
+I want to sell this puppy,
+I'm going to make a buck,
+
+132
+00:06:48,140 --> 00:06:51,497
+and I don't want to-- I want
+to sell it and make money
+
+133
+00:06:51,497 --> 00:06:52,080
+and that's it.
+
+134
+00:06:52,080 --> 00:06:52,871
+No, no, no, no, no.
+
+135
+00:06:52,871 --> 00:06:55,370
+You can't say that.
+
+136
+00:06:55,370 --> 00:06:59,120
+You say that and no one's
+going to give you a penny.
+
+137
+00:06:59,120 --> 00:07:02,010
+So you're always going public.
+
+138
+00:07:02,010 --> 00:07:04,000
+But why would a company
+ever want to buy you,
+
+139
+00:07:04,000 --> 00:07:07,540
+just in case they
+wanted to buy you?
+
+140
+00:07:07,540 --> 00:07:09,650
+Bay Networks.
+
+141
+00:07:09,650 --> 00:07:12,570
+At one time, Bay Networks
+was bigger than Cisco.
+
+142
+00:07:12,570 --> 00:07:15,860
+Bay built routers.
+
+143
+00:07:15,860 --> 00:07:18,080
+Internet IP routers.
+
+144
+00:07:18,080 --> 00:07:22,800
+And I ran the internet and
+telecom business group.
+
+145
+00:07:22,800 --> 00:07:27,670
+And we built blades to replace
+the old technology that
+
+146
+00:07:27,670 --> 00:07:30,750
+was maybe 10 megabits a second.
+
+147
+00:07:30,750 --> 00:07:34,980
+We had to come out with 100
+megabit a second, and then gig,
+
+148
+00:07:34,980 --> 00:07:36,470
+and play that game.
+
+149
+00:07:36,470 --> 00:07:38,300
+Different interfaces.
+
+150
+00:07:38,300 --> 00:07:41,540
+And my team was a good team.
+
+151
+00:07:41,540 --> 00:07:46,830
+We could build a blade
+in about 18 months.
+
+152
+00:07:46,830 --> 00:07:48,560
+That was pretty good.
+
+153
+00:07:48,560 --> 00:07:52,550
+People working maybe
+9:00-5:00, 9:00-6:00.
+
+154
+00:07:52,550 --> 00:07:56,450
+Good engineers, teamwork,
+meetings, stuff like that.
+
+155
+00:07:56,450 --> 00:07:59,620
+A startup can do
+that in nine months.
+
+156
+00:07:59,620 --> 00:08:03,490
+And nine months' delta in
+a new product introduction
+
+157
+00:08:03,490 --> 00:08:07,440
+can spell the difference
+between failure and success
+
+158
+00:08:07,440 --> 00:08:08,170
+in this business.
+
+159
+00:08:10,750 --> 00:08:14,100
+I could not afford to
+build a new blade that
+
+160
+00:08:14,100 --> 00:08:18,730
+goes into my rack and
+sell it to my customers,
+
+161
+00:08:18,730 --> 00:08:22,300
+sometimes, if I can
+only do it in 18 months.
+
+162
+00:08:22,300 --> 00:08:25,250
+If I have another
+company start advertising
+
+163
+00:08:25,250 --> 00:08:27,440
+and have a good marketing
+person and they're
+
+164
+00:08:27,440 --> 00:08:30,510
+telling the industry analysts
+and all the industry rags,
+
+165
+00:08:30,510 --> 00:08:31,940
+hey we got this new widget.
+
+166
+00:08:31,940 --> 00:08:34,799
+And it's got 100 megabits now.
+
+167
+00:08:34,799 --> 00:08:37,730
+And we're selling and
+customers love it.
+
+168
+00:08:37,730 --> 00:08:40,100
+I have to do a make
+or buy decision.
+
+169
+00:08:40,100 --> 00:08:42,030
+I may interrupt my development.
+
+170
+00:08:42,030 --> 00:08:45,920
+I may say, finance,
+go strike a deal.
+
+171
+00:08:45,920 --> 00:08:48,160
+Let's buy this company quickly.
+
+172
+00:08:48,160 --> 00:08:50,360
+And Bay did that all the time.
+
+173
+00:08:50,360 --> 00:08:54,170
+I bought a bunch of
+startups, hot startups
+
+174
+00:08:54,170 --> 00:08:56,490
+for internet dial-in modems.
+
+175
+00:08:56,490 --> 00:08:59,390
+That was big time
+back in the '90s.
+
+176
+00:08:59,390 --> 00:09:03,620
+So you had a box that was 10
+times smaller, faster, cheaper,
+
+177
+00:09:03,620 --> 00:09:07,100
+all that stuff, using
+chips that just came off
+
+178
+00:09:07,100 --> 00:09:09,829
+the line from Intel
+or TI or whatever,
+
+179
+00:09:09,829 --> 00:09:11,620
+and you can build
+something in nine months,
+
+180
+00:09:11,620 --> 00:09:13,710
+I'd buy that company.
+
+181
+00:09:13,710 --> 00:09:17,190
+That's a great example
+of how you can go out,
+
+182
+00:09:17,190 --> 00:09:21,080
+take the state-of-the-art
+today, the latest chip sets,
+
+183
+00:09:21,080 --> 00:09:25,050
+build it smarter
+smaller, faster,
+
+184
+00:09:25,050 --> 00:09:28,030
+all these nice characteristics,
+and sell your company.
+
+185
+00:09:28,030 --> 00:09:31,040
+And you can do it over
+and over and over again.
+
+186
+00:09:31,040 --> 00:09:33,160
+Why can you do
+that as a startup?
+
+187
+00:09:33,160 --> 00:09:35,490
+Why can't big companies do that?
+
+188
+00:09:35,490 --> 00:09:39,870
+Because you're
+working for stock.
+
+189
+00:09:39,870 --> 00:09:42,590
+You're not working
+for a promotion,
+
+190
+00:09:42,590 --> 00:09:44,620
+you're not working
+for a lot of things
+
+191
+00:09:44,620 --> 00:09:46,430
+big companies' people work for.
+
+192
+00:09:46,430 --> 00:09:48,280
+A nice stable lifestyle.
+
+193
+00:09:48,280 --> 00:09:51,840
+You're willing to work until
+midnight and bring in pizza.
+
+194
+00:09:51,840 --> 00:09:57,130
+The CEO, when I was a CEO, I'd
+bring in Chinese just to entice
+
+195
+00:09:57,130 --> 00:10:00,670
+people, please stay
+longer and work harder.
+
+196
+00:10:00,670 --> 00:10:02,740
+Because everybody's
+working for the same thing.
+
+197
+00:10:02,740 --> 00:10:04,080
+Everybody wants to get rich.
+
+198
+00:10:04,080 --> 00:10:06,590
+Everybody wants stock.
+
+199
+00:10:06,590 --> 00:10:07,893
+It's a great unifier.
+
+200
+00:10:11,340 --> 00:10:13,960
+It is the enticement
+that makes everybody
+
+201
+00:10:13,960 --> 00:10:16,360
+think along the same way.
+
+202
+00:10:16,360 --> 00:10:19,850
+When I was at AT&T,
+everybody wanted
+
+203
+00:10:19,850 --> 00:10:24,080
+to make you look bad so
+they might step on you
+
+204
+00:10:24,080 --> 00:10:26,940
+and get another
+$5,000 raise, or maybe
+
+205
+00:10:26,940 --> 00:10:29,750
+run the department
+with five more people.
+
+206
+00:10:29,750 --> 00:10:31,880
+That's big company mentality.
+
+207
+00:10:31,880 --> 00:10:34,620
+Startups were such
+a great cleanse
+
+208
+00:10:34,620 --> 00:10:37,070
+when I left the big
+corporate environment
+
+209
+00:10:37,070 --> 00:10:38,779
+and went to the startup world.
+
+210
+00:10:38,779 --> 00:10:40,320
+That's what we're
+talking about here.
+
+211
+00:10:40,320 --> 00:10:42,824
+That's the taste of what
+could be your future.
+
+212
+00:10:47,440 --> 00:10:51,350
+OK, getting money.
+
+213
+00:10:51,350 --> 00:10:53,310
+Signal to noise.
+
+214
+00:10:53,310 --> 00:10:55,100
+Signal to noise.
+
+215
+00:10:55,100 --> 00:10:58,400
+Do you know how much noise
+is out there that you're
+
+216
+00:10:58,400 --> 00:11:02,470
+going to be fighting against,
+if you want attention
+
+217
+00:11:02,470 --> 00:11:03,380
+as a startup?
+
+218
+00:11:03,380 --> 00:11:07,310
+If you want attention
+from a VC or an angel,
+
+219
+00:11:07,310 --> 00:11:12,000
+you're wading through a
+tremendous amount of noise.
+
+220
+00:11:12,000 --> 00:11:16,456
+Your signal has to
+be muy powerful.
+
+221
+00:11:16,456 --> 00:11:17,830
+And we're going
+to talk about how
+
+222
+00:11:17,830 --> 00:11:20,190
+to make your signal
+very powerful,
+
+223
+00:11:20,190 --> 00:11:22,130
+and punching through that noise.
+
+224
+00:11:22,130 --> 00:11:25,530
+Because you've got to go out
+and grab people by the neck,
+
+225
+00:11:25,530 --> 00:11:30,140
+shake them, and make them
+listen to your pitch.
+
+226
+00:11:30,140 --> 00:11:33,460
+So, this is a terrible
+elevator pitch,
+
+227
+00:11:33,460 --> 00:11:37,810
+but it's the elements of what
+you want to be looking for.
+
+228
+00:11:37,810 --> 00:11:39,220
+I'm going to paraphrase.
+
+229
+00:11:39,220 --> 00:11:42,190
+For this huge,
+great target market
+
+230
+00:11:42,190 --> 00:11:46,060
+who really hate the
+stuff they're using now,
+
+231
+00:11:46,060 --> 00:11:51,620
+our thermostat is a new
+[? Heigelberg ?] category
+
+232
+00:11:51,620 --> 00:11:55,750
+that provides all your solutions
+you've been looking for.
+
+233
+00:11:55,750 --> 00:11:59,700
+Unlike the bozos who
+we're competing against,
+
+234
+00:11:59,700 --> 00:12:03,250
+we have assembled
+incredible, groundbreaking
+
+235
+00:12:03,250 --> 00:12:07,569
+technology that is going
+to be ready in six months.
+
+236
+00:12:07,569 --> 00:12:09,860
+Essentially, that's kind of
+what you want to be saying.
+
+237
+00:12:09,860 --> 00:12:12,110
+You have to have all these
+elements in your elevator
+
+238
+00:12:12,110 --> 00:12:13,980
+pitch.
+
+239
+00:12:13,980 --> 00:12:18,130
+And say it a lot better
+than this format up here.
+
+240
+00:12:18,130 --> 00:12:20,120
+That's what you need to do.
+
+241
+00:12:20,120 --> 00:12:22,950
+I'd like you to start
+thinking about filling
+
+242
+00:12:22,950 --> 00:12:26,040
+in the blanks for
+your ideas now.
+
+243
+00:12:26,040 --> 00:12:29,790
+Whether or not it's a real
+product or technology,
+
+244
+00:12:29,790 --> 00:12:31,320
+or something you
+think, hey, this
+
+245
+00:12:31,320 --> 00:12:33,760
+would be cool if I
+could ever do this.
+
+246
+00:12:33,760 --> 00:12:38,260
+Think about how
+you would say this.
+
+247
+00:12:38,260 --> 00:12:41,870
+Because that's the elevator
+pitch and will determine
+
+248
+00:12:41,870 --> 00:12:45,120
+your readiness to do a startup.
+
+249
+00:12:45,120 --> 00:12:47,850
+Your readiness to get money.
+
+250
+00:12:47,850 --> 00:12:51,760
+You've got really one shot,
+because once a venture
+
+251
+00:12:51,760 --> 00:12:55,320
+capitalist has seen your face,
+and you've said a few words,
+
+252
+00:12:55,320 --> 00:12:57,212
+they're either
+thinking right away,
+
+253
+00:12:57,212 --> 00:12:59,420
+I'm going to go ahead and
+listen to the rest of this,
+
+254
+00:12:59,420 --> 00:13:03,800
+or you're having trouble
+here, and then you're gone.
+
+255
+00:13:03,800 --> 00:13:04,810
+Why?
+
+256
+00:13:04,810 --> 00:13:05,900
+Too much noise.
+
+257
+00:13:05,900 --> 00:13:09,360
+They see thousands of pitches
+and thousands of people,
+
+258
+00:13:09,360 --> 00:13:13,250
+and they have to quickly-- it's
+almost neuronally implanted.
+
+259
+00:13:13,250 --> 00:13:17,610
+They can very quickly determine
+whether you're worth it or not.
+
+260
+00:13:17,610 --> 00:13:20,420
+So that's why it's important
+to rehearse this stuff
+
+261
+00:13:20,420 --> 00:13:21,501
+and get it down right.
+
+262
+00:13:24,530 --> 00:13:26,302
+Everybody's maybe heard this.
+
+263
+00:13:26,302 --> 00:13:28,260
+I didn't have time to
+write you a short letter,
+
+264
+00:13:28,260 --> 00:13:31,530
+so I wrote you a long one.
+
+265
+00:13:31,530 --> 00:13:32,880
+What does that mean?
+
+266
+00:13:32,880 --> 00:13:37,470
+It means you've got to
+be super, super crisp.
+
+267
+00:13:37,470 --> 00:13:39,340
+You've got to be able
+to say what you're
+
+268
+00:13:39,340 --> 00:13:41,900
+going to say and enunciate it.
+
+269
+00:13:41,900 --> 00:13:45,900
+Grab them-- you have to hit
+him over the head with a hammer
+
+270
+00:13:45,900 --> 00:13:46,950
+with what you're saying.
+
+271
+00:13:46,950 --> 00:13:50,470
+It's got to be so compelling.
+
+272
+00:13:50,470 --> 00:13:53,210
+We'll talk more about
+that, but you really
+
+273
+00:13:53,210 --> 00:13:56,240
+got to capture their attention.
+
+274
+00:13:56,240 --> 00:13:59,020
+And then Jeffrey Moore.
+
+275
+00:14:03,280 --> 00:14:05,360
+What do you mean, you
+have to induce greed?
+
+276
+00:14:05,360 --> 00:14:07,190
+Greed doesn't sound good.
+
+277
+00:14:07,190 --> 00:14:12,690
+Well, when you go to the store
+and you see something on sale,
+
+278
+00:14:12,690 --> 00:14:14,190
+what are you thinking?
+
+279
+00:14:14,190 --> 00:14:16,710
+You're thinking that's on sale.
+
+280
+00:14:16,710 --> 00:14:17,510
+Do I need it?
+
+281
+00:14:17,510 --> 00:14:18,490
+I don't know.
+
+282
+00:14:18,490 --> 00:14:22,280
+Maybe I should buy it
+now while it's on sale.
+
+283
+00:14:22,280 --> 00:14:25,760
+You're inducing
+spontaneous greed
+
+284
+00:14:25,760 --> 00:14:30,490
+when you buy something for
+sale, because it's a good deal.
+
+285
+00:14:30,490 --> 00:14:32,290
+Might not be there later.
+
+286
+00:14:32,290 --> 00:14:35,740
+You have to induce greed on the
+part of your investors venture
+
+287
+00:14:35,740 --> 00:14:40,020
+catalysts or angel
+investors, even family.
+
+288
+00:14:40,020 --> 00:14:43,100
+You have to say I'm on
+to something really big.
+
+289
+00:14:43,100 --> 00:14:44,050
+Really, really big.
+
+290
+00:14:44,050 --> 00:14:46,780
+This is going to be
+huge, and you need
+
+291
+00:14:46,780 --> 00:14:49,720
+to think about investing now.
+
+292
+00:14:49,720 --> 00:14:51,740
+You have to get
+that greed going,
+
+293
+00:14:51,740 --> 00:14:54,950
+and that greed has to be started
+from the very first elevator
+
+294
+00:14:54,950 --> 00:14:55,730
+pitch.
+
+295
+00:14:55,730 --> 00:14:57,170
+And really, a good
+elevator pitch
+
+296
+00:14:57,170 --> 00:14:58,760
+isn't what I just said up here.
+
+297
+00:14:58,760 --> 00:15:00,820
+A good elevator pitch
+starts with a hook.
+
+298
+00:15:00,820 --> 00:15:05,510
+And we're going to talk about
+that hook a little bit later.
+
+299
+00:15:05,510 --> 00:15:07,250
+The pitch.
+
+300
+00:15:07,250 --> 00:15:08,430
+Keep it simple.
+
+301
+00:15:08,430 --> 00:15:10,510
+Keep it simple and stupid.
+
+302
+00:15:10,510 --> 00:15:12,450
+Keep it really, really simple.
+
+303
+00:15:12,450 --> 00:15:14,800
+No matter how simple
+you think your pitch is,
+
+304
+00:15:14,800 --> 00:15:20,445
+no matter how easy and clear
+you think you are, you're not.
+
+305
+00:15:20,445 --> 00:15:22,800
+You're not being clear enough.
+
+306
+00:15:22,800 --> 00:15:25,250
+You need to really dumb it down.
+
+307
+00:15:25,250 --> 00:15:26,360
+Like third grade.
+
+308
+00:15:26,360 --> 00:15:28,784
+You need to be able to
+explain it to a third grader.
+
+309
+00:15:28,784 --> 00:15:30,450
+If you can explain
+it to a third grader,
+
+310
+00:15:30,450 --> 00:15:32,190
+you're doing a good job.
+
+311
+00:15:32,190 --> 00:15:35,820
+Don't worry about coming
+across as too simplistic.
+
+312
+00:15:35,820 --> 00:15:38,970
+They'll pull you up
+to a different level
+
+313
+00:15:38,970 --> 00:15:42,327
+if they need to, like, let's
+talk more about the technology,
+
+314
+00:15:42,327 --> 00:15:43,910
+let's get into the
+weeds a little bit.
+
+315
+00:15:43,910 --> 00:15:47,210
+But if you lose them early on
+by being too technical or too
+
+316
+00:15:47,210 --> 00:15:49,230
+complex, you're gone.
+
+317
+00:15:49,230 --> 00:15:52,130
+They won't give you the chance
+of explaining yourself later,
+
+318
+00:15:52,130 --> 00:15:54,540
+because you weren't able
+to communicate effectively
+
+319
+00:15:54,540 --> 00:15:57,330
+up front.
+
+320
+00:15:57,330 --> 00:16:05,980
+This hook is kind of like a pain
+point, or a statement of greed.
+
+321
+00:16:05,980 --> 00:16:09,870
+You have to say something
+that is so exciting, they're
+
+322
+00:16:09,870 --> 00:16:12,520
+going to stop what they're doing
+and continue to listen to you,
+
+323
+00:16:12,520 --> 00:16:13,894
+because I've never
+heard of that.
+
+324
+00:16:13,894 --> 00:16:16,020
+How is that possible?
+
+325
+00:16:16,020 --> 00:16:17,480
+Think about your
+target audience.
+
+326
+00:16:17,480 --> 00:16:19,260
+Is your target
+audience technical?
+
+327
+00:16:19,260 --> 00:16:21,894
+Is your target audience
+a lay consumer?
+
+328
+00:16:21,894 --> 00:16:24,060
+Is it the financial analysts
+who don't know anything
+
+329
+00:16:24,060 --> 00:16:27,340
+about technology, they want to
+hear about money and numbers.
+
+330
+00:16:27,340 --> 00:16:30,220
+You need to really understand
+who your target audience is.
+
+331
+00:16:30,220 --> 00:16:32,350
+If the eyes start to
+glaze over, you failed.
+
+332
+00:16:32,350 --> 00:16:33,780
+You didn't do your homework.
+
+333
+00:16:33,780 --> 00:16:35,810
+You didn't understand
+who your audience was.
+
+334
+00:16:35,810 --> 00:16:37,290
+Talk to them on their level.
+
+335
+00:16:37,290 --> 00:16:38,770
+That makes them excited.
+
+336
+00:16:38,770 --> 00:16:42,500
+Everybody's listening to
+you, greedy for something.
+
+337
+00:16:42,500 --> 00:16:45,320
+Give them what they want.
+
+338
+00:16:45,320 --> 00:16:49,300
+And if you're in a room
+of different people,
+
+339
+00:16:49,300 --> 00:16:53,900
+change your pitch to the
+lowest common denominator
+
+340
+00:16:53,900 --> 00:16:57,620
+You might have a room full of
+VCs and a couple of junior VCs.
+
+341
+00:16:57,620 --> 00:17:01,340
+If one of the
+partners in the room
+
+342
+00:17:01,340 --> 00:17:04,220
+is not from this
+industry at all,
+
+343
+00:17:04,220 --> 00:17:07,960
+you need to lower it down
+to that person's level,
+
+344
+00:17:07,960 --> 00:17:09,859
+because if you lose
+that person, they're
+
+345
+00:17:09,859 --> 00:17:11,150
+going to blackball you later.
+
+346
+00:17:11,150 --> 00:17:14,042
+They're going to
+say, they lost me.
+
+347
+00:17:14,042 --> 00:17:15,750
+They weren't able to
+communicate with me.
+
+348
+00:17:15,750 --> 00:17:17,099
+I don't like them.
+
+349
+00:17:17,099 --> 00:17:20,940
+So be sure, when you're
+scanning the room,
+
+350
+00:17:20,940 --> 00:17:23,390
+or before you even
+walk into the room,
+
+351
+00:17:23,390 --> 00:17:27,609
+get a list of who
+the VCs may attend,
+
+352
+00:17:27,609 --> 00:17:31,790
+what their backgrounds are,
+what companies they work for.
+
+353
+00:17:31,790 --> 00:17:34,220
+If you can connect
+with any of them
+
+354
+00:17:34,220 --> 00:17:36,950
+by their past history
+with a person or a company
+
+355
+00:17:36,950 --> 00:17:39,680
+that you're familiar
+with, bring it in.
+
+356
+00:17:39,680 --> 00:17:42,730
+Say, by the way, I happen to
+know you were from Nortel.
+
+357
+00:17:42,730 --> 00:17:44,550
+Did you know so and so?
+
+358
+00:17:44,550 --> 00:17:47,150
+Try to engage that person.
+
+359
+00:17:47,150 --> 00:17:50,910
+But bring it down to the
+lowest common denominator.
+
+360
+00:17:50,910 --> 00:17:54,730
+The whizzes in the room will
+try to bring you back up,
+
+361
+00:17:54,730 --> 00:17:56,314
+but always try to
+remember there's
+
+362
+00:17:56,314 --> 00:17:57,980
+one or two people who
+may not understand
+
+363
+00:17:57,980 --> 00:18:00,880
+what you're talking about.
+
+364
+00:18:00,880 --> 00:18:04,060
+Joe's already
+covered 10, 20, 30.
+
+365
+00:18:04,060 --> 00:18:06,520
+But really, 20 minutes.
+
+366
+00:18:06,520 --> 00:18:07,080
+20 minutes?
+
+367
+00:18:07,080 --> 00:18:09,290
+They gave me an hour.
+
+368
+00:18:09,290 --> 00:18:12,000
+Why do I need to make
+this a 20-minute pitch?
+
+369
+00:18:12,000 --> 00:18:14,530
+Well, for two reasons.
+
+370
+00:18:14,530 --> 00:18:16,040
+One, they're going
+to have trouble--
+
+371
+00:18:16,040 --> 00:18:18,330
+you're going to have trouble
+getting your presentation
+
+372
+00:18:18,330 --> 00:18:20,580
+to work with the AV equipment.
+
+373
+00:18:20,580 --> 00:18:22,450
+That's going to
+eat up some time.
+
+374
+00:18:22,450 --> 00:18:25,010
+But realistically, you're
+going to be interrupted
+
+375
+00:18:25,010 --> 00:18:26,860
+over and over and over again.
+
+376
+00:18:26,860 --> 00:18:30,420
+People will drag you
+into minutia and detail.
+
+377
+00:18:30,420 --> 00:18:32,840
+You need to fight
+that and resist that,
+
+378
+00:18:32,840 --> 00:18:34,530
+but you'll be stopped.
+
+379
+00:18:34,530 --> 00:18:38,700
+And you'll never get through
+your 20-minute pitch.
+
+380
+00:18:38,700 --> 00:18:40,420
+That hour will go
+just like that.
+
+381
+00:18:40,420 --> 00:18:43,820
+So you really have to make it,
+if you're pitching it alone
+
+382
+00:18:43,820 --> 00:18:46,320
+in a room, no more
+than 20 minutes.
+
+383
+00:18:46,320 --> 00:18:50,000
+It will expand to the full hour.
+
+384
+00:18:50,000 --> 00:18:52,720
+Use pictures.
+
+385
+00:18:52,720 --> 00:18:54,300
+Seriously, use pictures.
+
+386
+00:18:54,300 --> 00:18:56,400
+There's nothing more boring
+than this right here.
+
+387
+00:19:01,160 --> 00:19:03,620
+There's always
+somebody in the room,
+
+388
+00:19:03,620 --> 00:19:07,790
+whether it's angels or a
+venture capital partnership,
+
+389
+00:19:07,790 --> 00:19:11,460
+someone in the room who
+wants to show off they
+
+390
+00:19:11,460 --> 00:19:13,220
+know more than you do.
+
+391
+00:19:13,220 --> 00:19:14,640
+That's not going to work.
+
+392
+00:19:14,640 --> 00:19:16,150
+We did that three years ago.
+
+393
+00:19:16,150 --> 00:19:18,050
+It was a failure.
+
+394
+00:19:18,050 --> 00:19:21,990
+Or, wait a minute.
+
+395
+00:19:21,990 --> 00:19:23,890
+The neural resistance,
+I thought was
+
+396
+00:19:23,890 --> 00:19:25,150
+going to be higher than that.
+
+397
+00:19:25,150 --> 00:19:26,970
+You need to defend that.
+
+398
+00:19:26,970 --> 00:19:31,440
+You're always going to be
+teased into a rat hole.
+
+399
+00:19:31,440 --> 00:19:32,992
+Here, follow me
+into this rat hole,
+
+400
+00:19:32,992 --> 00:19:34,700
+let's run around,
+waste everybody's time,
+
+401
+00:19:34,700 --> 00:19:37,150
+and then you're going
+to be asked to leave.
+
+402
+00:19:37,150 --> 00:19:39,140
+Don't fall for that.
+
+403
+00:19:39,140 --> 00:19:41,410
+You have two options.
+
+404
+00:19:41,410 --> 00:19:51,240
+You either firmly and with a
+nice, reasonable answer, say,
+
+405
+00:19:51,240 --> 00:19:55,320
+nope that's not the
+case, and this is why,
+
+406
+00:19:55,320 --> 00:19:57,760
+but I'll get back to that
+later if you want to.
+
+407
+00:19:57,760 --> 00:20:05,000
+Or you say, good point, I'm
+not familiar with that point
+
+408
+00:20:05,000 --> 00:20:06,210
+you just made.
+
+409
+00:20:06,210 --> 00:20:07,680
+I'll get back to you later.
+
+410
+00:20:07,680 --> 00:20:10,190
+Don't let them continue
+that conversation.
+
+411
+00:20:10,190 --> 00:20:13,240
+You've got to know how to
+shut off the questions,
+
+412
+00:20:13,240 --> 00:20:14,900
+shut off the
+spigot, and move on,
+
+413
+00:20:14,900 --> 00:20:19,000
+because you have an
+agenda to get to asking
+
+414
+00:20:19,000 --> 00:20:20,630
+for money at the very end.
+
+415
+00:20:20,630 --> 00:20:23,030
+If you don't get to
+that, then it was a nice,
+
+416
+00:20:23,030 --> 00:20:25,270
+thank you for the
+information, there's the door.
+
+417
+00:20:25,270 --> 00:20:27,410
+You have to be able
+to get to that.
+
+418
+00:20:27,410 --> 00:20:36,210
+So as important as
+anything I've talked about
+
+419
+00:20:36,210 --> 00:20:42,880
+is the need for you to
+be a competent presenter.
+
+420
+00:20:42,880 --> 00:20:47,340
+You need to show passion,
+you have to show confidence,
+
+421
+00:20:47,340 --> 00:20:50,990
+and you have to
+engage the audience.
+
+422
+00:20:50,990 --> 00:20:56,650
+Not easy to do, and it takes,
+sometimes, years and years
+
+423
+00:20:56,650 --> 00:20:58,830
+to learn how to do that.
+
+424
+00:20:58,830 --> 00:21:01,570
+It's very difficult. If I
+were to grab any one of you
+
+425
+00:21:01,570 --> 00:21:04,040
+down here and say, please give
+a presentation on whatever
+
+426
+00:21:04,040 --> 00:21:06,065
+your most passionate
+thing is, you're
+
+427
+00:21:06,065 --> 00:21:07,440
+going to be kind
+of hard-pressed,
+
+428
+00:21:07,440 --> 00:21:10,900
+you're going to want to kind
+of recite things from memory,
+
+429
+00:21:10,900 --> 00:21:12,980
+and forget about the engagement.
+
+430
+00:21:12,980 --> 00:21:15,680
+You're going to speak too fast.
+
+431
+00:21:15,680 --> 00:21:18,100
+It's almost impossible
+to speak too slowly,
+
+432
+00:21:18,100 --> 00:21:21,290
+especially if you're from
+a technical background.
+
+433
+00:21:21,290 --> 00:21:23,630
+Slow the pace down.
+
+434
+00:21:23,630 --> 00:21:26,760
+Make sure everybody's
+keeping up with you.
+
+435
+00:21:26,760 --> 00:21:29,700
+See if you've lost eye contact.
+
+436
+00:21:29,700 --> 00:21:33,010
+If you have, focus on the person
+who you lost eye contact with
+
+437
+00:21:33,010 --> 00:21:36,970
+and say, I must
+be confusing you.
+
+438
+00:21:36,970 --> 00:21:39,070
+Can I answer any
+question you've got?
+
+439
+00:21:39,070 --> 00:21:41,050
+You've got to pull people out.
+
+440
+00:21:41,050 --> 00:21:44,740
+You've got to get everybody
+in the room along with you
+
+441
+00:21:44,740 --> 00:21:47,944
+nodding their heads, because
+the more they nod their head
+
+442
+00:21:47,944 --> 00:21:50,360
+and agreeing with you, the
+more likely at the end, and all
+
+443
+00:21:50,360 --> 00:21:53,770
+I want is $25
+million, and I'm going
+
+444
+00:21:53,770 --> 00:21:56,410
+to give you 10% of my company.
+
+445
+00:21:56,410 --> 00:21:57,770
+It's a great deal.
+
+446
+00:21:57,770 --> 00:22:00,770
+So seriously, that's
+like sales 101.
+
+447
+00:22:00,770 --> 00:22:02,760
+Get them nodding their heads.
+
+448
+00:22:02,760 --> 00:22:04,860
+Look at everybody in the eye.
+
+449
+00:22:04,860 --> 00:22:09,330
+Be bold, be confident, use
+passion, change your pitch
+
+450
+00:22:09,330 --> 00:22:13,180
+and elevation, do whatever
+you have to do-- histrionics,
+
+451
+00:22:13,180 --> 00:22:14,190
+get their attention.
+
+452
+00:22:14,190 --> 00:22:15,730
+Focus them on what
+you're saying.
+
+453
+00:22:21,300 --> 00:22:25,080
+So Joe has basically
+covered the elements.
+
+454
+00:22:25,080 --> 00:22:26,540
+And this isn't the right order.
+
+455
+00:22:26,540 --> 00:22:30,690
+This isn't maybe Joe's order
+fir a business plan or even
+
+456
+00:22:30,690 --> 00:22:33,400
+a pitch, but basically, you
+want to have these things.
+
+457
+00:22:33,400 --> 00:22:36,550
+You want to have the hook.
+
+458
+00:22:36,550 --> 00:22:40,050
+The hook as to be an
+exciting statement.
+
+459
+00:22:40,050 --> 00:22:42,670
+You know, hey, I
+think we did fusion.
+
+460
+00:22:42,670 --> 00:22:43,860
+It's in my basement.
+
+461
+00:22:43,860 --> 00:22:44,770
+What?
+
+462
+00:22:44,770 --> 00:22:47,030
+Then talk about it.
+
+463
+00:22:47,030 --> 00:22:49,480
+Then you need to
+have your solution.
+
+464
+00:22:49,480 --> 00:22:51,950
+Your solution is, we
+have a great product.
+
+465
+00:22:51,950 --> 00:22:54,807
+It's using this technology,
+using all these things
+
+466
+00:22:54,807 --> 00:22:55,723
+in the elevator pitch.
+
+467
+00:22:58,870 --> 00:23:00,680
+Not everybody will
+agree with my order,
+
+468
+00:23:00,680 --> 00:23:03,150
+but this is the order I like.
+
+469
+00:23:03,150 --> 00:23:04,360
+What's your magic?
+
+470
+00:23:04,360 --> 00:23:08,850
+Don't wait to talk about the
+technology at the very end,
+
+471
+00:23:08,850 --> 00:23:10,450
+and don't do it right up front.
+
+472
+00:23:10,450 --> 00:23:14,420
+Hey, we solved
+this implant issue.
+
+473
+00:23:14,420 --> 00:23:16,331
+Talk about why it's
+exciting, what's
+
+474
+00:23:16,331 --> 00:23:18,330
+the market, what problem
+are you going to solve,
+
+475
+00:23:18,330 --> 00:23:20,540
+and we did it with
+this unbelievably
+
+476
+00:23:20,540 --> 00:23:24,200
+great new technology,
+fresh out of the labs.
+
+477
+00:23:24,200 --> 00:23:25,480
+Or wherever it came from.
+
+478
+00:23:25,480 --> 00:23:28,420
+Or a new chip or whatever it is.
+
+479
+00:23:28,420 --> 00:23:30,134
+Talk about the magic
+and technology,
+
+480
+00:23:30,134 --> 00:23:32,550
+so the technologists can get
+excited and go, yes, what are
+
+481
+00:23:32,550 --> 00:23:35,390
+you going to do with it now?
+
+482
+00:23:35,390 --> 00:23:38,220
+Then go into the
+business model, and then
+
+483
+00:23:38,220 --> 00:23:41,550
+more detail, the
+marketing and sales issue.
+
+484
+00:23:41,550 --> 00:23:43,570
+You really have to
+have a credible way
+
+485
+00:23:43,570 --> 00:23:45,070
+to sell what you've got.
+
+486
+00:23:45,070 --> 00:23:49,910
+You've got to have a credible
+way to channel it or retail it
+
+487
+00:23:49,910 --> 00:23:52,030
+into the customer's hands.
+
+488
+00:23:52,030 --> 00:23:54,260
+How are you going to
+be successful at that?
+
+489
+00:23:54,260 --> 00:23:56,880
+There's a lot of great
+products that need
+
+490
+00:23:56,880 --> 00:23:58,830
+to be sold through Home Depot.
+
+491
+00:23:58,830 --> 00:24:03,700
+And Home Depot has thousands
+of these ideas coming in,
+
+492
+00:24:03,700 --> 00:24:06,777
+and then they, one by one,
+nope, no time for you, go away.
+
+493
+00:24:06,777 --> 00:24:08,610
+Nope, no, and then what
+are you going to do,
+
+494
+00:24:08,610 --> 00:24:10,890
+with all of your channel
+strategies closed off?
+
+495
+00:24:10,890 --> 00:24:13,120
+Have a credible
+solution for that.
+
+496
+00:24:13,120 --> 00:24:14,870
+Talk about the competition.
+
+497
+00:24:14,870 --> 00:24:19,980
+If it's a new product,
+never been sold before,
+
+498
+00:24:19,980 --> 00:24:21,990
+well, that could
+be nice, but you've
+
+499
+00:24:21,990 --> 00:24:25,520
+got to spend a huge
+amount of money and time
+
+500
+00:24:25,520 --> 00:24:28,925
+and your personal capital
+creating a new niche,
+
+501
+00:24:28,925 --> 00:24:31,050
+or a new market for this.
+
+502
+00:24:31,050 --> 00:24:32,540
+You don't know how hard that is.
+
+503
+00:24:32,540 --> 00:24:33,748
+It's going to be really hard.
+
+504
+00:24:33,748 --> 00:24:35,590
+If nobody's buying
+this sort of thing now,
+
+505
+00:24:35,590 --> 00:24:38,340
+you have to-- look
+at Dean Kamen.
+
+506
+00:24:38,340 --> 00:24:39,750
+The Segway.
+
+507
+00:24:39,750 --> 00:24:41,450
+Remember everybody
+got all excited?
+
+508
+00:24:41,450 --> 00:24:44,520
+I mean, my home in Boulder,
+we had activists saying,
+
+509
+00:24:44,520 --> 00:24:48,110
+we don't want Segways
+riding down my sidewalk.
+
+510
+00:24:48,110 --> 00:24:50,550
+And they had protests.
+
+511
+00:24:50,550 --> 00:24:52,620
+Dean didn't realize
+how hard it was
+
+512
+00:24:52,620 --> 00:24:57,240
+to create a whole new market
+where the whole country stops
+
+513
+00:24:57,240 --> 00:24:58,680
+driving and uses Segways.
+
+514
+00:24:58,680 --> 00:25:00,210
+It didn't work at all that way.
+
+515
+00:25:00,210 --> 00:25:05,310
+He was trying to create a whole
+new approach towards travel.
+
+516
+00:25:05,310 --> 00:25:08,700
+Very difficult. If it's a
+substitution, then who are we
+
+517
+00:25:08,700 --> 00:25:10,787
+substituting against
+and why are you better?
+
+518
+00:25:10,787 --> 00:25:13,120
+Because we're 10 times cheaper,
+faster, better, smaller.
+
+519
+00:25:13,120 --> 00:25:16,100
+All those sorts of things.
+
+520
+00:25:16,100 --> 00:25:21,210
+And I have management
+here, not at the top.
+
+521
+00:25:21,210 --> 00:25:22,700
+Why?
+
+522
+00:25:22,700 --> 00:25:27,140
+Because I don't care who
+you are unless I really
+
+523
+00:25:27,140 --> 00:25:30,080
+am excited about
+your ideas, and then
+
+524
+00:25:30,080 --> 00:25:32,020
+I want to know who you are.
+
+525
+00:25:32,020 --> 00:25:33,550
+Where'd you were
+to come from, how
+
+526
+00:25:33,550 --> 00:25:36,960
+do I know you've got to take
+my money and spend it wisely?
+
+527
+00:25:36,960 --> 00:25:39,270
+Have you done this before?
+
+528
+00:25:39,270 --> 00:25:41,250
+Then give me all
+your credentials,
+
+529
+00:25:41,250 --> 00:25:45,250
+but not until I'm
+greedy, because I
+
+530
+00:25:45,250 --> 00:25:49,360
+want some of your stock,
+please, and now, who are you
+
+531
+00:25:49,360 --> 00:25:51,900
+and what's your team?
+
+532
+00:25:51,900 --> 00:25:53,600
+| at that point it's credible.
+
+533
+00:25:53,600 --> 00:25:55,840
+If you hit them too soon
+with here I am an all
+
+534
+00:25:55,840 --> 00:25:59,840
+that, without knowing whether
+they're excited or greedy yet,
+
+535
+00:25:59,840 --> 00:26:01,570
+they're going to
+not listen to it.
+
+536
+00:26:01,570 --> 00:26:05,130
+I won't listen to it
+I'm going to skip it.
+
+537
+00:26:05,130 --> 00:26:08,090
+Then go over your financials.
+
+538
+00:26:08,090 --> 00:26:10,950
+What are you going to do
+with the money that you get?
+
+539
+00:26:10,950 --> 00:26:12,240
+How are you going to spend it?
+
+540
+00:26:12,240 --> 00:26:15,680
+Is it a credible timeline you
+have for spending that money,
+
+541
+00:26:15,680 --> 00:26:18,840
+or are you going to
+run out of money?
+
+542
+00:26:18,840 --> 00:26:20,340
+Which is a problem,
+because then you
+
+543
+00:26:20,340 --> 00:26:22,860
+have to stop what you're doing
+and go raise money sooner,
+
+544
+00:26:22,860 --> 00:26:26,380
+than later, and
+stop the company.
+
+545
+00:26:26,380 --> 00:26:28,244
+Then go over your status
+and your timeline.
+
+546
+00:26:28,244 --> 00:26:29,410
+Have you built anything yet?
+
+547
+00:26:29,410 --> 00:26:30,360
+Do you have any prototypes?
+
+548
+00:26:30,360 --> 00:26:31,600
+When are you going
+to have it done?
+
+549
+00:26:31,600 --> 00:26:33,475
+How do you know you're
+going to have it done?
+
+550
+00:26:33,475 --> 00:26:35,530
+Is it a credible timeline?
+
+551
+00:26:35,530 --> 00:26:39,480
+What people have you lined
+up to build this thing?
+
+552
+00:26:39,480 --> 00:26:40,990
+Status and timeline.
+
+553
+00:26:40,990 --> 00:26:46,310
+And then don't forget-- a
+lot of people forget this,
+
+554
+00:26:46,310 --> 00:26:50,000
+at the very end, the offer.
+
+555
+00:26:50,000 --> 00:26:51,810
+You have to make the offer.
+
+556
+00:26:51,810 --> 00:26:53,770
+What is that offer?
+
+557
+00:26:53,770 --> 00:26:56,847
+And for all this cool
+stuff, and the $100 million
+
+558
+00:26:56,847 --> 00:26:58,680
+we're going to make
+over the next five years
+
+559
+00:26:58,680 --> 00:27:00,800
+with this product,
+I'm going to give you
+
+560
+00:27:00,800 --> 00:27:03,320
+10% of my company
+for $25 million.
+
+561
+00:27:03,320 --> 00:27:08,240
+And we're looking at
+closing in the next 60 days,
+
+562
+00:27:08,240 --> 00:27:12,390
+and oh, by the way, we're
+talking to four other venture
+
+563
+00:27:12,390 --> 00:27:15,956
+capitalists and three of
+them are quite interested.
+
+564
+00:27:15,956 --> 00:27:17,080
+Love to hear back from you.
+
+565
+00:27:17,080 --> 00:27:21,780
+Make the request, which is the
+offer of your stock for money.
+
+566
+00:27:25,920 --> 00:27:27,740
+A little bit about the hook.
+
+567
+00:27:27,740 --> 00:27:31,150
+When you very first
+meet somebody,
+
+568
+00:27:31,150 --> 00:27:35,770
+you've got about seven
+seconds to engage,
+
+569
+00:27:35,770 --> 00:27:38,170
+to make them excited about
+hearing the rest of what
+
+570
+00:27:38,170 --> 00:27:39,410
+you have to say.
+
+571
+00:27:39,410 --> 00:27:45,910
+So that hook could be
+whatever the cool part
+
+572
+00:27:45,910 --> 00:27:49,360
+of your technology or
+product is going to be.
+
+573
+00:27:49,360 --> 00:27:52,540
+The hook could be-- imagine
+a safe rubber coding
+
+574
+00:27:52,540 --> 00:27:54,482
+that conducts electricity.
+
+575
+00:27:54,482 --> 00:27:56,690
+Wait a minute, why would I
+need-- well, before I say,
+
+576
+00:27:56,690 --> 00:27:59,190
+but how do you--
+OK, keep talking.
+
+577
+00:27:59,190 --> 00:28:00,360
+So that's a hook.
+
+578
+00:28:00,360 --> 00:28:03,340
+An example of a hook.
+
+579
+00:28:03,340 --> 00:28:04,640
+Have you ever felt threatened?
+
+580
+00:28:04,640 --> 00:28:07,620
+Wow, what kind of a question--
+yes, of course I have.
+
+581
+00:28:07,620 --> 00:28:09,350
+Are you threatening me?
+
+582
+00:28:09,350 --> 00:28:10,778
+No, we have a solution for you.
+
+583
+00:28:15,010 --> 00:28:18,990
+Our box is 10 times smaller,
+faster, cheaper, better
+
+584
+00:28:18,990 --> 00:28:21,570
+than this.
+
+585
+00:28:21,570 --> 00:28:23,900
+Oh, cool, the next
+generation of that.
+
+586
+00:28:23,900 --> 00:28:27,900
+People will want that.
+
+587
+00:28:27,900 --> 00:28:31,370
+Anyway, that's kind of a hook.
+
+588
+00:28:31,370 --> 00:28:33,750
+So think about
+what is your hook?
+
+589
+00:28:33,750 --> 00:28:37,940
+What is your bold
+statement that's
+
+590
+00:28:37,940 --> 00:28:41,590
+going to wake me up and stop
+what I'm doing and listening
+
+591
+00:28:41,590 --> 00:28:46,930
+to you, whether it's an elevator
+or the beginning of a pitch.
+
+592
+00:28:46,930 --> 00:28:53,270
+So no geek speak.
+
+593
+00:28:53,270 --> 00:28:55,567
+No geek speak.
+
+594
+00:28:55,567 --> 00:28:56,400
+What does that mean?
+
+595
+00:29:00,450 --> 00:29:02,190
+I've had lots and
+lots of pitches,
+
+596
+00:29:02,190 --> 00:29:05,900
+and they start off
+with technical jargon.
+
+597
+00:29:05,900 --> 00:29:07,290
+And that's the
+wrong thing to do,
+
+598
+00:29:07,290 --> 00:29:11,200
+because then my job is
+now, pull out of you,
+
+599
+00:29:11,200 --> 00:29:13,960
+why am I greedy about that?
+
+600
+00:29:13,960 --> 00:29:17,330
+You need to explain it simply.
+
+601
+00:29:17,330 --> 00:29:18,520
+This is a real example.
+
+602
+00:29:18,520 --> 00:29:20,480
+"Our technology is the first
+integrated automatic book
+
+603
+00:29:20,480 --> 00:29:22,520
+scanner that will scan and
+digitize bound documents
+
+604
+00:29:22,520 --> 00:29:24,603
+at a speed of 1,200 pages
+per minute at a fraction
+
+605
+00:29:24,603 --> 00:29:26,025
+of the cost of
+existing solutions,
+
+606
+00:29:26,025 --> 00:29:28,400
+based on destructive digital
+imaging technology initially
+
+607
+00:29:28,400 --> 00:29:31,160
+developed at Bell Labs"-- Bell
+Labs isn't around anymore--
+
+608
+00:29:31,160 --> 00:29:34,050
+"and protected by 12 patents."
+
+609
+00:29:34,050 --> 00:29:39,470
+That's the wrong way to start a
+pitch about what you're doing.
+
+610
+00:29:39,470 --> 00:29:43,720
+A better approach is, we enable
+massive knowledge sharing.
+
+611
+00:29:43,720 --> 00:29:47,400
+We're going to digitize
+all the physical libraries
+
+612
+00:29:47,400 --> 00:29:50,770
+at an incredibly low cost,
+and there's people lined up
+
+613
+00:29:50,770 --> 00:29:53,430
+who want this technology.
+
+614
+00:29:53,430 --> 00:29:57,660
+So that's what I
+mean by geek speak.
+
+615
+00:29:57,660 --> 00:29:58,620
+Focus of the pitch.
+
+616
+00:30:01,570 --> 00:30:06,660
+So again, it's really tempting
+to talk about the technology
+
+617
+00:30:06,660 --> 00:30:11,690
+improvements, or
+the technology that
+
+618
+00:30:11,690 --> 00:30:16,000
+is going into your product,
+and how exciting it is,
+
+619
+00:30:16,000 --> 00:30:18,880
+but you've got to convert that
+into something that customers
+
+620
+00:30:18,880 --> 00:30:20,220
+really will care about.
+
+621
+00:30:20,220 --> 00:30:22,500
+So talk about the
+customer benefits, not
+
+622
+00:30:22,500 --> 00:30:24,200
+the tech benefits.
+
+623
+00:30:24,200 --> 00:30:27,090
+The tech benefits-- if you
+talk about the tech benefits,
+
+624
+00:30:27,090 --> 00:30:28,090
+it's a so what?
+
+625
+00:30:28,090 --> 00:30:31,060
+Why do I care about this
+next generation of thing
+
+626
+00:30:31,060 --> 00:30:32,950
+that you're building
+or producing?
+
+627
+00:30:32,950 --> 00:30:35,580
+It has to have benefits
+for the customer.
+
+628
+00:30:35,580 --> 00:30:38,220
+If it's telecom improved
+network utilization,
+
+629
+00:30:38,220 --> 00:30:40,010
+this is scalable and adaptable.
+
+630
+00:30:40,010 --> 00:30:42,790
+It integrates well,
+seamless integration.
+
+631
+00:30:42,790 --> 00:30:47,230
+The figures of merit that
+a buyer are interested in,
+
+632
+00:30:47,230 --> 00:30:49,660
+not just the fact that this
+is a cool next generation
+
+633
+00:30:49,660 --> 00:30:51,807
+technology.
+
+634
+00:30:51,807 --> 00:30:54,140
+And then you've got to talk
+about the business benefits.
+
+635
+00:30:54,140 --> 00:30:59,290
+And the business benefit--
+every business has pain,
+
+636
+00:30:59,290 --> 00:31:02,160
+and you have to find
+what the pain point is.
+
+637
+00:31:02,160 --> 00:31:05,070
+You're in pain.
+
+638
+00:31:05,070 --> 00:31:07,000
+I can heal your pain.
+
+639
+00:31:07,000 --> 00:31:11,010
+I have something that's going
+to make things better for you.
+
+640
+00:31:11,010 --> 00:31:14,020
+And it usually has to
+boil down to a dollar.
+
+641
+00:31:14,020 --> 00:31:20,670
+You have pain that's costing you
+$700,000 a year in something,
+
+642
+00:31:20,670 --> 00:31:24,260
+and my product, my
+device, my process,
+
+643
+00:31:24,260 --> 00:31:27,660
+whatever you're selling
+can cut that in half,
+
+644
+00:31:27,660 --> 00:31:29,260
+and I can prove it to you.
+
+645
+00:31:29,260 --> 00:31:31,320
+So that's a pain point.
+
+646
+00:31:31,320 --> 00:31:34,210
+Increase revenues
+or decrease costs.
+
+647
+00:31:34,210 --> 00:31:38,710
+Everything's got to
+boil down to a dollar.
+
+648
+00:31:38,710 --> 00:31:39,240
+A dollar.
+
+649
+00:31:39,240 --> 00:31:43,480
+Your technology
+is not important.
+
+650
+00:31:43,480 --> 00:31:47,820
+It's what that can do for a
+business or a customer that
+
+651
+00:31:47,820 --> 00:31:52,240
+can reduce their pain, and
+that's usually evidenced
+
+652
+00:31:52,240 --> 00:31:54,770
+by costing them money.
+
+653
+00:31:54,770 --> 00:31:58,160
+And you're either going to make
+them money or save them money.
+
+654
+00:32:03,030 --> 00:32:05,810
+Style.
+
+655
+00:32:05,810 --> 00:32:08,540
+If you're making a
+pitch, either you've
+
+656
+00:32:08,540 --> 00:32:10,470
+got to be the best
+presenter of your team,
+
+657
+00:32:10,470 --> 00:32:12,280
+or find the best
+presenter of your team
+
+658
+00:32:12,280 --> 00:32:13,860
+and let that person do it.
+
+659
+00:32:13,860 --> 00:32:18,770
+It's best if the founder
+or the CEO does it.
+
+660
+00:32:18,770 --> 00:32:22,490
+I haven't seen a
+whole lot of companies
+
+661
+00:32:22,490 --> 00:32:25,570
+that aren't led by the founder
+or the CEO making the pitch.
+
+662
+00:32:25,570 --> 00:32:30,030
+So between the two of you,
+unless you're the same person,
+
+663
+00:32:30,030 --> 00:32:31,500
+get good at making the pitch.
+
+664
+00:32:31,500 --> 00:32:32,425
+Be the best presenter.
+
+665
+00:32:35,860 --> 00:32:37,930
+If you're not the
+egghead, have the egghead
+
+666
+00:32:37,930 --> 00:32:42,640
+in the room on a
+really short leash.
+
+667
+00:32:42,640 --> 00:32:45,280
+Because they're going to
+get into the rat holes.
+
+668
+00:32:45,280 --> 00:32:46,950
+They love rat holes.
+
+669
+00:32:46,950 --> 00:32:48,020
+I love a rat hole.
+
+670
+00:32:48,020 --> 00:32:50,700
+I have to sometimes wake up and
+go, stop talking about that.
+
+671
+00:32:50,700 --> 00:32:54,100
+You're excited about
+it, nobody else is.
+
+672
+00:32:54,100 --> 00:32:58,170
+But be prepared to ask the
+one-off technical question.
+
+673
+00:32:58,170 --> 00:33:02,390
+Exactly what frequency
+will that resonate?
+
+674
+00:33:02,390 --> 00:33:04,136
+Tell them.
+
+675
+00:33:04,136 --> 00:33:07,300
+[LAUGHTER]
+
+676
+00:33:07,300 --> 00:33:08,660
+I said this earlier.
+
+677
+00:33:08,660 --> 00:33:13,240
+Give firm answers, even if
+you don't have the answer.
+
+678
+00:33:13,240 --> 00:33:16,600
+Don't sound hesitant, like,
+oh we hadn't thought of that.
+
+679
+00:33:20,160 --> 00:33:21,860
+Crushing defeat.
+
+680
+00:33:21,860 --> 00:33:25,030
+If you don't have an answer,
+say, let me get back to you.
+
+681
+00:33:25,030 --> 00:33:26,690
+I'll get back to
+you in 24 hours.
+
+682
+00:33:26,690 --> 00:33:29,060
+I think I know the answer.
+
+683
+00:33:29,060 --> 00:33:33,020
+Or the answer is, yes of course,
+we've always been that way
+
+684
+00:33:33,020 --> 00:33:36,710
+and we always will, or
+no, that's not a problem,
+
+685
+00:33:36,710 --> 00:33:37,660
+and here is why.
+
+686
+00:33:37,660 --> 00:33:40,630
+Be firm in your
+answer, smile, I mean,
+
+687
+00:33:40,630 --> 00:33:46,296
+don't get angry, smile, and
+say yes or no, but be firm.
+
+688
+00:33:46,296 --> 00:33:49,070
+Have the presence
+to be confident,
+
+689
+00:33:49,070 --> 00:33:51,734
+because you're asking
+for their money,
+
+690
+00:33:51,734 --> 00:33:53,150
+and they want to
+give it to people
+
+691
+00:33:53,150 --> 00:33:57,340
+who are firm and confident
+and all those nice things.
+
+692
+00:33:57,340 --> 00:34:00,190
+I talked about looking
+at everybody in the room.
+
+693
+00:34:00,190 --> 00:34:01,366
+Try to grab their eyeballs.
+
+694
+00:34:04,830 --> 00:34:06,930
+Practice that.
+
+695
+00:34:06,930 --> 00:34:08,780
+By the way, if you've
+never given a speech
+
+696
+00:34:08,780 --> 00:34:11,840
+in front of a large
+audience, the best confidence
+
+697
+00:34:11,840 --> 00:34:15,960
+builder before you start the
+speech is, look at everybody
+
+698
+00:34:15,960 --> 00:34:20,699
+in the room beforehand, at the
+bottom or wherever you are,
+
+699
+00:34:20,699 --> 00:34:22,949
+look at everybody in
+the room, and pretend
+
+700
+00:34:22,949 --> 00:34:25,510
+like they're an old buddy.
+
+701
+00:34:25,510 --> 00:34:27,110
+They're an old friend.
+
+702
+00:34:27,110 --> 00:34:31,230
+And you won't any trouble
+with confidence or locking up
+
+703
+00:34:31,230 --> 00:34:32,480
+or things like that.
+
+704
+00:34:32,480 --> 00:34:34,310
+Try it.
+
+705
+00:34:34,310 --> 00:34:35,920
+Do your homework,
+like I said earlier.
+
+706
+00:34:35,920 --> 00:34:38,080
+Know who you're talking to.
+
+707
+00:34:38,080 --> 00:34:40,190
+And practice your pitch.
+
+708
+00:34:40,190 --> 00:34:42,330
+Practice it.
+
+709
+00:34:42,330 --> 00:34:44,210
+Have all the points
+at your fingertips.
+
+710
+00:34:44,210 --> 00:34:47,580
+Be ready to go over
+them at any time.
+
+711
+00:34:47,580 --> 00:34:52,100
+And then pull questions
+out of the quiet people.
+
+712
+00:34:52,100 --> 00:34:55,940
+Even if, you can tell, this
+person does not like me
+
+713
+00:34:55,940 --> 00:34:59,590
+or what I'm doing or anybody
+that I brought up here,
+
+714
+00:34:59,590 --> 00:35:01,630
+still, pull them out.
+
+715
+00:35:01,630 --> 00:35:02,305
+Ask questions.
+
+716
+00:35:02,305 --> 00:35:03,930
+Because if nothing
+else, you will learn
+
+717
+00:35:03,930 --> 00:35:05,250
+what they don't like about you.
+
+718
+00:35:05,250 --> 00:35:07,166
+They might say, well, I
+don't understand that.
+
+719
+00:35:07,166 --> 00:35:09,637
+You said that, I
+don't believe it.
+
+720
+00:35:09,637 --> 00:35:11,470
+You may not be able to
+convince that person,
+
+721
+00:35:11,470 --> 00:35:13,210
+but make sure
+everybody in the room
+
+722
+00:35:13,210 --> 00:35:14,930
+has been able to say
+something, or ask
+
+723
+00:35:14,930 --> 00:35:20,700
+them a question of these
+venture capitalists.
+
+724
+00:35:20,700 --> 00:35:23,200
+OK, here's some pitch examples.
+
+725
+00:35:23,200 --> 00:35:25,900
+You saw some earlier from
+Joe, here are some more.
+
+726
+00:35:25,900 --> 00:35:26,730
+Good and bad.
+
+727
+00:35:29,410 --> 00:35:31,600
+Name are changed to
+protect the innocent.
+
+728
+00:35:31,600 --> 00:35:36,490
+This was a pitch made to me,
+I think, in 2003 or 2004.
+
+729
+00:35:36,490 --> 00:35:38,640
+don't do what they did.
+
+730
+00:35:38,640 --> 00:35:42,020
+So here's a company,
+CyberEx LLP.
+
+731
+00:35:42,020 --> 00:35:45,050
+Here's the executive summary.
+
+732
+00:35:45,050 --> 00:35:49,130
+Remember, the year
+is, I think, 2004.
+
+733
+00:35:49,130 --> 00:35:52,030
+The year was 2004.
+
+734
+00:35:52,030 --> 00:35:55,320
+What they're
+telling me, in 2005,
+
+735
+00:35:55,320 --> 00:36:00,350
+we'll have customers, and in
+2007 $60 million in sales.
+
+736
+00:36:00,350 --> 00:36:01,420
+How about that.
+
+737
+00:36:01,420 --> 00:36:04,572
+2007, investor IRR
+greater than 200%,
+
+738
+00:36:04,572 --> 00:36:06,030
+you all are going
+to get money back
+
+739
+00:36:06,030 --> 00:36:08,135
+and the investors are
+going to be happy.
+
+740
+00:36:08,135 --> 00:36:12,560
+What a terrible, terrible pitch.
+
+741
+00:36:12,560 --> 00:36:13,960
+It's insulting.
+
+742
+00:36:13,960 --> 00:36:16,090
+You're telling me this is
+what's going to happen.
+
+743
+00:36:16,090 --> 00:36:18,080
+You haven't even told
+me what you do yet,
+
+744
+00:36:18,080 --> 00:36:20,880
+and you're telling me how much
+money I'm going to make on it.
+
+745
+00:36:20,880 --> 00:36:22,370
+Please.
+
+746
+00:36:22,370 --> 00:36:26,390
+And here's the people-- the next
+slide is, here's who we are.
+
+747
+00:36:26,390 --> 00:36:29,200
+I don't know what you do, but
+you're telling me who you are.
+
+748
+00:36:29,200 --> 00:36:33,140
+So we got Aunt May, Peter
+Parker, Doctor Octopus,
+
+749
+00:36:33,140 --> 00:36:36,830
+and here's our advisory board.
+
+750
+00:36:36,830 --> 00:36:37,810
+Great.
+
+751
+00:36:37,810 --> 00:36:41,990
+I see all the backgrounds, is
+it relevant to what you do?
+
+752
+00:36:41,990 --> 00:36:43,480
+I don't know yet.
+
+753
+00:36:43,480 --> 00:36:44,690
+I don't know what you do.
+
+754
+00:36:47,640 --> 00:36:52,440
+So, now maybe they're going
+to get to what they do now.
+
+755
+00:36:52,440 --> 00:36:53,320
+Let's see.
+
+756
+00:36:53,320 --> 00:36:56,400
+Sentinel eStrand technology.
+
+757
+00:36:56,400 --> 00:36:57,290
+What does that mean.
+
+758
+00:36:57,290 --> 00:36:59,320
+"Dynamically adjusts
+to block emerging"--
+
+759
+00:36:59,320 --> 00:37:00,300
+what kind of threats?
+
+760
+00:37:00,300 --> 00:37:02,940
+Emerging threats, holy cow!
+
+761
+00:37:02,940 --> 00:37:04,160
+DNA, I see DNA.
+
+762
+00:37:04,160 --> 00:37:06,130
+They're a medical
+product company.
+
+763
+00:37:06,130 --> 00:37:07,610
+There's DNA there.
+
+764
+00:37:07,610 --> 00:37:10,840
+Special ISTAT-- is
+that like a statin?
+
+765
+00:37:10,840 --> 00:37:14,760
+ISTAT detects mutation--
+oh, that sounds terrible.
+
+766
+00:37:14,760 --> 00:37:17,000
+Mutations,
+immunization of-- spam?
+
+767
+00:37:19,565 --> 00:37:20,065
+Spam.
+
+768
+00:37:20,065 --> 00:37:23,645
+There's a DNA, Powerful
+[INAUDIBLE] Identify Spam.
+
+769
+00:37:26,260 --> 00:37:29,060
+Don't do that.
+
+770
+00:37:29,060 --> 00:37:32,430
+And then CyberEx
+technology benefits.
+
+771
+00:37:32,430 --> 00:37:34,990
+"The sentinel technology
+provides complete cyber
+
+772
+00:37:34,990 --> 00:37:37,650
+messaging"-- this
+is a lot of words.
+
+773
+00:37:37,650 --> 00:37:40,220
+This isn't 30 point font, is it?
+
+774
+00:37:40,220 --> 00:37:42,050
+No, not exactly.
+
+775
+00:37:42,050 --> 00:37:43,910
+So, OK.
+
+776
+00:37:43,910 --> 00:37:46,325
+This meeting ended really fast.
+
+777
+00:37:51,890 --> 00:37:56,870
+This is a good example
+of an on-the-spot pitch
+
+778
+00:37:56,870 --> 00:38:00,770
+made by somebody in a company
+I helped start up in Boulder.
+
+779
+00:38:00,770 --> 00:38:03,760
+Everybody's heard of
+the internet of things?
+
+780
+00:38:03,760 --> 00:38:07,460
+You have the [? Hue ?]
+light bulb and shades
+
+781
+00:38:07,460 --> 00:38:09,650
+and the lights that you
+can control in your house,
+
+782
+00:38:09,650 --> 00:38:12,070
+and the Nest thermostat,
+all that sort of thing.
+
+783
+00:38:12,070 --> 00:38:13,770
+The house is being
+filled up with
+
+784
+00:38:13,770 --> 00:38:17,340
+smart, intelligent,
+IP-addressable, programmable
+
+785
+00:38:17,340 --> 00:38:17,910
+objects.
+
+786
+00:38:17,910 --> 00:38:19,320
+It's really cool.
+
+787
+00:38:19,320 --> 00:38:21,180
+But if you have
+15 things that are
+
+788
+00:38:21,180 --> 00:38:23,780
+programmable in your home
+that do things automatically,
+
+789
+00:38:23,780 --> 00:38:27,260
+you need 15 apps to do it.
+
+790
+00:38:27,260 --> 00:38:29,560
+So we have a company
+in Boulder that's
+
+791
+00:38:29,560 --> 00:38:32,440
+integrating all these
+addressable things,
+
+792
+00:38:32,440 --> 00:38:34,910
+programmable so things
+can talk to each other.
+
+793
+00:38:34,910 --> 00:38:39,064
+This is an example of
+a fairly decent pitch.
+
+794
+00:38:39,064 --> 00:38:39,730
+[VIDEO PLAYBACK]
+
+795
+00:38:39,730 --> 00:38:41,498
+-Brought to you by Toyota.
+
+796
+00:38:41,498 --> 00:38:47,980
+--[INAUDIBLE] CES 2014 at Digital
+Experience is the [INAUDIBLE]
+
+797
+00:38:47,980 --> 00:38:51,389
+And I found Mike from Revolve.
+
+798
+00:38:51,389 --> 00:38:52,850
+Hi, Mike, how are you?
+
+799
+00:38:52,850 --> 00:38:54,285
+-Good, Sharon, how are you?
+
+800
+00:38:54,285 --> 00:38:55,285
+-Doing great, thank you.
+
+801
+00:38:55,285 --> 00:38:57,130
+Now Revolve, I hear
+that this is going
+
+802
+00:38:57,130 --> 00:38:58,911
+to make my life so much easier.
+
+803
+00:38:58,911 --> 00:38:59,410
+I'm excited.
+
+804
+00:38:59,410 --> 00:39:02,970
+Please, tell me how this
+makes my life easier.
+
+805
+00:39:02,970 --> 00:39:06,370
+-Well, Revolve is essentially a
+smart home automation solution,
+
+806
+00:39:06,370 --> 00:39:09,200
+focused on taking those
+premium devices like Philips
+
+807
+00:39:09,200 --> 00:39:12,080
+Hue, [INAUDIBLE]
+Nest, and Sonos,
+
+808
+00:39:12,080 --> 00:39:14,910
+bringing them all together
+under a single application
+
+809
+00:39:14,910 --> 00:39:17,660
+and then allowing you to
+automate them in ways that you
+
+810
+00:39:17,660 --> 00:39:19,815
+can't do with just a single
+native application that
+
+811
+00:39:19,815 --> 00:39:20,790
+comes with those.
+
+812
+00:39:20,790 --> 00:39:22,110
+-Oh, that's excellent.
+
+813
+00:39:22,110 --> 00:39:24,930
+I have like 10 of these
+apps sitting around at home
+
+814
+00:39:24,930 --> 00:39:27,360
+because I have the
+Hue, I have Sonos,
+
+815
+00:39:27,360 --> 00:39:30,356
+and It drives me nuts that
+I have to skip from one app
+
+816
+00:39:30,356 --> 00:39:31,390
+to another.
+
+817
+00:39:31,390 --> 00:39:33,807
+So is this easy for consumers?
+
+818
+00:39:33,807 --> 00:39:35,640
+-It's really easy, and
+actually, again, it's
+
+819
+00:39:35,640 --> 00:39:37,386
+direct to consumer play.
+
+820
+00:39:37,386 --> 00:39:40,140
+So, if you want, I'll walk
+you through how easy it is.
+
+821
+00:39:40,140 --> 00:39:42,160
+We pride ourselves
+on 60-second setup,
+
+822
+00:39:42,160 --> 00:39:44,800
+and you'll be up and running,
+discovering your devices
+
+823
+00:39:44,800 --> 00:39:46,110
+and being able to control them.
+
+824
+00:39:46,110 --> 00:39:47,040
+-OK, I'm counting.
+
+825
+00:39:47,040 --> 00:39:47,850
+Do it.
+
+826
+00:39:47,850 --> 00:39:48,720
+-All right.
+
+827
+00:39:48,720 --> 00:39:50,330
+So here we set the app here.
+
+828
+00:39:50,330 --> 00:39:51,850
+And the first thing
+that you'll see
+
+829
+00:39:51,850 --> 00:39:55,480
+is that we essentially
+allow you to just plug
+
+830
+00:39:55,480 --> 00:39:58,730
+in the hub in a central
+location in the home.
+
+831
+00:39:58,730 --> 00:40:00,510
+You're not tied to
+your router, is often
+
+832
+00:40:00,510 --> 00:40:02,657
+in the basement or
+some obscure place.
+
+833
+00:40:02,657 --> 00:40:04,490
+And the reason was we
+wanted to get the best
+
+834
+00:40:04,490 --> 00:40:06,690
+signal to talk to all the
+devices that you have.
+
+835
+00:40:06,690 --> 00:40:08,271
+So the key, though
+is getting this
+
+836
+00:40:08,271 --> 00:40:09,520
+onto your local Wi-Fi network.
+
+837
+00:40:09,520 --> 00:40:12,900
+And what we've done is created
+a proprietary technology
+
+838
+00:40:12,900 --> 00:40:15,550
+that essentially takes
+your Wi-Fi credentials
+
+839
+00:40:15,550 --> 00:40:19,580
+that you that you have
+on your iPhone or iPad
+
+840
+00:40:19,580 --> 00:40:22,130
+and then transmits that
+optically to the hub.
+
+841
+00:40:22,130 --> 00:40:25,280
+So if you just enter
+our password, hit done,
+
+842
+00:40:25,280 --> 00:40:28,910
+replace the iPad right
+onto the hub and optically,
+
+843
+00:40:28,910 --> 00:40:32,560
+it's transmitting the data to
+the hub, and within 30 seconds,
+
+844
+00:40:32,560 --> 00:40:34,832
+we'll get notification
+that the hub is now
+
+845
+00:40:34,832 --> 00:40:36,750
+on your local WiFi network.
+
+846
+00:40:36,750 --> 00:40:38,890
+And as soon as it does,
+it'll automatically
+
+847
+00:40:38,890 --> 00:40:40,670
+start discovering
+these great devices
+
+848
+00:40:40,670 --> 00:40:44,450
+like Sonos, Nest, Phillips Hue.
+
+849
+00:40:44,450 --> 00:40:45,594
+[END PLAYBACK]
+
+850
+00:40:45,594 --> 00:40:47,760
+STEPHEN PEARSE: It goes on
+for another minute or so.
+
+851
+00:40:47,760 --> 00:40:49,450
+[INAUDIBLE] kind of cool.
+
+852
+00:40:49,450 --> 00:40:51,930
+I like that show.
+
+853
+00:40:51,930 --> 00:40:55,420
+So that's an example
+of how you get
+
+854
+00:40:55,420 --> 00:40:58,900
+to the point, talk about why do
+I care about your technology?
+
+855
+00:40:58,900 --> 00:41:00,970
+If you have things
+in your home that
+
+856
+00:41:00,970 --> 00:41:02,470
+needs to be controlled
+or automated,
+
+857
+00:41:02,470 --> 00:41:03,790
+but they don't
+talk to each other
+
+858
+00:41:03,790 --> 00:41:05,520
+because they're from
+different manufacturers,
+
+859
+00:41:05,520 --> 00:41:06,490
+that's the solution.
+
+860
+00:41:06,490 --> 00:41:09,220
+And he gets to
+the point quickly.
+
+861
+00:41:09,220 --> 00:41:14,510
+Here's another example of
+a presentation or a pitch
+
+862
+00:41:14,510 --> 00:41:18,380
+that we did in the year 2000
+to telecommunications company.
+
+863
+00:41:18,380 --> 00:41:23,550
+We built a box that was 10
+times faster, smarter, smaller,
+
+864
+00:41:23,550 --> 00:41:27,800
+better, than the Nortel
+box, where I had just left.
+
+865
+00:41:27,800 --> 00:41:31,370
+And this is an
+example of how you
+
+866
+00:41:31,370 --> 00:41:34,200
+might want to use
+pictures and clearly
+
+867
+00:41:34,200 --> 00:41:38,830
+talk about the superlatives
+of what you're trying to sell.
+
+868
+00:41:38,830 --> 00:41:42,520
+So talk about a big,
+total addressable market.
+
+869
+00:41:42,520 --> 00:41:44,850
+Now, remember, this
+was a long time ago.
+
+870
+00:41:44,850 --> 00:41:48,400
+In 2008, the prediction
+was, this kind of technology
+
+871
+00:41:48,400 --> 00:41:49,570
+was going to be huge.
+
+872
+00:41:49,570 --> 00:41:53,430
+So therefore, we need a
+product in that space.
+
+873
+00:41:53,430 --> 00:41:59,080
+And why is the stuff that you're
+competing against terrible?
+
+874
+00:41:59,080 --> 00:42:03,100
+Talk about why things
+are terrible today.
+
+875
+00:42:03,100 --> 00:42:07,000
+And then talk about
+why what you're selling
+
+876
+00:42:07,000 --> 00:42:09,030
+is being purchased,
+and people want it,
+
+877
+00:42:09,030 --> 00:42:13,770
+but they want it faster,
+cheaper, smaller, better.
+
+878
+00:42:13,770 --> 00:42:17,400
+And then talk about the
+evolution of how your product--
+
+879
+00:42:17,400 --> 00:42:20,450
+and how the history of
+the technology, inevitably
+
+880
+00:42:20,450 --> 00:42:22,970
+is going to lead to what
+you're trying to sell.
+
+881
+00:42:22,970 --> 00:42:25,430
+So you want to show a nice
+picture showing things
+
+882
+00:42:25,430 --> 00:42:29,520
+getting better and faster,
+and more products later on.
+
+883
+00:42:29,520 --> 00:42:33,200
+And then in our case, we're
+simplifying the telephone
+
+884
+00:42:33,200 --> 00:42:37,100
+central office, so we show how
+complicated things are now,
+
+885
+00:42:37,100 --> 00:42:39,400
+and how the picture gets
+a little simpler when
+
+886
+00:42:39,400 --> 00:42:40,830
+you buy our product.
+
+887
+00:42:40,830 --> 00:42:42,250
+Keeping it simple.
+
+888
+00:42:42,250 --> 00:42:44,650
+Now, all these things were
+technical, kind of jargony,
+
+889
+00:42:44,650 --> 00:42:47,460
+but the audience
+we were pitching to
+
+890
+00:42:47,460 --> 00:42:50,650
+knew it intimately,
+because that was
+
+891
+00:42:50,650 --> 00:42:52,190
+the big bubble at that time.
+
+892
+00:42:52,190 --> 00:42:54,840
+Fiber optics and
+telecommunications.
+
+893
+00:42:54,840 --> 00:42:56,750
+And everybody knew
+a lot about it.
+
+894
+00:42:56,750 --> 00:43:00,190
+But I try to keep it even
+simpler than what they might--
+
+895
+00:43:00,190 --> 00:43:04,060
+they were being given
+pitches of terribly complex,
+
+896
+00:43:04,060 --> 00:43:08,240
+brand new protocols, new-wave
+division-- experimental stuff.
+
+897
+00:43:08,240 --> 00:43:09,570
+We kept it simple.
+
+898
+00:43:09,570 --> 00:43:11,630
+And I think that's
+one of the reasons why
+
+899
+00:43:11,630 --> 00:43:14,240
+we had lots of customers
+and we had lots of money
+
+900
+00:43:14,240 --> 00:43:18,000
+coming in, because we
+made our value proposition
+
+901
+00:43:18,000 --> 00:43:20,248
+compelling, simple, and easy.
+
+902
+00:43:24,470 --> 00:43:25,702
+I'll talk about that later.
+
+903
+00:43:25,702 --> 00:43:27,035
+When do you want to raise money?
+
+904
+00:43:30,360 --> 00:43:33,850
+So you always, always,
+always, always get money
+
+905
+00:43:33,850 --> 00:43:37,360
+when you do not need money.
+
+906
+00:43:37,360 --> 00:43:38,890
+Why?
+
+907
+00:43:38,890 --> 00:43:41,960
+What if I just had a round not
+too long ago, I got $2 million
+
+908
+00:43:41,960 --> 00:43:46,640
+in the bank, and I'm good
+for another nine months,
+
+909
+00:43:46,640 --> 00:43:50,560
+a year, now's a good time to
+start raising money again,
+
+910
+00:43:50,560 --> 00:43:53,680
+because people who
+have money don't want
+
+911
+00:43:53,680 --> 00:43:56,750
+to give it to you under duress.
+
+912
+00:43:56,750 --> 00:44:00,930
+If you're going to run out of
+money in six months, and it
+
+913
+00:44:00,930 --> 00:44:03,690
+takes six months
+to close a deal.
+
+914
+00:44:03,690 --> 00:44:07,500
+And assume it's going to
+take six months for you
+
+915
+00:44:07,500 --> 00:44:10,590
+to start your campaign
+and close a round.
+
+916
+00:44:10,590 --> 00:44:13,726
+If that's the case, then
+by the time you close,
+
+917
+00:44:13,726 --> 00:44:15,350
+you're going to be
+almost out of money,
+
+918
+00:44:15,350 --> 00:44:17,760
+and if somebody holds up the
+deal or bargain or whatever,
+
+919
+00:44:17,760 --> 00:44:22,150
+your company's done, or
+you start laying people off
+
+920
+00:44:22,150 --> 00:44:23,690
+and you lose all your momentum.
+
+921
+00:44:23,690 --> 00:44:26,270
+So always start raising
+your money and plan
+
+922
+00:44:26,270 --> 00:44:30,510
+to close around at least six
+months before you really need
+
+923
+00:44:30,510 --> 00:44:31,010
+it.
+
+924
+00:44:34,260 --> 00:44:36,320
+How do you raise money?
+
+925
+00:44:36,320 --> 00:44:39,120
+Let's go to this VC,
+oh, they said no.
+
+926
+00:44:39,120 --> 00:44:42,460
+Let's go to that
+VC, oh they said no.
+
+927
+00:44:42,460 --> 00:44:45,930
+Do you do it serially
+or in parallel?
+
+928
+00:44:45,930 --> 00:44:49,250
+You not only have to
+do it in parallel,
+
+929
+00:44:49,250 --> 00:44:52,400
+but you have to
+orchestrate it in parallel,
+
+930
+00:44:52,400 --> 00:44:56,590
+because this is important.
+
+931
+00:44:56,590 --> 00:45:01,832
+If you go to one or two VCs and
+spend a month or so with them,
+
+932
+00:45:01,832 --> 00:45:03,540
+and they're kind of
+dragging their heels,
+
+933
+00:45:03,540 --> 00:45:06,342
+and then you go
+to the next ones,
+
+934
+00:45:06,342 --> 00:45:07,800
+and the next ones
+are saying, well,
+
+935
+00:45:07,800 --> 00:45:09,450
+what did the first one say?
+
+936
+00:45:09,450 --> 00:45:10,830
+Well, they're thinking about it.
+
+937
+00:45:10,830 --> 00:45:12,540
+How long did-- OK.
+
+938
+00:45:12,540 --> 00:45:16,470
+They see hesitancy on some other
+people, some other investors'
+
+939
+00:45:16,470 --> 00:45:18,845
+part, they're going
+to make them hesitant,
+
+940
+00:45:18,845 --> 00:45:20,220
+and all of a
+sudden, everything's
+
+941
+00:45:20,220 --> 00:45:21,090
+being strong along.
+
+942
+00:45:21,090 --> 00:45:22,960
+Everybody's waiting
+to see, well,
+
+943
+00:45:22,960 --> 00:45:27,150
+why didn't they-- if you do
+everybody at the same time,
+
+944
+00:45:27,150 --> 00:45:31,400
+nobody knows what hand
+is being dealt where,
+
+945
+00:45:31,400 --> 00:45:35,219
+what potential partners might
+be thinking, because you often
+
+946
+00:45:35,219 --> 00:45:36,760
+don't get money from
+just one person.
+
+947
+00:45:36,760 --> 00:45:39,720
+You get it from several
+venture capitalists,
+
+948
+00:45:39,720 --> 00:45:41,160
+and they want to
+team and partner.
+
+949
+00:45:41,160 --> 00:45:43,720
+You want to create this feeding
+frenzy all at the same time.
+
+950
+00:45:43,720 --> 00:45:46,414
+Hey, did you get a
+pitch by this company?
+
+951
+00:45:46,414 --> 00:45:47,830
+They're going to
+do you next week?
+
+952
+00:45:47,830 --> 00:45:49,770
+Let's talk about them
+right afterwards.
+
+953
+00:45:49,770 --> 00:45:51,500
+They'll talk, they'll
+compare notes,
+
+954
+00:45:51,500 --> 00:45:53,340
+and you're just more
+likely to end up
+
+955
+00:45:53,340 --> 00:45:56,090
+with a really successful
+high valuation
+
+956
+00:45:56,090 --> 00:46:01,080
+if you orchestrate your pitch.
+
+957
+00:46:01,080 --> 00:46:02,560
+Don't dribble it out.
+
+958
+00:46:02,560 --> 00:46:04,370
+Do it all at once
+at the same time,
+
+959
+00:46:04,370 --> 00:46:08,600
+get all the feedback at the
+same time, and hit it hard.
+
+960
+00:46:08,600 --> 00:46:14,640
+Again, assume it's going to take
+six months to close a round.
+
+961
+00:46:14,640 --> 00:46:16,490
+Signal to noise.
+
+962
+00:46:16,490 --> 00:46:18,770
+Why should they pay
+attention to you?
+
+963
+00:46:18,770 --> 00:46:21,430
+You have a nice,
+pretty business plan
+
+964
+00:46:21,430 --> 00:46:24,010
+and a pitch deck, why won't
+they return your calls?
+
+965
+00:46:24,010 --> 00:46:25,330
+Because they don't know you.
+
+966
+00:46:25,330 --> 00:46:31,020
+And most pitches come
+across their desks
+
+967
+00:46:31,020 --> 00:46:32,600
+and they throw it away.
+
+968
+00:46:32,600 --> 00:46:35,860
+So you really need to
+have a differentiator.
+
+969
+00:46:35,860 --> 00:46:38,580
+You need to be introduced or
+have somebody do something
+
+970
+00:46:38,580 --> 00:46:40,020
+that gets their attention.
+
+971
+00:46:40,020 --> 00:46:44,460
+Or maybe an article in
+a newspaper or something
+
+972
+00:46:44,460 --> 00:46:46,310
+like that, to get
+their attention.
+
+973
+00:46:46,310 --> 00:46:48,180
+Think about what
+signal you're going
+
+974
+00:46:48,180 --> 00:46:51,500
+to punch through the noise
+that they're hearing every day,
+
+975
+00:46:51,500 --> 00:46:53,470
+If you can be introduced
+because so-and-so
+
+976
+00:46:53,470 --> 00:46:57,760
+knows somebody in this
+venture capital partnership,
+
+977
+00:46:57,760 --> 00:46:59,650
+that's the best way.
+
+978
+00:46:59,650 --> 00:47:01,800
+So hand out a lot of
+cards, meet people
+
+979
+00:47:01,800 --> 00:47:06,940
+go to social
+networking functions
+
+980
+00:47:06,940 --> 00:47:09,320
+where VCs and angels
+are going to be.
+
+981
+00:47:09,320 --> 00:47:12,920
+An angel is a great way to
+get introduced to big money,
+
+982
+00:47:12,920 --> 00:47:14,300
+to the venture capitalists.
+
+983
+00:47:14,300 --> 00:47:17,120
+Because chances
+are, the good ones
+
+984
+00:47:17,120 --> 00:47:18,536
+have worked with
+them before, too.
+
+985
+00:47:21,140 --> 00:47:25,490
+Oh, you've got two good offers
+from two venture capital
+
+986
+00:47:25,490 --> 00:47:26,300
+companies.
+
+987
+00:47:26,300 --> 00:47:27,650
+Yay!
+
+988
+00:47:27,650 --> 00:47:31,500
+One is better than the other.
+
+989
+00:47:31,500 --> 00:47:34,300
+One is better than the other.
+
+990
+00:47:34,300 --> 00:47:36,760
+What should you think
+about when you decide
+
+991
+00:47:36,760 --> 00:47:38,740
+whose money should I take?
+
+992
+00:47:38,740 --> 00:47:40,510
+Does it matter?
+
+993
+00:47:40,510 --> 00:47:41,510
+One's a better offer.
+
+994
+00:47:41,510 --> 00:47:44,740
+One is going to give you $25
+million for 10% of the company.
+
+995
+00:47:44,740 --> 00:47:47,110
+The other is going to
+give you $25 million
+
+996
+00:47:47,110 --> 00:47:49,460
+for 15% of the company.
+
+997
+00:47:49,460 --> 00:47:51,785
+Hey, that's my company
+you're taking there.
+
+998
+00:47:51,785 --> 00:47:53,900
+I want that.
+
+999
+00:47:53,900 --> 00:47:56,210
+What do you think about?
+
+1000
+00:47:56,210 --> 00:47:58,550
+Go for the best offer?
+
+1001
+00:47:58,550 --> 00:48:00,630
+It really depends.
+
+1002
+00:48:00,630 --> 00:48:05,870
+If one is a mid-level, not
+so well-known venture capital
+
+1003
+00:48:05,870 --> 00:48:10,950
+company, and the other
+is a super top-tier, NEA
+
+1004
+00:48:10,950 --> 00:48:17,960
+or one with a great track
+record and history of getting
+
+1005
+00:48:17,960 --> 00:48:20,680
+their companies acquired,
+you should probably
+
+1006
+00:48:20,680 --> 00:48:26,120
+go with the name brand because
+they can make deals happen.
+
+1007
+00:48:26,120 --> 00:48:29,810
+They can bring in money
+for the next round.
+
+1008
+00:48:29,810 --> 00:48:31,270
+They have a cachet.
+
+1009
+00:48:31,270 --> 00:48:33,550
+That's hard to compete with.
+
+1010
+00:48:33,550 --> 00:48:35,300
+That's my belief.
+
+1011
+00:48:35,300 --> 00:48:39,490
+And don't focus too much
+on the equity dilution,
+
+1012
+00:48:39,490 --> 00:48:44,490
+because chances are,
+founders and CEOs,
+
+1013
+00:48:44,490 --> 00:48:46,550
+even if you have a
+highly diluted round,
+
+1014
+00:48:46,550 --> 00:48:48,870
+they don't want you to
+walk away or lose interest.
+
+1015
+00:48:48,870 --> 00:48:52,800
+They're going to
+re-up your percentage.
+
+1016
+00:48:52,800 --> 00:48:56,650
+So good management tends to
+keep a big hunk of the company,
+
+1017
+00:48:56,650 --> 00:48:58,890
+no matter how many
+rounds you go through.
+
+1018
+00:48:58,890 --> 00:49:01,480
+So don't focus too
+much about dilution.
+
+1019
+00:49:01,480 --> 00:49:05,430
+It's important to focus
+on it, but not too much,
+
+1020
+00:49:05,430 --> 00:49:08,130
+Anybody know what this means?
+
+1021
+00:49:08,130 --> 00:49:14,690
+C-F-I-M-I-T-Y-M. There's usually
+someone who knows what that
+
+1022
+00:49:14,690 --> 00:49:16,630
+means.
+
+1023
+00:49:16,630 --> 00:49:22,820
+Cash Is More Important
+Than Your Mother.
+
+1024
+00:49:22,820 --> 00:49:25,060
+Ever heard that term?
+
+1025
+00:49:25,060 --> 00:49:28,490
+Finance people use
+it all the time.
+
+1026
+00:49:28,490 --> 00:49:31,510
+Cash is really,
+really important.
+
+1027
+00:49:31,510 --> 00:49:33,570
+Cash flow.
+
+1028
+00:49:33,570 --> 00:49:35,590
+The fastest way to
+kill your company
+
+1029
+00:49:35,590 --> 00:49:38,020
+is not pay attention
+to cash flow.
+
+1030
+00:49:38,020 --> 00:49:41,990
+Wait a minute-- we have
+orders pouring in like crazy.
+
+1031
+00:49:41,990 --> 00:49:43,670
+Everything's going great.
+
+1032
+00:49:43,670 --> 00:49:46,250
+What do you mean, we're dead?
+
+1033
+00:49:46,250 --> 00:49:47,380
+We have to shut the doors?
+
+1034
+00:49:47,380 --> 00:49:50,660
+Because you can go bankrupt
+if you're not paying attention
+
+1035
+00:49:50,660 --> 00:49:53,740
+to cash flow, and you
+need emergency debt,
+
+1036
+00:49:53,740 --> 00:49:55,740
+and you scared off the
+investors from giving you
+
+1037
+00:49:55,740 --> 00:49:58,250
+a bridge loan because you
+weren't paying attention
+
+1038
+00:49:58,250 --> 00:49:59,870
+to the business.
+
+1039
+00:49:59,870 --> 00:50:05,020
+So if you don't
+want to hire a CFO,
+
+1040
+00:50:05,020 --> 00:50:09,325
+have a good rental-- and a lot
+of startups just rent a CFO,
+
+1041
+00:50:09,325 --> 00:50:11,200
+but make sure they're
+paying attention to it.
+
+1042
+00:50:14,420 --> 00:50:16,080
+Flexibility and pivots.
+
+1043
+00:50:16,080 --> 00:50:18,810
+You're not going
+to end up selling
+
+1044
+00:50:18,810 --> 00:50:22,120
+the product you think you are.
+
+1045
+00:50:22,120 --> 00:50:24,320
+In fact, the company
+probably is not
+
+1046
+00:50:24,320 --> 00:50:28,450
+going to be the company
+you think you're building.
+
+1047
+00:50:28,450 --> 00:50:33,110
+A very large percentage, and
+no one has the data statistics,
+
+1048
+00:50:33,110 --> 00:50:38,800
+but I think most startups end
+up, at some point, pivoting.
+
+1049
+00:50:38,800 --> 00:50:41,160
+Pivoting a little
+bit, pivoting a lot.
+
+1050
+00:50:41,160 --> 00:50:46,050
+We were going to build-- this
+company, Revolve in Boulder.
+
+1051
+00:50:46,050 --> 00:50:47,850
+They came to me
+and said, we want
+
+1052
+00:50:47,850 --> 00:50:53,300
+to build an internet-addressable
+irrigation system.
+
+1053
+00:50:53,300 --> 00:50:55,960
+Well, OK, that's interesting.
+
+1054
+00:50:55,960 --> 00:50:58,640
+Nest is building the
+thermostat, and now they're
+
+1055
+00:50:58,640 --> 00:51:01,690
+building fire alarms and
+stuff, and maybe irrigation
+
+1056
+00:51:01,690 --> 00:51:03,700
+is important, too.
+
+1057
+00:51:03,700 --> 00:51:05,240
+But we talked, and
+I convinced them
+
+1058
+00:51:05,240 --> 00:51:06,900
+that there is a bigger problem.
+
+1059
+00:51:06,900 --> 00:51:10,550
+And you can be the one.
+
+1060
+00:51:10,550 --> 00:51:13,850
+The ring that rules all
+devices in the home.
+
+1061
+00:51:13,850 --> 00:51:16,040
+You can build this product,
+because you guys are all
+
+1062
+00:51:16,040 --> 00:51:18,970
+[? ex-Amber ?] people, and
+you know how to do wireless,
+
+1063
+00:51:18,970 --> 00:51:22,260
+and we have seven radios in
+the box and can control every
+
+1064
+00:51:22,260 --> 00:51:24,730
+protocol in the universe.
+
+1065
+00:51:24,730 --> 00:51:26,690
+You can do it!
+
+1066
+00:51:26,690 --> 00:51:28,690
+And they went and built it.
+
+1067
+00:51:28,690 --> 00:51:29,980
+They pivoted.
+
+1068
+00:51:29,980 --> 00:51:32,990
+They were building
+this irrigation system.
+
+1069
+00:51:32,990 --> 00:51:36,190
+So you might end up having to do
+that once or maybe even twice.
+
+1070
+00:51:36,190 --> 00:51:37,930
+Don't be afraid
+of being flexible.
+
+1071
+00:51:37,930 --> 00:51:42,540
+Don't be afraid of taking
+rapid customer feedback.
+
+1072
+00:51:42,540 --> 00:51:46,710
+Use the lean, Eric Ries'
+lean startup methodology.
+
+1073
+00:51:46,710 --> 00:51:48,060
+Do a lot of prototypes.
+
+1074
+00:51:48,060 --> 00:51:48,935
+Show it to customers.
+
+1075
+00:51:48,935 --> 00:51:50,143
+What do you think about that?
+
+1076
+00:51:50,143 --> 00:51:52,940
+Well, I don't like the color,
+or I don't like that button.
+
+1077
+00:51:52,940 --> 00:51:55,680
+Whatever it is, take
+that feedback quickly,
+
+1078
+00:51:55,680 --> 00:51:57,680
+build more prototypes,
+and don't be
+
+1079
+00:51:57,680 --> 00:52:00,322
+afraid to change course
+in what you're building.
+
+1080
+00:52:04,350 --> 00:52:06,640
+A few more success factors.
+
+1081
+00:52:06,640 --> 00:52:08,640
+So intellectual property.
+
+1082
+00:52:08,640 --> 00:52:11,630
+I have five patents.
+
+1083
+00:52:11,630 --> 00:52:15,240
+I really don't care,
+because patents have never
+
+1084
+00:52:15,240 --> 00:52:19,720
+successfully, in my experience,
+or most VCs I've talked to,
+
+1085
+00:52:19,720 --> 00:52:22,180
+has never successfully
+defended anything.
+
+1086
+00:52:22,180 --> 00:52:27,240
+In fact, most of
+the patents that
+
+1087
+00:52:27,240 --> 00:52:31,490
+startups pull out
+of universities end
+
+1088
+00:52:31,490 --> 00:52:36,410
+up being handed back later,
+either because the terms are
+
+1089
+00:52:36,410 --> 00:52:38,280
+too onerous, from
+the university,
+
+1090
+00:52:38,280 --> 00:52:40,399
+I want so much thousands
+of dollars a year.
+
+1091
+00:52:40,399 --> 00:52:42,190
+Well, I'm going to
+figure out a way how not
+
+1092
+00:52:42,190 --> 00:52:44,140
+to have to give that to you.
+
+1093
+00:52:44,140 --> 00:52:48,120
+But anyway, IP is good
+and it's important,
+
+1094
+00:52:48,120 --> 00:52:50,030
+and some people who
+might buy your company
+
+1095
+00:52:50,030 --> 00:52:52,240
+may say, thank you, I
+would like that patent
+
+1096
+00:52:52,240 --> 00:52:55,840
+as part of my war chest
+to defend this or that.
+
+1097
+00:52:55,840 --> 00:52:57,160
+It could be important.
+
+1098
+00:52:57,160 --> 00:53:01,210
+But speed is far more
+important than patents.
+
+1099
+00:53:01,210 --> 00:53:03,010
+Outrun your competitors.
+
+1100
+00:53:03,010 --> 00:53:05,620
+Even if everybody
+steals your idea
+
+1101
+00:53:05,620 --> 00:53:08,310
+and they're building
+it right away,
+
+1102
+00:53:08,310 --> 00:53:12,300
+and they're stealing all
+your intellectual property,
+
+1103
+00:53:12,300 --> 00:53:16,390
+if you beat them to the
+market, first mover will win.
+
+1104
+00:53:16,390 --> 00:53:20,050
+Just be first, be
+fast, be the best.
+
+1105
+00:53:20,050 --> 00:53:25,390
+So focus more on speed
+than intellectual property.
+
+1106
+00:53:25,390 --> 00:53:27,857
+Think about the mission.
+
+1107
+00:53:27,857 --> 00:53:28,690
+What is the mission?
+
+1108
+00:53:28,690 --> 00:53:31,410
+Well, isn't the
+mission in the pitch?
+
+1109
+00:53:31,410 --> 00:53:34,300
+No, it's really not.
+
+1110
+00:53:34,300 --> 00:53:36,647
+The mission is when you
+sit down with your team
+
+1111
+00:53:36,647 --> 00:53:38,230
+and go, what are we
+trying to do here?
+
+1112
+00:53:38,230 --> 00:53:40,590
+Oh, well, we want to build this
+box, we want to sell a million
+
+1113
+00:53:40,590 --> 00:53:41,150
+of them.
+
+1114
+00:53:41,150 --> 00:53:45,441
+No, what are we really
+trying to do here?
+
+1115
+00:53:45,441 --> 00:53:46,190
+What are we doing?
+
+1116
+00:53:46,190 --> 00:53:48,023
+Well, we want to change
+the way people think
+
+1117
+00:53:48,023 --> 00:53:52,550
+about this whole field, or we
+want to change the way people
+
+1118
+00:53:52,550 --> 00:53:56,030
+interface with their
+home, or what is
+
+1119
+00:53:56,030 --> 00:53:58,230
+it you're really trying to do?
+
+1120
+00:53:58,230 --> 00:54:01,820
+And you're using a technology
+for right now to do it,
+
+1121
+00:54:01,820 --> 00:54:04,560
+but later on you may
+move on to other things.
+
+1122
+00:54:04,560 --> 00:54:06,190
+But what are you
+really trying to do?
+
+1123
+00:54:06,190 --> 00:54:08,690
+Figure out your mission
+statement, word for word.
+
+1124
+00:54:08,690 --> 00:54:10,910
+Figure it out.
+
+1125
+00:54:10,910 --> 00:54:11,920
+How am I doing on time?
+
+1126
+00:54:11,920 --> 00:54:12,430
+Am I out?
+
+1127
+00:54:16,230 --> 00:54:18,530
+I'm out?
+
+1128
+00:54:18,530 --> 00:54:19,030
+I'm good?
+
+1129
+00:54:19,030 --> 00:54:21,130
+OK, all right.
+
+1130
+00:54:21,130 --> 00:54:22,120
+The team.
+
+1131
+00:54:22,120 --> 00:54:22,640
+The team.
+
+1132
+00:54:26,350 --> 00:54:29,742
+Really, venture capitalists
+do look at the team,
+
+1133
+00:54:29,742 --> 00:54:31,950
+and a lot of them say, yeah,
+the most important thing
+
+1134
+00:54:31,950 --> 00:54:36,780
+is the team and we're
+betting on the team.
+
+1135
+00:54:36,780 --> 00:54:38,844
+Well, really, they
+want your idea
+
+1136
+00:54:38,844 --> 00:54:40,010
+to make them a lot of money.
+
+1137
+00:54:40,010 --> 00:54:41,460
+That's the most important thing.
+
+1138
+00:54:41,460 --> 00:54:47,470
+But the team can pivot or be
+flexible and have the integrity
+
+1139
+00:54:47,470 --> 00:54:51,620
+to be able to handle
+shocks, whether it's a money
+
+1140
+00:54:51,620 --> 00:54:54,050
+shock or a technology shock.
+
+1141
+00:54:54,050 --> 00:54:57,630
+Or we just came to market and
+so did three other companies.
+
+1142
+00:54:57,630 --> 00:54:58,560
+What do we do now?
+
+1143
+00:54:58,560 --> 00:55:00,940
+Do we buckle or are we tough?
+
+1144
+00:55:00,940 --> 00:55:03,290
+Is this team going
+to stick with it?
+
+1145
+00:55:03,290 --> 00:55:05,090
+Are we going to work
+whatever we have to?
+
+1146
+00:55:05,090 --> 00:55:06,672
+The team is really important.
+
+1147
+00:55:06,672 --> 00:55:08,380
+Think about that as
+you're assembling it.
+
+1148
+00:55:08,380 --> 00:55:12,990
+Make sure the chemistry works.
+
+1149
+00:55:12,990 --> 00:55:16,890
+There will be the
+time when you'll
+
+1150
+00:55:16,890 --> 00:55:19,210
+have founder versus CEO issues.
+
+1151
+00:55:19,210 --> 00:55:21,730
+Who's really running this
+company, or this is my baby,
+
+1152
+00:55:21,730 --> 00:55:22,760
+or whatever.
+
+1153
+00:55:22,760 --> 00:55:25,124
+Or you'll have hires of
+people who you really
+
+1154
+00:55:25,124 --> 00:55:26,540
+like, but they're
+not working out,
+
+1155
+00:55:26,540 --> 00:55:28,985
+and what do we do with them?
+
+1156
+00:55:28,985 --> 00:55:31,590
+These things have to be
+thought out well in advance.
+
+1157
+00:55:31,590 --> 00:55:33,620
+You have to be able to
+make the tough decisions.
+
+1158
+00:55:33,620 --> 00:55:35,380
+And part of that
+toughness has to be
+
+1159
+00:55:35,380 --> 00:55:37,780
+displayed to the
+venture capitalists,
+
+1160
+00:55:37,780 --> 00:55:39,080
+to the people giving you money.
+
+1161
+00:55:39,080 --> 00:55:40,830
+Yet you have to have
+good answers for when
+
+1162
+00:55:40,830 --> 00:55:42,380
+people-- what would
+you do if this
+
+1163
+00:55:42,380 --> 00:55:44,660
+were to happen with the team?
+
+1164
+00:55:44,660 --> 00:55:45,784
+Have that thought out.
+
+1165
+00:55:51,712 --> 00:55:53,670
+How much money will it
+cost to build a company?
+
+1166
+00:55:53,670 --> 00:55:55,290
+That's part of
+the business plan.
+
+1167
+00:55:55,290 --> 00:55:57,674
+And how much money
+you will you make us?
+
+1168
+00:56:01,190 --> 00:56:04,840
+Also goes into your final exit
+strategy when you go public.
+
+1169
+00:56:07,336 --> 00:56:08,710
+Think about what
+happens when you
+
+1170
+00:56:08,710 --> 00:56:11,130
+go-- have a credible
+story when you go public.
+
+1171
+00:56:11,130 --> 00:56:12,930
+Even if you end up
+getting acquired,
+
+1172
+00:56:12,930 --> 00:56:14,370
+always plan on going public.
+
+1173
+00:56:17,040 --> 00:56:18,240
+Just a few more real quick.
+
+1174
+00:56:22,970 --> 00:56:24,350
+One of the things
+about startups,
+
+1175
+00:56:24,350 --> 00:56:25,724
+if you don't have
+any experience,
+
+1176
+00:56:25,724 --> 00:56:28,220
+it's really, really tough
+to convince money people
+
+1177
+00:56:28,220 --> 00:56:29,790
+that you know what you're doing.
+
+1178
+00:56:29,790 --> 00:56:33,330
+So you have to surround
+yourself with people who
+
+1179
+00:56:33,330 --> 00:56:35,000
+compensate for your weaknesses.
+
+1180
+00:56:35,000 --> 00:56:36,590
+If you want to be
+the CEO of a company
+
+1181
+00:56:36,590 --> 00:56:38,870
+but you don't have any
+experience in finance or sales,
+
+1182
+00:56:38,870 --> 00:56:43,070
+whatever, this is my
+team, and everybody rounds
+
+1183
+00:56:43,070 --> 00:56:43,860
+each other out.
+
+1184
+00:56:43,860 --> 00:56:46,664
+You have to make sure you
+answer that issue of, are
+
+1185
+00:56:46,664 --> 00:56:48,330
+you really ready for
+this startup, based
+
+1186
+00:56:48,330 --> 00:56:51,160
+on your experience level?
+
+1187
+00:56:51,160 --> 00:56:54,120
+We talked about trying to
+do it again after a failure.
+
+1188
+00:56:54,120 --> 00:56:55,300
+Failure is not bad.
+
+1189
+00:56:55,300 --> 00:56:59,670
+In Silicon Valley,
+it's a mark of courage.
+
+1190
+00:56:59,670 --> 00:57:03,220
+Speed and execution
+are personality traits.
+
+1191
+00:57:03,220 --> 00:57:05,070
+They really are.
+
+1192
+00:57:05,070 --> 00:57:07,569
+If you don't come
+across as high energy,
+
+1193
+00:57:07,569 --> 00:57:09,110
+I'm going to be a
+hard time believing
+
+1194
+00:57:09,110 --> 00:57:11,390
+that you have this as
+a personality trait,
+
+1195
+00:57:11,390 --> 00:57:15,190
+that you are going to get this
+product done fast when you
+
+1196
+00:57:15,190 --> 00:57:16,310
+say it's going to be done.
+
+1197
+00:57:16,310 --> 00:57:19,540
+You're willing to put in the
+late midnight oil, burning that
+
+1198
+00:57:19,540 --> 00:57:22,060
+to get this thing out the door.
+
+1199
+00:57:22,060 --> 00:57:25,630
+Try to convey that you're
+capable of these things.
+
+1200
+00:57:25,630 --> 00:57:27,630
+Focus, focus, focus.
+
+1201
+00:57:27,630 --> 00:57:30,630
+The worst thing that
+can happen to a startup
+
+1202
+00:57:30,630 --> 00:57:33,850
+is, OK we started
+out building this,
+
+1203
+00:57:33,850 --> 00:57:37,410
+but oh, here's a shiny, pretty
+little thing over there.
+
+1204
+00:57:37,410 --> 00:57:39,600
+And I'm going to start
+going build that.
+
+1205
+00:57:39,600 --> 00:57:40,440
+Oh, wait a minute.
+
+1206
+00:57:40,440 --> 00:57:43,370
+I just read about
+that, it's cool, too.
+
+1207
+00:57:43,370 --> 00:57:45,440
+That's losing focus.
+
+1208
+00:57:45,440 --> 00:57:49,710
+Sometimes you're going to be
+forced to pivot because there's
+
+1209
+00:57:49,710 --> 00:57:52,342
+a major block that you
+didn't expect thrown up
+
+1210
+00:57:52,342 --> 00:57:54,300
+in front of you, and you
+need to get around it.
+
+1211
+00:57:54,300 --> 00:57:57,600
+You need to pivot around it and
+move on to something similar,
+
+1212
+00:57:57,600 --> 00:58:00,880
+but you don't want to give
+up one perfectly good thing
+
+1213
+00:58:00,880 --> 00:58:04,380
+that you spent six months doing
+just because something else
+
+1214
+00:58:04,380 --> 00:58:06,740
+nicer and prettier came along.
+
+1215
+00:58:06,740 --> 00:58:07,800
+So focus.
+
+1216
+00:58:07,800 --> 00:58:08,950
+You have to stay focused.
+
+1217
+00:58:08,950 --> 00:58:12,062
+If somebody says, hey
+boss, look at this.
+
+1218
+00:58:12,062 --> 00:58:13,270
+They just came out with that.
+
+1219
+00:58:13,270 --> 00:58:14,860
+Shouldn't we be building that?
+
+1220
+00:58:14,860 --> 00:58:16,380
+Focus.
+
+1221
+00:58:16,380 --> 00:58:17,971
+We're getting this done now.
+
+1222
+00:58:17,971 --> 00:58:19,720
+We're going to work
+on it and that's that.
+
+1223
+00:58:23,120 --> 00:58:26,180
+We talked about stock
+dilution and control,
+
+1224
+00:58:26,180 --> 00:58:28,470
+and not to worry
+too much about that.
+
+1225
+00:58:28,470 --> 00:58:30,470
+And then finally, take
+help from your investors.
+
+1226
+00:58:33,090 --> 00:58:37,360
+But investors probably aren't
+going to be very helpful.
+
+1227
+00:58:37,360 --> 00:58:40,030
+You might think they are,
+they might tell you they are,
+
+1228
+00:58:40,030 --> 00:58:41,900
+they're going to say
+we're your buddies,
+
+1229
+00:58:41,900 --> 00:58:44,730
+I love what you're doing, I
+love you, I'm going to help you,
+
+1230
+00:58:44,730 --> 00:58:48,030
+I'm going to roll up my
+sleeves, and it's all BS.
+
+1231
+00:58:48,030 --> 00:58:49,116
+They can't.
+
+1232
+00:58:49,116 --> 00:58:50,490
+They're doing too
+many companies.
+
+1233
+00:58:50,490 --> 00:58:53,010
+They're sitting
+on too many boards
+
+1234
+00:58:53,010 --> 00:58:54,330
+They know people.
+
+1235
+00:58:54,330 --> 00:58:56,950
+Use the network and
+use their connections.
+
+1236
+00:58:56,950 --> 00:58:59,950
+At the next round,
+have them help you.
+
+1237
+00:58:59,950 --> 00:59:03,710
+Who you're partnering with now,
+can we parade in front of them
+
+1238
+00:59:03,710 --> 00:59:04,670
+as well?
+
+1239
+00:59:04,670 --> 00:59:06,900
+But they're not going
+to help you that much.
+
+1240
+00:59:06,900 --> 00:59:09,820
+Angel investors are more
+likely to roll their sleeves up
+
+1241
+00:59:09,820 --> 00:59:12,820
+because sometimes they're
+retirees like me who
+
+1242
+00:59:12,820 --> 00:59:16,790
+want to have fun and play with
+gadgets and stuff like that,
+
+1243
+00:59:16,790 --> 00:59:17,810
+and they could help.
+
+1244
+00:59:17,810 --> 00:59:21,100
+But in general, the kind
+of help from your investors
+
+1245
+00:59:21,100 --> 00:59:22,840
+is more who they know.
+
+1246
+00:59:22,840 --> 00:59:24,790
+Customers and
+networks and partners.
+
+1247
+00:59:27,340 --> 00:59:31,400
+OK, so the bottom line is,
+this all really boils down
+
+1248
+00:59:31,400 --> 00:59:32,250
+to leadership.
+
+1249
+00:59:32,250 --> 00:59:35,230
+Whether it's technology
+leadership, CEO leadership,
+
+1250
+00:59:35,230 --> 00:59:39,500
+team management, you want to be
+the leader in whatever you do.
+
+1251
+00:59:39,500 --> 00:59:42,520
+So leadership wins.
+
+1252
+00:59:42,520 --> 00:59:46,980
+In order to be a leader,
+you've got to show passion,
+
+1253
+00:59:46,980 --> 00:59:51,970
+you've got to be confident,
+and you have to engage.
+
+1254
+00:59:51,970 --> 00:59:54,880
+You have to do
+those three things.
+
+1255
+00:59:54,880 --> 00:59:57,160
+You need to have
+a call to action.
+
+1256
+00:59:57,160 --> 00:59:58,500
+I'm going to go do this.
+
+1257
+00:59:58,500 --> 01:00:00,310
+Do you want to be a part of it?
+
+1258
+01:00:00,310 --> 01:00:03,000
+I can give you a
+piece of my company.
+
+1259
+01:00:03,000 --> 01:00:04,940
+Love to have you
+on board, but we're
+
+1260
+01:00:04,940 --> 01:00:06,530
+going to change the world.
+
+1261
+01:00:06,530 --> 01:00:09,500
+You need to make
+that pitch and then
+
+1262
+01:00:09,500 --> 01:00:12,880
+you win the war, even if
+you don't win that battle,
+
+1263
+01:00:12,880 --> 01:00:15,390
+even if you don't get that VC.
+
+1264
+01:00:15,390 --> 01:00:17,484
+The word will get out,
+what you're trying to do,
+
+1265
+01:00:17,484 --> 01:00:18,650
+and you're going to do fine.
+
+1266
+01:00:26,044 --> 01:00:27,384
+[APPLAUSE]
+
+1267
+01:00:27,384 --> 01:00:28,550
+MODERATOR: Thank you, Steve.
+
+1268
+01:00:28,550 --> 01:00:29,630
+STEPHEN PEARSE: Thanks, Joe.
+
+1269
+01:00:29,630 --> 01:00:30,320
+Thank you, guys.
+
+1270
+01:00:30,320 --> 01:00:35,470
+And by the way, all of you can
+be the next Tony Stark or Betty
+
+1271
+01:00:35,470 --> 01:00:36,570
+Stark.
+
+1272
+01:00:36,570 --> 01:00:39,890
+We need another Tony
+Stark, a female Tony Stark,
+
+1273
+01:00:39,890 --> 01:00:40,930
+captain of industry.
+
+1274
+01:00:40,930 --> 01:00:42,127
+So good luck, OK?
+
+1275
+01:00:42,127 --> 01:00:42,960
+Thank you very much.
+
+1276
+01:00:42,960 --> 01:00:44,510
+[APPLAUSE]

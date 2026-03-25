@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Lecture Notes on MIT OpenCourseWare</title>
+    <link>/resources/lecture-notes/</link>
+    <description>Recent content in Lecture Notes on MIT OpenCourseWare</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language><atom:link href="/resources/lecture-notes/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Financial Template - 15.S21 Nuts and Bolts IAP 2014</title>
+      <link>/resources/mit15_s21iap14_fncltemp13-1/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/resources/mit15_s21iap14_fncltemp13-1/data.json</guid>
+      <description>This resource contains information related to Financial Template.</description>
+    </item>
+    
+    <item>
+      <title>Financial Template - 15.S21 Nuts and Bolts IAP 2014</title>
+      <link>/resources/mit15_s21iap14_fncltemp13/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/resources/mit15_s21iap14_fncltemp13/data.json</guid>
+      <description>This resource contains information related to Financial Template.</description>
+    </item>
+    
+    <item>
+      <title>Lecture 1.1 Introduction to Business Plans - 15.S21 Nuts and Bolts IAP 2014</title>
+      <link>/resources/mit15_s21iap14_session1-1/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/resources/mit15_s21iap14_session1-1/data.json</guid>
+      <description>This resource contains information related to Introduction to Business Plans.</description>
+    </item>
+    
+    <item>
+      <title>Lecture 1.2 How to Make a Pitch - 15.S21 Nuts and Bolts IAP 2014</title>
+      <link>/resources/mit15_s21iap14_session1-2/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/resources/mit15_s21iap14_session1-2/data.json</guid>
+      <description>This resource contains information related to How to Make a Pitch.</description>
+    </item>
+    
+    <item>
+      <title>Lecture 2.1 Finding Your Customer - 15.S21 Nuts and Bolts IAP 2014</title>
+      <link>/resources/mit15_s21iap14_session2-1/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/resources/mit15_s21iap14_session2-1/data.json</guid>
+      <description>This resource contains information related to Finding Your Customer.</description>
+    </item>
+    
+    <item>
+      <title>Lecture 2.2 Business Model Slides - 15.S21 Nuts and Bolts IAP 2014</title>
+      <link>/resources/mit15_s21iap14_session2-2/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/resources/mit15_s21iap14_session2-2/data.json</guid>
+      <description>This resource contains information related to Business Model.</description>
+    </item>
+    
+    <item>
+      <title>Lecture 3.2 Business Plan Financial Projections - 15.S21 Nuts and Bolts IAP 2014</title>
+      <link>/resources/mit15_s21iap14_session3-2/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/resources/mit15_s21iap14_session3-2/data.json</guid>
+      <description>This resource contains information related to business plan financial projections.</description>
+    </item>
+    
+    <item>
+      <title>Lecture 4.2 Legal Issues and Business Plans - 15.S21 Nuts and Bolts IAP 2014</title>
+      <link>/resources/mit15_s21iap14_session4-2/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/resources/mit15_s21iap14_session4-2/data.json</guid>
+      <description>This resource contains information related to Legal Issues and Business Plans.</description>
+    </item>
+    
+    <item>
+      <title>Lecture Notes</title>
+      <link>/pages/lecture-notes/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/pages/lecture-notes/data.json</guid>
+      <description>TOPICS SUBTOPICS LECTURE NOTES Session 1 Part 1: Introduction and Overview of Business Plans
+Speaker Joe Hadzima (bio)
+Introduction to Business Plans What is it, why do I need it and what is it used for? Practical do&amp;rsquo;s and don&amp;rsquo;ts in preparing a Business Plan. Things to keep in mind in writing a Business Plan which will improve your chances of obtaining funding and running a successful business.
+Introduction to Virtual Ink During this course we will be referring to the Virtual Ink Business Plan as an example.</description>
+    </item>
+    
+    <item>
+      <title>Speaker Biographies</title>
+      <link>/pages/lecture-notes/speaker-biographies/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/pages/lecture-notes/speaker-biographies/data.json</guid>
+      <description>Joseph G. Hadzima Jr. Joe Hadzima is a Managing Director of Main Street Partners LLC, a venture development and technology commercialization firm, and is President of IPVision, Inc., a Main Street portfolio company which provides intellectual property systems and services. He was a Director of the Global MIT Enterprise Forum, with 24 chapters worldwide, from 1984 to 2009 and was Global Chairman from 2004 to 2008. He is also a past Director of the New England chapter of the National Association of Corporate Directors.</description>
+    </item>
+    
+  </channel>
+</rss>

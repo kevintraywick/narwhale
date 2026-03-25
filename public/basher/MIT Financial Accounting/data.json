@@ -1,0 +1,30 @@
+{
+  "course_title":"Financial Accounting",
+  "course_description":"Our goal is to help you develop a framework for understanding financial, managerial, and tax reports. The course goal is divided into five subordinate challenges that can help you organize the way you learn accounting:\n\n1.  The record keeping and reporting challenge\n2.  The computation challenge\n3.  The judgment challenge\n4.  The usage challenge\n5.  The search challenge\n\nThe course adopts a decision-maker perspective of accounting by emphasizing the relation between accounting data and the underlying economic events generating them. Restricted to first-year Sloan MBA students.\n\n##### Acknowledgements\n\nAcknowledgment is hereby given to Professor G. Peter Wilson for his authorship of the following content in this course:\n\n*   The Five Challenges (see Syllabus and Lecture 1)\n*   \"What Do Intel and Accountants Have in Common?\" (see Lecture 1)\n*   A Conceptual Framework for Financial Accounting (see Lecture 1)\n",
+  "site_uid":"0372f180-0fff-4a43-8d17-232806953d4f",
+  "legacy_uid":"01412b9c-8aca-83ae-8aae-0cda93dc74cb","instructors": [{
+    "first_name":"George",
+    "last_name":"Plesko",
+    "middle_initial":"",
+    "salutation":"Prof.",
+    "title":"Prof. George Plesko"},{
+    "first_name":"Kin",
+    "last_name":"Lo",
+    "middle_initial":"",
+    "salutation":"Prof.",
+    "title":"Prof. Kin Lo"},{
+    "first_name":"Richard",
+    "last_name":"Frankel",
+    "middle_initial":"",
+    "salutation":"Prof.",
+    "title":"Prof. Richard Frankel"}],"department_numbers":["15"],
+  "learning_resource_types":["Lecture Notes","Problem Sets"],
+  "topics":[["Business","Accounting"],["Business","Finance"],["Business","Management"]],
+  "primary_course_number":"15.515",
+  "extra_course_numbers":"",
+  "term":"Fall",
+  "year":"2003",
+  "level":["Graduate"],
+  "image_src":"./static_resources/2e6c015844f1f7bcde46be9fb0a8b4f8_15-515f03.jpg",
+  "course_image_metadata":{"content_type":"resource","description":"","draft":false,"file":"/courses/15-515-financial-accounting-fall-2003/2e6c015844f1f7bcde46be9fb0a8b4f8_15-515f03.jpg","file_type":"image/jpeg","image_metadata":{"caption":"Accountants use the equation Assets = Liabilities + Shareholders' Equity as the basis for their balance sheets. (Image courtesy of Matthew Palmer. Used with permission.)","credit":"","image-alt":"Close up of dollar bill with A equals L plus E written on it."},"iscjklanguage":false,"learning_resource_types":[],"license":"https://creativecommons.org/licenses/by-nc-sa/4.0/","ocw_type":"OCWImage","resourcetype":"Image","title":"15-515f03.jpg","uid":"2e6c0158-44f1-f7bc-de46-be9fb0a8b4f8"}}
+
