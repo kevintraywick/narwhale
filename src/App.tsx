@@ -1,4 +1,5 @@
 import { Routes, Route } from 'react-router-dom'
+import Footer from './components/Footer'
 import pastryImg from './assets/pastry.png'
 import bubbleImg from './assets/bubble.png'
 import penImg from './assets/pen.png'
@@ -37,10 +38,13 @@ function Homepage() {
 
 export default function App() {
   return (
-    <Routes>
-      <Route path="/" element={<Homepage />} />
-      <Route path="/blog" element={<Blog />} />
-      <Route path="/blog/:id" element={<BlogEntry />} />
-    </Routes>
+    <>
+      <Routes>
+        <Route path="/" element={<Homepage />} />
+        <Route path="/blog" element={<Blog />} />
+        <Route path="/blog/:id" element={<BlogEntry />} />
+      </Routes>
+      <Footer />
+    </>
   )
 }
