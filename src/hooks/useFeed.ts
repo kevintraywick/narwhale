@@ -7,6 +7,7 @@ export interface Entry {
   title: string
   link?: string
   note?: string
+  image_url?: string
   created_at: string
   comment_count: number
 }
@@ -35,7 +36,7 @@ export function useFeed() {
       .finally(() => setLoading(false))
   }, [])
 
-  async function postEntry(title: string, link?: string, note?: string): Promise<Entry> {
+  async function postEntry(title: string, link?: string, note?: string, imageUrl?: string): Promise<Entry> {
     const secret = import.meta.env.VITE_POST_SECRET
     const res = await fetch(`${API_URL}/entries`, {
       method: 'POST',
@@ -47,6 +48,7 @@ export function useFeed() {
         title,
         link: link || undefined,
         note: note || undefined,
+        image_url: imageUrl || undefined,
       }),
     })
     if (!res.ok) throw new Error('Post failed')
@@ -76,4 +78,18 @@ export async function fetchEntry(id: string): Promise<EntryDetail> {
   const res = await fetch(`${API_URL}/entries/${id}`)
   if (!res.ok) throw new Error('Not found')
   return res.json()
+}
+
+export async function uploadImage(file: File): Promise<string> {
+  const secret = import.meta.env.VITE_POST_SECRET
+  const body = new FormData()
+  body.append('image', file)
+  const res = await fetch(`${API_URL}/uploads`, {
+    method: 'POST',
+    headers: { 'Authorization': `Bearer ${secret}` },
+    body,
+  })
+  if (!res.ok) throw new Error('Upload failed')
+  const data = await res.json()
+  return data.url as string
 }
