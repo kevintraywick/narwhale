@@ -55,6 +55,13 @@ export default function BlogEntry() {
           <a href={entry.link} target="_blank" rel="noopener noreferrer"
             className="text-gray-400 italic text-sm block mb-4">{entry.link}</a>
         )}
+        {entry.image_url && (
+          <img
+            src={entry.image_url}
+            alt=""
+            className="w-full rounded max-h-96 object-contain bg-gray-50 mb-4"
+          />
+        )}
         {entry.note && <p className="text-gray-600 text-sm leading-relaxed mt-4 mb-8">{entry.note}</p>}
 
         <div className="border-t border-gray-100 pt-6">
