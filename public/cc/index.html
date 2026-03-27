@@ -8,35 +8,126 @@
     * { margin: 0; padding: 0; box-sizing: border-box; }
     body { background: #111; color: #fff; font-family: sans-serif; height: 100vh; display: flex; flex-direction: column; overflow: hidden; }
 
-    nav {
+    /* Thumbnail strip */
+    #thumbstrip {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      padding: 8px 12px;
+      background: #1a1a1a;
+      flex-shrink: 0;
+      overflow-x: auto;
+      scrollbar-width: thin;
+      scrollbar-color: #333 transparent;
+      position: relative;
+    }
+
+    #thumbs {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      flex: 1;
+      min-width: 0;
+    }
+
+    .thumb {
+      flex-shrink: 0;
+      width: 72px;
+      height: 48px;
+      border-radius: 4px;
+      background: #282828;
+      border: 2px solid transparent;
       display: flex;
       align-items: center;
       justify-content: center;
-      gap: 48px;
-      padding: 12px 24px;
-      background: #111;
-      flex-shrink: 0;
+      cursor: grab;
+      font-size: 9px;
+      color: #888;
+      text-align: center;
+      padding: 2px 4px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      user-select: none;
+      transition: border-color 0.15s, opacity 0.15s;
+    }
+    .thumb:active { cursor: grabbing; }
+    .thumb.active { border-color: #5af; }
+    .thumb:hover:not(.active) { border-color: #444; }
+    .thumb.drag-over { border-color: #f80; }
+    .thumb.dragging { opacity: 0.3; }
+
+    .thumb img {
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: cover;
+      border-radius: 2px;
     }
 
-    button {
+    /* Drop zone */
+    #dropzone {
+      flex-shrink: 0;
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      border: 2px dashed #444;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      font-size: 22px;
+      color: #555;
+      transition: border-color 0.15s, color 0.15s;
+    }
+    #dropzone:hover, #dropzone.drag-hover { border-color: #5af; color: #5af; }
+
+    /* Delete button */
+    #deletebtn {
+      flex-shrink: 0;
+      width: 48px;
+      height: 48px;
+      border: none;
+      background: none;
+      font-size: 24px;
+      cursor: pointer;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background 0.15s;
+    }
+    #deletebtn:hover { background: #332; }
+
+    /* Nav controls group — true center via absolute positioning */
+    #nav-controls {
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      z-index: 5;
+    }
+
+    button.nav-arrow {
+      flex-shrink: 0;
       background: none;
       border: none;
       color: #fff;
-      font-size: 28px;
+      font-size: 22px;
       cursor: pointer;
-      padding: 4px 12px;
+      padding: 4px 6px;
       border-radius: 4px;
       line-height: 1;
       transition: opacity 0.1s;
       user-select: none;
     }
-    button:hover { opacity: 0.6; }
-    button:disabled { opacity: 0.15; cursor: default; }
+    button.nav-arrow:hover { opacity: 0.6; }
 
     #counter {
-      font-size: 13px;
+      flex-shrink: 0;
+      font-size: 11px;
       color: #555;
-      min-width: 60px;
+      min-width: 36px;
       text-align: center;
     }
 
@@ -60,39 +151,271 @@
       border: none;
       background: #fff;
     }
+
+    /* Undo toast */
+    #toast {
+      position: fixed;
+      bottom: 24px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #333;
+      color: #fff;
+      padding: 10px 20px;
+      border-radius: 8px;
+      font-size: 14px;
+      display: none;
+      align-items: center;
+      gap: 12px;
+      z-index: 100;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.4);
+    }
+    #toast button {
+      background: #5af;
+      color: #111;
+      border: none;
+      padding: 4px 12px;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 13px;
+      font-weight: bold;
+    }
+
+    /* Hidden file input */
+    #fileinput { display: none; }
   </style>
 </head>
 <body>
-  <nav>
-    <button id="prev" onclick="go(-1)">&#8592;</button>
-    <span id="counter"></span>
-    <button id="next" onclick="go(1)">&#8594;</button>
-  </nav>
+  <div id="thumbstrip">
+    <div id="dropzone" title="Drop or click to add files">+</div>
+    <div id="thumbs"></div>
+    <div id="nav-controls">
+      <button class="nav-arrow" id="prev" onclick="go(-1)">&#8592;</button>
+      <span id="counter"></span>
+      <button class="nav-arrow" id="next" onclick="go(1)">&#8594;</button>
+    </div>
+    <button id="deletebtn" title="Delete current page">🔥</button>
+  </div>
+  <input type="file" id="fileinput" accept="image/*,.pdf,.html,.htm" multiple />
+
   <div id="viewer"></div>
 
+  <div id="toast">
+    <span id="toast-msg"></span>
+    <button onclick="undoDelete()">Undo</button>
+  </div>
+
   <script>
+    const STORAGE_KEY = 'cc_flipbook'
     let files = []
     let index = 0
+    let undoStack = [] // { file, index, position }
+    let undoTimer = null
 
-    function render() {
+    // --- Persistence ---
+    function saveState() {
+      localStorage.setItem(STORAGE_KEY, JSON.stringify({ files, index }))
+    }
+
+    function loadState() {
+      try {
+        const saved = JSON.parse(localStorage.getItem(STORAGE_KEY))
+        if (saved && saved.files && saved.files.length) return saved
+      } catch {}
+      return null
+    }
+
+    // --- Thumbnails ---
+    function renderThumbs() {
+      const container = document.getElementById('thumbs')
+      container.innerHTML = ''
+      files.forEach((f, i) => {
+        const el = document.createElement('div')
+        el.className = 'thumb' + (i === index ? ' active' : '')
+        el.draggable = true
+        el.dataset.index = i
+
+        if (f.type === 'image') {
+          const src = f.dataUrl || encodeURIComponent(f.name)
+          el.innerHTML = `<img src="${src}" alt="${f.name}" />`
+        } else {
+          const label = f.name.replace(/\.[^.]+$/, '')
+          el.textContent = label.length > 20 ? label.slice(0, 18) + '...' : label
+        }
+
+        el.addEventListener('click', () => { index = i; render() })
+        el.addEventListener('dragstart', onThumbDragStart)
+        el.addEventListener('dragover', onThumbDragOver)
+        el.addEventListener('dragenter', onThumbDragEnter)
+        el.addEventListener('dragleave', onThumbDragLeave)
+        el.addEventListener('drop', onThumbDrop)
+        el.addEventListener('dragend', onThumbDragEnd)
+
+        container.appendChild(el)
+      })
+    }
+
+    // --- Drag to reorder ---
+    let dragIndex = null
+
+    function onThumbDragStart(e) {
+      dragIndex = +this.dataset.index
+      this.classList.add('dragging')
+      e.dataTransfer.effectAllowed = 'move'
+      e.dataTransfer.setData('text/plain', dragIndex)
+    }
+
+    function onThumbDragOver(e) {
+      e.preventDefault()
+      e.dataTransfer.dropEffect = 'move'
+    }
+
+    function onThumbDragEnter(e) {
+      e.preventDefault()
+      if (dragIndex !== null) this.classList.add('drag-over')
+    }
+
+    function onThumbDragLeave() {
+      this.classList.remove('drag-over')
+    }
+
+    function onThumbDrop(e) {
+      e.preventDefault()
+      this.classList.remove('drag-over')
+      const from = dragIndex
+      const to = +this.dataset.index
+      if (from === null || from === to) return
+
+      const [moved] = files.splice(from, 1)
+      files.splice(to, 0, moved)
+
+      // Update current index to follow the viewed page
+      if (index === from) {
+        index = to
+      } else if (from < index && to >= index) {
+        index--
+      } else if (from > index && to <= index) {
+        index++
+      }
+
+      saveState()
+      render()
+    }
+
+    function onThumbDragEnd() {
+      dragIndex = null
+      document.querySelectorAll('.thumb').forEach(t => {
+        t.classList.remove('dragging', 'drag-over')
+      })
+    }
+
+    // --- Drop zone (add files) ---
+    const dropzone = document.getElementById('dropzone')
+    const fileinput = document.getElementById('fileinput')
+
+    dropzone.addEventListener('click', () => fileinput.click())
+
+    dropzone.addEventListener('dragover', e => { e.preventDefault(); dropzone.classList.add('drag-hover') })
+    dropzone.addEventListener('dragleave', () => dropzone.classList.remove('drag-hover'))
+    dropzone.addEventListener('drop', e => {
+      e.preventDefault()
+      dropzone.classList.remove('drag-hover')
+      handleFiles(e.dataTransfer.files)
+    })
+
+    fileinput.addEventListener('change', () => {
+      handleFiles(fileinput.files)
+      fileinput.value = ''
+    })
+
+    function handleFiles(fileList) {
+      Array.from(fileList).forEach(file => {
+        const ext = file.name.split('.').pop().toLowerCase()
+        let type = 'html'
+        if (['png','jpg','jpeg','gif','webp','svg','bmp'].includes(ext)) type = 'image'
+        else if (ext === 'pdf') type = 'pdf'
+
+        const reader = new FileReader()
+        reader.onload = () => {
+          files.push({ name: file.name, type, dataUrl: reader.result })
+          index = files.length - 1
+          saveState()
+          render()
+        }
+        reader.readAsDataURL(file)
+      })
+    }
+
+    // --- Delete with undo ---
+    document.getElementById('deletebtn').addEventListener('click', deleteCurrent)
+
+    function deleteCurrent() {
       if (!files.length) return
+      const removed = files[index]
+      const removedIndex = index
+
+      files.splice(index, 1)
+      if (index >= files.length) index = Math.max(0, files.length - 1)
+      saveState()
+
+      undoStack.push({ file: removed, position: removedIndex })
+      showToast(`Deleted "${removed.name.replace(/\.[^.]+$/, '')}"`)
+      render()
+    }
+
+    function undoDelete() {
+      if (!undoStack.length) return
+      const { file, position } = undoStack.pop()
+      const insertAt = Math.min(position, files.length)
+      files.splice(insertAt, 0, file)
+      index = insertAt
+      saveState()
+      hideToast()
+      render()
+    }
+
+    function showToast(msg) {
+      const toast = document.getElementById('toast')
+      document.getElementById('toast-msg').textContent = msg
+      toast.style.display = 'flex'
+      clearTimeout(undoTimer)
+      undoTimer = setTimeout(hideToast, 5000)
+    }
+
+    function hideToast() {
+      document.getElementById('toast').style.display = 'none'
+      clearTimeout(undoTimer)
+    }
+
+    // --- Main render ---
+    function render() {
+      renderThumbs()
+      if (!files.length) {
+        document.getElementById('viewer').innerHTML = '<span style="color:#555">No pages</span>'
+        document.getElementById('counter').textContent = '0 / 0'
+        return
+      }
       const f = files[index]
-      const src = encodeURIComponent(f.name)
       const viewer = document.getElementById('viewer')
       const counter = document.getElementById('counter')
 
       counter.textContent = `${index + 1} / ${files.length}`
-      document.getElementById('prev').disabled = false
-      document.getElementById('next').disabled = false
 
       if (f.type === 'image') {
+        const src = f.dataUrl || encodeURIComponent(f.name)
         viewer.innerHTML = `<img src="${src}" alt="${f.name}" />`
+      } else if (f.dataUrl) {
+        viewer.innerHTML = `<iframe src="${f.dataUrl}"></iframe>`
       } else {
-        viewer.innerHTML = `<iframe src="${src}"></iframe>`
+        viewer.innerHTML = `<iframe src="${encodeURIComponent(f.name)}"></iframe>`
       }
+
+      // Scroll active thumb into view
+      const active = document.querySelector('.thumb.active')
+      if (active) active.scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' })
     }
 
     function go(dir) {
+      if (!files.length) return
       index = (index + dir + files.length) % files.length
       render()
     }
@@ -100,11 +423,36 @@
     document.addEventListener('keydown', e => {
       if (e.key === 'ArrowLeft') go(-1)
       if (e.key === 'ArrowRight') go(1)
+      if ((e.key === 'Delete' || e.key === 'Backspace') && !e.metaKey && !e.ctrlKey) deleteCurrent()
+      if (e.key === 'z' && (e.metaKey || e.ctrlKey)) { e.preventDefault(); undoDelete() }
     })
 
+    // --- Init: merge server files with localStorage ---
     fetch('files.json')
       .then(r => r.json())
-      .then(data => { files = data; render() })
+      .then(serverFiles => {
+        const saved = loadState()
+        if (saved) {
+          // Merge: keep saved order/additions, add any new server files
+          const savedNames = new Set(saved.files.filter(f => !f.dataUrl).map(f => f.name))
+          const newServerFiles = serverFiles.filter(f => !savedNames.has(f.name))
+          files = [...saved.files, ...newServerFiles]
+          index = Math.min(saved.index, files.length - 1)
+        } else {
+          files = serverFiles
+        }
+        if (index < 0) index = 0
+        render()
+      })
+      .catch(() => {
+        // If files.json fails, try localStorage only
+        const saved = loadState()
+        if (saved) {
+          files = saved.files
+          index = Math.min(saved.index, files.length - 1)
+        }
+        render()
+      })
   </script>
 </body>
 </html>
