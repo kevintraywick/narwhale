@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>basher — Greenleaf Bioplastics</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+    body{font-family:'Inter',-apple-system,sans-serif;background:#fafafa;color:#1a1a1a;min-height:100vh;-webkit-font-smoothing:antialiased}
+    .header{padding:48px 0 12px;text-align:center}
+    .header a{font-size:11px;font-weight:400;letter-spacing:.12em;text-transform:lowercase;color:#999;text-decoration:none;transition:color .2s}
+    .header a:hover{color:#1a1a1a}
+    .company-name{margin-top:12px;font-size:20px;font-weight:600;color:#1a1a1a;text-align:center}
+    .company-tagline{margin-top:6px;font-size:13px;color:#888;text-align:center;font-weight:400}
+    .pipeline{max-width:860px;margin:40px auto 0;padding:0 24px;display:flex;align-items:stretch;justify-content:center}
+    .pipeline-stage{background:#fff;border:1px solid #eee;border-radius:8px;padding:20px 24px;text-align:center;text-decoration:none;color:inherit;transition:all .25s;min-width:180px}
+    .pipeline-stage:hover{border-color:#ddd;box-shadow:0 2px 12px rgba(0,0,0,.04);transform:translateY(-1px)}
+    .stage-label{font-size:10px;font-weight:500;color:#999;letter-spacing:.08em;text-transform:uppercase;margin-bottom:8px}
+    .stage-value.grades{display:flex;gap:6px;justify-content:center}
+    .mini-grade{width:24px;height:24px;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;font-size:10px;font-weight:700;color:#fff}
+    .stage-subtitle{font-size:11px;color:#aaa;margin-top:6px;font-weight:400}
+    .pipeline-arrow{font-size:18px;color:#ddd;padding:0 12px;flex-shrink:0;display:flex;align-items:center}
+    .grade-A{background:#2a9d6a}.grade-B{background:#4a90d9}.grade-C{background:#d4a843}.grade-D{background:#d97a4a}.grade-F{background:#d94a4a}
+    .pragmatic-score{font-size:24px;font-weight:700}.pragmatic-total{font-size:14px;font-weight:400;color:#999}
+    .fin-score{font-size:13px;font-weight:600;color:#1a1a1a;margin-bottom:6px}.fin-score span{font-weight:400;color:#999}
+    .fin-list{list-style:none;text-align:left;margin:0;padding:0}
+    .fin-row{display:flex;align-items:center;gap:6px;padding:1.5px 0;font-size:10px;color:#666;line-height:1.3}
+    .fin-radio{width:7px;height:7px;border-radius:50%;flex-shrink:0}
+    .fin-radio.present{background:#2a9d6a}.fin-radio.partial{background:#d4a843}.fin-radio.absent{background:#d94a4a}
+    .pg-score{font-size:13px;font-weight:600;color:#1a1a1a;margin-bottom:8px}.pg-score span{font-weight:400;color:#999}
+    .pg-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:5px;justify-items:center}
+    .pg-dot{width:18px;height:18px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:8px;font-weight:700;color:#fff}
+    .pg-dot.pass{background:#2a9d6a}.pg-dot.fail{background:#d94a4a}
+    .section{max-width:760px;margin:0 auto;padding:40px 24px 0}
+    .section-title{font-size:11px;font-weight:500;color:#999;letter-spacing:.08em;text-transform:uppercase;margin-bottom:16px}
+    .missing-list{list-style:none}
+    .missing-item{font-size:13px;line-height:1.7;color:#555;padding:8px 0;border-bottom:1px solid #f0f0f0}
+    .missing-item:last-child{border-bottom:none}
+    .missing-tag{font-size:10px;font-weight:600;color:#999;letter-spacing:.04em;margin-right:8px}
+    .summary{font-size:14px;line-height:1.8;color:#444;font-weight:400}
+    .footer{max-width:760px;margin:0 auto;padding:48px 24px 32px;font-size:10px;color:#ccc;letter-spacing:.04em;text-align:center}
+    @media(max-width:740px){.pipeline{flex-direction:column;align-items:center}.pipeline-arrow{transform:rotate(90deg);padding:8px 0}.pipeline-stage{min-width:auto;width:100%;max-width:260px}}
+  </style>
+</head>
+<body>
+  <div class="header"><a href="../index.html">basher</a></div>
+  <div class="company-name">Greenleaf Bioplastics</div>
+  <div class="company-tagline">Compostable food packaging from agricultural waste at price parity</div>
+  <div class="pipeline">
+    <a class="pipeline-stage" href="frameworks.html">
+      <div class="stage-label">Frameworks</div>
+      <div class="stage-value grades">
+        <span class="mini-grade grade-B">B</span><span class="mini-grade grade-B">B</span><span class="mini-grade grade-A">A</span><span class="mini-grade grade-B">B</span>
+      </div>
+      <div class="stage-subtitle">BP · DB · SQ · CC</div>
+    </a>
+    <div class="pipeline-arrow">→</div>
+    <a class="pipeline-stage" href="pragmatic.html">
+      <div class="stage-label">Pragmatic</div>
+      <div class="stage-value"><span class="pragmatic-score">7</span><span class="pragmatic-total"> / 11</span></div>
+      <div class="stage-subtitle">threshold questions</div>
+    </a>
+    <div class="pipeline-arrow">→</div>
+    <a class="pipeline-stage" href="financials.html">
+      <div class="stage-label">Financials</div>
+      <div class="fin-score">3 <span>/ 12</span></div>
+      <ul class="fin-list">
+        <li class="fin-row"><span class="fin-radio present"></span> F1 Revenue Model</li>
+        <li class="fin-row"><span class="fin-radio partial"></span> F2 Burn Rate</li>
+        <li class="fin-row"><span class="fin-radio present"></span> F3 Use of Funds</li>
+        <li class="fin-row"><span class="fin-radio partial"></span> F4 Runway</li>
+        <li class="fin-row"><span class="fin-radio partial"></span> F5 3-Year P&L</li>
+        <li class="fin-row"><span class="fin-radio partial"></span> F6 Unit Economics</li>
+        <li class="fin-row"><span class="fin-radio present"></span> F7 Gross Margin</li>
+        <li class="fin-row"><span class="fin-radio absent"></span> F8 Cash Flow</li>
+        <li class="fin-row"><span class="fin-radio absent"></span> F9 Cap Table</li>
+        <li class="fin-row"><span class="fin-radio partial"></span> F10 Revenue Assumptions</li>
+        <li class="fin-row"><span class="fin-radio absent"></span> F11 Sensitivity</li>
+        <li class="fin-row"><span class="fin-radio absent"></span> F12 Comparables</li>
+      </ul>
+    </a>
+    <div class="pipeline-arrow">→</div>
+    <a class="pipeline-stage" href="pg-thinking.html">
+      <div class="stage-label">PG Thinking</div>
+      <div class="pg-score">16 <span>/ 20</span></div>
+      <div class="pg-grid">
+        <span class="pg-dot pass">1</span><span class="pg-dot pass">2</span><span class="pg-dot pass">3</span><span class="pg-dot pass">4</span>
+        <span class="pg-dot pass">5</span><span class="pg-dot pass">6</span><span class="pg-dot pass">7</span><span class="pg-dot pass">8</span>
+        <span class="pg-dot fail">9</span><span class="pg-dot pass">10</span><span class="pg-dot fail">11</span><span class="pg-dot pass">12</span>
+        <span class="pg-dot fail">13</span><span class="pg-dot pass">14</span><span class="pg-dot fail">15</span><span class="pg-dot pass">16</span>
+        <span class="pg-dot pass">17</span><span class="pg-dot pass">18</span><span class="pg-dot pass">19</span><span class="pg-dot pass">20</span>
+      </div>
+    </a>
+  </div>
+  <div class="section">
+    <div class="section-title">Executive Summary</div>
+    <p class="summary">Greenleaf Bioplastics is a strong Series A candidate with regulatory tailwinds, proven technology, and early enterprise traction. The founding team is unusually well-matched to this opportunity. However, the financial picture is thin — only 3 of 12 items fully present. For a company seeking $8M to build a manufacturing facility, the lack of monthly cash flow projections, unit economics, and sensitivity analysis is a gap any Sand Hill analyst would flag. The fundamentals are solid; the financial packaging needs work before a partner meeting.</p>
+  </div>
+  <div class="section">
+    <div class="section-title">Missing Information</div>
+    <ul class="missing-list">
+      <li class="missing-item"><span class="missing-tag">P6 · BP</span> No CTO identified — blocking dependency for facility build-out.</li>
+      <li class="missing-item"><span class="missing-tag">F8</span> No monthly cash flow projection. For a $5M facility build, cash timing is critical.</li>
+      <li class="missing-item"><span class="missing-tag">F6 · P7</span> No CAC/LTV. Enterprise sales with a 5-person team needs acquisition cost modeling.</li>
+      <li class="missing-item"><span class="missing-tag">F9</span> No cap table. At $8M Series A, ownership structure matters.</li>
+      <li class="missing-item"><span class="missing-tag">F11 · P8</span> No sensitivity analysis or SPOF mitigation.</li>
+    </ul>
+  </div>
+  <div class="footer">evaluated by basher · 2026-03-26</div>
+</body>
+</html>

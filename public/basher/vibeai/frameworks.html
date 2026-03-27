@@ -1,0 +1,119 @@
+<!--
+  basher — VibeAI evaluation
+  Generated: 2026-03-26
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>basher — VibeAI</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      background: #fafafa; color: #1a1a1a; min-height: 100vh;
+      -webkit-font-smoothing: antialiased;
+    }
+    .header { padding: 48px 0 12px; text-align: center; }
+    .header a { font-size: 11px; font-weight: 400; letter-spacing: 0.12em; text-transform: lowercase; color: #999; text-decoration: none; transition: color 0.2s ease; }
+    .header a:hover { color: #1a1a1a; }
+    .company-name { margin-top: 12px; font-size: 20px; font-weight: 600; color: #1a1a1a; text-align: center; }
+    .company-tagline { margin-top: 6px; font-size: 13px; color: #888; text-align: center; font-weight: 400; }
+
+    .grid { max-width: 760px; margin: 32px auto 0; padding: 0 24px; display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    .card {
+      background: #fff; border: 1px solid #eee; border-radius: 8px;
+      padding: 28px 24px 24px; position: relative; transition: all 0.25s ease;
+      display: flex; flex-direction: column; min-height: 200px;
+    }
+    .card:hover { border-color: #ddd; box-shadow: 0 2px 12px rgba(0,0,0,0.04); }
+    .card-framework { font-size: 10px; font-weight: 500; color: #ccc; letter-spacing: 0.06em; margin-bottom: 8px; text-transform: uppercase; }
+    .card-title { font-size: 14px; font-weight: 600; color: #1a1a1a; margin-bottom: 10px; line-height: 1.3; }
+    .card-assessment { font-size: 12.5px; line-height: 1.6; color: #555; font-weight: 400; flex: 1; }
+
+    .grade-badge {
+      position: absolute; bottom: 16px; right: 16px; width: 36px; height: 36px;
+      border-radius: 50%; display: flex; align-items: center; justify-content: center;
+      font-size: 16px; font-weight: 700; color: #fff; letter-spacing: 0;
+    }
+    .grade-A { background: #2a9d6a; }
+    .grade-B { background: #4a90d9; }
+    .grade-C { background: #d4a843; }
+    .grade-D { background: #d97a4a; }
+    .grade-F { background: #d94a4a; }
+
+    .section { max-width: 760px; margin: 0 auto; padding: 40px 24px 0; }
+    .section-title { font-size: 11px; font-weight: 500; color: #999; letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 16px; }
+
+    .missing-list { list-style: none; }
+    .missing-item { font-size: 13px; line-height: 1.7; color: #555; padding: 8px 0; border-bottom: 1px solid #f0f0f0; }
+    .missing-item:last-child { border-bottom: none; }
+    .missing-framework { font-size: 10px; font-weight: 600; color: #999; letter-spacing: 0.04em; margin-right: 8px; }
+
+    .summary { font-size: 14px; line-height: 1.8; color: #444; font-weight: 400; }
+
+    .footer { max-width: 760px; margin: 0 auto; padding: 48px 24px 32px; font-size: 10px; color: #ccc; letter-spacing: 0.04em; text-align: center; }
+
+    @media (max-width: 560px) {
+      .grid { grid-template-columns: 1fr; }
+      .header { padding: 36px 0 8px; }
+      .card { min-height: auto; }
+    }
+  </style>
+</head>
+<body>
+  <div class="header"><a href="../index.html">basher</a></div>
+  <div class="company-name">VibeAI</div>
+  <div class="company-tagline">AI-powered mood detection and automatic playlist generation</div>
+
+  <div class="grid">
+    <div class="card">
+      <div class="card-framework">Bill Payne · Scorecard</div>
+      <div class="card-title">Solo founder in a feature-sized market</div>
+      <div class="card-assessment">A single 22-year-old founder with weekend help from a roommate scores well below average on team (30% weight). The market opportunity is really a feature inside Spotify's existing product, not a standalone business. The working prototype with 2,000 users is the brightest spot, but 30% Day-7 retention is mediocre for a consumer app. Composite: 59%.</div>
+      <div class="grade-badge grade-F">F</div>
+    </div>
+    <div class="card">
+      <div class="card-framework">Dave Berkus · Risk</div>
+      <div class="card-title">Technology works, everything else is exposed</div>
+      <div class="card-assessment">The prototype earns meaningful credit — the app exists and mood detection actually functions. But every other risk category is largely unmitigated: no co-founder or team, no strategic relationships, no revenue or sales traction, and the business model of selling emotional data raises ethical red flags that create new risks rather than reducing them. $550K of $2.5M.</div>
+      <div class="grade-badge grade-D">D</div>
+    </div>
+    <div class="card">
+      <div class="card-framework">Sequoia · Endurance</div>
+      <div class="card-title">Fails five of six elements</div>
+      <div class="card-assessment">Only clarity of purpose passes — you can explain what VibeAI does in one sentence. But the market is a feature not a platform, customers show no willingness to pay, the product tries to do four things at once (tracking, playlists, vibe maps, data sales), mood-matched playlists are a nice-to-have not a painkiller, and competing directly with Spotify's recommendation engine isn't contrarian — it's suicidal.</div>
+      <div class="grade-badge grade-F">F</div>
+    </div>
+    <div class="card">
+      <div class="card-framework">Christensen · Innovation</div>
+      <div class="card-title">No disruption thesis, head-on with incumbents</div>
+      <div class="card-assessment">This is the worst kind of competitive positioning in Christensen's framework: going head-on against incumbents (Spotify, Apple Music) on their strongest feature set. There's no low-end or new-market disruption angle. The JTBD is fuzzy — users described the mood detection as "kinda accurate, sometimes creepy," which suggests the product hasn't found true product-market fit. No profit formula exists.</div>
+      <div class="grade-badge grade-F">F</div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-title">Missing Information</div>
+    <ul class="missing-list">
+      <li class="missing-item"><span class="missing-framework">BP · DB</span> No co-founder, technical team, or advisors. A consumer AI product needs at minimum an ML engineer and a designer. Who is building the mood detection model? What's Jake's specific ML background?</li>
+      <li class="missing-item"><span class="missing-framework">CC</span> No unit economics or revenue model validation. Has anyone been asked to pay $4.99/mo? What's the conversion rate expectation? The plan assumes willingness to pay without evidence.</li>
+      <li class="missing-item"><span class="missing-framework">BP · CC</span> No go-to-market strategy beyond "TikTok ads." What's the CAC? What's the budget? Consumer apps in music/wellness have notoriously high acquisition costs — $5-15 per install is typical. At $500K total funding, this would exhaust the budget quickly.</li>
+      <li class="missing-item"><span class="missing-framework">DB · SQ</span> The "vibe map" and mood data sales to brands and real estate companies raises serious privacy and regulatory concerns (GDPR, state biometric laws in IL, TX, WA). No legal analysis or compliance strategy is mentioned. This could be a company-killing liability.</li>
+      <li class="missing-item"><span class="missing-framework">CC</span> No technical architecture or accuracy metrics for mood detection. "Kinda accurate, sometimes creepy" from beta users is not a foundation for a product. What sensors are used? What's the false positive rate? How do you handle consent for camera/microphone monitoring?</li>
+      <li class="missing-item"><span class="missing-framework">SQ</span> No explanation of why this is better as a standalone app versus a Spotify plugin or feature. If Spotify adds automatic mood detection tomorrow, what's left?</li>
+    </ul>
+  </div>
+
+  <div class="section">
+    <div class="section-title">Executive Summary</div>
+    <p class="summary">VibeAI has a working prototype and a founder with genuine enthusiasm, but the business fundamentals are severely lacking. The core problem is strategic: mood-based playlist generation is a feature, not a company, and the primary competitor (Spotify) has the data, the users, and the engineering team to build this in a sprint. The most concerning elements are the plan to sell users' emotional biometric data without any compliance strategy, and the attempt to compete head-on with incumbents rather than finding an underserved niche. Before seeking funding, Jake should validate willingness to pay, find a co-founder with ML expertise, and narrow the focus to one defensible use case rather than four.</p>
+  </div>
+
+  <div class="footer">evaluated by basher · 2026-03-26</div>
+</body>
+</html>
