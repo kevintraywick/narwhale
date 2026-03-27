@@ -19,7 +19,6 @@
       overflow-x: auto;
       scrollbar-width: thin;
       scrollbar-color: #333 transparent;
-      position: relative;
     }
 
     #thumbs {
@@ -56,12 +55,6 @@
     .thumb.drag-over { border-color: #f80; }
     .thumb.dragging { opacity: 0.3; }
 
-    .thumb img {
-      max-width: 100%;
-      max-height: 100%;
-      object-fit: cover;
-      border-radius: 2px;
-    }
 
     /* Drop zone */
     #dropzone {
@@ -97,15 +90,12 @@
     }
     #deletebtn:hover { background: #332; }
 
-    /* Nav controls group — true center via absolute positioning */
+    /* Nav controls group — in the flow, pushed right with margin-left:auto */
     #nav-controls {
-      position: absolute;
-      left: 50%;
-      transform: translateX(-50%);
+      flex-shrink: 0;
       display: flex;
       align-items: center;
       gap: 4px;
-      z-index: 5;
     }
 
     button.nav-arrow {
@@ -188,11 +178,6 @@
   <div id="thumbstrip">
     <div id="dropzone" title="Drop or click to add files">+</div>
     <div id="thumbs"></div>
-    <div id="nav-controls">
-      <button class="nav-arrow" id="prev" onclick="go(-1)">&#8592;</button>
-      <span id="counter"></span>
-      <button class="nav-arrow" id="next" onclick="go(1)">&#8594;</button>
-    </div>
     <button id="deletebtn" title="Delete current page">🔥</button>
   </div>
   <input type="file" id="fileinput" accept="image/*,.pdf,.html,.htm" multiple />
@@ -228,19 +213,21 @@
     function renderThumbs() {
       const container = document.getElementById('thumbs')
       container.innerHTML = ''
+      const mid = Math.ceil(files.length / 2)
+
       files.forEach((f, i) => {
+        // Insert nav controls at the midpoint
+        if (i === mid) {
+          container.appendChild(makeNavControls())
+        }
+
         const el = document.createElement('div')
         el.className = 'thumb' + (i === index ? ' active' : '')
         el.draggable = true
         el.dataset.index = i
 
-        if (f.type === 'image') {
-          const src = f.dataUrl || encodeURIComponent(f.name)
-          el.innerHTML = `<img src="${src}" alt="${f.name}" />`
-        } else {
-          const label = f.name.replace(/\.[^.]+$/, '')
-          el.textContent = label.length > 20 ? label.slice(0, 18) + '...' : label
-        }
+        const label = f.name.replace(/\.[^.]+$/, '')
+        el.textContent = label.length > 20 ? label.slice(0, 18) + '...' : label
 
         el.addEventListener('click', () => { index = i; render() })
         el.addEventListener('dragstart', onThumbDragStart)
@@ -252,6 +239,22 @@
 
         container.appendChild(el)
       })
+
+      // If no files or only one half, still add controls
+      if (files.length === 0 || mid === files.length) {
+        container.appendChild(makeNavControls())
+      }
+    }
+
+    function makeNavControls() {
+      const nav = document.createElement('div')
+      nav.id = 'nav-controls'
+      nav.innerHTML = `
+        <button class="nav-arrow" onclick="go(-1)">&#8592;</button>
+        <span id="counter">${files.length ? (index + 1) + ' / ' + files.length : '0 / 0'}</span>
+        <button class="nav-arrow" onclick="go(1)">&#8594;</button>
+      `
+      return nav
     }
 
     // --- Drag to reorder ---
@@ -391,14 +394,10 @@
       renderThumbs()
       if (!files.length) {
         document.getElementById('viewer').innerHTML = '<span style="color:#555">No pages</span>'
-        document.getElementById('counter').textContent = '0 / 0'
         return
       }
       const f = files[index]
       const viewer = document.getElementById('viewer')
-      const counter = document.getElementById('counter')
-
-      counter.textContent = `${index + 1} / ${files.length}`
 
       if (f.type === 'image') {
         const src = f.dataUrl || encodeURIComponent(f.name)
