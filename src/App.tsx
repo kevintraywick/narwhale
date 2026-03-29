@@ -52,9 +52,9 @@ function Homepage() {
         <img src={pastryImg} alt="Fast French" className="w-full h-full object-cover" />
       </a>
       {/* Wind — position 9 */}
-      <div className="overflow-hidden" style={{ gridColumn: '7 / 10', gridRow: '7 / 10' }} {...hover('Windy,\nmy real time wind project')}>
+      <a href="https://meticulous-eagerness-production-411f.up.railway.app" target="_blank" rel="noopener noreferrer" className="overflow-hidden" style={{ gridColumn: '7 / 10', gridRow: '7 / 10' }} {...hover('Windy,\nmy real time wind project')}>
         <img src={windImg} alt="Wind" className="w-full h-full object-cover" />
-      </div>
+      </a>
     </div>
   )
 }
