@@ -42,6 +42,14 @@ function EntryRow({ entry, postComment }: { entry: Entry, postComment: (id: numb
 
   return (
     <div className="border-b border-gray-100 py-4">
+      {entry.image_url && (
+        <img
+          src={entry.image_url}
+          alt=""
+          className="w-full max-h-64 object-cover rounded mb-3"
+          loading="lazy"
+        />
+      )}
       <div>
         <span className="text-gray-400 text-xs mr-2">{formatDate(entry.created_at, true)}</span>
         <button

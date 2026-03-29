@@ -18,8 +18,8 @@ function Homepage() {
 
   return (
     <div className="grid h-screen w-screen bg-white" style={{ gridTemplateColumns: 'repeat(9, 1fr)', gridTemplateRows: 'repeat(9, 1fr)' }}>
-      {/* Blog — spans positions 1 and 4 (col 1-3, row 1-6) */}
-      <div className="relative overflow-hidden bg-black" style={{ gridColumn: '1 / 4', gridRow: '1 / 7' }} {...hover('My blog')}>
+      {/* Blog — spans positions 1, 4, and 7 (col 1-3, row 1-9) */}
+      <div className="relative overflow-hidden bg-black" style={{ gridColumn: '1 / 4', gridRow: '1 / 10' }} {...hover('My blog')}>
         <FeedOverlay />
       </div>
       {/* Text Me — position 2 */}
@@ -47,10 +47,6 @@ function Homepage() {
         <img src={penImg} alt="JustEdit" className="w-full h-full object-cover" />
       </a>
 
-      {/* position 7 */}
-      <div className="flex items-center justify-center bg-white border border-black" style={{ gridColumn: '1 / 4', gridRow: '7 / 10', ...kFont, fontSize: 'clamp(80px, 12vw, 200px)', lineHeight: 1 }} {...hover('Coming Soon')}>
-        7
-      </div>
       {/* Fast French — position 8 */}
       <a href="/fast-french/" target="_blank" rel="noopener noreferrer" className="overflow-hidden" style={{ gridColumn: '4 / 7', gridRow: '7 / 10' }} {...hover('Fast French,\nmy French learning game')}>
         <img src={pastryImg} alt="Fast French" className="w-full h-full object-cover" />
