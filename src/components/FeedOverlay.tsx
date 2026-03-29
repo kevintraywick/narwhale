@@ -96,7 +96,7 @@ export function FeedOverlay() {
     >
       {/* Header bar — visual symmetry with bottom bar */}
       <div className="border-b border-white/10 flex-shrink-0 flex items-center justify-center" style={{ height: '22px' }}>
-        <a href="/cc" className="w-5 h-5 rounded-full block" style={{ background: '#999', opacity: 0.4 }} />
+        <a href="/cc" className="w-5 h-5 rounded-full block" style={{ background: '#999', opacity: 0.4, marginTop: '5px' }} />
       </div>
 
       {/* Feed */}
