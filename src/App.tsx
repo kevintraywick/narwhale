@@ -53,7 +53,7 @@ function Homepage() {
       </a>
       {/* Wind — position 9 */}
       <a href="https://meticulous-eagerness-production-411f.up.railway.app" target="_blank" rel="noopener noreferrer" className="overflow-hidden" style={{ gridColumn: '7 / 10', gridRow: '7 / 10' }} {...hover('Windy,\nmy real time wind project')}>
-        <img src={windImg} alt="Wind" className="w-full h-full object-cover" />
+        <img src={windImg} alt="Wind" className="w-full h-full object-cover" style={{ objectPosition: 'calc(50% + 30px) center' }} />
       </a>
     </div>
   )
