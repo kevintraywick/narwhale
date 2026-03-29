@@ -95,8 +95,8 @@ export function FeedOverlay() {
       onDrop={handleDrop}
     >
       {/* Header bar — visual symmetry with bottom bar */}
-      <div className="border-b border-white/10 py-1.5 flex items-center justify-center">
-        <span className="w-5 h-5" />
+      <div className="border-b border-white/10 py-1 flex items-center justify-center">
+        <span className="w-5 h-3.5" />
       </div>
 
       {/* Feed */}
