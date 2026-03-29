@@ -94,6 +94,9 @@ export function FeedOverlay() {
       onDragLeave={handleDragLeave}
       onDrop={handleDrop}
     >
+      {/* Header bar — visual symmetry with bottom bar */}
+      <div className="border-b border-white/10 flex-shrink-0" style={{ height: '22px' }} />
+
       {/* Feed */}
       <div
         className="flex-1 overflow-y-auto p-2.5 space-y-2"
