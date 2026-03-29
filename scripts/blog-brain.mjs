@@ -62,7 +62,7 @@ async function generateDescription(pageText, title) {
       max_tokens: 100,
       messages: [{
         role: 'user',
-        content: `You are writing a brief comment on a blog post. The blog entry is titled "${title}" and links to an HTML page. Here is the text content of that page:\n\n${pageText}\n\nWrite a description of this page in under 30 words. Be direct and descriptive — no filler phrases like "This page" or "This is". End your response with exactly: 🧠`,
+        content: `You are writing a brief comment on a blog post. The blog entry is titled "${title}" and links to a web page. Here is the text content of that page:\n\n${pageText}\n\nWrite a description in under 120 characters. Be direct and descriptive — no filler phrases like "This page" or "This is". End your response with exactly: 🧠`,
       }],
     }),
   })
@@ -79,11 +79,11 @@ async function generateDescription(pageText, title) {
   return text
 }
 
-function isHtmlLink(link) {
+function hasLink(link) {
   if (!link) return false
   try {
-    const url = new URL(link)
-    return /\.html?$/i.test(url.pathname)
+    new URL(link)
+    return true
   } catch {
     return false
   }
@@ -104,7 +104,7 @@ async function main() {
   // Only check entries from the last 24 hours with .html links
   const cutoff = Date.now() - 24 * 60 * 60 * 1000
   const recent = entries.filter(e =>
-    isHtmlLink(e.link) && new Date(e.created_at).getTime() > cutoff
+    hasLink(e.link) && new Date(e.created_at).getTime() > cutoff
   )
 
   console.log(`${recent.length} recent entries with .html links`)

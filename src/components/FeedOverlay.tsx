@@ -1,6 +1,6 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
-import { useFeed, uploadImage } from '../hooks/useFeed'
+import { useFeed, uploadImage, fetchEntry, type Comment } from '../hooks/useFeed'
 import { formatDate, hostname } from '../utils/format'
 
 const FEED_PREVIEW_LIMIT = 8
@@ -15,6 +15,17 @@ export function FeedOverlay() {
   const [commentErrors, setCommentErrors] = useState<Record<number, boolean>>({})
 
   const recent = entries.slice(0, FEED_PREVIEW_LIMIT)
+  const [commentPreviews, setCommentPreviews] = useState<Record<number, Comment[]>>({})
+
+  useEffect(() => {
+    const withComments = recent.filter(e => e.comment_count > 0)
+    withComments.forEach(entry => {
+      if (commentPreviews[entry.id]) return
+      fetchEntry(String(entry.id)).then(detail => {
+        setCommentPreviews(prev => ({ ...prev, [entry.id]: detail.comments }))
+      }).catch(() => {})
+    })
+  }, [entries])
 
   function handleDragOver(e: React.DragEvent) {
     e.preventDefault()
@@ -126,6 +137,9 @@ export function FeedOverlay() {
             {entry.note && (
               <p className="text-black text-[12px] leading-snug mt-0.5 line-clamp-3">{entry.note}</p>
             )}
+            {commentPreviews[entry.id]?.slice(0, 3).map(c => (
+              <p key={c.id} className="text-gray-500 text-[11px] leading-snug mt-0.5 line-clamp-3">{c.body}</p>
+            ))}
             <input
               className={`mt-1 w-full text-[12px] border rounded px-1.5 py-0.5 bg-white placeholder-gray-400 focus:outline-none ${commentErrors[entry.id] ? 'border-red-400' : 'border-gray-200'}`}
               placeholder="Add a comment…"
