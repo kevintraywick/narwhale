@@ -34,19 +34,33 @@ async function postComment(entryId, body) {
   return res.json()
 }
 
+const MAX_FETCH_RETRIES = 10
+
 async function fetchHtmlText(url) {
-  const res = await fetch(url)
-  if (!res.ok) throw new Error(`Failed to fetch ${url}: ${res.status}`)
-  const html = await res.text()
-  // Strip tags, collapse whitespace, take first 5000 chars for the prompt
-  const text = html
-    .replace(/<script[\s\S]*?<\/script>/gi, '')
-    .replace(/<style[\s\S]*?<\/style>/gi, '')
-    .replace(/<[^>]+>/g, ' ')
-    .replace(/\s+/g, ' ')
-    .trim()
-    .slice(0, 5000)
-  return text
+  let lastError
+  for (let attempt = 1; attempt <= MAX_FETCH_RETRIES; attempt++) {
+    try {
+      const res = await fetch(url)
+      if (!res.ok) throw new Error(`Failed to fetch ${url}: ${res.status}`)
+      const html = await res.text()
+      // Strip tags, collapse whitespace, take first 5000 chars for the prompt
+      const text = html
+        .replace(/<script[\s\S]*?<\/script>/gi, '')
+        .replace(/<style[\s\S]*?<\/style>/gi, '')
+        .replace(/<[^>]+>/g, ' ')
+        .replace(/\s+/g, ' ')
+        .trim()
+        .slice(0, 5000)
+      return text
+    } catch (err) {
+      lastError = err
+      console.log(`  Attempt ${attempt}/${MAX_FETCH_RETRIES} failed: ${err.message}`)
+      if (attempt < MAX_FETCH_RETRIES) {
+        await new Promise(r => setTimeout(r, 1000 * attempt))
+      }
+    }
+  }
+  throw lastError
 }
 
 async function generateDescription(pageText, title) {
@@ -119,7 +133,13 @@ async function main() {
     }
 
     console.log(`  Fetching ${entry.link}`)
-    const pageText = await fetchHtmlText(entry.link)
+    let pageText
+    try {
+      pageText = await fetchHtmlText(entry.link)
+    } catch (err) {
+      console.log(`  Failed to fetch after ${MAX_FETCH_RETRIES} attempts, skipping: ${err.message}`)
+      continue
+    }
 
     console.log(`  Generating description...`)
     const description = await generateDescription(pageText, entry.title)
