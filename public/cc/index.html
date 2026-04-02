@@ -57,7 +57,7 @@
 
 
     /* Drop zone */
-    #dropzone {
+    #dropzone, #urlbtn {
       flex-shrink: 0;
       width: 48px;
       height: 48px;
@@ -70,8 +70,39 @@
       font-size: 22px;
       color: #555;
       transition: border-color 0.15s, color 0.15s;
+      background: none;
     }
-    #dropzone:hover, #dropzone.drag-hover { border-color: #5af; color: #5af; }
+    #dropzone:hover, #dropzone.drag-hover, #urlbtn:hover { border-color: #5af; color: #5af; }
+
+    /* URL input bar */
+    #url-bar {
+      display: none;
+      align-items: center;
+      gap: 6px;
+      flex-shrink: 0;
+    }
+    #url-bar.visible { display: flex; }
+    #url-bar input {
+      background: #222;
+      border: 1px solid #444;
+      color: #fff;
+      padding: 6px 10px;
+      border-radius: 6px;
+      font-size: 12px;
+      width: 260px;
+      outline: none;
+    }
+    #url-bar input:focus { border-color: #5af; }
+    #url-bar button {
+      background: #5af;
+      color: #111;
+      border: none;
+      padding: 6px 12px;
+      border-radius: 6px;
+      font-size: 12px;
+      font-weight: bold;
+      cursor: pointer;
+    }
 
     /* Delete button */
     #deletebtn {
@@ -177,6 +208,11 @@
 <body>
   <div id="thumbstrip">
     <div id="dropzone" title="Drop or click to add files">+</div>
+    <button id="urlbtn" title="Add webpage URL">🔗</button>
+    <div id="url-bar">
+      <input type="text" id="urlinput" placeholder="https://example.com" />
+      <button onclick="addUrl()">Add</button>
+    </div>
     <div id="thumbs"></div>
     <button id="deletebtn" title="Delete current page">🔥</button>
   </div>
@@ -195,6 +231,10 @@
     let index = 0
     let undoStack = [] // { file, index, position }
     let undoTimer = null
+
+    // --- Prevent browser default drop behavior (navigating/downloading) ---
+    document.addEventListener('dragover', e => e.preventDefault())
+    document.addEventListener('drop', e => e.preventDefault())
 
     // --- Persistence ---
     function saveState() {
@@ -322,6 +362,20 @@
     dropzone.addEventListener('drop', e => {
       e.preventDefault()
       dropzone.classList.remove('drag-hover')
+
+      // Check for a dropped URL (dragged link or address bar)
+      const droppedUrl = e.dataTransfer.getData('text/uri-list') || e.dataTransfer.getData('text/plain')
+      if (droppedUrl && /^https?:\/\//.test(droppedUrl.trim()) && !e.dataTransfer.files.length) {
+        const url = droppedUrl.trim().split('\n')[0] // uri-list can have multiple lines
+        let name
+        try { name = new URL(url).hostname.replace(/^www\./, '') } catch { name = url }
+        files.push({ name, type: 'url', url })
+        index = files.length - 1
+        saveState()
+        render()
+        return
+      }
+
       handleFiles(e.dataTransfer.files)
     })
 
@@ -330,12 +384,44 @@
       fileinput.value = ''
     })
 
+    // --- URL input ---
+    const urlbtn = document.getElementById('urlbtn')
+    const urlbar = document.getElementById('url-bar')
+    const urlinput = document.getElementById('urlinput')
+
+    urlbtn.addEventListener('click', () => {
+      urlbar.classList.toggle('visible')
+      if (urlbar.classList.contains('visible')) urlinput.focus()
+    })
+
+    urlinput.addEventListener('keydown', e => {
+      if (e.key === 'Enter') addUrl()
+      if (e.key === 'Escape') urlbar.classList.remove('visible')
+    })
+
+    function addUrl() {
+      let url = urlinput.value.trim()
+      if (!url) return
+      if (!/^https?:\/\//.test(url)) url = 'https://' + url
+
+      let name
+      try { name = new URL(url).hostname.replace(/^www\./, '') } catch { name = url }
+
+      files.push({ name, type: 'url', url })
+      index = files.length - 1
+      urlinput.value = ''
+      urlbar.classList.remove('visible')
+      saveState()
+      render()
+    }
+
     function handleFiles(fileList) {
       Array.from(fileList).forEach(file => {
         const ext = file.name.split('.').pop().toLowerCase()
         let type = 'html'
         if (['png','jpg','jpeg','gif','webp','svg','bmp'].includes(ext)) type = 'image'
         else if (ext === 'pdf') type = 'pdf'
+        else if (ext === 'url') type = 'url'
 
         const reader = new FileReader()
         reader.onload = () => {
@@ -402,8 +488,23 @@
       if (f.type === 'image') {
         const src = f.dataUrl || encodeURIComponent(f.name)
         viewer.innerHTML = `<img src="${src}" alt="${f.name}" />`
+      } else if (f.type === 'url') {
+        viewer.innerHTML = `<iframe src="${f.url}" sandbox="allow-scripts allow-same-origin allow-popups allow-forms" referrerpolicy="no-referrer"></iframe>`
       } else if (f.dataUrl) {
-        viewer.innerHTML = `<iframe src="${f.dataUrl}"></iframe>`
+        // Decode the data URL to HTML and use srcdoc to avoid download behavior
+        const iframe = document.createElement('iframe')
+        if (f.dataUrl.startsWith('data:text/html')) {
+          try {
+            const comma = f.dataUrl.indexOf(',')
+            const isBase64 = f.dataUrl.slice(0, comma).includes(';base64')
+            const payload = f.dataUrl.slice(comma + 1)
+            iframe.srcdoc = isBase64 ? atob(payload) : decodeURIComponent(payload)
+          } catch { iframe.src = f.dataUrl }
+        } else {
+          iframe.src = f.dataUrl
+        }
+        viewer.innerHTML = ''
+        viewer.appendChild(iframe)
       } else {
         viewer.innerHTML = `<iframe src="${encodeURIComponent(f.name)}"></iframe>`
       }
